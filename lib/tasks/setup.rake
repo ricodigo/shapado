@@ -52,10 +52,10 @@ namespace :setup do
     default_group = Group.where(:domain => AppConfig.domain).first
 
     if AppConfig.enable_groups
-      default_group.welcome_widgets << GroupsWidget.new
+      default_group.mainlist_widgets << GroupsWidget.new
     end
-    default_group.welcome_widgets << UsersWidget.new
-    default_group.welcome_widgets << BadgesWidget.new
+    default_group.mainlist_widgets << UsersWidget.new
+    default_group.mainlist_widgets << BadgesWidget.new
     default_group.save!
   end
 
