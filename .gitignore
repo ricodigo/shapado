@@ -8,6 +8,7 @@ config/shapado.yml
 data/*.dat
 config/mongoid.yml
 config/database.yml
+config/auth_providers.yml
 base_packaged.*
 .directory
 .bundle
