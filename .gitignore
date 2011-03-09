@@ -22,3 +22,4 @@ public/stylesheets/packaged/
 .sass-cache
 *.kdev4
 .redcar
+.idea
