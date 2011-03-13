@@ -66,5 +66,5 @@ if rack_spec && rack_spec.version.version == '1.1.0'
     end
   end
 else
-  RAILS_DEFAULT_LOGGER.warn 'fix_rack_110_quote_parsing.rb not loaded'
+  Rails.logger.warn 'fix_rack_110_quote_parsing.rb not loaded'
 end
