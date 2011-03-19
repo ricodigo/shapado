@@ -1,4 +1,4 @@
-- if logged_in? && (current_user.facebook_login? || current_user.twitter_login? || current_user.identica_login?)
+- if logged_in?
   = render :partial => "shared/suggestions", :locals => {:limit => 5}
   .more
     = link_to t("scaffold.more"), suggestions_path

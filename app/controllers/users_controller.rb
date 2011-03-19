@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :only => [:edit, :update, :follow]
+  before_filter :login_required, :only => [:edit, :update,
+                                           :follow, :follow_tags,
+                                           :unfollow_tags]
   tabs :default => :users
 
   subtabs :index => [[:reputation, "reputation"],
@@ -155,10 +157,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # My feed, this returns:
+  # - all the questions I asked
+  # - all the questions I follow
+  # - all the questions followed by people I follow
+  #   (questions followed by people I find interesting must be interesting to me)
+  # - all the questions tagged with one of the tag I follow
   def feed
     @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
-
-    find_questions(:follower_ids => @user.id)
+    tags = @user.config_for(current_group).preferred_tags
+    user_ids = @user.friend_list.following_ids
+    user_ids << @user.id
+    find_questions({ }, :any_of => [{:follower_ids.in => user_ids},
+                                    {:tags.in => tags},
+                                    {:user_id => user_ids}])
   end
 
   def by_me
@@ -196,18 +208,35 @@ class UsersController < ApplicationController
     redirect_to settings_path
   end
 
-  def change_preferred_tags
+  def follow_tags
     @user = current_user
     if tags = params[:tags]
-      if params[:opt] == "add"
-        @user.add_preferred_tags(tags, current_group) if tags
-      elsif params[:opt] == "remove"
-        @user.remove_preferred_tags(tags, current_group)
-      end
+      @user.add_preferred_tags(tags, current_group) if tags
     end
-
+    flash[:notice] = t("users.update_followed_tags.followed.flash_notice",
+                       :tag => params[:tags])
     respond_to do |format|
       format.html {redirect_to questions_path}
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice] }.to_json)
+      }
+    end
+  end
+
+  def unfollow_tags
+    @user = current_user
+    if tags = params[:tags]
+      @user.remove_preferred_tags(tags, current_group)
+    end
+    flash[:notice] = t("users.update_followed_tags.unfollowed.flash_notice",
+                       :tag => params[:tags])
+    respond_to do |format|
+      format.html {redirect_to questions_path}
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice] }.to_json)
+      }
     end
   end
 

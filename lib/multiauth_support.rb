@@ -23,6 +23,10 @@ module MultiauthSupport
     field :identica_login,             :type => String
     field :identica_id,                :type => String
 
+    field :linked_in_id,               :type => String
+    field :linked_in_token,            :type => String
+    field :linked_in_secret,            :type => String
+
     field :github_id, :type => String
     field :github_login, :type => String
 
@@ -71,7 +75,15 @@ module MultiauthSupport
 
         return false if !user.save
       end
-
+      if provider == 'twitter' && user.user_info["twitter"] && user.user_info["twitter"]["old"]
+        user.user_info["twitter"] = fields["user_info"]
+        user.save(:validate => false)
+      end
+      if provider == 'facebook' && user.user_info["facebook"] && user.user_info["facebook"]["old"]
+        user.user_info["facebook"] = fields["user_info"]
+        user["facebook_token"] = fields["credentials"]["token"]
+        user.save(:validate => false)
+      end
       user
     end
   end # ClassMethods
@@ -150,8 +162,22 @@ module MultiauthSupport
       @accesstoken = OAuth::AccessToken.new(@consumer, self.identica_token, self.identica_secret)
     end
 
+    def linked_in_client
+      config = Multiauth.providers["LinkedIn"]
+      @consumer = OAuth::Consumer.new(config["id"], config["token"], {:site=>'http://api.linkedin.com'})
+      @accesstoken = OAuth::AccessToken.new(@consumer, self.linked_in_token, self.linked_in_secret)
+    end
+
     def get_identica_friends
       JSON.parse(identica_client.get('/api/friends/ids.json').body)
+    end
+
+    def get_linked_in_friends
+      friends_ids = []
+      JSON.parse(linked_in_client.
+                 get("/v1/people/~/connections:(id)", 'x-li-format' => 'json').
+                 body)["values"].map do |x| friends_ids << x["id"] end
+      friends_ids
     end
 
     private
@@ -188,6 +214,15 @@ module MultiauthSupport
       self.identica_id = fields["extra"]["user_hash"]["id"]
 
       self.login.blank? && self.login = fields["user_info"]["nickname"]
+    end
+
+    def handle_linked_in(fields)
+      self.linked_in_token = fields["credentials"]["token"]
+      self.linked_in_secret = fields["credentials"]["secret"]
+      self.linked_in_id = fields["uid"]
+      self.bio.blank? && self.bio = fields["user_info"]["description"]
+
+      self.login.blank? && self.login = fields["user_info"]["first_name"]+fields["user_info"]["last_name"]
     end
   end # InstanceMethods
 end

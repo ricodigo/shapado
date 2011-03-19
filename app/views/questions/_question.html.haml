@@ -34,7 +34,7 @@
           Tags:
         -question.first_tags.each do |tag|
           %li{:class => "tag_#{h(tag)}"}
-            = link_to h(tag), tag_path(:id => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
+            = tag_link(tag)
         %li
           = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag', :class => "important"
       .clear

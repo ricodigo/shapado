@@ -42,5 +42,13 @@ module Jobs
       user.identica_friends_list.save
       user.save
     end
+
+    def self.get_linked_in_friends(user_id)
+      user = User.find(user_id)
+      friends = user.get_linked_in_friends
+      user.linked_in_friends_list.friends = friends
+      user.linked_in_friends_list.save
+      user.save
+    end
   end
 end

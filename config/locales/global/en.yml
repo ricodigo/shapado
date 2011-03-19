@@ -39,6 +39,8 @@ en:
     anonymous: Anonymous
     unknown_place: Unknown
     subjetive: subjetive
+    follow: Follow
+    unfollow: Unfollow
   feeds:
     question: Subscribe to this question
     questions: Subscribe to all questions

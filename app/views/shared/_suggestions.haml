@@ -3,13 +3,13 @@
     =t("widgets.suggestions.title", :group => current_group.name)
   .content
     %ul.list
-      -current_user.suggestions(limit).each do |suggestion|
+      -current_user.suggestions(current_group, limit).each do |suggestion|
         %li
           .gravatar
             = suggestion_avatar(suggestion)
           .item
-            = link_to h(suggestion.login), user_path(suggestion)
+            = suggestion_link(suggestion)
           .item
-            = link_to "+ #{t("users.show.follow")}", follow_user_path(suggestion), :class => "follow_link", 'data-class' => "unfollow_link", 'data-title' => t("users.show.unfollow"), 'data-undo' => unfollow_user_path(suggestion)
+            = follow_suggestion_link(suggestion)
         %li
           = common_follower(current_user, suggestion)

@@ -72,7 +72,7 @@ $(document).ready(function() {
 
   initStorageMethods();
   fillTextareas();
-
+  initFollowTags();
   $(".highlight_for_user").effect("highlight", {}, 2000);
   sortValues('#group_language', 'option', ':last', 'text', null);
   sortValues('#language_filter', 'option',  ':lt(2)', 'text', null);
@@ -215,6 +215,47 @@ function init_geolocal(){
   } else {
       //error('not supported');
   }
+}
+
+function initFollowTags(){
+  console.log('beep')
+  $(".follow-tag, .unfollow-tag").live("click", function(event) {
+    var link = $(this);
+    if(!link.hasClass('busy')){
+      link.addClass('busy');
+      var href = link.attr("href");
+      var title = link.text();
+      var dataTitle = link.attr("data-title");
+      var dataUndo = link.attr("data-undo");
+      var linkClass = link.attr('class');
+      var dataClass = link.attr('data-class');
+      var tag = link.attr('data-tag');
+      $.ajax({
+        url: href+'.js',
+        dataType: 'json',
+        type: "POST",
+        data: "tags="+tag,
+        success: function(data){
+          if(data.success){
+            link.attr({href: dataUndo, 'data-undo': href, 'data-title': title, 'class': dataClass, 'data-class': linkClass });
+            showMessage(data.message, "notice");
+          } else {
+            showMessage(data.message, "error");
+
+            if(data.status == "unauthenticate") {
+                window.location="/users/login";
+            }
+        }
+        },
+        error: manageAjaxError,
+        complete: function(XMLHttpRequest, textStatus) {
+            link.removeClass('busy');
+            link.text(dataTitle);
+        }
+        })
+    }
+    return false;
+  })
 }
 
 // Script for HTML5 tags, so IE will see it and use it

@@ -128,6 +128,22 @@ class Group
     TagList.where(:group_id => self.id).first || TagList.create(:group_id => self.id)
   end
 
+  def top_tags(limit=5)
+    tags.desc(:count).limit(limit)
+  end
+
+  def top_tags_strings(limit=5)
+    tags = []
+    top_tags(limit).each do |tag|
+      tags << [tag.name]
+    end
+    tags
+  end
+
+  def top_users(limit=5)
+    users.desc(:followers_count).limit(limit)
+  end
+
   def default_tags=(c)
     if c.kind_of?(String)
       c = c.downcase.split(",").join(" ").split(" ")

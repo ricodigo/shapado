@@ -1,6 +1,6 @@
 
 desc "Fix all"
-task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_list"] do
+task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_list", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users"] do
 end
 
 
@@ -250,7 +250,7 @@ namespace :fixdb do
 
   task :widgets => [:init] do
     c=Group.count
-    Group.unset({}, {:widgets => true, :question_widgets => true, :welcome_widgets => true, :mainlist_widgets => true,
+    Group.unset({}, {:widgets => true, :question_widgets => true, :mainlist_widgets => true,
                 :external_widgets => true})
     i=0
     Group.all.each do |g|
@@ -316,10 +316,40 @@ namespace :fixdb do
       u.facebook_friends_list = FacebookFriendsList.create
       u.twitter_friends_list = TwitterFriendsList.create
       u.identica_friends_list = IdenticaFriendsList.create
+      u.linked_in_friends_list = LinkedInFriendsList.create
 
       p "#{i}/#{total} #{u.login}"
       i += 1
     end
     p "done"
+  end
+
+  task :fix_twitter_users => [:init] do
+    users = User.where({:twitter_token => {:$ne => nil}})
+    users.each do |u|
+      twitter_id = u.twitter_token.split('-').first
+      p "fixing #{u.login} with twitter id #{twitter_id}"
+      u["auth_keys"] = [] if u["auth_keys"].nil?
+      u["auth_keys"] << "twitter_#{twitter_id}"
+      u["auth_keys"].uniq!
+      u["twitter_id"] = twitter_id
+      u["user_info"] = { } if u["user_info"].nil?
+      u["user_info"]["twitter"] = { "old" => 1}
+      u.save(:validate => false)
+    end
+  end
+
+  task :fix_facebook_users => [:init] do
+    users = User.where({:facebook_id => {:$ne => nil}})
+    users.each do |u|
+      facebook_id = u.facebook_id
+      p "fixing #{u.login} with facebook id #{facebook_id}"
+      u["auth_keys"] = [] if u["auth_keys"].nil?
+      u["auth_keys"] << "facebook_#{facebook_id}"
+      u["auth_keys"].uniq!
+      u["user_info"] = { } if u["user_info"].nil?
+      u["user_info"]["facebook"] = { "old" => 1}
+      u.save(:validate => false)
+    end
   end
 end

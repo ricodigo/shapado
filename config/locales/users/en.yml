@@ -31,6 +31,11 @@ en:
       flash_notice: "The user %{user} was added to your friends"
     unfollow:
       flash_notice: "The user %{user} was removed from your friends"
+    update_followed_tags:
+      followed:
+        flash_notice: "You are now following the tag %{tag}."
+      unfollowed:
+        flash_notice: "You are not following the tag %{tag} anymore."
     form:
       information: Information
       notifications: Notifications

@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
     @current_group
   end
 
-  def find_questions(extra_conditions = {})
+  def find_questions(extra_conditions = {}, extra_scope = { })
     if params[:language] || request.query_string =~ /tags=/
       params.delete(:language)
       head :moved_permanently, :location => url_for(params)
@@ -76,7 +76,13 @@ class ApplicationController < ActionController::Base
     end
     @active_subtab ||= params[:sort] || "newest"
 
-    @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order).paginate({:per_page => 25, :page => params[:page] || 1})
+    @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order)
+
+    extra_scope.keys.each do |key|
+      @questions = @questions.send(key, extra_scope[key])
+    end
+
+    @questions = @questions.paginate({:per_page => 25, :page => params[:page] || 1})
 
     @langs_conds = scoped_conditions[:language][:$in]
 
