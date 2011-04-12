@@ -27,7 +27,7 @@ sudo gem install -v=2.3.10 rails
 
 3. Install dependencies
 
-    rake gems:install
+    bundle install
 
 4. Download GeoIP data
 
