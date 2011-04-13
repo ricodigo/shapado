@@ -8,7 +8,6 @@ ru:
   layouts: 
     application: 
       ask_question: Задать вопрос
-      badges: Беджи
       forgot: Забыли?
       home: В начало
       languages: Языки
@@ -33,6 +32,21 @@ ru:
       unanswered: Без ответов
       users: Пользователи
       welcome_from: Добро пожаловать! Вы можете
+      follow: Давайте дружить
+      publicad: Публичная реклама
+      answers: Ответы
+      activity: Активность
+      sort: Сортировать по
+      menu:
+        randomq: Случайный вопрос   
+        badges: Беджи 
+        pages: Страницы
+        all: Все
+        followed: Интересующие
+        myne: Мои
+        preferred: Избранные
+        contributed: Вклад
+        collaborate: Сотрудничай!
     manage: 
       actions: Действия
       announcements: Объявления

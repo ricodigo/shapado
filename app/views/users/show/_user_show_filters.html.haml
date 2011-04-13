@@ -1,7 +1,7 @@
 %header
   =# number_with_delimiter(@answers.total_entries)
   =t(:questions, :scope => "activerecord.models")
-  = "- Sort By:" #i18n
+  = "#{t 'questions.index.sort'}:" #i18n
 %li.newest
   = link_to t("questions.index.newest"), user_path(@user, params.merge(:sort=>"newest")), :rel => "nofollow"
 %li.hot

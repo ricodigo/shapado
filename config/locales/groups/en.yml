@@ -1,5 +1,7 @@
 en:
   groups:
+    top:
+      active: Active site
     index:
       title: Groups
       filter: "Search for groups"

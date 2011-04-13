@@ -6,3 +6,21 @@ en:
       user_page: My page
     current_tags:
       title: Selected tags
+    empty:
+      ask: Ask Question
+      sorry: Sorry! but don't have much to show here.
+      youcan: You can add something if you want,
+    login_menu:
+      login: LogIn
+      join: Join Shapado
+    layouts:
+      footer:
+        content: All Shapado.com content and data are available under the
+        chat: Chat
+        feedback: Feedback
+        blog: Blog
+        privacy: Privacy
+        tos: Tos
+        twitter: Twitter
+      activity:
+        title: Activity

@@ -1,5 +1,10 @@
 en:
   users:
+    top_user:
+      my_karma: My Karma      
+      profile: Profile
+      settings: Settings
+      my_badges: My badges
     index:
       title: All users
       empty: "This group does not have any members. Participate by joining this group."
@@ -27,6 +32,9 @@ en:
       views: views
       followers: Followers
       following: Following
+      edit: Edit profile
+      badges: Badges
+      follow: Follow
     follow:
       flash_notice: "The user %{user} was added to your friends"
     unfollow:

@@ -30,6 +30,8 @@ ru:
       group: Группа
       groups: Группы
   groups: 
+    top:
+      active: Активный сайт
     create: 
       flash_notice: Ваша группа успешно создана, теперь вы можете приступить к её настройке.
     form: 

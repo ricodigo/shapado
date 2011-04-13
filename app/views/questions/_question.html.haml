@@ -24,7 +24,7 @@
       -if owner
         =render :partial => "users/user_data", :locals => {:user => owner}
       -else
-        Por:
+        #{t 'questions.question.from'}
         =t("global.anonymous")
         %time{:pubdate => "pubdate", :datetime => last_target_date.iso8601}
           = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question, :anchor => last_target_id)
@@ -34,7 +34,7 @@
       -if question.tags.empty? && logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
       %ul
         %li
-          Tags:
+          #{t 'questions.tags.title'}
         -question.first_tags.each do |tag|
           %li{:class => "tag_#{h(tag)}"}
             = tag_link(tag)
@@ -49,7 +49,7 @@
 
         -if question.followers_count.to_i > 0
           %li.followers
-            = "#{format_number(question.followers_count)} followers"
+            = "#{format_number(question.followers_count)} #{t '.followers'}"
 
         %li.votes
           -unless question.closed
@@ -70,10 +70,10 @@
 
         %li
           -if !logged_in? || !question.follower?(current_user)
-            =link_to "Seguir", follow_question_path(question)
+            =link_to "#{t '.continue'}", follow_question_path(question)
 
         %li
-          =link_to "Responder", question_path(question, :anchor => "to_answer")
+          =link_to "#{t '.answer'}", question_path(question, :anchor => "to_answer")
 
     .clear
 

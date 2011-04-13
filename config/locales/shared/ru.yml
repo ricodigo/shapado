@@ -11,3 +11,22 @@ ru:
       admin: Администрирование
       logged_as: Вы вошли как %{login}
       user_page: Моя страница
+    login_menu:
+      login: Войти
+      join: Присоедениться к Shapado
+    empty:
+      ask: Задать вопрос
+      sorry: Простите, здесь пока нечего показывать.
+      youcan: Вы можете исправить ситуацию!
+    layouts:
+      footer:
+       content: Весь контент и информация Shapado.com доступна под
+       chat: Чат
+       feedback: Обратная связь
+       blog: Блог
+       privacy: Приватность
+       tos: Toc
+       twitter: Твиттер
+      activity:
+       title: Активность
+       

@@ -49,13 +49,13 @@
         .widget-links.module
           %nav
             %ul
-              = tab_entry "li", "All", questions_path, :selected => "active"
+              = tab_entry "li", "#{t 'layouts.application.menu.all'}", questions_path, :selected => "active"
               -if logged_in?
-                = tab_entry "li", "Followed", feed_user_path(current_user), :selected => "active"
-                = tab_entry "li", "By Me", by_me_user_path(current_user), :selected => "active"
-                = tab_entry "li", "Preferred", preferred_user_path(current_user), :selected => "active"
-                = tab_entry "li", "Contributed", contributed_user_path(current_user), :selected => "active"
-                = tab_entry "li", "Collaborate!", expertise_user_path(current_user), :selected => "active"
+                = tab_entry "li", "#{t 'layouts.application.menu.followed'}", feed_user_path(current_user), :selected => "active"
+                = tab_entry "li", "#{t 'layouts.application.menu.myne'}", by_me_user_path(current_user), :selected => "active"
+                = tab_entry "li", "#{t 'layouts.application.menu.preferred'}", preferred_user_path(current_user), :selected => "active"
+                = tab_entry "li", "#{t 'layouts.application.menu.contributed'}", contributed_user_path(current_user), :selected => "active"
+                = tab_entry "li", "#{t 'layouts.application.menu.collaborate'}", expertise_user_path(current_user), :selected => "active"
               %li
                 =link_to "FAQ"
 
@@ -65,16 +65,16 @@
           %nav
             %ul
               %li
-                = link_to "Random question", random_questions_path(:unanswered => true)
+                = link_to "#{t 'layouts.application.menu.randomq'}", random_questions_path(:unanswered => true)
               %li
-                = link_to "Badges", badges_path
+                = link_to "#{t 'layouts.application.menu.badges'}", badges_path
               %li
-                = link_to "Pages", pages_path
+                = link_to "#{t 'layouts.application.menu.pages'}", pages_path
 
         =render "widgets/tag_cloud", :widget => TagCloudWidget.new
 
         .widget-networks.module
-          %h3  Siguenos y comparte:
+          %h3= t 'layouts.application.follow'
           %ul
             %li
               =link_to "Facebook", "#", :class => "facebook", :rel => "nofollow"
@@ -91,7 +91,7 @@
           .clear
 
         .add
-          %h6 Publicidad
+          %h6= t 'layouts.application.publicad'
           =link_to image_tag "http://www.bipbanners.co.uk/assets/images/WebConveyancing_Animated_SkyScraper_Banner_Sample_1A.gif"
 
       %section.content-panel
@@ -108,7 +108,7 @@
       %section.right-panel
 
         .add
-          %h6 Publicidad
+          %h6= t 'layouts.application.publicad'
           =link_to image_tag "banner-250x250.jpg"
 
         = yield :sidebar

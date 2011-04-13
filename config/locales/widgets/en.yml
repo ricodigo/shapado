@@ -14,6 +14,7 @@ en:
     badges:
       title: Recent badges
       description: "This widget displays recent badges earned by users."
+      all: See all badges
     groups:
       title: Recent groups
       description: "This widget displays the latest groups."
@@ -29,6 +30,8 @@ en:
     tag_cloud:
       title: Tag cloud
       description: "This widget displays a tag cloud."
+      size: Size
+      alphabetically: Alphabetically
     pages:
       title: Wiki pages
       description: "This widget displays the list of wiki pages."
@@ -70,3 +73,7 @@ en:
       title: "People And Tags To Follow"
       description: "Suggestion of friends and tags for the user to follow"
       followed_by: "Followed by %{user}"
+    
+      
+    
+      

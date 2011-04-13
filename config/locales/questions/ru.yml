@@ -41,6 +41,12 @@ ru:
       body_tip: В чём состоит вопрос? Сделайте его более информативным.
       language_tip: Выберите язык вопроса.
       tags_tip: Используйте теги для добавления информации о вашем вопросе.
+      name: Редактирование вопроса
+      similar: Здесь будут отображаться похожие вопросы
+    attachment:
+      attached: Вложенные файлы
+      add: Добавить вложение
+      remove: Убрать вложение
     index: 
       active: Активные
       active_tooltip: Недавно обновлённые вопросы
@@ -56,6 +62,7 @@ ru:
       unanswered_questions: Вопросы без ответов
       votes: Голоса
       votes_tooltip: Вопросы с наибольшим числом голосов
+      sort: Сортировать
     model: 
       messages: 
         empty_tags: Необходимо указать хотя бы один тег.
@@ -74,6 +81,12 @@ ru:
       title: Задать вопрос
     question: 
       accepted_tooltip: На этот вопрос есть принятый ответ
+      from: От
+      continue: Продолжить
+      answer: Ответить
+      followers: интересуется
+    reward: 
+      open: Этот вопрос имеет открытую цену вознаграждения
     retag: 
       title: Изменить теги
     retag_form: 
@@ -91,6 +104,17 @@ ru:
       accepted_tooltip: Один из ответов был принят в качестве правильного ответа
       another_answers: Другие ответы
       answers: Ответы
+      answer: Ответить
+      follow: Интересно
+      unfollow: Не интересно
+      more: Больше
+      follow_up: Переспросить
+      submit_comment: Комментировать
+      chosen: Принятый ответ
+      topics: Темы
+      history: История
+      create_rew: Добавить вознаграждение
+      comment: Комментировать
       answers_title: 
         one: "%{count} ответ"
         other: "%{count} ответ(а/ов)"

@@ -3,7 +3,7 @@
 
 =render "followup_form.html.haml", local_assigns
 
-%h1 Editing this question
+%h1 #{t 'questions.form.name'}
 
 -if @question.position
   = hidden_field_tag "question[position][lat]", @question.position["lat"], :class => "lat_input"
@@ -18,7 +18,7 @@
   %label
     =t(".related_questions", :default => :"questions.show.related_questions" )
   %ul#related_questions
-  %small Here you will find questions that are similar to yours
+  %small #{t 'questions.form.similar'}
 
 .field
   = f.label :tags, "#{t(:tags, :scope => "activerecord.attributes.question")}", :class => "label"
@@ -37,8 +37,8 @@
     #fields
       .attachment_field.template
         = f.file_field "attachments[0]"
-        = link_to "Remove", "#", :class => "remove_attachment"
-    = link_to "Add attachment", "#", :class => "add_attachment"
+        = link_to "#{t 'questions.attachment.remove'}", "#", :class => "remove_attachment"
+    = link_to "#{t 'questions.attachment.add'}", "#", :class => "add_attachment"
 
 
 -if current_group.languages.size>1 && AppConfig.enable_i18n

@@ -1,8 +1,7 @@
 .empty
   =image_tag("empty.png")
-  %h2
-    Sorry! but don't have much to show here.
-  %p
-    You can add something if you want,
+  %h2= t 'shared.empty.sorry'
+  %p 
+    =t 'shared.empty.youcan'
     //= t(".empty")
-    =link_to "Ask Question", new_question_path
+    =link_to "#{t 'shared.empty.ask'}", new_question_path

@@ -1,7 +1,7 @@
 en:
   badges:
     index:
-      title: badges
+      title: Badges
       description: "All badges that you can earn. Share your knowledge earn badges."
     show:
       title: Badge %{type}

@@ -1,6 +1,6 @@
 -attachments.each_file do |key, file|
   #attachments_list
-    .header Attached files:
+    .header #{t 'question.attachment.attached'}:
     %ul
       %li
         = link_to file.name, question_attachment_path(question.group, question, file, key)

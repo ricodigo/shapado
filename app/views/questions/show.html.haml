@@ -56,16 +56,16 @@
   .toolbar
     %ul.drop-menu
       %li.answer
-        = link_to t(".answer", :default => "Answer"), "#", :id => "add_answer"
+        = link_to t(".answer"), "#", :id => "add_answer"
 
       %li.comment
-        = link_to t(".comment", :default => "Comment"), "#", :id => "add_question_comment"
+        = link_to t(".comment"), "#", :id => "add_question_comment"
 
       %li.follow
         - if current_user && @question.follower?(current_user)
-          = link_to "Unfollow", unfollow_question_path(@question), :class => 'unfollow-q question-action', "data-undo" =>  follow_question_path(@question), "data-title" => t(".watch_tooltip"), :title => t(".unwatch_tooltip"), :id => "watch-question"
+          = link_to t(".unfollow"), unfollow_question_path(@question), :class => 'unfollow-q question-action', "data-undo" =>  follow_question_path(@question), "data-title" => t(".watch_tooltip"), :title => t(".unwatch_tooltip"), :id => "watch-question"
         - else
-          = link_to "Follow", follow_question_path(@question), :title => t(".watch_tooltip"), :class => 'follow-q question-action', "data-undo" =>  unfollow_question_path(@question), "data-title" => t(".unwatch_tooltip"), :id => "watch-question"
+          = link_to t(".follow"), follow_question_path(@question), :title => t(".watch_tooltip"), :class => 'follow-q question-action', "data-undo" =>  unfollow_question_path(@question), "data-title" => t(".unwatch_tooltip"), :id => "watch-question"
 
       - if !@flag.new_record?
         %li.spam
@@ -80,19 +80,19 @@
         = link_to "Compartir", "#", :id => "share_question"
 
       %li.more.current
-        = link_to "More actions"
+        = link_to t(".more")
         %ul
           - if logged_in?
             - if (current_user.can_modify?(@question) || current_user.owner_of?(@question.group))
               %li.activity
-                = link_to t(".history", :default => "history"), history_question_path(@question)
+                = link_to t(".history"), history_question_path(@question)
 
           %li.followUp
-            = link_to "Follow Up", new_question_path(:from_question => @question.id), :rel => "nofollow"
+            = link_to t(".follow_up"), new_question_path(:from_question => @question.id), :rel => "nofollow"
 
           -if logged_in? && current_user.can_create_reward?(@question)
             %li
-              = link_to "Create Reward", "#", :rel => "nofollow", :id => "add_reward"
+              = link_to t(".create_rew"), "#", :rel => "nofollow", :id => "add_reward"
 
           - if logged_in?
             %li.close
@@ -166,13 +166,13 @@
 
           .field.form-options
             .buttons
-              = f.submit :class => "save"
+              = f.submit :class => "save", :value => "#{t '.submit_comment'}"
               = link_to t('scaffold.cancel'), '', :class => 'cancel'
               = t("global.or")
 
       =form_tag "", :class => "share_question" do
         %h1
-          Share this on:
+          #{t '.share'}
         %ul
           %li.facebook
             =link_to "Facebook"
@@ -202,7 +202,7 @@
 
 %ul.tag-list
   %li.title
-    Topics:
+    #{t '.topics'}
   - @question.tags.each do |tag|
     %li
       = link_to h(tag), tag_path(:id => tag), :rel => "tag", :class => 'tag'
@@ -217,7 +217,7 @@
 
   %section.filters
     %ul{:class => @active_subtab.to_s}
-      %header Sort By:
+      %header #{t 'questions.index.sort'}
       %li.newest-active
         = link_to t("questions.index.newest"), question_path(@question, :sort=>"newest", :anchor => "answers"), :rel => "nofollow"
       %li.votes-active
@@ -225,7 +225,7 @@
       %li.oldest-active
         = link_to t("questions.index.oldest"), question_path(@question, :sort=>"oldest", :anchor => "answers"), :rel => "nofollow"
       %li
-        = link_to "Respuesta elegida"
+        = link_to t(".chosen")
 
   .error
     - source = question_path(@question)

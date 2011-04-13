@@ -8,7 +8,6 @@ en:
       ask_question: Ask question
       tags: Tags
       users: Users
-      badges: Badges
       unanswered: Unanswered
       pages: Pages
       logout: Log out
@@ -25,8 +24,22 @@ en:
       subscribe: Subscribe
       welcome_from: Welcome! You can
       now: now!
+      follow: Follow us on
+      publicad: Public Ad
+      answers: Answers
+      activity: Activity
+      sort: Sort by
       openid:
         explaination: "If you would like to register or just log in, please select your OpenID provider:"
+      menu:
+        badges: Badges
+        randomq: Random question 
+        pages: Pages
+        all: All
+        followed: Followed
+        myne: By me
+        preferred: Preferred
+        contributed: Contribute!      
     manage:
       dashboard: Dashboard
       properties: Properties

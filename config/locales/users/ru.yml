@@ -35,7 +35,13 @@ ru:
     models: 
       user: Пользователь
       users: Пользователи
-  users: 
+  users:
+    deleted: Удаленный
+    top_user:
+      my_karma: Моя Карма 
+      profile: Профиль
+      settings: Настройки
+      my_badges: Мои беджи  
     actions: 
       edit_others_posts: Изменение чужих постов
       edit_wiki_post: Редактирование вики-записей
@@ -91,5 +97,8 @@ ru:
       title: Пользователь %{user}
       unfollow: Не следить
       views: просмотры
+      edit:  Редактировать
+      badges: Беджи
+      follow: Интересоваться
     unfollow: 
       flash_notice: Пользователь %{user} удалён из списка ваших друзей

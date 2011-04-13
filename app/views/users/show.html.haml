@@ -4,10 +4,10 @@
       = avatar_img @user, :size => "big"
       -if current_user == @user
         %p
-          =link_to "Edit profile", settings_path
+          =link_to "#{t 'users.show.edit'}", settings_path
 
     // TODO i18n
-    %h3 Badges
+    %h3 #{t 'users.show.badges'}
     %ul.badges
       -@badges.each do |badge|
         %li
@@ -75,10 +75,10 @@
     #main-content-wrap{:class => @active_tab}
       %nav{:class => @active_subtab }
         %ul.content-tabs
-          = tab_entry "li", "Questions", user_path(@user), {:selected => "active"}, {:class => "questions"} #i18n
-          = tab_entry "li", "Answers", answers_user_path(@user), {:selected => "active"}, {:class => "answers"} #i18n
-          = tab_entry "li", "Follow", follows_user_path(@user), {:selected => "active"}, {:class => "follow"} #i18n
-          = tab_entry "li", "Activity", activity_user_path(@user), {:selected => "active"}, {:class => "activity"} #i18n
+          = tab_entry "li", t("layouts.application.questions"), user_path(@user), {:selected => "active"}, {:class => "questions"} #i18n
+          = tab_entry "li", t("layouts.application.answers"), answers_user_path(@user), {:selected => "active"}, {:class => "answers"} #i18n
+          = tab_entry "li", t("users.show.follow"), follows_user_path(@user), {:selected => "active"}, {:class => "follow"} #i18n
+          = tab_entry "li", t("layouts.application.activity"), activity_user_path(@user), {:selected => "active"}, {:class => "activity"} #i18n
       %section.filters{:class => @active_subtab }
         %ul
           = render "users/show/user_#{params[:action]}_filters"

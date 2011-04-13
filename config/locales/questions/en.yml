@@ -15,10 +15,22 @@ en:
       active_tooltip: Questions that have been updated recently
       votes_tooltip:  Questions with the most votes
       newest_tooltip: The most recently asked questions
+      sort:  Sort by
     show:
       answers: Answers
+      answer: Answer
+      comment: Comment
       another_answers: Other answers
       solution: Solution
+      follow: Follow
+      unfollow: Unfollow
+      more: More actions
+      follow_up: Follow up
+      history: History
+      create_rew: Create reward
+      topics: Topics
+      submit_comment: Comment
+      chosen: Accepted answer
       share: "Share this question on"
       share_on: "Share this question on %{site}"
       related_questions: Related questions
@@ -63,11 +75,21 @@ en:
       unfavorite_tooltip: "Remove this answer from your favorites"
     question:
       accepted_tooltip: This question has an answer that has been accepted
+      from: from
+      continue: Continue
+      answer: Answer
+      followers: followers
     form:
       body_tip: What is your question? Be descriptive.
       language_tip: Select the language the question is asked in.
       tags_tip:  Use tags to add more information about your question.
       adult_content: This question contains adult material.
+      name: Editing this question
+      similar: Here you will find questions that are similar to yours
+    attachment:
+      attached: Attached files
+      add: Add attachment
+      remove: Remove
     flag:
       title:   Flag question
     edit:
@@ -112,6 +134,8 @@ en:
       title:  "Update tags"
       submit: "Update tags!"
       cancel: "Cancel"
+    reward:
+      open: This question has an open reward worth
     retag_to:
       success: "The tags have been updated successfully."
       failure: "Sorry, the tags could not be updated."

@@ -1,5 +1,5 @@
 -if @question.reward.present? && @question.reward.active
-  This question has an open reward worth
+  #{t 'questions.reward.open'}
   = "+#{@question.reward.reputation}"
   reputation from
   = link_to @question.reward.created_by.name, user_path(@question.reward.created_by)
