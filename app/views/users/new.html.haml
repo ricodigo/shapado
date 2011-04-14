@@ -1,7 +1,7 @@
 %h1
-  Join (Group Name)
+  #{t 'users.new.join'}
 %p.description
-  be part of this group and see their data
+  #{t 'users.new.be'} 
 
 - @user.password = @user.password_confirmation = nil
 = error_messages_for :user

@@ -21,6 +21,8 @@ en:
     new:
       title: Sign up as a new user
       submit: Sign up
+      join: Join
+      be: be part of this group and see their data
     edit:
       title: Settings
       submit: Save
@@ -108,4 +110,4 @@ en:
         website: Website
         birthday: Birthday
         age: Age
-
+        bio: Bio
