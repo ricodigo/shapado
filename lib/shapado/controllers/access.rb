@@ -78,7 +78,7 @@ module Shapado
         if current_user.linked_in_login? && current_user.linked_in_friends.empty?
           Jobs::Users.async.get_linked_in_friends(current_user.id).commit!
         end
-        if current_user.linked_in_login? || current_user.twitter_login? || current_user.identica_login? || current_user.linked_in_login?
+        if current_user.facebook_in_login? || current_user.twitter_login? || current_user.identica_login? || current_user.linked_in_login?
           '/close_popup.html'
         else
           response.redirect root_path
