@@ -1,8 +1,8 @@
 %ul.auth-list.sf-menu
   %li
+    = render "shared/login_drop_down"
     %a
       #{t 'shared.login_menu.login'}
-    = render "shared/login_drop_down"
   %li
     =link_to "#{t 'shared.login_menu.join'}", new_user_path
 
