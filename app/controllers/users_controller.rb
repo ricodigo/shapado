@@ -71,8 +71,8 @@ class UsersController < ApplicationController
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset session
-      sweep_new_users(current_group)
-      @user.accept_invitation(params[:invitation_id]) if params[:invitation_id]
+     # sweep_new_users(current_group)
+    #  @user.accept_invitation(params[:invitation_id]) if params[:invitation_id]
       flash[:notice] = t("flash_notice", :scope => "users.create")
       sign_in_and_redirect(:user, @user) # !! now logged in
     else
@@ -161,7 +161,12 @@ class UsersController < ApplicationController
       if params[:user][:avatar]
         Jobs::Images.async.generate_user_thumbnails(@user.id).commit!
       end
-      @user.add_preferred_tags(preferred_tags, current_group) if preferred_tags
+      @user.add_preferred_tags(preferred_tags, current_respond_to do |wants|
+        wants.html do
+          group
+        end
+        wants.js {  }
+      end) if preferred_tags
       if params[:next_step]
         current_user.accept_invitation(params[:invitation_id])
         redirect_to accept_invitation_path(:step => params[:next_step], :id => params[:invitation_id])

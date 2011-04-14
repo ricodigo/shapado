@@ -42,7 +42,7 @@
 .field
   = f.label :bio, t(:bio, :scope => "activerecord.attributes.user", :default => "Bio"), :class => "label"
   = f.text_field :bio, :class => "text_field"
-
+  = f.hidden_field :language, :value => "ru"
 -unless @user.new_record?
   .field.birthday
     = f.label :birthday, t(:birthday, :scope => "activerecord.attributes.user"), :class => "label"
@@ -58,7 +58,7 @@
     = f.label :language, t('.language'), :class => "label"
     = f.select :language, locales_options, {}, :class => "select"
 -else
-  = f.hidden_field :language, :value => (current_group.language || AppConfig.default_language)
+  = f.hidden_field :language, :value => "ru"
 
 .field
   = f.label :timezone, t(:timezone, :scope => "activerecord.attributes.user"), :class => "label"
@@ -83,7 +83,7 @@
           %label.radio.langbox{:class=>jsclass}
             = language_desc(lang)
 -else
-  = hidden_field_tag "user[preferred_languages][]", (current_group.language || AppConfig.default_language)
+  = hidden_field_tag "user[preferred_languages][]", "ru"
 
 
 -unless @user.new_record?

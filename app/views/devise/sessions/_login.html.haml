@@ -1,9 +1,9 @@
-- form_tag :action=> "create", :controller=> "devise/sessions", :class => "form" do
+= form_tag new_user_session_path do
   .field
     = label_tag 'email', t(:email, :scope => "activerecord.attributes.user"), :class => "label"
-    = text_field_tag 'email', @email, :class => "text_field"
+    = text_field_tag 'user[email]'
   .field
     = label_tag 'password', t(:password, :scope => "activerecord.attributes.user"), :class => "label"
-    = password_field_tag 'password', nil, :class => "text_field"
+    = password_field_tag 'user[password]'
   .buttons
-    = submit_tag t("sessions.new.log_in"), :class => "save"
+    %button #{t 'sessions.new.log_in'}
