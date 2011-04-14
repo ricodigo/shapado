@@ -31,7 +31,7 @@ class User
 
   field :preferred_languages,       :type => Array, :default => []
 
-  field :language,                  :type => String, :default => "en"
+  field :language,                  :type => String, :default => "ru"
   index :language
   field :timezone,                  :type => String
   field :language_filter,           :type => String, :default => "user", :in => LANGUAGE_FILTERS

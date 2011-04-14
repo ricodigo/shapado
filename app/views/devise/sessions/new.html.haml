@@ -1,6 +1,6 @@
-%h1 Login to (Group Name)
+%h1 #{t '.login'}
 %p.description
-  We help you discover and share opinions that is the most relevant to you and those in your group.
+  #{t '.descr'}
 
 = multiauth_assets
 
@@ -26,7 +26,7 @@
 
 
     .buttons
-      =f.submit "Sign in", :class => "save"
+      =f.submit "#{t 'sessions.new.log_in'}", :class => "save"
 
 
   = render :partial => "shared/devise_links"

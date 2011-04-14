@@ -22,7 +22,11 @@ ru:
       link: Зарегистрироваться
       signed_up: Вы подписаны.
       updated: Обновление учётной записи прошло успешно.
-    sessions: 
+    sessions:
+      new:
+        login: Войти
+        descr: C нами вы сможете найти ответы и изучить различные мнения по интересующему вас вопросу
+        remember_me: Запомнить меня
       facebook_actions: 
         sign_in: Войти
         sign_out: Выйти

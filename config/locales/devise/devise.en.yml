@@ -15,6 +15,8 @@ en:
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
     sessions:
+      login: Login
+      descr: We help you discover and share opinions that is the most relevant to you and those in your group.
       signed_in: 'Signed in successfully.'
       signed_out: 'Signed out successfully.'
       link: 'Sign in'
