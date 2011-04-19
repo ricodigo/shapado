@@ -2,15 +2,14 @@
   - unless current_group.is_email_only_signup?
     %li
       %a
-        LogIn
+        #{t 'shared.login_menu.login'}
       = render "shared/login_drop_down"
   - else
     %li
-      = link_to "LogIn", new_user_session_path
+      = link_to "#{t 'shared.login_menu.login'}", new_user_session_path
   %li
     = render  "shared/login_drop_down"
-    %a
-      #{t 'shared.login_menu.login'}
+ 
   %li
     =link_to "#{t 'shared.login_menu.join'}", new_user_path
 

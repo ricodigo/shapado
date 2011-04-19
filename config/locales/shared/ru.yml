@@ -13,14 +13,14 @@ ru:
       user_page: Моя страница
     login_menu:
       login: Войти
-      join: Присоедениться к Shapado
+      join: Присоедениться
     empty:
       ask: Задать вопрос
       sorry: Простите, здесь пока нечего показывать.
       youcan: Вы можете исправить ситуацию!
     layouts:
       footer:
-       content: Весь контент и информация Shapado.com доступна под
+       content: Весь контент и информация портала доступна под
        chat: Чат
        feedback: Обратная связь
        blog: Блог
