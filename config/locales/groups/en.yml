@@ -2,6 +2,7 @@ en:
   groups:
     top:
       active: Active site
+      jkh: JKH-Info
     index:
       title: Groups
       filter: "Search for groups"
