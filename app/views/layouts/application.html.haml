@@ -91,10 +91,6 @@
                   =image_tag "atom.png", :width => 20
           .clear
 
-        .add
-          %h6= t 'layouts.application.publicad'
-          =link_to image_tag "http://www.bipbanners.co.uk/assets/images/WebConveyancing_Animated_SkyScraper_Banner_Sample_1A.gif"
-
       %section.content-panel
         - unless params[:controller] =~ /moderate\//
           //= render "shared/action-tabs"
@@ -108,9 +104,6 @@
 
       %section.right-panel
 
-        .add
-          %h6= t 'layouts.application.publicad'
-          =link_to image_tag "banner-250x250.jpg"
 
         = yield :sidebar
 
