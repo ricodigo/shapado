@@ -1,6 +1,9 @@
 
 class OpenRequest
   include Mongoid::Document
+  include Shapado::Models::Trackable
+
+  track_activities :user, :comment, :openable, :scope => [:group_id], :target => :openable
 
   identity :type => String
 

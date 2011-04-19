@@ -1,9 +1,10 @@
+%h1
+  Manage Ads
+%p.description
+  Manage Ads
+  //i18n
 
--content_for :subtabs do
-  .navtitle
-    Manage Ads
-
-%ul.buttons
+%ul.admin-nav
   %li
     = link_to t("ads.ad_links", :type => "Adsense"), new_ad_path(:type => "Adsense"), :class => "button"
   %li

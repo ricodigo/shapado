@@ -18,8 +18,7 @@ class Moderate::AnswersController < ApplicationController
     @answers = current_group.answers.
                                   where(options).
                                   order_by("flags_count desc").
-                                  paginate(:per_page => params[:per_page] || 25,
-                                           :page => params[:page] || 1)
+                                  paginate(paginate_opts(params))
   end
 
 

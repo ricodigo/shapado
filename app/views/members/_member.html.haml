@@ -2,6 +2,22 @@
 -can_modify_member = logged_in? && (current_user.admin? || current_user != member ) && current_user.owner_of?(@group)
 %ul
   %li
+    / Member Stats
+    .stats
+      %p
+        %b
+          =format_number(member.questions.count)
+        = t(:questions, :scope => "activerecord.models")
+      %p
+        %b
+          =format_number(member.answers.count)
+        = t(:answers, :scope => "activerecord.models")
+
+      %p
+        %b
+          =format_number(member.reputation_on(current_group))
+        = t(:reputation, :scope => "activerecord.attributes.user")
+
     .user-info
       %h2
         = link_to h(member.login), user_path(member)
@@ -9,26 +25,11 @@
         =find_and_preserve(auto_link(member.bio))
       %small
         = t("time.ago", :time => time_ago_in_words(member.created_at))
-      / Member Stats
-      .stats
-        %p
-          %b
-            =format_number(member.questions.count)
-          = t(:questions, :scope => "activerecord.models")
-        %p
-          %b
-            =format_number(member.answers.count)
-          = t(:answers, :scope => "activerecord.models")
-
-        %p
-          %b
-            =format_number(member.reputation_on(current_group))
-          = t(:reputation, :scope => "activerecord.attributes.user")
 
     -if can_modify_member
       -form_tag(member_path(member.id), :class => "form", :method => :put) do |f|
         .field
-          = select_tag :role, options_for_select(Membership::ROLES, membership.role)
+          = select_tag :role, options_for_select(locales_roles, membership.role)
         .buttons
           = submit_tag t("scaffold.update"), :class => "save"
     -else

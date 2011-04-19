@@ -1,17 +1,20 @@
--content_for :subtabs do
-  .navtitle
-    = t(".title")
-  %ul
-    %li.facebook_app
-      = link_to t(".facebook_app"), manage_social_path(:tab=>"facebook_app"), :title => t(".facebook_app_title")
-    %li.twitter_account
-      = link_to t(".twitter_account"), manage_social_path(:tab=>"twitter_account"), :title => t(".twitter_account_title")
-    %li.post_to_twitter
-      = link_to t(".post_to_twitter"), manage_social_path(:tab=>"post_to_twitter"), :title => t(".post_to_twitter_title")
-    %li.ask_from_twitter
-      = link_to t(".ask_from_twitter"), manage_social_path(:tab=>"ask_from_twitter"), :title => t(".ask_from_twitter_title")
-    %li.tag_your_tweets
-      = link_to t(".tag_your_tweets"), manage_social_path(:tab=>"tag_your_tweets"), :title => t(".tag_your_tweets_title")
+%h1
+  Social
+%p.description
+  Add all your networks
+
+%ul.admin-nav
+  %li.facebook_app
+    = link_to t(".facebook_app"), manage_social_path(:tab=>"facebook_app"), :title => t(".facebook_app_title")
+  %li.twitter_account
+    = link_to t(".twitter_account"), manage_social_path(:tab=>"twitter_account"), :title => t(".twitter_account_title")
+  %li.post_to_twitter
+    = link_to t(".post_to_twitter"), manage_social_path(:tab=>"post_to_twitter"), :title => t(".post_to_twitter_title")
+  %li.ask_from_twitter
+    = link_to t(".ask_from_twitter"), manage_social_path(:tab=>"ask_from_twitter"), :title => t(".ask_from_twitter_title")
+  %li.tag_your_tweets
+    = link_to t(".tag_your_tweets"), manage_social_path(:tab=>"tag_your_tweets"), :title => t(".tag_your_tweets_title")
+
 -form_for(@group, :html => {:class => "form", :multipart => true}) do |f|
   = f.error_messages
   =hidden_field_tag :source, domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "social", :tab => @active_subtab)

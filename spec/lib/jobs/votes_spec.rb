@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Jobs::Votes do
   before(:each) do
+    @current_user = User.make
+    Thread.current[:current_user] = @current_user
     @question = Question.make(:votes => {})
     @answer = Answer.make(:votes => {}, :question => @question)
   end

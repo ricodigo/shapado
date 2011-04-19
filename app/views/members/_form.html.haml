@@ -6,4 +6,4 @@
 
 .field.select-role
   = label_tag :role, t(:role, :scope => "activerecord.attributes.member")
-  = select_tag :role, options_for_select(Membership::ROLES, @member.role)
+  = select_tag :role, options_for_select(locales_roles, @member.role)

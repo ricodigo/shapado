@@ -1,11 +1,18 @@
+%h1
+  Adsense add
+%p.description
+  = t("ads.ad_links", :type => h(params[:type]))
+  //i18n
 
--content_for :subtabs do
-  .navtitle
-    = t("ads.ad_links", :type => h(params[:type]))
+%ul.admin-nav
+  %li
+    = link_to t("ads.ad_links", :type => "Adsense"), new_ad_path(:type => "Adsense"), :class => "button"
+  %li
+    = link_to t("ads.ad_links", :type => "Adbard"), new_ad_path(:type => "Adbard"), :class => "button"
 
 -form_for(:ad, @ad, :url => ads_path,:html => {:class => "form"}) do |f|
   = f.error_messages
   = render :partial => "form", :object => f
   .buttons
-    = f.submit t('scaffold.create')
-    = link_to t('scaffold.back'), ads_path, :class => "cancel button"
+    = f.submit t('scaffold.create'), :class => "save"
+    = link_to t('scaffold.back'), ads_path

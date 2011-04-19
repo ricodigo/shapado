@@ -1,5 +1,11 @@
 = javascript_include_merged(:show).html_safe
 
+%h1 Editing this question
+//i18n
+%p.description
+  Please be descriptive with your question, an be sure your are adding good tags for the searchers
+  //i18n
+
 - form_for(@question, :url => question_path(@question), :html => {:class => "question-form", :multipart => true}) do |f|
 
   =render :partial => "form", :locals => {:f => f}

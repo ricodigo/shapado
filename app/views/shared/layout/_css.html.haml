@@ -2,7 +2,7 @@
 
 //%link#current-theme{ :href => "/stylesheets/compiled/themes/#{current_group.theme}/style.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
 //%link#current-nav{ :href => "/stylesheets/compiled/navigation/#{current_group.theme}.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
-//-if current_group.has_custom_css?
-//  %link{:href => css_group_path(current_group),  :rel => "stylesheet", :media => "screen", :type => "text/css"}
+-if current_group.has_custom_css?
+  %link{:href => css_group_path(current_group),  :rel => "stylesheet", :media => "screen", :type => "text/css"}
 
 = yield :css

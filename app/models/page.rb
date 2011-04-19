@@ -7,6 +7,10 @@ class Page
   include Support::Versionable
 
   include Mongoid::Timestamps
+  include Shapado::Models::Trackable
+
+  track_activities :user, :title, :language, :scope => [:group_id]
+
 
   identity :type => String
   field :title, :type => String

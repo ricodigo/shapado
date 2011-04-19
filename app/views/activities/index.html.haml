@@ -1,0 +1,22 @@
+= render "shared/content-nav", :questions_link => questions_link_for(params[:context])
+
+%section
+  -feed_url = url_for(:format => "atom")
+
+  -content_for :rss do
+    %link{:rel=>"alternate", :type=>"application/atom+xml", :title => "atom", :href=> url_for(:format => "atom")}
+
+  -content_for :sidebar do
+    = render "shared/widgets", :context => 'mainlist'
+
+  -if @activities.empty?
+    = render "activities/empty"
+
+
+  -@activities.each do |activity|
+    = render "activities/activity", :activity => activity
+
+  #additional_info
+    =will_paginate @activities
+
+    .clear

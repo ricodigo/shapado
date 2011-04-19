@@ -1,5 +1,7 @@
 en:
   invitations:
+    create:
+      flash_notice: Your invitations were sent successfully
     accept:
       welcome: Welcome
       description: %{group} is an ever improving collection of questions and answers about any topic.

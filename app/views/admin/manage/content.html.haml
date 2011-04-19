@@ -1,19 +1,23 @@
--content_for :subtabs do
-  .navtitle
-    = t(".title")
-  %ul
-    %li.head_tag
-      = link_to h("<head>"), manage_content_path(:tab=>"head_tag")
-    %li.question_help
-      = link_to t(".question_help"), manage_content_path(:tab=>"question_help")
-    %li.question_prompt
-      = link_to t(".question_prompt"), manage_content_path(:tab=>"question_prompt")
-    %li.head
-      = link_to t(".head"), manage_content_path(:tab=>"head")
-    %li.top_bar
-      = link_to t(".top_bar"), manage_content_path(:tab=>"top_bar")
-    %li.footer
-      = link_to t(".footer"), manage_content_path(:tab=>"footer")
+%h1
+  Content
+%p.description
+  You can change the settings for your content features
+  //i18n
+
+%ul.admin-nav
+  %li.head_tag
+    = link_to h("<head>"), manage_content_path(:tab=>"head_tag")
+  %li.question_help
+    = link_to t(".question_help"), manage_content_path(:tab=>"question_help")
+  %li.question_prompt
+    = link_to t(".question_prompt"), manage_content_path(:tab=>"question_prompt")
+  %li.head
+    = link_to t(".head"), manage_content_path(:tab=>"head")
+  %li.top_bar
+    = link_to t(".top_bar"), manage_content_path(:tab=>"top_bar")
+  %li.footer
+    = link_to t(".footer"), manage_content_path(:tab=>"footer")
+
 
 -form_for @group, :html => {:class => "form"} do |form|
   = form.error_messages
@@ -22,34 +26,39 @@
   -case @active_subtab.to_sym
     -when :question_prompt
       -langs.each do |lang|
-        .group
+        .field
           =form.label "_question_prompt[#{lang}]", language_desc(lang), :class => "label"
           =text_field_tag "group[custom_html][question_prompt[#{lang}]]", @group.custom_html.question_prompt[lang], :class => "text_field"
+
     -when :question_help
       -langs.each do |lang|
-        .group
+        .field
           =form.label "group[custom_html][#{lang}]", language_desc(lang), :class => "label"
           =text_area_tag "group[custom_html][question_help[#{lang}]]", @group.custom_html.question_help[lang], :class => "text_area"
+
     -when :head
       -langs.each do |lang|
-        .group
+        .field
           =form.label "_head[#{lang}]", language_desc(lang), :class => "label"
           =text_area_tag "group[custom_html][head[#{lang}]]", @group.custom_html.head[lang], :class => "text_area"
+
     -when :footer
       -langs.each do |lang|
-        .group
+        .field
           = form.label "footer", language_desc(lang), :class => "label"
           = text_area_tag "group[custom_html][footer[#{lang}]]", @group.custom_html.footer[lang], :class => "text_area"
+
     -when :head_tag
-      .group
+      .field
         = form.label "head_tag", h("<head>"), :class => "label"
         = text_area_tag "group[custom_html][head_tag]", @group.custom_html.head_tag, :class => "text_area"
-    -when :top_bar
-      .group
-        =form.label "top_bar", t(".top_bar"), :class => "label"
-        .description
-          =t(".top_bar_tip")
-        =text_area_tag "group[custom_html][top_bar]", @group.custom_html.top_bar, :class => "text_area"
 
-  .navform.group
-    = form.submit t("scaffold.update")
+    -when :top_bar
+      .field
+        =form.label "top_bar", t(".top_bar"), :class => "label"
+        =text_area_tag "group[custom_html][top_bar]", @group.custom_html.top_bar, :class => "text_area"
+        %small
+          =t(".top_bar_tip")
+
+  .buttons
+    = form.submit t("scaffold.update"), :class => "save"

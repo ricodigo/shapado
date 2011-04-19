@@ -1,25 +1,31 @@
 %h1
   = t(".post_to_twitter")
 - if current_group.has_twitter_oauth?
-  %h2
+  %p
     =raw t(".legend", :twitter_account => current_group.twitter_account["screen_name"], :link =>  manage_social_path(:tab=>"twitter_account"))
-  .group
-    = f.check_box "notification_opts[questions_to_twitter]", :checked => @group.notification_opts.questions_to_twitter
-    = t(".send_questions_to_twitter")
-  .group
-    = f.check_box "notification_opts[badges_to_twitter]", :checked => @group.notification_opts.badges_to_twitter
-    = t(".send_badges_to_twitter")
-  .group
-    = f.check_box "notification_opts[favorites_to_twitter]", :checked => @group.notification_opts.favorites_to_twitter
-    = t(".send_favorites_to_twitter")
-  .group
-    = f.check_box "notification_opts[answers_to_twitter]", :checked => @group.notification_opts.answers_to_twitter
-    = t(".send_answers_to_twitter")
-  .group
-    = f.check_box "notification_opts[comments_to_twitter]", :checked => @group.notification_opts.comments_to_twitter
-    = t(".send_comments_to_twitter")
-  .group.navform
-    = f.submit t('scaffold.update')
+  .field
+    .checkbox
+      = f.check_box "notification_opts[questions_to_twitter]", :checked => @group.notification_opts.questions_to_twitter
+      = t(".send_questions_to_twitter")
+  .field
+    .checkbox
+      = f.check_box "notification_opts[badges_to_twitter]", :checked => @group.notification_opts.badges_to_twitter
+      = t(".send_badges_to_twitter")
+  .field
+    .checkbox
+      = f.check_box "notification_opts[favorites_to_twitter]", :checked => @group.notification_opts.favorites_to_twitter
+      = t(".send_favorites_to_twitter")
+  .field
+    .checkbox
+      = f.check_box "notification_opts[answers_to_twitter]", :checked => @group.notification_opts.answers_to_twitter
+      = t(".send_answers_to_twitter")
+  .field
+    .checkbox
+      = f.check_box "notification_opts[comments_to_twitter]", :checked => @group.notification_opts.comments_to_twitter
+      = t(".send_comments_to_twitter")
+  .buttons
+    = f.submit t('scaffold.update'), :class => "save"
+
 - else
   =raw t(".legend_connect", :link =>  manage_social_path(:tab=>"twitter_account"))
-  .group
+  .filed

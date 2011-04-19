@@ -10,16 +10,23 @@
 
     .comment-content.markdown
       = shapado_auto_link(markdown(comment.body), :link_users => true)
-    %ul.comment-actions
-      - if logged_in? && current_user != comment.user
-        %li
+    .controls
+      .actions
+        - if logged_in? && current_user != comment.user
           = link_to t("comments.shared.reply"), "#", :class => "addNestedAnswer reply", 'data-author' => comment.user.login
-      -if logged_in? && (current_user.can_modify?(comment) || current_user.mod_of?(current_group))
-        %li
-          = link_to t("scaffold.edit"), edit_comment_path(comment, :source => source)
-      -if logged_in? && comment.can_be_deleted_by?(current_user)
-        %li
-          = link_to t("scaffold.destroy"), comment_path(comment, :source => source), :confirm => t("scaffold.sure", :model => "comment"), :method => :delete
+        -if logged_in? && (current_user.can_modify?(comment) || current_user.mod_of?(current_group))
+          -case comment.commentable
+            -when Question
+              = link_to t("scaffold.edit"), edit_question_comment_path(:question_id => comment.commentable.id, :id => comment.id, :source => source), :class => "edit_comment"
+            -when Answer
+              = link_to t("scaffold.edit"), edit_question_answer_comment_path(:question_id => comment.commentable.question, :answer_id => comment.commentable, :id => comment.id, :source => source), :class => "edit_comment"
+        -if logged_in? && comment.can_be_deleted_by?(current_user)
+          -case comment.commentable
+            -when Question
+              = link_to t("scaffold.destroy"), question_comment_path(:question_id =>  comment.commentable.id, :id => comment.id, :source => source), :confirm => t("scaffold.sure", :model => "comment"), :method => :delete
+            -when Answer
+              = link_to t("scaffold.destroy"), question_answer_comment_path(:question_id =>  comment.commentable.question.id, :answer_id => comment.commentable.id, :id => comment.id, :source => source), :confirm => t("scaffold.sure", :model => "comment"), :method => :delete
+    .clear
 
 -else
   %article.comment

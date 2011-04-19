@@ -187,7 +187,7 @@ function sortValues(selectID, child, keepers, method, arg){
   var sortedVals = $.makeArray($(selectID+' '+child)).sort(function(a,b){
     return $(a)[method](arg) > $(b)[method](arg) ? 1: -1;
   });
-  $(selectID).empty().html(sortedVals);
+  $(selectID).html(sortedVals.join());
   if(keepers)
     $(selectID).prepend(any);
   // needed for firefox:

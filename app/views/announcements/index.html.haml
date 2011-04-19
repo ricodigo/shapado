@@ -1,7 +1,11 @@
+%h1
+  All Announcemts
+%p.description
+  These are the announcements for the app
+  //i18n
+
 .list-announcements
-  %h1
-    All Announcemts
-  %ul.each-announcement
+  %ul
     -@announcements.each do |announcement|
       %li
         %h2
@@ -12,8 +16,6 @@
           %strong
             = "[#{t("activerecord.attributes.announcement.only_anonymous")}]"
         = link_to t("announcements.actions.delete"), announcement_path(announcement), :method => :delete
-
-
 
 - form_for(@announcement, :html=>{:class => "form", :id => "new_announcement"}) do |f|
   = render :partial => "form", :locals => {:f => f}

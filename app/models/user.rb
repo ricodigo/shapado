@@ -67,6 +67,7 @@ class User
   references_many :answers, :dependent => :destroy
   references_many :badges, :dependent => :destroy
   references_many :searches, :dependent => :destroy
+  references_many :activities, :dependent => :destroy
   references_many :invitations, :dependent => :destroy
   references_one :facebook_friends_list, :dependent => :destroy
   references_one :twitter_friends_list, :dependent => :destroy
@@ -430,11 +431,11 @@ Time.zone.now ? 1 : 0)
     conditions = {}
     conditions[:preferred_languages] = {:$in => scope[:languages]}  if scope[:languages]
     conditions[:"membership_list.#{scope[:group_id]}"] = {:$exists => true} if scope[:group_id]
-    self.friend_list.followers.where(conditions)
+    User.where(conditions.merge(:_id.in => self.friend_list.follower_ids)) # FIXME mongoid
   end
 
   def following
-    self.friend_list.following
+    User.where(:_id.in => self.friend_list.following_ids)
   end
 
   def following?(user)
@@ -645,16 +646,17 @@ Time.zone.now ? 1 : 0)
     User.where(:_id => (self.friend_list.following_ids & user.friend_list.follower_ids).sample).first
   end
 
-  def invite(email, group)
+  def invite(email, user_role, group)
     if self.can_invite_on?(group)
       Invitation.create(:user_id => self.id,
                         :email => email,
-                        :group_id => group.id)
+                        :group_id => group.id,
+                        :user_role => user_role)
     end
   end
 
   def revoke_invite(invitation)
-    invite.destroy if self.can_modify?(invitation)
+    invitation.destroy if self.can_modify?(invitation)
   end
 
   def can_invite_on?(group)
@@ -668,8 +670,16 @@ Time.zone.now ? 1 : 0)
   def accept_invitation(invitation_id)
     invitation = Invitation.find(invitation_id)
     group = invitation.group
-    invitation.update(:accepted => true) &&
-      group.add_member(self, 'user')
+    invitation.update_attributes(:accepted => true,
+                                 :accepted_by => self.id,
+                                 :accepted_at => Time.now) &&
+      group.add_member(self, invitation.user_role)
+  end
+
+  def pending_invitations(group)
+      Invitation.where(:accepted => false,
+                       :group_id => group.id,
+                       :user_id => self.id)
   end
 
   protected

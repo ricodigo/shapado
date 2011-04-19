@@ -13,21 +13,17 @@ class Admin::ModerateController < ApplicationController
       when "flagged_questions"
         @questions = Question.where(options.merge(:flags_count.gt => 0)).
                               order_by("flags_count desc").
-                              paginate(:per_page => params[:per_page] || 25,
-                                                     :page => params[:questions_page] || 1)
+                              paginate(paginate_opts(params))
       when "flagged_answers"
         @answers = Answer.where(options.merge(:flags_count.gt => 0)).
                           order_by("flags_count desc").
-                          paginate(:per_page => params[:per_page] || 25,
-                                   :page => params[:questions_page] || 1)
+                          paginate(paginate_opts(params))
       when "banned"
         @banned = Question.where(options.merge(:banned => true)).
-                           paginate(:per_page => params[:per_page] || 25,
-                                    :page => params[:questions_page] || 1)
+                           paginate(paginate_opts(params))
       when "retag"
         @questions = Question.where(options.merge(:tags => {:$size => 0})).
-                              paginate(:per_page => params[:per_page] || 25,
-                                       :page => params[:questions_page] || 1)
+                              paginate(paginate_opts(params))
     end
   end
 

@@ -82,6 +82,7 @@ class Group
 
   references_many :ads, :dependent => :destroy
   references_many :tags, :dependent => :destroy
+  references_many :activities, :dependent => :destroy
 
   embeds_many :mainlist_widgets, :class_name => "Widget", :as => "group_mainlist"
   embeds_many :question_widgets, :class_name => "Widget", :as => "group_questions"
@@ -126,6 +127,8 @@ class Group
                               :message => "Sorry, this group subdomain is reserved by"+
                                           " our system, please choose another one"
   validates_inclusion_of :invitations_perms, :in => %w[user moderator owner]
+  validates_inclusion_of :signup_type,  :in => %w[all noemail social email]
+
   before_save :disallow_javascript
   before_save :modify_attributes
 

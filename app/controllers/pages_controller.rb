@@ -15,8 +15,7 @@ class PagesController < ApplicationController
     end
 
     @pages = current_group.pages.where(options).
-                                paginate(:page => params[:page],
-                                         :per_page => params[:per_page] || 25)
+                                 paginate(paginate_opts(params))
 
     set_page_title("Wiki") # TODO: i18n
 

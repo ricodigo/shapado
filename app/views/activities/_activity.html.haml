@@ -1,0 +1,10 @@
+-# FIXME: use t('activity.humanized', :user=>user, :action=> action, :target=> target) after styling
+%article
+  %h2
+    =link_to activity.login, user_path(activity.login||activity.user_id)
+    %b
+      = activity.humanize_action
+    = link_to activity.target_name, activity.url_for_trackable(request.host)
+    %em
+      = t("time.ago", :time => time_ago_in_words(activity.created_at, true))
+      = activity.created_at

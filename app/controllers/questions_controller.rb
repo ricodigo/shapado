@@ -72,7 +72,7 @@ class QuestionsController < ApplicationController
     @questions = Question.related_questions(@question).without(:_keywords, :watchers, :flags,
                                                                :close_requests, :open_requests, :versions).
                                                        order_by(:answers_count.desc).
-                                                       paginate(:page => params[:page], :per_page => params[:per_page],)
+                                                       paginate(paginate_opts(params))
 
     respond_to do |format|
       format.js do
@@ -108,10 +108,7 @@ class QuestionsController < ApplicationController
 
     @tag_cloud = Question.tag_cloud(conditions, 25)
 
-    @questions = Question.minimal.order_by(current_order).where(conditions).paginate({
-                                    :per_page => 25,
-                                    :page => params[:page] || 1,
-                                   })
+    @questions = Question.minimal.order_by(current_order).where(conditions).paginate(paginate_opts(params))
 
     respond_to do |format|
       format.html # unanswered.html.erb
@@ -157,10 +154,10 @@ class QuestionsController < ApplicationController
     @tag_cloud = Question.tag_cloud(:_id => @question.id, :banned => false)
     options = {:banned => false}
     options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
-    options[:fields] = {:_keywords => 0}
     @answers = @question.answers.where(options).
                                 order_by(current_order).
-                                paginate(:per_page => 25, :page => params[:page] || 1)
+                                without(:_keywords).
+                                paginate(paginate_opts(params))
 
     @answer = Answer.new(params[:answer])
 
@@ -380,7 +377,7 @@ class QuestionsController < ApplicationController
         options = {:banned => false}
         options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
         @answers = @question.answers.where(options).
-                                    paginate(:per_page => 25, :page => params[:page] || 1).
+                                    paginate(paginate_opts(params)).
                                     order_by(current_order)
         @answer = Answer.new
 
@@ -418,7 +415,7 @@ class QuestionsController < ApplicationController
         options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
         @answers = @question.answers.where(options).
                             order_by(current_order).
-                            paginate(:per_page => 25, :page => params[:page] || 1)
+                            paginate(paginate_opts(params))
         @answer = Answer.new
 
         format.html { render :action => "show" }

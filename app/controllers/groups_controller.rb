@@ -1,10 +1,9 @@
 class GroupsController < ApplicationController
-  skip_before_filter :check_group_access, :only => [:logo, :css, :favicon]
-  before_filter :login_required, :except => [:index, :show, :logo, :css, :favicon]
+  before_filter :login_required, :except => [:index, :show]
   before_filter :check_permissions, :only => [:edit, :update, :close,
                                               :connect_group_to_twitter,
                                               :disconnect_twitter_group]
-  before_filter :moderator_required , :only => [:accept, :destroy]
+  before_filter :admin_required , :only => [:accept, :destroy]
   subtabs :index => [ [:most_active, "activity_rate desc"], [:newest, "created_at desc"],
                       [:oldest, "created_at asc"], [:name, "name asc"]]
   # GET /groups
@@ -20,12 +19,10 @@ class GroupsController < ApplicationController
 
     if params[:q].blank?
       @groups = Group.where(conds).order_by(current_order).
-                                   paginate(:per_page => params[:per_page] || 15,
-                                            :page => params[:page])
+                                   paginate(paginate_opts(params))
     else
       @groups = Group.filter(params[:q], options).order_by(current_order).
-                                                  paginate(:per_page => params[:per_page] || 15,
-                                                           :page => params[:page])
+                                                  paginate(paginate_opts(params))
     end
 
     respond_to do |format|
@@ -51,12 +48,6 @@ class GroupsController < ApplicationController
       @group = current_group
     end
     raise PageNotFound if @group.nil?
-
-    @comments = @group.comments.paginate(:page => params[:page].to_i,
-                                         :per_page => params[:per_page] || 10 )
-
-    @comment = Comment.new
-
 
     respond_to do |format|
       format.html # show.html.erb
@@ -156,39 +147,12 @@ class GroupsController < ApplicationController
     redirect_to group_path(@group)
   end
 
-  def logo
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_logo?
-      send_data(@group.logo.try(:read), :filename => "logo.#{@group.logo.extension}", :type => @group.logo.content_type,  :disposition => 'inline')
-    else
-      render :text => ""
-    end
-  end
-
-  def css
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_custom_css?
-      send_data(@group.custom_css.read, :filename => "custom_theme.css", :type => "text/css")
-    else
-      render :text => ""
-    end
-  end
-
-  def favicon
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_custom_favicon?
-      send_data(@group.custom_favicon.read, :filename => "favicon.ico", :type => @group.custom_favicon.content_type)
-    else
-      render :text => ""
-    end
-  end
-
   def autocomplete_for_group_slug
-    @groups = Group.all( :limit => params[:limit] || 20,
-                         :fields=> 'slug',
-                         :slug =>  /.*#{params[:term].downcase.to_s}.*/,
-                         :order => "slug desc",
-                         :state => "active")
+    Group.only(:slug).where(:slug =>  /.*#{Regexp.escape(params[:term].downcase.to_s)}.*/,
+                            :state => "active").
+                      limit(20).
+                      order_by(:slug.desc).
+                      all
 
     respond_to do |format|
       format.json {render :json=>@groups}
@@ -228,6 +192,7 @@ class GroupsController < ApplicationController
     end
   end
 
+  #FIXME is this an action?
   def connect_group_to_twitter
     token = session[:twitter_token]
     secret = session[:twitter_secret]

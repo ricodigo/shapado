@@ -11,6 +11,9 @@ class Question
   include Support::Versionable
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :title, :language, :scope => [:group_id]
 
   index :tags
 
@@ -334,6 +337,17 @@ class Question
       when "attachment"
         @question.attachments.get($4)
       end
+    end
+  end
+
+  def self.humanize_action(action)
+    case action
+    when "create"
+      "asked"
+    when "update"
+      "changed"
+    when "destroy"
+      "deleted"
     end
   end
 

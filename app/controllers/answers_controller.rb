@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
       @question = current_group.questions.by_slug(params[:question_id])
       @answers = @question.answers.without(exclude)
     else
-      @answers = current_group.answers.without(exclude).paginate(:per_page => params[:per_page]||25, :page => params[:page]||1)
+      @answers = current_group.answers.without(exclude).paginate(paginate_opts(params))
     end
 
     respond_to do |format|

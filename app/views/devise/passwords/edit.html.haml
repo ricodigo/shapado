@@ -1,5 +1,7 @@
-%h2
+%h1
   Change your password
+  //i18n
+%p.description
 
 -form_for resource_name, resource, :url => password_path(resource_name), :html => { :method => :put } do |f|
   = f.error_messages

@@ -22,10 +22,10 @@ en:
           foss: free/open source
           joel: will i make joel richer?
         stackexchange:
-          adaptable: no
-          multitopic: no
-          multilanguage: no
-          foss: no
+          adaptable: "no"
+          multitopic: "no"
+          multilanguage: "no"
+          foss: "no"
           joel: yes!
         shapado:
           adaptable: yes!
@@ -40,8 +40,8 @@ en:
       email_description: Please provide your email address so we can answer your message
       captcha_error: Please, solve a simple math operation
     index:
-      hot:     Hot
-      active:  Active
+      hot: Hot
+      active: Active
       recent_questions: Recent questions
       quick_question: Ask a question, we will find someone to answer
       create_own_site: "Create your own Q&amp;A site in 8 seconds for free"

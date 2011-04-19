@@ -3,13 +3,14 @@
     // TODO I18n
     #{t 'groups.top.active'}
   = link_to current_group.name
-  -if logged_in?
-    %ul
+  %ul
+    -if logged_in?
       -current_user.groups.only(:name).limit(10).all.each do |group|
         %li
           = link_to group.name, group_path(group)
-  -else
-    %ul
+    -else
       -Group.where(:state => "active", :private => false).order_by([:activity_rate, :desc]).limit(10).all.each do |group|
         %li
           = link_to group.name, group_path(group)
+    %li
+      = link_to t(".request_group"), new_group_path

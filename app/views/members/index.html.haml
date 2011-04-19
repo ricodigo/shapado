@@ -1,7 +1,7 @@
+%h1
+  Members
+%p.description
 .members
-  %h1
-    Members
-
   -if logged_in? && current_user.owner_of?(@group)
     #manage_members
       -form_tag(members_path, :class => "form members-form", :method => :post) do
@@ -9,7 +9,6 @@
         .buttons
           = submit_tag t('scaffold.add', :model => "member"), :class => "save"
 
-  %ul
   -@members.each do |member|
     = render :partial => "member", :object => member
 

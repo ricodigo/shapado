@@ -17,14 +17,15 @@ class UsersController < ApplicationController
         :answers => [[:votes, [[:votes_average, :desc], [:created_at, :desc]]],
                     [:views,  [:views, :desc]],
                     [:newest, [:created_at, :desc]],
-                    [:oldest, [:created_at, :asc]]]
+                    [:oldest, [:created_at, :asc]]],
+        :follows => [[:questions, []],
+                     [:following, []],
+                     [:followers, []]]
 
   def index
     set_page_title(t("users.index.title"))
 
     order = current_order
-    options =  {:per_page => params[:per_page]||24,
-               :page => params[:page] || 1}
     conditions = {}
     conditions = {:login => /^#{Regexp.escape(params[:q])}/} if params[:q]
 
@@ -33,9 +34,9 @@ class UsersController < ApplicationController
     end
 
     @users = if order.blank?
-               current_group.users(conditions.merge(:near => current_user.point)).paginate(options)
+               current_group.users(conditions.merge(:near => current_user.point)).paginate(paginate_opts(params))
              else
-               current_group.users(conditions).order_by(order).paginate(options)
+               current_group.users(conditions).order_by(order).paginate(paginate_opts(params))
              end
     respond_to do |format|
       format.html
@@ -82,11 +83,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    params[:per_page] ||= "s"
     @resources = @user.questions.where(:group_id => current_group.id,
                                        :banned => false,
                                        :anonymous => false).
                        order_by(current_order).
-                       paginate(:page=>params[:page], :per_page => 10)
+                       paginate(paginate_opts(params))
 
     respond_to do |format|
       format.html
@@ -102,19 +104,26 @@ class UsersController < ApplicationController
                                      :banned => false,
                                      :anonymous => false).
                               order_by(current_order).
-                              paginate(:page=>params[:page], :per_page => 10)
+                              paginate(paginate_opts(params))
     respond_to do |format|
       format.html{render :show}
     end
   end
 
   def follows
-    @resources = Question.where(:follower_ids.in => [@user.id],
+    case @active_subtab.to_s
+    when "following"
+      @resources = @user.following.paginate(paginate_opts(params))
+    when "followers"
+      @resources = @user.followers.paginate(paginate_opts(params))
+    else
+      @resources = Question.where(:follower_ids.in => [@user.id],
                                 :banned => false,
                                 :group_id => current_group.id,
                                 :anonymous => false).
                           order_by(current_order).
-                          paginate(:page=>params[:page], :per_page => 10)
+                          paginate(paginate_opts(params))
+    end
     respond_to do |format|
       format.html{render :show}
     end
@@ -352,7 +361,7 @@ class UsersController < ApplicationController
     raise Goalie::NotFound unless @user
     set_page_title(t("users.show.title", :user => @user.login))
     @badges = @user.badges.where(:group_id => current_group.id).
-                            paginate(:page => params[:badges_page], :per_page => 25)
+                           paginate(paginate_opts(params))
     add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
     @user.viewed_on!(current_group) if @user != current_user && !is_bot?
   end

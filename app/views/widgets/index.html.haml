@@ -1,19 +1,17 @@
--content_for :subtabs do
-  .navtitle
-    = t(".title")
-  %ul
-    %li.mainlist_widgets
-      = link_to t(".mainlist_widgets"), widgets_path(:tab=>"mainlist"), :title => t(".mainlist_widgets_title")
-    %li.question_widgets
-      = link_to t(".question_widgets"), widgets_path(:tab=>"question"), :title => t(".question_widgets_title")
-    %li.question_widgets
-      = link_to t(".external_widgets"), widgets_path(:tab=>"external"), :title => t(".external_widgets_title")
+%h1
+  Widgets
+%p.description
+  =t(".description")
 
+%ul.admin-nav
+  %li.mainlist_widgets
+    = link_to t(".mainlist_widgets"), widgets_path(:tab=>"mainlist"), :title => t(".mainlist_widgets_title")
+  %li.question_widgets
+    = link_to t(".question_widgets"), widgets_path(:tab=>"question"), :title => t(".question_widgets_title")
+  %li.question_widgets
+    = link_to t(".external_widgets"), widgets_path(:tab=>"external"), :title => t(".external_widgets_title")
 
 .widgets-admin
-  %h1
-    =t(".description")
-
   %ul
     %li
       -form_tag widgets_path(:tab => @active_subtab), :class => "add-widget" do

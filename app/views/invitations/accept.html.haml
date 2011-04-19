@@ -31,7 +31,7 @@
           = render "shared/login_drop_down"
     %h1
       = t('.create_account')
-  - elsif !params[:step]
+  - elsif params[:step] == "2"
     - form_for current_user, :html => {:class => "form", :multipart => true} do |f|
       .field
         = f.label :name, t(:name, :scope => "activerecord.attributes.user"), :class => "label"

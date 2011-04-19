@@ -1,5 +1,5 @@
 %ul
-  - current_user.invitations.each do |invitation|
+  - current_user.pending_invitations(current_group).each do |invitation|
     %li
       = invitation.email
       = form_tag revoke_invitation_path(invitation), :class => "form", :multipart => true, :method => :post do

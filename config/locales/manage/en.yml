@@ -31,6 +31,7 @@ en:
         invite:
           title: Invite people by email
           emails_instructions: "Enter emails separated by coma"
+          user_role: "Invite users as"
           invite: Invite people
           invitations: Sent invitations
         post_to_twitter:

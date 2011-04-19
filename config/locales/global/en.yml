@@ -1,4 +1,8 @@
 en:
+  roles:
+    user: Regular user
+    moderator: Moderator
+    owner: Owner
   pagination:
     previous: "&laquo; Previous"
     next: "Next &raquo;"

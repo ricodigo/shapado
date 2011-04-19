@@ -1,4 +1,12 @@
 %ul.auth-list.sf-menu
+  - unless current_group.is_email_only_signup?
+    %li
+      %a
+        LogIn
+      = render "shared/login_drop_down"
+  - else
+    %li
+      = link_to "LogIn", new_user_session_path
   %li
     = render  "shared/login_drop_down"
     %a

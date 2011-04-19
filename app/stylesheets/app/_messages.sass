@@ -5,13 +5,6 @@
 //    Client       :   Shapado
 //    Description  :   Messgaes for the app
 //========================================================================
-.message
-  text-align: center
-  font-size: 18px
-  font-weight: bold
-  padding: 10px 0 0 0 !important
-  text-shadow: $text-shadow
-
 // Error Message
 .error
   color: #fff
@@ -19,7 +12,13 @@
   +box-shadow
 
 //Any notice type message
-.notice
+#messages
   color: #fff
   +blue-gradient
   +box-shadow
+  padding: 15px 0
+  p
+    text-align: center
+    font-size: 18px
+    font-weight: bold
+    text-shadow: 0 1px 1px black

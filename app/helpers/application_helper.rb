@@ -102,6 +102,14 @@ module ApplicationHelper
     end
   end
 
+  def locales_roles
+    roles = []
+    Membership::ROLES.each do |role|
+      roles << [I18n.t("roles.#{role}"), role]
+    end
+    roles
+  end
+
   def tag_cloud(tags = [], options = {}, limit = nil)
     if tags.empty?
       tags = Question.tag_cloud({:group_id => current_group.id, :banned => false}.

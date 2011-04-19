@@ -1,18 +1,22 @@
 %h1
   =t(".twitter_account")
+
 - if current_group.has_twitter_oauth?
-  %h2
+  %p
     =raw t(".legend_with_account", :twitter_account => current_group.twitter_account["screen_name"],  :link =>  manage_social_path(:tab=>"post_to_twitter"))
-  .group
-    %label.label
+
+  .field
+    %label
       = link_to t(".connect_to_other_twitter"), group_twitter_request_token_path
-  %p= t('global.or')
-  .group
+
+  %p
+    = t('global.or')
+  .filed
     %label.label
       = link_to t(".disconnect_twitter_group"), disconnect_twitter_group_path
 - else
-  %h2
+  %small
     =t(".legend")
-  .group
+  .filed
     %label.label
       = link_to t(".connect_to_twitter"), group_twitter_request_token_path

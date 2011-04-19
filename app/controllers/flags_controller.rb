@@ -95,9 +95,8 @@ class FlagsController < ApplicationController
   end
 
   def destroy
-    @resource.flags.delete_if { |f| f._id == params[:id] }
+    @resource.flags.find(params[:id]).destroy
 
-    @resource.save!
     @resource.decrement(:flags_count => 1)
     flash[:notice] = t(:flash_notice, :scope => "flag.destroy")
     respond_to do |format|

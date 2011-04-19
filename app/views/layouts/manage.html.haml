@@ -16,20 +16,67 @@
   %body
     = render :partial => "shared/analytics"
 
-    #container
+    #container{:class => @current_class}
+
+      %nav.top-bar
+        %ul.group-list.sf-menu
+          -if !current_group.isolate
+            = render "groups/top_grouplist"
+          -if !logged_in?
+          - else
+            -if current_user.admin_of?(current_group)
+              = render "admin/manage/top_admin"
+            -if current_user.mod_of?(current_group)
+              = render "admin/moderate/top_moderate"
+
+        .searcher
+          = form_tag search_index_path, :method => :get, :id => "search" do
+            .field
+              = text_field_tag :q, params[:q]
+
+
+        -if !logged_in?
+          /=multiauth_menu("Sign In")
+          = multiauth_dropdown("Sign In")
+        -else
+          = render "users/top_user"
+
       = show_flash_messages(:class => "flash", :markdown => true)
 
       %section.left-panel
+
         .brand
           %h1
-            // Im comment this just to not see the app broken :) you can uncomment without problem
-            //-if current_group.has_logo?
-            //=link_to image_tag(logo_path(current_group), :class => "group_logo", :width => current_group.logo_info["width"], :height => current_group.logo_info["height"]), domain_url(:custom => current_group.domain)
-            //-else
-            = link_to image_tag("shapado-brand.png", :class => "group_logo"), domain_url(:custom => current_group.domain)
+            = link_to(group_logo_img(current_group, :class => "group_logo"), domain_url(:custom => current_group.domain))
 
-        = render "shared/user-zone"
-        = render :partial => "shared/manage_navigation"
+        .widget-links.module
+          %h3
+            Group Content
+          %nav
+            %ul
+              -if current_group.has_custom_html
+                %li
+                  =link_to t("layouts.manage.content"), manage_content_path
+              %li
+                = link_to t("layouts.manage.members"), members_path
+              %li
+                = link_to t("layouts.manage.invitations"), manage_invitations_path
+              %li
+                = link_to t("layouts.manage.social"), manage_social_path
+
+        .widget-links.module
+          %h3
+            Group Features
+          %nav
+            %ul
+              %li
+                =link_to t("layouts.manage.widgets"), widgets_path
+              -if current_group.has_custom_html
+                %li
+                  = link_to t("layouts.manage.announcements"), announcements_path
+              -if current_group.has_custom_ads
+                %li
+                  =link_to t("layouts.application.manage_ads"), ads_path
 
       %section.content-panel
         #main-content-wrap{:class => @active_tab}

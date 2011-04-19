@@ -7,6 +7,10 @@ class Answer
   include Support::Versionable
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :question, :body, :language, :scope => [:group_id]
+
   identity :type => String
 
   field :body, :type => String, :required => true

@@ -7,9 +7,7 @@
   -else
     = f.text_area :message, :class => "text_area", :id => "markdown_editor"
 
-  .markdown
-    =markdown(@announcement.message)
-
+  =markdown(@announcement.message)
 
   .field.date-msg
     = f.label :starts_at, t(:starts_at, :scope => "activerecord.attributes.announcement")

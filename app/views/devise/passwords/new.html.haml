@@ -1,7 +1,9 @@
 %h1
   Forgot your password?
+  //i18n
 %p.description
   You can retrive your pastword from here
+  //i18n
 
 - form_for resource_name, resource, :url => password_path(resource_name) do |f|
   = f.error_messages
@@ -10,6 +12,7 @@
     = f.text_field :email
   .buttons
     = f.submit "Send me reset password instructions", :class => "save"
+    //i18n
 
 
 = render :partial => "shared/devise_links"

@@ -1,5 +1,5 @@
 require 'sham'
-require 'faker'
+require 'ffaker'
 
 Sham.email { Faker::Internet.email }
 Sham.name  { Faker::Name.name }
