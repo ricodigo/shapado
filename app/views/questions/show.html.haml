@@ -57,12 +57,16 @@
 
   .toolbar
     %ul.drop-menu
-      %li.answer
-        = link_to t(".answer"), "#", :id => "add_answer"
-
-      %li.comment
-        = link_to t(".comment"), "#", :id => "add_question_comment"
-
+      -if logged_in?
+        %li.answer
+          = link_to t(".answer"), "#", :id => "add_answer"
+        %li.comment
+          = link_to t(".comment"), "#", :id => "add_question_comment"
+      -else
+        %li.answer
+          = link_to t(".answer"),  new_user_session_path
+        %li.comment
+          = link_to t(".comment"), new_user_session_path
       %li.follow
         - if current_user && @question.follower?(current_user)
           = link_to t(".unfollow"), unfollow_question_path(@question), :class => 'unfollow-q question-action', "data-undo" =>  follow_question_path(@question), "data-title" => t(".watch_tooltip"), :title => t(".unwatch_tooltip"), :id => "watch-question"
