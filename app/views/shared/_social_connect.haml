@@ -1,0 +1,9 @@
+%h1
+  = t('invitations.accept.find_friends')
+#twitter-and-facebook
+  .find_friends
+    = link_to t('.find_friends_facebook'), '/users/auth/facebook', :class => 'auth-provider', :id => 'facebook_auth' unless current_user.facebook_login?
+    = link_to t('.find_friends_twitter'), '/users/auth/twitter', :class => 'auth-provider', :id => 'twitter_auth' unless current_user.twitter_login?
+  .find_friends
+    = link_to t('.find_friends_linked_in'),'/users/auth/linkedin', :class => 'auth-provider', :id => 'linked_in_auth' unless current_user.linked_in_login?
+    = link_to t('.find_friends_identica'),'/users/auth/identica', :class => 'auth-provider', :id => 'identica_auth' unless current_user.identica_login?

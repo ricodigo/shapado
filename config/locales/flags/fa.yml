@@ -1,0 +1,33 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      flag: 
+        reason: دلیل
+    models: 
+      flag: علامت
+      flags: علامتها
+  flags: 
+    create: 
+      flash_error: نمی‌توانید بر رویش علامت بگذارید
+      flash_notice: برای گزارشتان از شما متشکریم
+    destroy: 
+      flash_notice: علامت شما با موفقیت لغو شد
+    edit: 
+      title: ویرایش علامت %{model}
+    form: 
+      attention: نیاز به توجه مدیر دارد
+      label: لطفا با دقت علامت بگذارید
+      offensive: توهین آمیز، متعارضانه و یا نفرت در گفتار
+      spam: هرزنامه
+    model: 
+      messages: 
+        already_requested: شما قبلا روی این %{model} علامت گذاشته اید
+    new: 
+      title: علامت زدن %{model}
+    update: 
+      flash_notice: علامت ساوال با موفقیت به روز شد

@@ -1,7 +1,8 @@
 # Messages for Greek (Ελληνικά)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Discon
+# Author: Evropi
 el: 
   activerecord: 
     models: 
@@ -14,6 +15,7 @@ el:
     shared: 
       addict: 
         description: Επισκεφθείτε το site κάθε μέρα για 20 συνεχόμενες ημέρες
+        name: Εθισμένος
       autobiographer: 
         description: Συμπληρώστε όλα τα πεδία στο προφίλ σας
         name: Αυτοβιογράφος
@@ -31,8 +33,10 @@ el:
         name: Συγύρισμα
       commentator: 
         description: Αφήστε 10 σχόλια
+        name: Σχολιαστής
       critic: 
         description: Ψηφίστε αρνητικά για πρώτη φορά
+        name: Κριτικός
       disciplined: 
         description: Διαγράψτε δική σας ανάρτηση με βαθμολογία 3 ή ψηλότερη
         name: Πειθαρχημένος
@@ -45,8 +49,10 @@ el:
         name: Πεφωτισμένος
       famous_question: 
         description: Κάντε ερώτηση που θα φτάσει τις 10000 προβολές
+        name: Περίφημη ερώτηση
       fanatic: 
         description: Επισκεφθείτε το site κάθε μέρα για 100 συνεχόμενες ημέρες
+        name: Φανατικός
       favorite_question: 
         description: Κάντε ερώτηση που θα αγαπηθεί από 25 μέλη
       friendly: 
@@ -54,6 +60,7 @@ el:
         name: Φιλικός
       good_answer: 
         description: Δώστε απάντηση που θα φτάσει πάνω από 25 ψήφους μέσο όρο
+        name: Καλή απάντηση
       good_question: 
         description: Κάντε ερώτηση που θα φτάσει πάνω από 25 ψήφους μέσο όρο
       great_answer: 
@@ -64,6 +71,7 @@ el:
         name: Σπουδαία ερώτηση
       guru: 
         description: Δώστε λύση σε ερώτηση με περισσότερες από 40 ψήφους μέσο όρο
+        name: Γκουρού
       inquirer: 
         description: Κάντε ερώτηση για πρώτη φορά
       interesting_person: 
@@ -82,6 +90,7 @@ el:
         name: Ωραία ερώτηση
       notable_question: 
         description: Κάντε ερώτηση που θα φτάσει τις 2500 προβολές
+        name: Αξιοσημείωτη ερώτηση
       organizer: 
         description: Αλλάξτε ετικέτες σε μια ερώτηση για πρώτη φορά
         name: Διοργανωτής
@@ -97,6 +106,7 @@ el:
         name: Δημοφιλές πρόσωπο
       popular_question: 
         description: Κάντε ερώτηση που θα φτάσει τις 1000 προβολές
+        name: Δημοφιλές ερώτηση
       rockstar: 
         description: 1000 θετικές ψήφοι, 10 αρνητικές ψήφοι το πολύ
       scholar: 
@@ -114,6 +124,7 @@ el:
         name: Ερώτηση αστέρι
       student: 
         description: Κάντε την πρώτη σας ερώτηση που θα πάρει τουλάχιστον μία θετική ψήφο
+        name: Φοιτητής
       supporter: 
         description: Ψηφίστε θετικά για πρώτη φορά
       troubleshooter: 

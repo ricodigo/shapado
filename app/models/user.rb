@@ -294,6 +294,11 @@ Time.zone.now ? 1 : 0)
     !facebook_id.blank?
   end
 
+  def is_socially_connected?
+    linked_in_login? || identica_login? || twitter_login? ||
+      facebook_login?
+  end
+
   def has_voted?(voteable)
     !vote_on(voteable).nil?
   end
@@ -677,7 +682,7 @@ Time.zone.now ? 1 : 0)
   end
 
   def pending_invitations(group)
-      Invitation.where(:accepted => false,
+      Invitation.where(:state => 'pending',
                        :group_id => group.id,
                        :user_id => self.id)
   end

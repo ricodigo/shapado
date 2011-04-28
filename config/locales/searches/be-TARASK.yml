@@ -1,0 +1,15 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: EugeneZelenko
+# Author: Jim-by
+be-TARASK: 
+  searches: 
+    form: 
+      clear: Ачысьціць
+      search_box_title: Праверце, ці было гэтае пытаньне зададзенае раней
+      tags_tip: Выкарыстоўвайце [tag] для пазначэньня тэгаў.
+    index: 
+      empty: Па Вашым запыце ня знойдзена ніводнага пытаньня.
+      search_text: Пытаньні, якія ўтрымліваюць
+      tags: у рамках гэтых тэгаў

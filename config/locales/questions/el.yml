@@ -1,7 +1,8 @@
 # Messages for Greek (Ελληνικά)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Discon
+# Author: Evropi
 el: 
   activerecord: 
     attributes: 
@@ -100,6 +101,7 @@ el:
       flagged_as: Αναφέρθηκε ως
       flags: Αναφέρθηκε ως
       last_activity: Τελευταία δραστηριότητα
+      open: Ανοιχτή
       related_questions: Σχετικές ερωτήσεις
       request_closing: Αίτηση κλειδώματος
       request_closing_details: Αίτηση για να κλειδωθεί η ερώτηση

@@ -238,6 +238,7 @@ GEM
       simplecov-html (~> 0.4.4)
     simplecov-html (0.4.4)
     smart_asset (0.5.4)
+    state_machine (0.10.4)
     subexec (0.0.4)
     thor (0.14.6)
     treetop (1.4.9)
@@ -306,6 +307,7 @@ DEPENDENCIES
   sanitize (= 1.2.1)
   simplecov
   smart_asset
+  state_machine (= 0.10.4)
   twitter-text (= 1.1.8)
   twitter_oauth
   uuidtools (= 2.1.1)

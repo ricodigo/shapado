@@ -1,0 +1,25 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  mailers: 
+    notifications: 
+      earned_badge: 
+        subject: شما در گروه %{group} یک نشان به دست آورده اید!
+      favorited: 
+        subject: "%{login} سوال شما را به سوالات محبوبش اضافه کرده است!"
+      follow: 
+        subject: "%{login} شما را در %{app} دنبال می‌کند"
+      give_advice: 
+        friend_subject: دوست شما نیاز به کمک دارد %{question_title}
+        subject: ما نیاز به مشاوره شما داریم %{question_title}
+      new_answer: 
+        subject_friend: دوست شما %{login} به سوالی با عنوان %{title} پاسخ داده
+        subject_other: "%{login}سوالی با انوان %{title} را پاسخ داده"
+        subject_owner: "%{login} سوال شما را پاسخ داد %{title}"
+      new_comment: 
+        subject: "%{login} برای گروه %{group} نظر داده است"
+      report: 
+        subject: گزارش گروه %{group} از برنامه %{app}

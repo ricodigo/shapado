@@ -1,0 +1,31 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  widgets: 
+    badges: 
+      description: Nagpapakita ang widyet na ito ng kamakailang mga tsapang nakamit ng mga tagagamit o mga katanungan
+      title: Kamakailang mga tsapa
+    groups: 
+      description: Nagpapakita ang widyet na ito ng pinakabagong mga pangkat
+      title: Kamakailang mga pangkat
+    index: 
+      description: Gamitin ang mga palaso upang mailipat ang mga widyet mo
+      title: Pamahalaan ang mga widyet ng panggilid na halang
+    pages: 
+      description: Nagpapakita ang widyet na ito ng tala ng mga pahina ng wiki
+      new: Magdagdag ng bagong pahina
+      title: Mga pahina ng wiki
+    tag_cloud: 
+      description: Nagpapakita ang widyet na ito ng ulap ng tatak
+      title: Ulap ng tatak
+    top_groups: 
+      description: Nagpapakita ang widyet na ito ng nangungunang limang mga pangkat
+      title: Nangungunang 5 mga pangkat
+    top_users: 
+      description: Nagpapakita ang widyet na ito ng nangungunang limang mga tagagamit
+      title: Nangungunang 5 mga tagagamit
+    users: 
+      description: Nagpapakita ang widyet na ito ng bagong kapapatalang mga kasapi
+      title: Kamakailang mga tagagamit

@@ -1,0 +1,17 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  admin: 
+    moderate: 
+      index: 
+        all: همه
+        ban: ممنوع کردن
+        banned: سوالات ممنوع شده
+        content: محتوا
+        flagged: سوالات علامت زده شده
+        item_title: عنوان
+        need_tags: برچسب گذاری مجدد
+        title: اداره کردن

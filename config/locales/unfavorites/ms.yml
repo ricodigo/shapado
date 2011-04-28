@@ -1,0 +1,13 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    models: 
+      favorite: Kegemaran
+      favorites: Kegemaran
+  unfavorites: 
+    create: 
+      success: Soalan ini telah digugurkan daripada kegemaran anda
+      unauthenticated: Anda memerlukan akaun untuk menggugurkan kegemaran

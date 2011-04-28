@@ -1,0 +1,55 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  admin: 
+    manage: 
+      content: 
+        footer: Talababa
+        head: paulo
+        question_help: Tulong sa tanong
+        question_prompt: Udyok ng tanong
+        title: Pasadyang nilalaman
+        top_bar: Pang-itaas na halang
+        top_bar_tip: Magpasok ng isang kawing bawat guhit
+      properties: 
+        constrains: 
+          reputation_constrains_description: Nagpapahintulot ang pormularyong ito na maisaayos kung ilang mga puntos ng dangal ang kakailanganin ng mga tagagamit upang makagawa ng isang ibinigay na kilos
+          reputation_constrains_subtitle: Tala ng mga pangangailangan ng dangal para sa bawat isang kilos
+          title: Mga kinakailangan
+        domain: 
+          description: "Maimamapa mo ang sityo mo upang maaari itong mapuntahan sa pamamagitan ng sarili mong pasadyang nasasakupan.  Ganito ang paraan kung mo ito magagawa:"
+          instruction1: Upang maisagawa kailangan mo munang lumagda sa iyong tagapagbigay ng nasasakupan.  Iyan ang sityo kung saan mo binili ang nasasakupan mo katulad ng %{subdomain}.com.
+          instruction2: Doon ay kailangan mong pumunta sa bahagi ng DNS at lumikha ng bagay na tinatawag na isang CNAME.
+          instruction3: Piliin ang 'www' o ibang anumang bagay bilang pangalan ng iyong CNAME.
+          instruction4: "Pagkaraan ay ilagay ang pangkasalukuyan mong nasasakupan sa Shapado sa loob ng kahanayan ng tagapagpasinaya o kapupuntahan: %{domain}."
+          instruction5: Kapag nagawa na ito, pagkalipas ng isang oras o mahigit pa, ang nasasakupan mong www.%{subdomain} ay dapat na tumuro sa %{appdomain}.
+          instruction6: Kung ganito ang pangyayari, bumalik rito at ilagay ang iyong pangalan ng nasasakupan na www.%{subdomain} sa loob ng kahanayang nasa ibaba at pindutin ang pindutang 'isapanahon'.  Kung may mga katanungan ka, tanungin kami sa loob ng %{chat_url} o sa aming poro ng pagtangkilik.
+          title: Itakda ang nasasakupan mo
+          warning: Nakatitiyak ka bang nais mong baguhin ang nasasakupan mo?
+        general: 
+          title: Mga pag-aari ng pangkat
+        rewards: 
+          reputation_rewards_description: Nagpapahintulot ang pormularyong ito na maisaayos kung paano makapagwawagi at mawawalan ng mga puntos ng dangal ang mga tagagamit para sa isang ibinigay na kilos
+          reputation_rewards_subtitle: Tala ng mga gantimpala sa dangal
+          title: Mga gantimpala
+        share: 
+          add_tags: Magdagdag ng mga tatak sa mga pag-tweet mo
+          application_id: ID ng aplikasyon
+          asking_from_twitter: Nagtatanong ng mga katanungan magmula sa Twitter
+          ends_with_example: "katulad ng #shapado"
+          facebook_app: Mga katakdaan ng aplikasyon ng Facebook
+          question_asked_to: Itinanong Ang Tanong Sa
+          question_must_include: Ang tanong ay dapat na magsama ng sumusunod na tatak na maisisiyap
+          question_must_include_example: "katulad ng #iAsk"
+          secret_key: Lihim na Susi
+          starts_with_example: "katulad ng #qa"
+          title: Ibahagi
+          title_on_dlvr: Ibahagi sa dlvr.it
+          tweet_ends_with: Magkabit ng isang tatak sa iyong mga pagsisiyap
+          tweet_starts_with: Magkabit sa harap ng isang tatak sa iyong mga pagsisiyap
+          twitter_account: Ang akawnt sa Twitter na pagtatanungan ng mga katanungan ng mga tagagamit mo.
+        theme: 
+          logo_legend: Magkargang papaitaas ng isang logo para sa pangkat mo.  Dapat itong mas maliit kaysa 2MB.
+          title: Itakda ang tema ng pangkat

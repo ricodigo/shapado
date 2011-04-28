@@ -1,0 +1,54 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  welcome: 
+    confirm_age: 
+      notice: Anda boleh memasuki laman ini hanya jika umur anda sekurang-kurangnya 18 tahun, ataupun melampaui umur majoriti dalam bidang kuasa tempat tinggal anda atau tempat anda mencapai laman ini.
+      over_18: Saya berusia 18 tahun ke atas
+      under_18: Saya berusia di bawah 18 tahun
+      warning: "AMARAN: Laman ini mungkin mengandungi kandungan yang tidak sesuai untuk golongan bawah umur 18 tahun."
+    facts: 
+      features: 
+        cols: 
+          adaptable: boleh suai
+          foss: bebas/sumber terbuka
+          joel: adakah saya akan buatkan Joel jadi lebih kaya?
+          multilanguage: pelbagai bahasa
+          multitopic: pelbagai topik
+        shapado: 
+          adaptable: ya!
+          foss: ya!
+          joel: tidak :/
+          multilanguage: ya!
+          multitopic: ya!
+        stackexchange: 
+          adaptable: tidak
+          foss: tidak
+          joel: ya!
+          multilanguage: tidak
+          multitopic: tidak
+      prices: 
+        cols: 
+          onsite: di tapak
+        stackexchange: 
+          large: $1299/bulan
+          medium: $999/bulan
+          onsite: bulan
+          small: $129/bulan
+    feedback: 
+      captcha_error: Sila jawab soalan matematik yang mudah ini
+      email_description: Sila nyatakan alamat e-mel anda supaya kami boleh membalas pesanan anda
+      feedback_description: Keterangan
+      feedback_title: Tajuk
+      title: Hantar maklum balas anda
+    index: 
+      active: Aktif
+      browse_all_or_by_tags: Lihat %{full_list_of_questions} atau %{browse_by_tags}
+      browse_by_tags: gelintar mengikut tag
+      create_own_site: Cipta laman Soal Jawab sendiri secara percuma dalam 8 saat
+      full_list_of_questions: senarai penuh soalan
+      hot: Hangat
+      quick_question: Tanyakan soalan supaya kami boleh mencari orang untuk menjawabnya
+      recent_questions: Soalan terbaru

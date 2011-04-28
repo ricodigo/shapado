@@ -1,0 +1,87 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: dihidupkan pada
+        activation_code: Kod pengaktifan
+        age: Umur
+        asked_by: ditanya oleh
+        avatar: Gambar profil
+        birthday: Hari jadi
+        created_at: menyertai
+        current_password: Kata laluan sekarang
+        email: E-mel
+        fullname: Nama penuh
+        hide_country: Jangan paparkan negara saya
+        language: Bahasa
+        language_filter: Tapis mengikut bahasa
+        last_logged_at: dilihat
+        login: Nama pengguna
+        name: Nama sebenar
+        password: Kata laluan
+        password_confirmation: Pengesahan kata laluan
+        preferred_languages: "Anda mahu membaca soalan dalam bahasa-bahasa berikut:"
+        preferred_tags: Tag keutamaan
+        reputation: Reputasi
+        timezone: Zon waktu
+        updated_at: dikemas kini pada
+        website: Tapak web
+    models: 
+      user: Pengguna
+      users: Pengguna
+  users: 
+    actions: 
+      edit_others_posts: Sunting kiriman orang lain
+      edit_wiki_post: Sunting kiriman wiki
+      flag: Bendera
+      retag_others_questions: Tag semula soalan orang lain
+      vote_down: Undi tak setuju
+      vote_to_close_any_question: Pohon supaya soalan ditutup
+      vote_to_close_own_question: Pohon supaya soalan anda ditutup
+      vote_up: Undi setuju
+    anonymous_form: 
+      never_shown: tidak pernah dipaparkan
+    create: 
+      flash_error: Maaf, kami tidak dapat membuka akaun itu. Sila cuba lagi atau hubungi pentadbir (melalui pautan di atas).
+      flash_notice: Terima kasih kerana mendaftar diri!
+    edit: 
+      enable_twitter: Bolehkan akaun Facebook atau Twitter anda
+      submit: Simpan
+      title: Tetapan
+    follow: 
+      flash_notice: Pengguna %{user} disenaraikan sebagai rakan anda
+    form: 
+      activities_notification: Terima pemberitahuan e-mel mengenai kegiatan sistem seperti lencana yang diraih, pengikut baru, dsb.
+      information: Maklumat
+      language: Bahasa yang digunakan untuk antara muka laman
+      notifications: Pemberitahuan
+      show_more_lang: Tunjukkan banyak lagi bahasa
+    index: 
+      empty: Kumpulan ini tiada ahli baru. Ambil bahagian dengan menyertai kumpulan ini.
+      filter: Cari pengguna
+      name: Nama
+      name_tooltip: Pengguna disusun mengikut turutan abjad
+      newest: Terbaru
+      newest_tooltip: Pengguna yang baru menyertai
+      oldest: Terlama
+      oldest_tooltip: Pengguna yang pertama sekali menyertai
+      reputation: Reputasi
+      reputation_tooltip: Pengguna disusun mengikut tahap reputasi
+      title: Semua pengguna
+    messages: 
+      errors: 
+        reputation_needed: Anda memerlukan tahap reputasi %{min_reputation} untuk %{action}
+    new: 
+      submit: Daftar diri
+      title: Berdaftar sebagai pengguna baru
+    show: 
+      follow: Ikuti
+      followers: Pengikut
+      following: Mengikuti
+      title: Pengguna %{user}
+      unfollow: Berhenti mengikut
+      views: kunjungan

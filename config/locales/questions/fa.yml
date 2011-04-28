@@ -1,0 +1,143 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      question: 
+        answers: پاسخ‌ها
+        asked_by: خواسته شده توسط
+        body: بدنه
+        closed: بسته‌شده
+        created_at: خواسته شد
+        language: زبان
+        tags: برچسب‌ها
+        title: عنوان
+        updated_at: به‌هنگام شده
+        updated_by: به‌هنگام شده توسط
+        views: بازدیدها
+        votes: آرا
+    models: 
+      question: سوال
+      questions: سوال‌ها
+  questions: 
+    answer: 
+      add_comment: اضافه کردن نظر ...
+      flag: علامت گذاشتن
+      pick_answer: انتخاب به عنوان راه حل
+      unset_answer: لغو کردن درستی سوال
+    create: 
+      flash_notice: سوال با موفقیت ساخته شد.
+    edit: 
+      title: ویرایش سوال
+    flag: 
+      title: علامت زدن سوال
+    form: 
+      adult_content: این سوال شامل محتوای بزرگسالان است.
+      body_tip: سوالتان چیست؟ توضیحات کامل بدهید
+      language_tip: زبانی که سوال با استفاده از آن پرسیده شده است را انتخاب کنید.
+      tags_tip: از برچسبها برای اضافه کردن اطلاعات بیشتر به سوالتان استفاده کنید.
+    index: 
+      active: فعال
+      active_tooltip: سوالاتی که اخیرا به روز شده اند
+      ask_question: پرسیدن سوال
+      empty: هنوز کسی سوالی نپرسیده است، اولین نفری باشید که سوال می‌پرسد!
+      help_to_answer: در پاسخ گویی به ما کمک کنید
+      hot: داغ
+      hot_tooltip: سوالات دارای بیشترین فعالیت در ۵ روز گذشته
+      newest: جدیدترین
+      newest_tooltip: آخرین سوالات پرسیده شده
+      oldest: قدیمیترین
+      title: همه سوالات
+      unanswered_questions: سوالات بی پاسخ
+      votes: رای
+      votes_tooltip: سوالات دارای بیشترین رای
+    model: 
+      messages: 
+        empty_tags: با عرض پوزش، شما باید حداقل یک برچسب استفاده کنید.
+        title_too_long: عنوان خیلی طولانی است. نباید عنوان بیش از 100 کاراکتر باشد.
+        too_many_tags: با عرض پوزش، شما می توانید از حد اکثر 9 برچسب استفاده کنید.
+        too_short: به نظر خیلی کوتاه می رسد. لطفا از تعداد لغات بیش از %{count} استفاده کنید تا صراحت بیشتری داشته باشد.
+    move: 
+      group_label: "انتقال به گروه با ضربه:"
+      submit: انتقال!
+      title: "انتقال سوال: %{title}"
+    move_to: 
+      group_dont_exists: گروه %{group} موجود نیست
+      success: سوال به %{group} منتقل شد
+    new: 
+      how_to_ask: روش پرسیدن سوال
+      title: پرسیدن سوال
+    question: 
+      accepted_tooltip: این سوال دارای جوابی پذیرفته شده است
+    retag: 
+      title: برچسب گذاری مجدد
+    retag_form: 
+      cancel: لغو
+      submit: به روز کردن برچسب‌ها
+      title: به روز کردن برچسب‌ها
+    retag_to: 
+      failure: متاسفیم، برچسبها قابل به روز رسانی نیستند.
+      success: برچسبها با موفقیت به روز شدند.
+    revert: 
+      title: برگرداندن سوال
+    shared: 
+      flag: علامت زدن
+    show: 
+      accepted_tooltip: یکی از پاسخها به عنوان پاسخ درست انتخاب شده است.
+      another_answers: دیگر پاسخ‌ها
+      answers: پاسخ‌ها
+      answers_title: 
+        one: "%{count} پاسخ"
+        other: "%{count} پاسخ"
+      asked_on: پرسیده است در
+      ban: ممنوع کردن
+      close: بستن
+      close_reason: "سوال به این دلیل بسته شده است:"
+      edit_request: ویرایش درخواست
+      favorite_tooltip: اضافه کردن این سوال به سوالات محبوبتان
+      flag: علامت زدن
+      flagged_as: علامت زده شده به عنوان
+      flags: گزارش شده به عنوان
+      last_activity: آخرین فعالیت
+      open: گشودن
+      related_questions: سوالات مربوط
+      request_closing: درخواست باز کردن
+      request_closing_details: درخواست بستن این سوال
+      request_opening: درخواست باز کردن دوباره
+      request_opening_details: درخواست باز کردن مجدد این سوال
+      requested_close_as: شما درخواست بستن این سوال را داده اید به عنوان
+      requested_reopening: شما درخواست باز کردن مجدد این سوال را کرده اید.
+      retag: برچسب گذاری مجدد
+      retract_request: لغو درخواست
+      share: به اشتراک گذاشتن این سوال در
+      share_on: به اشتراک گذاشتن این سوال در %{site}
+      solution: راه حل
+      to_answer_question: برای پاسخ گفتن به این سوال
+      unauthenticated_retag: برای برچسب گذاری سوالات به یک حساب کاربری نیاز دارید
+      unfavorite_tooltip: حذف کردن این سوال از موارد محبوبتان
+      unwatch_tooltip: توقف زیر نظر گرفتن این سوال
+      viewed: دیده شده
+      watch_tooltip: زیر نظر داشتن این سوال
+    solve: 
+      flash_notice: سوال برطرف شده است.
+    tags: 
+      filter: جست و جو برای برچسبها
+      title: برچسب‌ها
+      tooltip: سوالات دارای برچسب %{tag} را نشان بده
+    unanswered: 
+      empty: این گروه دارای هیچ سوال بی جوابی نیست.
+      expert: کارشناسان
+      my_tags: برچسبها
+      tags: برچسب های بی پاسخ
+      title: سوالات بی پاسخ
+    unsolve: 
+      flash_notice: سوال دیگر یک مساله حل شده نیست.
+    unwatch: 
+      success: دیگر شما برای هر پاسخی که به این پرسش داده می‌شود ایمیل دریافت نخواهید کرد
+    update: 
+      flash_notice: پرسش با موفقیت به روز شد
+    watch: 
+      success: از این پس برای هر پاسخی که به این سوال داده شود شما یک اطلاعیه با ایمیل دریافت خواهید کرد.

@@ -1,10 +1,11 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
+# Author: Ebraminio
 # Author: Persianizer
 fa: 
   ads: 
-    ad_links: "%{type} افزودن یک آگهی  تازه"
+    ad_links: "%{type} افزودن یک آگهی تازه"
     create: 
       success: آگهی با موفقیت ایجاد شد
     index: 
@@ -13,4 +14,4 @@ fa:
       title: آگهی‌ها
     name: "نام:"
     position: "مکان:"
-    title: "%{type} افزودن یک آگهی  تازه"
+    title: "%{type} افزودن یک آگهی تازه"

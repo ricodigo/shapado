@@ -1,6 +1,6 @@
 # Messages for Galician (Galego)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Toliño
 gl: 
   admin: 
@@ -11,6 +11,6 @@ gl:
         banned: preguntas bloqueadas
         content: contido
         flagged: preguntas marcadas
-        item_title: título
+        item_title: Título
         need_tags: necesita etiquetas
         title: moderar

@@ -1,6 +1,6 @@
 # Messages for Interlingua (Interlingua)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: McDutchie
 ia: 
   activerecord: 
@@ -144,7 +144,7 @@ ia:
         description: Dava un solution a un question con un medio de plus de 2 votos
         name: Tutor
     show: 
-      description: "Usatores que ganiava iste insignia. Recentemente meritate per:"
+      description: "Usatores que ha ganiate iste insignia. Recentemente attribuite a:"
       earned: ganiate
       for_tag_bronze: 200 votos in etiquetta %{tag}
       for_tag_gold: 1000 votos in etiquetta %{tag}

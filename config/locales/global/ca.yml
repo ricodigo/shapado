@@ -1,8 +1,9 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Martorell
 # Author: Papapep
+# Author: SMP
 ca: 
   feeds: 
     feed: Canal
@@ -14,6 +15,7 @@ ca:
     user: Subscriviu-vos a les preguntes d'usuaris
   global: 
     active: Activa
+    anonymous: Anònim
     by: per
     current: Actual
     from: des de %{site}
@@ -34,6 +36,9 @@ ca:
       one: "%{count} temps"
       other: "%{count} cops"
       zero: Mai
+  pagination: 
+    next: Següent &raquo;
+    previous: "&laquo; Anterior"
   scaffold: 
     add: Afegeix
     back: Enrera
@@ -45,6 +50,7 @@ ca:
     edit: Edita
     more: Més ...
     new: Afegeix un nou %{model}
+    post_as_anonymous: Publica anònimament
     save: Desa
     send: Envia
     show: Mostra

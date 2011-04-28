@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('ul.sf-menu').superfish();
   $('.auth-provider').click(function(){
       var authUrl = $(this).attr('href');
+      $.cookie('pp', '1'); //set cookie popup to 1
       window.open(authUrl, 'openid_popup', 'width=790,height=580');
       return false;
   })
@@ -187,7 +188,7 @@ function sortValues(selectID, child, keepers, method, arg){
   var sortedVals = $.makeArray($(selectID+' '+child)).sort(function(a,b){
     return $(a)[method](arg) > $(b)[method](arg) ? 1: -1;
   });
-  $(selectID).html(sortedVals.join());
+  $(selectID).html(sortedVals);
   if(keepers)
     $(selectID).prepend(any);
   // needed for firefox:

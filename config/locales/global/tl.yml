@@ -1,0 +1,59 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  feeds: 
+    feed: Pasubo
+    post_new_questions: Magpaskil ng bagong mga tanong sa
+    question: Magpasipi sa tanong na ito
+    questions: Magpasipi sa lahat ng mga katanungan
+    share_on_twitter: Twitter, Facebook at marami pa...
+    tag: Magpasipi sa tatak
+    user: Magpasipi sa mga tanong ng tagagamit
+  global: 
+    active: Pasiglahin
+    anonymous: Hindi nagpapakilala
+    by: sa pamamagitan ng
+    current: Pangkasalukuyan
+    from: mula sa %{site}
+    group_not_found: Hindi umiiral ang pahinang %{url}
+    or: o
+    permission_denied: Tinanggihang pahintulutan
+    please_login: Mangyaring lumagda
+    preview: Paunang tingin
+    previous: Nakaraan
+    share: Ibahagi
+  languages: 
+    any: Kahit ano
+    user: Mga wikang nais ko
+  models: 
+    question: Ang katanungan
+  number: 
+    x_time: 
+      one: "%{count} ulit"
+      other: "%{count} mga ulit"
+      zero: Hindi magpakailanman
+  pagination: 
+    next: Susunod &raquo;
+    previous: "&laquo; Nakaraan"
+  scaffold: 
+    add: Idagdag
+    back: Bumalik
+    cancel: Huwag ituloy
+    close: Isara
+    create: Likhain
+    destroy: Burahin
+    details: Mga detalye
+    edit: Baguhin
+    more: Marami pa ...
+    new: Magdagdag ng bagong %{model}
+    post_as_anonymous: Ipaskil bilang hindi nagpapakilala
+    save: Sagipin
+    send: Ipadala
+    show: Ipakita
+    sure: Nakatitiyak ka bang nais mong burahin ang %{model} na ito?
+    update: Isapanahon
+  time: 
+    ago: "%{time} ang nakalipas"
+    today: ngayon

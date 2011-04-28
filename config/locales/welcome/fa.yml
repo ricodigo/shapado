@@ -1,0 +1,60 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  welcome: 
+    confirm_age: 
+      notice: شما تنها در صورتی می‌توانید به این صفحه دسترسی پیدا کنید که بیش از ۱۸ سال داشته باشید و یا سنتان بیش از سن بلوغ در محدودهٔ قضایی محل زندگیتان یا آن جایی که از آن به این صفحه دسترسی پیدا می‌کنید باشد.
+      over_18: من بیش از ۱۸ سال سن دارم
+      under_18: من زیر ۱۸ سال سن دارم
+      warning: "هشدار: این صفحه ممکن است محتوای جنسی واضحی داشته باشد."
+    facts: 
+      features: 
+        cols: 
+          adaptable: سازگار
+          foss: آزاد/باز متن
+          joel: من جوئل را ثروتمندتر خواهم کرد؟
+          multilanguage: چند زبان
+          multitopic: چندموضوعه
+        shapado: 
+          adaptable: بله!
+          foss: بله!
+          joel: خیر :/
+          multilanguage: بله!
+          multitopic: بله!
+        stackexchange: 
+          adaptable: خیر
+          foss: خیر
+          joel: بله!
+          multilanguage: خیر
+          multitopic: خیر
+      prices: 
+        cols: 
+          onsite: در سایت خودتان
+        shapado: 
+          large: احتمالا حدود ۵۰۰$
+          medium: <=== ditto
+          onsite: احتمالا $0 در سرور خودتان
+          small: احتمالا بین ۵۰$ و ۱۰۰$ در ماه در بیشتر ارایه دهنده های خدمات میزبانی وب
+        stackexchange: 
+          large: $۱۲۹۹ در ماه
+          medium: $۹۹۹ در ماه
+          onsite: $۲۵۰۰ در ماه
+          small: $۱۲۹ در ماه
+    feedback: 
+      captcha_error: لطفاً، یک عملیات سادهٔ ریاضی را حل کنید
+      email_description: لطفا آدرس ایمیلتان را در اختیار ما بگذارید تا بتوانیم به پیغامتان پاسخ دهیم
+      feedback_description: توضیحات
+      feedback_title: عنوان
+      title: ارسال نظرات شما
+    index: 
+      active: فعال
+      browse_all_or_by_tags: "%{full_list_of_questions} را ببینید و یا %{browse_by_tags}"
+      browse_by_tags: مرور بر اساس برچسب ها
+      create_own_site: سایت سوال و جواب خود را در 8 ثانیه به شکل رایگان بسازید
+      full_list_of_questions: فهرست کامل سوالات
+      hot: داغ
+      quick_question: سوالی بپرسید، ما کسی برای پاسخ دادن به آن پیدا می کنیم
+      recent_questions: سوالات اخیر

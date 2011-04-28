@@ -1,0 +1,52 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  layouts: 
+    application: 
+      ask_question: پرسیدن سوال
+      badges: نشانها
+      forgot: فراموش کردید؟
+      home: خانه
+      languages: زبانها
+      log_in: ورود
+      logged: وارد شده به عنوان %{login}
+      logout: خروج
+      manage_ads: مدیریت تبلیغات
+      moderate: اداره کردن
+      now: حالا!
+      openid: 
+        explaination: "اگر می‌خواهید ثبت نام کنید و یا وارد شوید لطفاً ارائه‌دهنده OpenID خود را انتخاب کنید:"
+      pages: صفحات
+      questions: سوال‌ها
+      questions_in: سوالات در
+      questions_tagged: برچسب خورده با
+      search: جستجو
+      settings: تنظیمات
+      signup: ثبت نام
+      subscribe: اشتراک
+      tags: برچسبها
+      title: پرسش‌ها و پاسخ‌ها
+      unanswered: بی پاسخ
+      users: کاربران
+      welcome_from: خوش آمدید! شما می‌توانید
+    manage: 
+      actions: عملکردها
+      announcements: اطلاعیه‌ها
+      constrains: نیازمندی‌ها
+      content: محتوا
+      dashboard: داشبورد
+      domain: دامنه
+      general: عمومی
+      members: اعضا
+      pages: صفحات
+      properties: ویژگی‌ها
+      reputation: شهرت
+      rewards: پاداش
+      stats: آمار
+      theme: تم
+      widgets: ویدجت
+    notifications: 
+      message: اگر دیگر نمی‌خواهید اطلاعیه‌های خودکار %{domain} را دریافت کنید در بخش اطلاعیه‌ها ترجیحات خود را تغییر دهید.

@@ -1,8 +1,9 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Martorell
 # Author: Papapep
+# Author: SMP
 ca: 
   activerecord: 
     attributes: 
@@ -85,6 +86,8 @@ ca:
       title: Registreu-vos com a nou usuari
     show: 
       follow: Seguir-lo/la
+      followers: Seguidors
+      following: Seguint
       title: Usuari %{user}
       unfollow: Deixar de seguir-lo/la
       views: Visualitzacions

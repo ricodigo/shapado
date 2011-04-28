@@ -1,6 +1,6 @@
 
 desc "Fix all"
-task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:create_thumbnails", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:set_comment_count"] do
+task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:create_thumbnails", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:set_comment_count", "fixdb:versions"] do
 end
 
 
@@ -400,6 +400,34 @@ namespace :fixdb do
           p "#{u.login}: #{count} in #{group.name}"
         end
       end
+    end
+  end
+
+  task :versions => [:init] do
+    Question.only(:versions, :versions_count).each do |question|
+      next if question.versions.count > 0
+      question.override({:versions_count => 0})
+      (question[:versions]||[]).each do |version|
+        version["created_at"] = version.delete("date")
+        version["target"] = question
+
+        question.version_klass.create!(version)
+      end
+
+      question.unset({:versions => true})
+    end
+
+    Answer.only(:versions, :versions_count).each do |post|
+      next if post.versions_count.to_i > 0
+      post.override({:versions_count => 0})
+      (post[:versions]||[]).each do |version|
+        version["created_at"] = version.delete("date")
+        version["target"] = post
+
+        post.version_klass.create!(version)
+      end
+
+      post.unset({:versions => true})
     end
   end
 

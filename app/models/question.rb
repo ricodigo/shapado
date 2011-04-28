@@ -402,7 +402,7 @@ class Question
   end
 
   def group_language
-    if self.group.present? && (!self.group.language.nil? && self.group.language != self.language)
+    if self.group.present? && !self.group.languages.include?(self.language)
       self.errors.add :language, I18n.t("questions.model.messages.not_group_languages")
     end
   end

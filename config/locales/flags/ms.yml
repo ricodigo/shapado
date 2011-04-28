@@ -1,0 +1,32 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      flag: 
+        reason: Sebab
+    models: 
+      flag: Bendera
+      flags: Bendera
+  flags: 
+    create: 
+      flash_error: Anda tidak boleh menaikkan bendera pada yang ini
+      flash_notice: Terima kasih atas laporan anda
+    destroy: 
+      flash_notice: Bendera anda berjaya ditarik balik.
+    edit: 
+      title: Sunting bendera %{model}
+    form: 
+      attention: Memerlukan perhatian pengawal selia
+      label: Sila berjaga-jaga ketika menaikkan bendera
+      offensive: Ujaran yang menyinggung perasaan, berkata makian atau berbau kebencian
+      spam: Spam
+    model: 
+      messages: 
+        already_requested: Anda sudah menaikkan bendera pada %{model} ini
+    new: 
+      title: Naikkan bendera pada %{model}
+    update: 
+      flash_notice: Bendera soalan berjaya dikemas kini.

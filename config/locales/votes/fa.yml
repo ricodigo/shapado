@@ -1,0 +1,26 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    models: 
+      vote: رای
+      votes: آرا
+  votes: 
+    control: 
+      have_voted_down: برای لغو رای منفیتان کلیک کنید
+      have_voted_up: برای لغو رای مثبتتان کلیک کنید
+      to_vote_down: برای دادن رای منفی کلیک کنید
+      to_vote_up: برای دادن رای مثبت کلیک کنید
+    create: 
+      flash_error: شما نمی توانید برای این موضوع رای دهید
+      flash_notice: از رای دادنتان متشکریم!
+      unauthenticated: کاربر ناشناس نمی تواند رای دهد
+    destroy: 
+      flash_notice: رای شما با موفقیت لغو شد
+    model: 
+      messages: 
+        closed_question: نمی توانید به هیچ یک از پستهای مربوط به یک سوال بسته شده رای دهید
+        vote_down_comment: دادن رای منفی به نظرات ممکن نیست

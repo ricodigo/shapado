@@ -1,0 +1,35 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      page: 
+        css: شیوه‌نامه‌ها
+        js: جاوااسکریپت
+    models: 
+      page: صفحه
+      pages: صفحه‌ها
+  pages: 
+    actions: 
+      create_page: ایجاد صفحهٔ جدید
+      edit_page: ویرایش صفحه
+      title: عملیات
+    create: 
+      success: صفحه با موفقیت ایجاد شد
+    edit: 
+      title: ویرایش صفحه
+    form: 
+      language_tip: زبان صفحه
+      title_tip: "عنوان صفحه. از عنوان برای ارجاع به صفحه استفاده کنید. مثلا: [[FAQ|نگاهی به سوالات متداول بیندازید]]"
+    index: 
+      create_page: ایجاد صفحهٔ جدید
+      title: فهرست صفحه‌ها
+      written_in: نوشته شده در %{language}
+    new: 
+      title: صفحهٔ جدید
+    title: درستم کن
+    update: 
+      success: صفحه با موفقیت به روز شد.

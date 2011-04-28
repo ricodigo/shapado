@@ -1,0 +1,59 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  feeds: 
+    feed: Suapan
+    post_new_questions: Kirim soalan baru ke
+    question: Langgan soalan ini
+    questions: Langgan semua soalan
+    share_on_twitter: Twitter, Facebook dan banyak lagi ...
+    tag: Langgan tag
+    user: Langgan soalan pengguna
+  global: 
+    active: Hidupkan
+    anonymous: Tanpa nama
+    by: oleh
+    current: Kini
+    from: dari% {site}
+    group_not_found: Laman %{url} tak wujud
+    or: atau
+    permission_denied: Kebenaran ditolak
+    please_login: Sila log masuk
+    preview: Pralihat
+    previous: Sebelumnya
+    share: Kongsi
+  languages: 
+    any: Semua
+    user: Bahasa keutamaan saya
+  models: 
+    question: Soalan
+  number: 
+    x_time: 
+      one: "%{count} kali"
+      other: "%{count} kali"
+      zero: Tidak pernah
+  pagination: 
+    next: Berikutnya &raquo;
+    previous: "&laquo; Sebelumnya"
+  scaffold: 
+    add: Tambahkan
+    back: Kembali
+    cancel: Batalkan
+    close: Tutup
+    create: Cipta
+    destroy: Hapuskan
+    details: Butiran
+    edit: Sunting
+    more: Lagi ...
+    new: Tambahkan %{model} baru
+    post_as_anonymous: Kirim sebagai tanpa nama
+    save: Simpan
+    send: Hantar
+    show: Paparkan
+    sure: Adakah anda benar-benar ingin menghapuskan %{model} ini?
+    update: Kemas kini
+  time: 
+    ago: "%{time} yang lalu"
+    today: hari ini

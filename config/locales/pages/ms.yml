@@ -1,0 +1,29 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      page: 
+        css: Helaian gaya
+        js: JavaScript
+    models: 
+      page: Laman
+      pages: Laman
+  pages: 
+    actions: 
+      create_page: Cipta laman baru
+      edit_page: Sunting laman
+      title: Tindakan
+    create: 
+      success: Laman berjaya dicipta.
+    edit: 
+      title: Menyunting laman
+    form: 
+      language_tip: Bahasa laman
+      title_tip: "Tajuk laman. Gunakannya untuk merujukkan laman uni. Contoh: [[FAQ|rujuk soalan lazim]]"
+    index: 
+      create_page: Cipta laman baru
+      title: Senarai laman
+      written_in: Ditulis dalam %{language}

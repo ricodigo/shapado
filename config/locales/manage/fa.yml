@@ -1,0 +1,56 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  admin: 
+    manage: 
+      content: 
+        footer: پاصفحه
+        head: سرصفحه
+        question_help: راهنمای سوال
+        question_prompt: اعلان سوال
+        title: محتوای سفارشی
+        top_bar: نوار بالا
+        top_bar_tip: در هر خط یک لینک وارد کنید
+      properties: 
+        constrains: 
+          reputation_constrains_description: با استفاده از این فرم می توانید تنظیم کنید کاربران برای انجام هر کار چند امتیاز شهرت نیاز دارند
+          reputation_constrains_subtitle: فهرست امتیاز شهرت مورد نیاز برای انجام هر کار
+          title: نیازمندی‌ها
+        domain: 
+          description: "شما می توانید سایتتان را طوری پیکربندی کنید که با نام دامنه سفارشی خودتان قابل دسترس باشد. روش انجام این کار چنین است:"
+          instruction1: برای انجام این کار ابتدا باید وارد سایتی شوید که نام دامنه خود را از آن خریداری کرده اید. یک نام دامنه مثل %{subdomain}.com.
+          instruction2: باید به بخش DNS بروید و چیزی به نام CNAME بسازید.
+          instruction3: "\"www\" یا هر چیز دیگری را به عنوان نام CNAME خود انتخاب کنید."
+          instruction4: بعد در فیلد مقصد یا میزبان، نام دامنه شاپادو خود %{domain} را وارد کنید.
+          instruction5: هنگامی که این کار را انجام دادید بعد از حدود یک ساعت دامنه شما در www.%{subdomain} باید به %{appdomain} اشاره کند.
+          instruction6: هنگامی که این کار را انجام دادید، به این صفحه بازگردید و نام دامنه خود www.%{subdomain}را در فیلد زیر درج کنید و دکمهٔ «به روز رسانی» را بزنید. اگر سوالی دارید از ما در %{chat_url} بپرسید و یا به انجمنهای پشتیبانی بروید.
+          title: دامنه خود را تنظیم کنید.
+          warning: آیا اطمینان دارید می خواهید دامنه خود را تغییر دهید؟
+        general: 
+          title: ویژگی های گروه
+        rewards: 
+          reputation_rewards_description: این فرم به شما امکان می دهد تا چگونگی به دست آوردن و از دست دادن امتیازهای شهرت توسط کاربران، برای هر اقدامی که انجام می دهند را پیکربندی کنید.
+          reputation_rewards_subtitle: فهرست پاداشهای مربوط به شهرت
+          title: پاداشها
+        share: 
+          add_tags: به تویت هایتان برچسب اضافه کنید
+          application_id: شناسه برنامه
+          asking_from_twitter: پرسیدن سوالات از طریق twitter
+          ends_with_example: "مثلا #shapado"
+          facebook_app: تنظیمات facebook app
+          question_asked_to: سوال پرسیده شده است از
+          question_must_include: سوال باید دارای برچسب زیر باشد تا تویت شود
+          question_must_include_example: "مثلا #iAsk"
+          secret_key: کلید مخفی
+          starts_with_example: "مثلا #qa"
+          title: به اشتراک گذاشتن
+          title_on_dlvr: به اشتراک گذاشتن در divr.it
+          tweet_ends_with: افزودن یک برچسپ به توییت‌هایتان
+          tweet_starts_with: از پیش اضافه کردن یک برچسب به تویت هایتان
+          twitter_account: حساب تویتری که کاربرانتان سوالاتشان را از آن خواهند پرسید.
+        theme: 
+          logo_legend: یک آرم برای گروهتان آپ لود کنید. اندازه فایل باید کمتر از 2 مگابایت باشد
+          title: تنظیم کردن تم گروه

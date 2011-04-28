@@ -24,6 +24,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :find_languages
   before_filter :share_variables
+  before_filter :check_social
+
   layout :set_layout
 
   helper_method :recaptcha_tag
@@ -32,6 +34,14 @@ class ApplicationController < ActionController::Base
   rescue_from Mongoid::Errors::DocumentNotFound, :with => :render_404
 
   protected
+
+  def check_social
+    if logged_in? && current_group.is_social_only_signup? &&
+        !current_user.is_socially_connected?
+      redirect_to social_connect_path if params[:controller] == 'questions'
+    end
+  end
+
   def find_group
     @current_group ||= begin
       subdomains = request.subdomains

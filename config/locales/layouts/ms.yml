@@ -1,0 +1,51 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  layouts: 
+    application: 
+      ask_question: Tanyakan soalan
+      badges: Lencana
+      forgot: Lupa?
+      home: Laman utama
+      languages: Bahasa
+      log_in: Log masuk
+      logged: Log masuk sebagai %{login}
+      logout: Log keluar
+      manage_ads: Uruskan iklan
+      moderate: Kawal selia
+      now: sekarang!
+      openid: 
+        explaination: "Jika anda ingin mendaftar atau sekadar log masuk, sila pilih pembekal OpenID anda:"
+      pages: Laman
+      questions: Soalan
+      questions_in: Soalan dalam
+      questions_tagged: bertag
+      search: Cari
+      settings: Tetapan
+      signup: Daftar diri
+      subscribe: Langgan
+      tags: Tag
+      title: Soalan & Jawapan
+      unanswered: Tak terjawab
+      users: Pengguna
+      welcome_from: Selamat datang! Anda boleh
+    manage: 
+      actions: Tindakan
+      announcements: Pengumuman
+      constrains: Keperluan
+      content: Kandungan
+      dashboard: Papan Pemuka
+      domain: Domain
+      general: Umum
+      members: Ahli
+      pages: Laman
+      properties: Sifat
+      reputation: Reputasi
+      rewards: Ganjaran
+      stats: Statistik
+      theme: Tema
+      widgets: Widget
+    notifications: 
+      message: Jika anda tidak ingin menerima pemberitahuan automatik dari %{domain} lagi, tukar keutamaan anda di skirn pemberitahuan.

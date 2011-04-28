@@ -1,0 +1,24 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  mailers: 
+    notifications: 
+      earned_badge: 
+        subject: Anda telah meraih lencana di %{group}!
+      favorited: 
+        subject: "%{login} menggemari soalan anda!"
+      follow: 
+        subject: "%{login} kini mengikuti anda di %{app}"
+      give_advice: 
+        friend_subject: "Rakan anda memerlukan bantuan: %{question_title}"
+        subject: "Kami memerlukan nasihat anda: %{question_title}"
+      new_answer: 
+        subject_friend: Rakan anda, %{login} menjawab soalan %{title}
+        subject_other: "%{login} menjawab soalan %{title}"
+        subject_owner: "%{login} menjawab soalan anda, %{title}"
+      new_comment: 
+        subject: "%{login} mengulas %{group}"
+      report: 
+        subject: Laporan untuk kumpulan %{group} di %{app}

@@ -4,6 +4,7 @@ Shapado::Application.routes.draw do
              :controllers => {:registrations => 'users', :omniauth_callbacks => "multiauth/sessions"}) do
     match '/users/connect' => 'users#connect', :method => :post, :as => :connect
   end
+  match '/connect' => 'users#social_connect', :method => :get, :as => :social_connect
   match '/invitations/accept' => 'invitations#accept', :method => :get, :as => :accept_invitation
   match '/disconnect_twitter_group' => 'groups#disconnect_twitter_group', :method => :get
   match '/group_twitter_request_token' => 'groups#group_twitter_request_token', :method => :get

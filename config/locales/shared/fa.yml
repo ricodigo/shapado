@@ -1,0 +1,12 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  shared: 
+    current_tags: 
+      title: برچسب های انتخاب شده
+    topbar: 
+      admin: مدیر
+      logged_as: وارد شده به عنوان %{login}
+      user_page: صفحه من

@@ -33,7 +33,7 @@ class VotesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html{redirect_to params[:source]}
+      format.html{redirect_to params[:source]||root_path}
 
       format.js do
         if state != :error
@@ -60,23 +60,6 @@ class VotesController < ApplicationController
           render(:json => {:success => false, :message => flash[:error] }.to_json)
         end
       end
-    end
-  end
-
-  def destroy
-    @vote = Vote.find(params[:id])
-    voteable = @vote.voteable
-    value = @vote.value
-    if  @vote && current_user == @vote.user
-      @vote.destroy
-      if voteable.kind_of?(Question)
-        sweep_question(voteable)
-      end
-      voteable.remove_vote!(value, current_user)
-    end
-    respond_to do |format|
-      format.html { redirect_to params[:source] }
-      format.json  { head :ok }
     end
   end
 

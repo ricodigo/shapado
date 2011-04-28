@@ -1,0 +1,23 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  errors: 
+    forbidden: 
+      explanation: شما محق دسترسی به این صفحه را ندارید.
+      title: دستیابی منع شده است.
+    go_to: برو به صفحه %{link}
+    help_us_answer: به ما کمک کنید که به %{link} پاسخ دهیم
+    internal_error: 
+      explanation: ما متوجه این مشکل شده ایم و به زودی نگاهی به آن می‌اندازیم.
+      title: متاسفیم اما مشکلی پیش آمده.
+    not_found: 
+      explanation: ممکن است آدرس صفحه را اشتباه نوشته باشید یا آدرس صفحه تغییر کرده باشد.
+      title: صفحه یافت نشد
+    options_label: چند چیز دیگر برای امتحان کردن
+    search: جست و جو
+    unprocessable_entity: 
+      explanation: ممکن است سعی کرده باشید چیزی را تغییر دهید که حق دسترسی به آن را نداشتید.
+      title: تغییری که می‌خواستید اعمال کنید رد شد.

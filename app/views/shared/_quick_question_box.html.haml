@@ -1,18 +1,19 @@
-.quick_question
-  %h2
-    = raw(current_group.question_prompt) || t(".quick_question")
-  -@question = Question.new
-  =form_for(@question, :url => new_question_url, :html=>{:method => :get, :class => "form", :id => "ask_question"}) do |f|
-    -# TODO: refactor this
-    -lang = logged_in? ? current_user.main_language : nil
-    -lang = current_group.language ? current_group.language : lang
+- unless params[:controller] == 'questions' && params[:action] == 'new'
+  .quick_question
+    %h2
+      = raw(current_group.question_prompt) || t(".quick_question")
+    -@question = Question.new
+    =form_for(@question, :url => new_question_url, :html=>{:method => :get, :class => "form", :id => "ask_question"}) do |f|
+      -# TODO: refactor this
+      -lang = logged_in? ? current_user.main_language : nil
+      -lang = current_group.language ? current_group.language : lang
 
-    =f.text_field :title, :class => "text_area", :id => "question_title"
-    =f.submit t(".ask_question", :default => :"layouts.application.ask_question"), :class => "ask_question"
+      =f.text_field :title, :class => "text_area", :id => "question_title"
+      =f.submit t(".ask_question", :default => :"layouts.application.ask_question"), :class => "ask_question"
 
-    -if lang
-      = f.hidden_field :language, :value => lang
-    -else
-      = language_select(f, @question)
+      -if lang
+        = f.hidden_field :language, :value => lang
+      -else
+        = language_select(f, @question)
+      .clear
     .clear
-  .clear

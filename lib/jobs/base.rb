@@ -17,7 +17,7 @@ module Jobs
 
       badge = user.badges.create(opts.merge({:group_id => group.id}))
       if !badge.valid?
-        puts "Cannot create the #{badge.token} badge: #{badge.errors.full_messages}"
+        Rails.logger.info "Cannot create the #{badge.token} badge: #{badge.errors.full_messages}"
       else
         user.increment(:"membership_list.#{group.id}.#{badge.type}_badges_count" => 1)
         if badge.token == "editor"
@@ -26,7 +26,7 @@ module Jobs
       end
 
       if !badge.new_record?
-        puts ">> Created badge: #{badge.inspect}"
+        Rails.logger.info ">> Created badge: #{badge.inspect}"
         if !user.email.blank? && user.notification_opts.activities
           Notifier.earned_badge(user, group, badge).deliver
         end

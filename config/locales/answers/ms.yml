@@ -1,0 +1,29 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      answer: 
+        body: Isi
+        created_at: Dijawab
+        link: Pautan
+    models: 
+      answer: Jawapan
+      answers: Jawapan
+  answers: 
+    create: 
+      flash_error: "Ada yang tak kena dengan jawapan anda.\nIngat:\n- Jawapan yang kosong atau diulang tidak dibenarkan\n- Anda perlu menunggu 20 saat sebelum mengirim soalan lagi.\n- Anda hanya boleh mengirim satu jawapan untuk satu soalan."
+      flash_notice: Terima kasih!
+    edit: 
+      title: Sunting jawapan
+    form: 
+      answer_label: Jawab soalan
+      comment_label: Ulas jawapan ini
+      comment_submit: Ulas
+      submit: Jawab
+    revert: 
+      title: Batalkan jawapan
+    update: 
+      flash_notice: Jawapan berjaya dikemas kini.

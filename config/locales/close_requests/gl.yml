@@ -1,6 +1,6 @@
 # Messages for Galician (Galego)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Toliño
 gl: 
   close_requests: 
@@ -24,7 +24,7 @@ gl:
       attributes: 
         comment: comentario
         reason: motivo
-        user: usuario
+        user: Usuario
       messages: 
         already_requested: xa solicitou o peche desta pregunta
       name: solicitude de peche

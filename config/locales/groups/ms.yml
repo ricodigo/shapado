@@ -1,0 +1,73 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      group: 
+        default_tags: Tag sediaan
+        description: Keterangan
+        domain: Domain
+        enable_latex: Hidupkan LaTeX
+        fb_button: Hidupkan butang Facebook Like (tidak mesra privasi)
+        forum: Benarkan pengguna mengemukakan lebih daripada satu jawapan
+        group_created_by: dicipta oleh
+        language: Bahasa
+        legend: Petunjuk
+        logo: Logo
+        may_contain_adult_content: Tapak ini mungkin mengandungi kandungan dewasa
+        name: Nama
+        openid_only: Hanya yang menggunakan OpenID boleh mencapai tapak ini
+        owner: Kumpulan ini dicipta oleh %{login}
+        registered_only: Hanya yang berdaftar yang boleh mencapai tapak ini
+        state: Negara
+        subdomain: URL
+        wysiwyg_editor: Hidupkan alat sunting mesra pengguna
+    models: 
+      default_tags_message: Anda tidak boleh mempunyai lebih daripada 10 tag sediaan
+      group: Kumpulan
+      groups: Kumpulan
+  groups: 
+    create: 
+      flash_notice: Kumpulan anda berjaya dicipta. Anda boleh mulai menentukan tatarajahnya.
+    form: 
+      access: Tetapan Capaian
+      analytics_engine: Enjin analitis
+      analytics_legend: Kumpulan ini akan dapat menggunakan kod penjejakan sendiri
+      any_language: Semua
+      custom_analytics: Benarkan analitis peribadi
+      custom_html: Benarkan HTML tersuai
+      custom_js: Benarkan JavaScript tersuai
+      default_tags_legend: Pisahkan tag dengan tanda koma. Hanya 10 tag sediaan dibenarkan.
+      description_legend: Anda perlu memperihalkan kumpulan dengan tidak lebih 400 aksara.
+      isolate_group: Pencilkan kumpulan ini daripada kumpulan-kumpulan lain
+      legend_legend: Ini akan digunakan sebagai pengatas (header). Anda ada 40 aksara.
+      logo_legend: Anda boleh memuat naik logo kumpulan, asalkan saiz fail tidak melebihi 2MB.
+      members_only: Ahli-ahli kumpulan sahaja yang boleh mencapai kumpulan ini
+      website_analytics_id: ID Analitis Tapak Web
+    group: 
+      about: Tentang
+      accept_group: Terima kumpulan ini
+      allow_ads: Benarkan iklan
+      close: Tutup
+      close_group: Tutup kumpulan ini
+      disallow_ads: Larang iklan
+    index: 
+      actives: Aktif
+      filter: Cari kumpulan
+      most_active: Paling aktif
+      name: Nama
+      pendings: Menunggu
+      request_group: Pohon kumpulan baru
+      title: Kumpulan
+    new: 
+      title: Buka kumpulan anda
+    show: 
+      accept_group: Terima kumpulan ini
+      accept_group_with_custom_ads: Terima kumpulan dan benarkan iklan tempahan
+      close_group: Tutup kumpulan ini
+      group_awaiting_acceptance: Kumpulan ini menunggu penerimaan pengawal selia.
+      group_closed: Kumpulan ini ditutup.
+      title: Tentang %{name}
+      visit_group: Kunjungi kumpulan ini

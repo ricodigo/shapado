@@ -1,0 +1,10 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  imports: 
+    subtabs: 
+      need_confirmation: 
+        name: Pengesahan diperlukan
+        title: Hantar e-mel pengesahan

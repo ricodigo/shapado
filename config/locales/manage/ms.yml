@@ -1,0 +1,54 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  admin: 
+    manage: 
+      content: 
+        footer: Pembawah
+        head: pengatas
+        question_help: Bantuan pertanyaan
+        question_prompt: Prompt soalan
+        title: Kandungan tempahan
+        top_bar: Bar atas
+        top_bar_tip: Isikan satu pautan segaris
+      properties: 
+        constrains: 
+          reputation_constrains_description: Borang ini membolehkan anda menataletak keperluan mata reputasi pengguna untuk melakukan tindakan tertentu
+          reputation_constrains_subtitle: Senarai keperluan reputasi untuk setiap tindakan
+          title: Keperluan
+        domain: 
+          description: "Anda boleh memetakan tapak anda supaya ia boleh dicapai melalui domain tempahan anda sendiri. Inilah caranya:"
+          instruction1: Untuk berbuat demikian, mula-mula anda perlu log masuk ke dalam penyedia domain anda, iaitu tempat anda membeli domain anda seperti %{subdomain}.com.
+          instruction2: Di situ, anda perlu pergi ke bahagian DNS dan membuat sesuatu yang dipanggil CNAME.
+          instruction3: Pilih 'www' atau apa sahaja sebagai nama CNAME anda.
+          instruction4: "Kemudian, dalam ruangan hos atau destinasi, nyatakan domain Shapado anda sekarang: %{domain}."
+          instruction5: Sebaik sahaja ini selesai, selepas lebih kurang sejam, domain anda www.%{subdomain} sewajarnya menghala ke %{appdomain}.
+          instruction6: Selepas itu, kembali ke sini dan taipkan nama domain anda, www.%{subdomain} dalam ruangan di bawah, kemudian tekan butang 'kemas kini. Jika anda ada apa-apa soalan, tanya kami di %{chat_url} ataupun forum bantuan kami.
+          title: Setkan domain anda
+          warning: Adakah anda benar-benar ingin menukar domain anda?
+        general: 
+          title: Sifat kumpulan
+        rewards: 
+          reputation_rewards_description: Borang ini membolehkan anda menatarajah naik turun mata reputasi pengguna atas tindakan-tindakan tertentu
+          reputation_rewards_subtitle: Senarai ganjaran reputasi
+          title: Ganjaran
+        share: 
+          add_tags: Lampirkan tag pada tweet anda
+          application_id: ID Aplikasi
+          asking_from_twitter: Menanyakan soalan dari Twitter
+          ends_with_example: "cth. #shapado"
+          facebook_app: Tetapan aplikasi Facebook
+          question_asked_to: Soalan Ditanyakan Kepada
+          question_must_include: Soalan mestilah ada tag yang berikut untuk ditweetkan
+          question_must_include_example: "cth. #iAsk"
+          secret_key: Kunci Rahsia
+          starts_with_example: "cth. #qa"
+          title: Kongsi
+          title_on_dlvr: Kongsikan di dlvr.it
+          tweet_ends_with: Tambahkan tag pada tweet anda
+          twitter_account: Akaun Twitter yang ditujui oleh soalan pengguna anda.
+        theme: 
+          logo_legend: Muat naik logo kumpulan anda, asalkan tidak melebihi 2MB.
+          title: Setkan tema kumpulan

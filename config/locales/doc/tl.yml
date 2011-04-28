@@ -1,0 +1,37 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  doc: 
+    chat: 
+      title: Pantangkilik ng Satsatan
+    plans: 
+      15millions: 15 milyong mga pagtanaw sa pahina bawat buwan
+      1million: 1 milyong mga pagtanaw sa pahina bawat buwan
+      247_all_support: Pagtangkilik na nakabatay sa web, e-liham, satsatan at telepono sa loob ng 24 na mga oras sa loob ng 7 mga araw
+      5millions: 5 milyong mga pagtanaw sa pahina bawat buwan
+      all_support: Pagtangkilik na nakabatay sa web, e-liham, satsatan at telepono
+      basic_restrictions: Walang pasadyang mga patalastas at walang buong maipapasadyang UI
+      beta_info: Sa ngayon ang lahat ng mga sityo ay malaya at lahat ng mga sityo ay nakikinabang mula sa kaparehong mga mapagpipilian sa planong Optimum, maliban na lamang sa suporta na tanging nakabatay sa web, e-liham at satsatan lamang.
+      big_sites: Malalaking mga lugar ng trapiko
+      custom_ads: Gamitin ang sarili mong mga patalastas
+      custom_analytics: Estadistika ng trapiko
+      custom_domain: Pasadyang nasasakupan
+      custom_themes: Gamitin ang aming paunang-nagawang pinasadyang mga tema
+      custom_ui: Buong mapapasadyang UI
+      free_plan: planong malaya
+      getting_popular: Nagiging tanyag
+      huge_sites: Dambuhalang mga sityo ng trapiko
+      month: buwan
+      page_views: Para sa Maliit/Pribadong mga sityo
+      plans: Mga plano
+      private_site: Paganahin ang pagpuntang pribado/pangmadla
+      small_private: Maliit/Pribadong mga sityo
+      start_monetizing: simulan ang pagtatalaga bilang salaping bayarin
+      support: Tangkilikin
+      title: Mga balak at mga halaga
+      unlimited: Walang hangganang trapiko bawat buwan
+      we_offer: Nag-aalok rin kami ng isang
+      web_support: Pagtangkilik na nakabatay sa web
+      with_unlimited: may trapikong walang paghahangga na walang pasadyang mga patalastas o pasadyang nasasakupan.

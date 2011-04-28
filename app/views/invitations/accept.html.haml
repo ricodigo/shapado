@@ -1,5 +1,5 @@
 .invitation-container
-  - if !logged_in?
+  - if @invitation.state?(:pending)
     %h1= t('.welcome')
     %h2
       = t('.description', :group => @group.name)
@@ -31,7 +31,7 @@
           = render "shared/login_drop_down"
     %h1
       = t('.create_account')
-  - elsif params[:step] == "2"
+  - elsif @invitation.state?(:connect)
     - form_for current_user, :html => {:class => "form", :multipart => true} do |f|
       .field
         = f.label :name, t(:name, :scope => "activerecord.attributes.user"), :class => "label"
@@ -48,27 +48,17 @@
       .field
         = label :final_step, t('.final_step')
         = hidden_field_tag 'invitation_id', @invitation.id
-        = hidden_field_tag 'next_step', 3
+        = hidden_field_tag 'next_step', 'confirm'
       .form-options
         .buttons
           = submit_tag t('.create_account_step2'), :class => "save"
-  - elsif params[:step] == "3"
-    %h1
-      = t('.find_friends')
-    #twitter-and-facebook
-      .find_friends
-        = link_to t('.find_friends_facebook'), '/users/auth/facebook', :class => 'auth-provider', :id => 'facebook_auth' unless current_user.facebook_login?
-        = link_to t('.find_friends_twitter'), '/users/auth/twitter', :class => 'auth-provider', :id => 'twitter_auth' unless current_user.twitter_login?
-      .find_friends
-        = link_to t('.find_friends_linked_in'),'/users/auth/linkedin', :class => 'auth-provider', :id => 'linked_in_auth' unless current_user.linked_in_login?
-        = link_to t('.find_friends_identica'),'/users/auth/identica', :class => 'auth-provider', :id => 'identica_auth' unless current_user.identica_login?
-
-
-    = link_to t('global.next_button'), "?step=4&id=#{params[:id]}"
-  - elsif params[:step] == "4"
+  - elsif @invitation.state?(:confirm)
+    = render :partial => "shared/social_connect"
+    = link_to t('global.next_button'), "?step=find_friends&id=#{params[:id]}"
+  - elsif @invitation.state?(:find_friends)
     %h1
       = t('.follow_things')
     = t('.follow_things_description')
     = render :partial => "shared/suggestions", :locals => {:limit => 10, :no_title => true}
-    = link_to 'Done!', '/'
+    = link_to 'Done!', "?step=follow_suggestions&id=#{params[:id]}"
 

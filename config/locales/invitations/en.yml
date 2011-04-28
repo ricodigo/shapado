@@ -16,7 +16,7 @@ en:
       other_social_options: 'You can also use %{linkedin} and %{identica}.'
       final_step: Final step (2 of 2)
       create_account_step2: Create Account
-      find_friends: "Find friends on:"
+      find_friends: "Find friends and connect:"
       find_friends_facebook: Find friends on Facebook
       find_friends_twitter: Find friends on Twitter
       find_friends_linked_in: Find friends on LinkedIn

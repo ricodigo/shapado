@@ -1,0 +1,38 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  doc: 
+    chat: 
+      title: پشتیبانی با چت
+    plans: 
+      15millions: ۱۵ میلیون بازدید صفحه/ماه
+      1million: ۱ میلیون بازدید صفحه/ماه
+      247_all_support: پشتیبانی ۷/۲۴ بر پایه وب، ایمیل، چت و تلفن
+      5millions: ۵ میلیون بازدید صفحه/ماه
+      all_support: پشتیبانی بر پایه وب، ایمیل، چت و تلفنی
+      basic_restrictions: بدون تبلیغات سفارشی و بدون رابط کاربر کاملا سفارشی
+      beta_info: فعلاً همه سایت‌ها رایگان بوده و از امکانات طرح بهینه بهره می‌برند به غیر از پشتیبانی که از طریق وب، ایمیل و چت صورت می‌گیرد.
+      big_sites: سایت‌های با ترافیک بالا
+      custom_ads: از تبلیغات خودتان استفاده کنید.
+      custom_analytics: آمار ترافیک
+      custom_domain: دامنه سفارشی
+      custom_themes: از از تم‌های پیش ساخته ما استفاده می‌کند.
+      custom_ui: رابط کاربر کاملا سفارشی
+      free_plan: طرح رایگان
+      getting_popular: محبوب شدن
+      huge_sites: سایتهای با ترافیک کلان
+      month: ماه
+      page_views: برای سایتهای کوچک/خصوصی
+      plans: طرحها
+      private_site: فعال بودن دسترسی خصوصی/عمومی
+      small_private: سایتهای کوچک/خصوصی
+      start_monetizing: آغاز سودآور کردن
+      support: پشتیبانی
+      title: طرحها و قیمتها
+      unlimited: ترافیک نامحدود برای همه ماهها
+      we_offer: ما همچنین یک پیشنهاد دیگر هم ارایه می‌دهیم
+      web_support: پشتیبانی بر پایه وب
+      with_unlimited: با ترافیک نا محدود و بدون تبلیغات سفارشی و دامنه سفارشی

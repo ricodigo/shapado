@@ -1,6 +1,6 @@
 # Messages for Tagalog (Tagalog)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: AnakngAraw
 tl: 
   shared: 
@@ -8,5 +8,5 @@ tl:
       title: napiling mga tatak
     topbar: 
       admin: tagapangasiwa
-      logged_as: nakalagda bilang %{login}
+      logged_as: Nakalagda bilang %{login}
       user_page: pahina ko

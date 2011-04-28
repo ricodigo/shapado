@@ -1,0 +1,15 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  sessions: 
+    destroy: 
+      flash_notice: Anda telah log keluar.
+    new: 
+      log_in: Log masuk
+      sign_in: Daftar masuk
+      signup: Daftar diri
+      with_facebook: Daftar masuk dengan Facebook
+      with_openid: Log masuk dengan OpenID
+      with_twitter: Daftar masuk dengan Twitter

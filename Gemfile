@@ -63,6 +63,8 @@ gem 'devise', "~> 1.2.1"
 gem 'whenever', :require => false
 gem 'rack-ssl', :require => false
 
+gem 'state_machine', "0.10.4"
+
 group :scripts do
   gem 'eventmachine', '~> 0.12.10'
   gem 'em-websocket', '~> 0.1.4'

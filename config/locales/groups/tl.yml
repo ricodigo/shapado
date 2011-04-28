@@ -1,0 +1,73 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  activerecord: 
+    attributes: 
+      group: 
+        default_tags: Likas na nakatakdang mga tatak
+        description: Paglalarawan
+        domain: Nasasakupan
+        enable_latex: Paganahin ang TeX
+        fb_button: Paganahin ang pindutan ng Nagustuhan ng Facebook (hindi maginhawa para sa pagsasarilinan)
+        forum: Payagan ang mahigit sa isang sagot ng tagagamit
+        group_created_by: nilikha ni
+        language: Wika
+        legend: Alamat
+        logo: Logo
+        may_contain_adult_content: Ang lugar na ito ay maaaring naglalaman ng nilalamang hindi pambata
+        name: Pangalan
+        openid_only: Tanging mga taong gumagamit lamang ng OpenID ang makakapunta sa sityo
+        owner: Ang pangkat na ito ay nilikha ni %{login}
+        registered_only: Tanging mga taong nakapagpatala lamang ang maaaring makapunta sa sityo
+        state: Estado
+        subdomain: URL
+        wysiwyg_editor: Paganahin ang patnugot na maginhawa para sa tagagamit
+    models: 
+      default_tags_message: Hindik ka maaaring magkaroon ng mahigit kaysa 10 likas na nakatakdang mga tatak
+      group: Pangkat
+      groups: Mga pangkat
+  groups: 
+    create: 
+      flash_notice: Matagumpay na nalikha ang pangkat mo.  Maaari mo na ngayong simulan ang pagsasaayos nito.
+    form: 
+      access: Mga Katakdaan sa Pagpunta
+      analytics_engine: Makina ng mahimaymay na pagsusuri
+      analytics_legend: Ang pangkat ay maaaring makagamit ng sarili nitong kodigo ng pagsubaybay
+      any_language: Kahin alin
+      custom_analytics: Pahintulutan ang pasadyang mga paghihimay
+      custom_html: Payagan ang pasadyang HTML
+      custom_js: Payagan ang pasadyang JavaScript
+      default_tags_legend: Paghiwalayin ang mga tatak sa pamamagitan ng mga kuwit.  Tanging 10 likas na nakatakdang mga tatak lang ang pinapayagan.
+      description_legend: Mayroon kang 400 mga panitik upang ilarawan ang pangkat.
+      isolate_group: Ibukod ang pangkat mula sa ibang mga pangkat
+      legend_legend: Gagamitin ito sa loob ng paulo.  Mayroon kang 40 mga panitik.
+      logo_legend: Maikakarga mong papaitaas ang logo ng pangkat.  Ang pinakamataas na sukat ng talaksan ay 2MB.
+      members_only: Tanging mga kasapi lamang ng pangkat ang maaaring makapunta sa pangkat na ito
+      website_analytics_id: ID ng Panghimaymay ng Websayt
+    group: 
+      about: Patungkol
+      accept_group: Tanggapin ang pangkat na ito
+      allow_ads: Pahintulutan ang mga patalastas
+      close: Isara
+      close_group: Isara ang pangkat na ito
+      disallow_ads: Huwag pahintulutan ang mga patalastas
+    index: 
+      actives: Masigla
+      filter: Maghanap ng mga pangkat
+      most_active: Pinaka masigla
+      name: Pangalan
+      pendings: Nakabinbin
+      request_group: Humiling ng isang bagong pangkat
+      title: Mga pangkat
+    new: 
+      title: Likhain ang pangkat mo
+    show: 
+      accept_group: Tanggapin ang pangkat na ito
+      accept_group_with_custom_ads: Tanggapin ang pangkat at pahintulutan ang pasadyang mga patalastas
+      close_group: Isara ang pangkat na ito
+      group_awaiting_acceptance: Ang pangkat na ito ay naghihintay ng pagtanggap ng isang tagapamagitan.
+      group_closed: Naisara na ang pangkat na ito.
+      title: Patungkol sa %{name}
+      visit_group: Dalawin ang pangkat na ito

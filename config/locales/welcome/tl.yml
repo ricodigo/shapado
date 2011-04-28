@@ -1,0 +1,59 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  welcome: 
+    confirm_age: 
+      notice: Maaari ka lamang pumasok sa pahinang ito kapag nasa gulang ka nang hindi bababa sa 18 mga taong gulang, o hindi bababa sa gulang ng kahustuhan sa loob ng nasasakupan ng batas kung saan ka naninirahan o magmula kung saan mo pinupuntahan ang pahinang ito.
+      over_18: Lampas na ako sa 18 taong gulang
+      under_18: Hindi pa ako 18 taong gulang
+      warning: "BABALA: Ang pahinang ito ay maaaring maglaman ng mga sangkap na tahasang para sa taong may sapat na gulang lamang."
+    facts: 
+      features: 
+        cols: 
+          adaptable: maaaring ilapat
+          foss: pinagmulang malaya/bukas
+          joel: magagawa ko bang mas mayaman pa si Joel?
+          multilanguage: maramihang wika
+          multitopic: maramihang paksa
+        shapado: 
+          adaptable: oo!
+          foss: oo!
+          joel: hindi :/
+          multilanguage: oo!
+          multitopic: oo!
+        stackexchange: 
+          adaptable: hindi
+          foss: hindi
+          joel: oo!
+          multilanguage: hindi
+          multitopic: hindi
+      prices: 
+        cols: 
+          onsite: sa sityo
+        shapado: 
+          large: marahil katulad ng $500
+          medium: <=== ganoon din
+          onsite: marahil ay $0 sa sarili mong tagapaghain
+          small: marahil katulad ng $50 hanggang $100 bawat buwan sa karamihan ng mga tagapagbigay ng pagpapasinaya
+        stackexchange: 
+          large: $1299 bawat buwan
+          medium: $999 bawat buwan
+          onsite: $2500 bawat buwan
+          small: $129 bawat buwan
+    feedback: 
+      captcha_error: Mangyaring lutasin ang isang payak na gawaing pangmatematika
+      email_description: Mangyaring ibigay ang iyong tirahan ng e-liham upang masagot namin ang mensahe mo
+      feedback_description: Paglalarawan
+      feedback_title: Pamagat
+      title: Ipadala ang iyong puna
+    index: 
+      active: Masigla
+      browse_all_or_by_tags: Tingnan ang %{full_list_of_questions} o %{browse_by_tags}
+      browse_by_tags: tumingin-tingin ayon sa mga tatak
+      create_own_site: Walang babayarang lumikha ng sarili mong sityo ng Tanong at Sagot sa loob ng 8 mga segundo
+      full_list_of_questions: buong talaan ng mga katanungan
+      hot: Mainit
+      quick_question: Magtanong ng isang katanungan, maghahanap kami ng isang taong sasagot
+      recent_questions: Kamakailang mga katanungan

@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   before_filter :find_user, :only => [:show, :answers, :follows, :activity]
   tabs :default => :users
 
+  before_filter :check_signup_type, :only => [:new]
+
   subtabs :index => [[:reputation, "reputation"],
                      [:newest, %w(created_at desc)],
                      [:oldest, %w(created_at asc)],
@@ -72,8 +74,10 @@ class UsersController < ApplicationController
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset session
-     # sweep_new_users(current_group)
-    #  @user.accept_invitation(params[:invitation_id]) if params[:invitation_id]
+      sweep_new_users(current_group)
+      @user.accept_invitation(params[:invitation_id]) if params[:invitation_id]
+      @invitation = Invitation.find(params[:invitation_id])
+      @invitation.confirm if @invitation
       flash[:notice] = t("flash_notice", :scope => "users.create")
       sign_in_and_redirect(:user, @user) # !! now logged in
     else
@@ -170,14 +174,11 @@ class UsersController < ApplicationController
       if params[:user][:avatar]
         Jobs::Images.async.generate_user_thumbnails(@user.id).commit!
       end
-      @user.add_preferred_tags(preferred_tags, current_respond_to do |wants|
-        wants.html do
-          group
-        end
-        wants.js {  }
-      end) if preferred_tags
+      @user.add_preferred_tags(preferred_tags, current_group) if preferred_tags
       if params[:next_step]
         current_user.accept_invitation(params[:invitation_id])
+        @invitation = Invitation.find(params[:invitation_id])
+        @invitation.confirm if @invitation
         redirect_to accept_invitation_path(:step => params[:next_step], :id => params[:invitation_id])
       else
         redirect_to root_path
@@ -337,7 +338,17 @@ class UsersController < ApplicationController
     head :status => 404
   end
 
+  def social_connect
+  end
+
   protected
+  def check_signup_type
+    if current_group.is_social_only_signup? ||
+        current_group.is_email_only_signup?
+      redirect_to '/'
+    end
+  end
+
   def active_subtab(param)
     key = params.fetch(param, "votes")
     order = "votes_average desc, created_at desc"
