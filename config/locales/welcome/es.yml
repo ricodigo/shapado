@@ -1,6 +1,7 @@
 # Messages for Spanish (Español)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
+# Author: Od1n
 # Author: Patcito
 es: 
   welcome: 
@@ -46,7 +47,7 @@ es:
       captcha_error: Por favor, resuelve una simple operación matemática
       email_description: Por favor, provee tu correo electrónico para poder responder tu inquietud
       feedback_description: Descripción
-      feedback_title: Titulo
+      feedback_title: Título
       title: Envía tu sugerencia
     index: 
       active: Activas

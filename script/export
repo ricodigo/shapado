@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
+require 'rubygems'
+require 'zip/zipfilesystem'
+require 'fileutils'
 
 options = {}
 optparser = OptionParser.new do |opts|
@@ -28,33 +31,30 @@ rescue => e
   exit 0
 end
 
-require File.dirname(__FILE__)+'/../config/environment'
+require File.expand_path('../../config/environment', __FILE__)
 
-group = Group.find(args.first) || Group.find_by_subdomain(args.first)
+group = Group.find(args.first) || Group.where(:subdomain => args.first).first
 exporter = Export.new(group)
 time = Time.now
 
-if options[:method] == :zip
-  require 'zip/zipfilesystem'
-  require 'ftools'
+exclude = [:_keywords, :salt, :remember_token_expires_at, :crypted_password, :encrypted_password, :ip, :email, :default_subtab, :admin]
 
+if options[:method] == :zip
   filename = "#{group.subdomain}.zip"
   File.unlink(filename) if File.exist?(filename)
   Zip::ZipFile.open(filename, Zip::ZipFile::CREATE) do |zf|
     zf.dir.mkdir(group.subdomain)
     zf.dir.chdir(group.subdomain)
 
+    exporter.to_zip(group, zf)
     exporter.to_zip(Question, zf)
     exporter.to_zip(Answer, zf)
-    exporter.to_zip(Comment, zf)
-    exporter.to_zip(Vote, zf, :except => [:_keywords, :user_ip])
     exporter.to_zip(Badge, zf)
-    exporter.to_zip(Member, zf)
     exporter.to_zip(Ad, zf)
-    exporter.to_zip(Favorite, zf)
-    exporter.to_zip(Widget, zf)
-    exporter.to_zip(User, zf, :selector => {"reputation.#{group.id}" => {:$exists => true}},
-                           :except => [:_keywords, :salt, :remember_token_expires_at, :crypted_password, :ip, :identity_url, :email, :default_subtab, :admin])
+    exporter.to_zip(User, zf, :selector => {:"membership_list.#{group.id}" => {:$exists => true}},
+                           :except => exclude)
+    friend_list_ids = group.members.only(:friend_list_id).map(&:friend_list_id)
+    exporter.to_file(FriendList, :selector => {:_id.in => friend_list_ids})
   end
 else
   FileUtils.mkpath(group.subdomain)
@@ -62,17 +62,15 @@ else
 
   $stderr.puts "Created #{File.expand_path(Dir.getwd)}"
 
+  exporter.to_file(group)
   exporter.to_file(Question)
   exporter.to_file(Answer)
-  exporter.to_file(Comment)
-  exporter.to_file(Vote, :except => [:_keywords, :user_ip])
   exporter.to_file(Badge)
-  exporter.to_file(Member)
   exporter.to_file(Ad)
-  exporter.to_file(Favorite)
-  exporter.to_file(Widget)
-  exporter.to_file(User, :selector => {"reputation.#{group.id}" => {:$exists => true}},
-                         :except => [:_keywords, :salt, :remember_token_expires_at, :crypted_password, :ip, :identity_url, :email, :default_subtab, :admin])
+  exporter.to_file(User, :selector => {"membership_list.#{group.id}" => {:$exists => true}},
+                         :except => exclude)
+  friend_list_ids = group.members.map(&:friend_list_id)
+  exporter.to_file(FriendList, :selector => {:_id.in => friend_list_ids})
 end
 
 time = Time.now - time

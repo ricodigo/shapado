@@ -1,0 +1,44 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  notifier: 
+    earned_badge: 
+      message1: شما یک نشان %{badge} در %{app} به دست آورده اید
+      message2: توضیح نشان
+      message3: شما می توانید تمام نشانهایتان را در صفحه %{user_page} ببینید.
+    favorited: 
+      message1: "%{user} در گروه %{group} سوال شما را به سوالات محبوب اضافه کرد"
+      message2: متن سوالتان
+      message3: "می توانید این جا ببینیدش:"
+    follow: 
+      message1: "%{user} سوالات و جوابهای شما در %{app} را دنبال می کند."
+      message2: با کلیک کردن روی دکمه «دنبال کردن» در صفحهٔ %{user_page} می‌توانید او را دنبال کنید.
+    give_advice: 
+      message1: "%{user} سوالی پرسیده که شما ممکن است بتوانید به آن پاسخ دهید:"
+      message2: "برای پاسخ دادن کافی است همین جا به این پیغام جواب دهید:"
+      message3: یا اگر کسی را می شناسید که ممکن است جواب سوال را بداند این لینک ارجاع را برایش بفرستید.
+      message4: اگر به زودی پاسخی از شما دریافت نکنیم، از کس دیگری خواهیم پرسید. همچنان شما می توانید در هر زمانی به سوال جواب دهید.
+    global: 
+      hi: سلام %{user}،
+      user_page: صفحهٔ کاربر
+    new_answer: 
+      message: "%{user} به سوال %{question} پاسخ %{new_answer} را داده است"
+    new_comment: 
+      message: "%{user} برای سوال %{question} نظر %{new_comment} را داده است."
+    new_feedback: 
+      message1: کاربر %{user} <%{email}> یک فیدبک ارسال کرده
+      message2: کاربر ناشناس از آدرس %{ip} یک فید بک ارسال کرده است
+      message3: "آدرس ایمیل: %{email}"
+      message4: "موضوع: %{subject}"
+    report: 
+      message1: گزارش گروه %{group}
+      message2: از تاریخ %{date}
+      message3: "%{questions} سوال پرسیده شده است"
+      message4: "%{answers} جاسخ داده شده است"
+      message5: "%{votes} رای داده شده است"
+      message6: نشانهای %{badges} اهدا شده اند
+      message7: حساب %{users} کاربر دارد.
+      message8: از گروهتان در %{link} دیدن کنید

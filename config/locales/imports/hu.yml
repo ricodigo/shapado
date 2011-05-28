@@ -1,0 +1,10 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  imports: 
+    subtabs: 
+      need_confirmation: 
+        name: Megerősítés szükséges
+        title: Megerősítő emailek küldése

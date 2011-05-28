@@ -1,0 +1,33 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  close_requests: 
+    create: 
+      flash_notice: درخواست بستن با موفقیت ساخته شد
+    destroy: 
+      flash_notice: درخواست بستن با موفقیت حذف شد
+    edit: 
+      title: ویرایش درخواست بستن
+    form: 
+      close_with_reason: بستن این سوال بدین دلیل
+      dupe: تکراری
+      no_question: این یک سوال نیست
+      not_relevant: نامربوط
+      ot: خارج از موضوع
+      request_closing_details: درخواست بستن این سوال
+      spam: هرزنامه
+    index: 
+      title: لیست درخواستهای بستن
+    model: 
+      attributes: 
+        comment: نظر
+        reason: دلیل
+        user: کاربر
+      messages: 
+        already_requested: شما قبلا درخواست بستن این سوال را داده اید
+      name: درخواست بستن
+      prural_name: درخواستهای بستن
+    update: 
+      flash_notice: درخواست بستن با موفقیت به روز شد

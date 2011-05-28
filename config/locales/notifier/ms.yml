@@ -1,0 +1,43 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  notifier: 
+    earned_badge: 
+      message1: Anda telah meraih lencana %{badge} di %{app}
+      message2: "Keterangan lencana:"
+      message3: Anda boleh melihat semua lencana anda di %{user_page} anda
+    favorited: 
+      message1: "%{user} menggemari soalan anda di %{group}"
+      message2: "Teks soalan anda:"
+      message3: Anda boleh lihat di sini;
+    follow: 
+      message1: "%{user} kini mengikuti soal jawab anda di %{app}"
+      message2: Anda boleh mengikutinya juga dengan mengklik butang "Ikut" di  %{user_page}nya
+    give_advice: 
+      message1: "%{user} baru menanyakan soalan yang mungkin anda boleh jawab:"
+      message2: "Untuk menjawab, sila balas pesanan ini di sini:"
+      message3: "Ataupun, jika anda kenal sesiapa yang mungkin boleh menjawabnya, sila hantar pautan rujukan ini kepada mereka:"
+      message4: Jika kami tidak menerima jawapan anda secepat mungkin, kami akan menanya orang lain. Anda masih boleh menjawabnya pada bila-bila masa.
+    global: 
+      hi: Hai %{user},
+      user_page: laman pengguna
+    new_answer: 
+      message: "%{user} menjawab %{new_answer} pada soalan %{question}"
+    new_comment: 
+      message: "%{user} mengulas %{new_comment} pada soalan %{question}"
+    new_feedback: 
+      message1: Pengguna %{user} <%{email}> menghantar maklumbalas
+      message2: Seorang pengguna tanpa nama menghantar maklumbalas dari alamat IP %{ip}
+      message3: "Alamat e-mel: %{email}"
+      message4: "Subjek: %{subject}"
+    report: 
+      message1: Laporan untuk kumpulan %{group}
+      message2: Sejak %{date}
+      message3: "%{questions} soalan dibuka"
+      message4: "%{answers} jawapan dituliskan"
+      message5: "%{votes} undian dibuat"
+      message6: "%{badges} lencana dianugerahkan"
+      message7: Akaun ini mempunyai %{users} pengguna.
+      message8: Kunjungi kumpulan anda di %{link}

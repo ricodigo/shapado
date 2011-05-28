@@ -1,0 +1,20 @@
+# Messages for Hawaiian (Hawai`i)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Kolonahe
+haw: 
+  activerecord: 
+    attributes: 
+      announcement: 
+        ends_at: Hoʻopau ma
+        message: Memo
+        only_anonymous: No nā mea hoʻohana ʻike inoa ʻole wale nō
+        starts_at: Hoʻomaka ma
+  announcements: 
+    actions: 
+      delete: Kāpae
+      title: Hana
+    create: 
+      success: Ua hana pono ʻia ka hoʻolaha nū hou.
+    index: 
+      title: Hoʻolaha nū hou

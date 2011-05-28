@@ -1,0 +1,25 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    models: 
+      vote: Undi
+      votes: Undian
+  votes: 
+    control: 
+      have_voted_down: Klik untuk menarik balik undian tak setuju anda
+      have_voted_up: Klik untuk menarik balik undian setuju anda
+      to_vote_down: Klik untuk mengundi tak setuju
+      to_vote_up: Klik untuk mengundi setuju
+    create: 
+      flash_error: Anda tidak boleh mengundi di sini
+      flash_notice: Terima kasih kerana mengundi!
+      unauthenticated: Pengguna tanpa nama tidak boleh mengundi
+    destroy: 
+      flash_notice: Undian anda berjaya ditarik balik.
+    model: 
+      messages: 
+        closed_question: Anda tidak boleh mengundi mana-mana kiriman yang tergolong dalam soalan yang tertutup
+        vote_down_comment: Ulasan tidak boleh diundi tak setuju

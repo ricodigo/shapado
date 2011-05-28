@@ -1,6 +1,6 @@
 # Messages for Macedonian (Македонски)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Bjankuloski06
 mk: 
   activerecord: 
@@ -50,19 +50,19 @@ mk:
       flash_notice: ви благодариме што се регистриравте!
     edit: 
       enable_twitter: Овозможете ги вашите сметки на Facebook или Twitter
-      submit: зачувај
+      submit: Зачувај
       title: поставки
     follow: 
       flash_notice: Корисникот %{user} е додаден како ваш пријател
     form: 
-      activities_notification: добивање на соопштенија по е-пошта за системски активности како заработени значки, нови следбеници и тн.
+      activities_notification: Испраќај ми соопштенија по е-пошта за системски активности како заработени значки, нови следбеници и тн.
       avatar_tip: сменете си ја профилната слика со граватар
-      give_advice_notification: добивање на известувања по е-пошта за прашања од вашата стручна област
+      give_advice_notification: Испраќај ми известувања по е-пошта за прашања од мојата стручна област
       information: информации
       language: Јазик на посредникот на мрежното место
-      new_answer_notification: добивање на соопштенија по е-пошта за нови одговори
+      new_answer_notification: Испраќај ми соопштенија по е-пошта за нови одговори
       notifications: соопштенија
-      reports_notification: добивање на извештај за најновите активности во групата (само за администратори на групи)
+      reports_notification: Испраќај ми извештај за најновите активности во групата (само за администратори на групи)
       show_more_lang: Покажи повеќе јазици
     index: 
       empty: оваа група нема членови. Учествувајте за да се зачлените во групава.

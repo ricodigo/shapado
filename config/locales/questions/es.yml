@@ -1,7 +1,8 @@
 # Messages for Spanish (Español)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Danke7
+# Author: Od1n
 # Author: Patcito
 es: 
   activerecord: 
@@ -14,7 +15,7 @@ es:
         created_at: Preguntado
         language: Idioma
         tags: Etiquetas
-        title: Titulo
+        title: Título
         updated_at: actualizado
         updated_by: actualizado por
         views: Visitas

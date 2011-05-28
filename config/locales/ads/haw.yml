@@ -1,0 +1,16 @@
+# Messages for Hawaiian (Hawai`i)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Kolonahe
+haw: 
+  ads: 
+    ad_links: Ho'ohui i kekahi ho'olaha %{type} hou
+    create: 
+      success: Ua hana pono 'ia ka ho'olaha.
+    index: 
+      add_adbard: Ho'ohui i kekahi ho'olaha Ad Bard hou
+      add_adsense: Ho'ohui i kekahi Ho'olaha Google AdSense hou
+      title: Ho'olaha
+    name: "Inoa:"
+    position: "Wahi:"
+    title: Ho'ohui i kekahi ho'olaha %{type} hou

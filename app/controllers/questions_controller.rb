@@ -162,7 +162,7 @@ class QuestionsController < ApplicationController
     if params[:q].blank?
       @tag_cloud = Question.tag_cloud(conditions)
     else
-      @tag_cloud = current_group.questions.find_tags(/^#{Regexp.escape(params[:q])}/, conditions)
+      @tag_cloud = Question.find_tags(/^#{Regexp.escape(params[:q])}/, conditions)
     end
     respond_to do |format|
       format.html do
@@ -181,7 +181,7 @@ class QuestionsController < ApplicationController
       format.js do
         result = []
         if q = params[:tag]
-          result = current_group.questions.find_tags(/^#{Regexp.escape(q.downcase)}/i,
+          result = Question.find_tags(/^#{Regexp.escape(q.downcase)}/i,
                                       :group_id => current_group.id,
                                       :banned => false)
         end

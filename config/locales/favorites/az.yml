@@ -1,0 +1,9 @@
+# Messages for Azerbaijani (Azərbaycanca)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Cekli829
+az: 
+  activerecord: 
+    models: 
+      favorite: Favorit
+      favorites: Favoritlər

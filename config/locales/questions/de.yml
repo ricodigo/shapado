@@ -1,6 +1,6 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Kghbln
 de: 
   activerecord: 
@@ -30,7 +30,7 @@ de:
     create: 
       flash_notice: Die Frage wurde erfolgreich erstellt.
     edit: 
-      title: Bearbeiten der Frage
+      title: Frage bearbeiten
     flag: 
       title: Kennzeichnen der Frage
     form: 

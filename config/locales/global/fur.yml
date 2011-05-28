@@ -1,0 +1,54 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  feeds: 
+    feed: Canâl
+    share_on_twitter: Twitter, Facebook e altris...
+  global: 
+    active: Ative
+    anonymous: Anonim
+    by: di
+    current: Atuâl
+    from: di %{site}
+    group_not_found: La pagjine %{url} no esist
+    or: o
+    permission_denied: Permès dineât
+    please_login: Par plasê jentre
+    preview: Anteprime
+    previous: Precedent
+    share: Condivît
+  languages: 
+    any: Cualsisei
+    user: Lis mês lenghis preferidis
+  models: 
+    question: La domande
+  number: 
+    x_time: 
+      one: "%{count} volte"
+      other: "%{count} voltis"
+      zero: Mai
+  pagination: 
+    next: Sucessîf &raquo;
+    previous: "&laquo; Precedent"
+  scaffold: 
+    add: Zonte
+    back: Indaûr
+    cancel: Scancele
+    close: Siere
+    create: Cree
+    destroy: Elimine
+    details: Detais
+    edit: Cambie
+    more: Plui...
+    new: Zonte gnûf %{model}
+    post_as_anonymous: Publiche in mût anonim
+    save: Salve
+    send: Mande
+    show: Mostre
+    sure: Sêstu sigûr di volê eliminâ chest %{model}?
+    update: Inzorne
+  time: 
+    ago: "%{time} indaûr"
+    today: vuê

@@ -1,0 +1,52 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  admin: 
+    manage: 
+      content: 
+        footer: Lábléc
+        head: Fejléc
+        title: Egyedi tartalom
+        top_bar: Felső sáv
+        top_bar_tip: Soronként egy hivatkozást adj meg
+      properties: 
+        constrains: 
+          reputation_constrains_description: Ez az űrlap lehetővé teszi, hogy beállítsd, mennyi követelménypont szükséges a felhasználóknak egy adott művelet elvégzéséhez
+          reputation_constrains_subtitle: Követelmények listája minden egyes tevékenységhez
+          title: Követelmények
+        domain: 
+          description: "Hozzárendelheted az oldaladat egy saját domainnévhez, így az oldal azon keresztül lesz elérhető. Ezt kell tenned:"
+          instruction1: Először be kell jelentkezned a domainszolgáltatódhoz. Ez az az oldal, ahol az olyan domainnevek vehetőek, mint a %{subdomain}.com.
+          instruction2: Itt a DNS beállításokhoz kell menned, és létre kell hoznod egy CNAME-nek hívott bejegyzést.
+          instruction3: Válassz egy nevet a CNAME-nek, lehet „www”, vagy bármi más.
+          instruction4: "Ezután a hoszt vagy célmezőbe helyezd el a jelenlegi Shapado-domainedet: %{domain}."
+          instruction5: "Ha ezzel megvagy, a www.%{subdomain} domaincímed a következőre kell, hogy mutasson: %{appdomain}."
+          instruction6: Ha ez a helyzet, gyere vissza ide, és helyezd el a domainnevedet (www.%{subdomain}) az alábbi mezőbe, majd kattints a „Frissítés” gombra. Ha kérdésed lenne, keress fel minket a %{chat_url} címen vagy a támogatással foglalkozó fórumon.
+          title: Domainnév beállítása
+          warning: Biztosan meg szeretnéd változtatni a domainnevedet?
+        general: 
+          title: Csoport tulajdonságai
+        rewards: 
+          reputation_rewards_description: Ezen az űrlapon beállíthatod, hogy a felhasználók hogyan kaphatnak vagy veszíthetnek hírnévpontokat egy adott művelet elvégzése esetén
+          reputation_rewards_subtitle: Hírnévjutalmak listája
+          title: Jutalmak
+        share: 
+          add_tags: Adj egy taget a tweetjeidhez
+          application_id: Alkalmazás azonosítója
+          asking_from_twitter: Kérdés feltevése Twitterről
+          ends_with_example: "pl. #shapado"
+          facebook_app: Facebook-alkalmazás beállításai
+          question_must_include: A kérdésnek tartalmaznia kell a következő címkéket a tweeteléshez
+          question_must_include_example: "pl. #iAsk"
+          secret_key: Titkos kulcs
+          starts_with_example: "pl. #qa"
+          title: Megosztás
+          title_on_dlvr: Megosztás a dlvr.it-en
+          tweet_ends_with: Helyezz el egy címkét a tweetjeid mögé
+          tweet_starts_with: Helyezz el egy címkét a tweetjeid elé
+          twitter_account: A Twitter-fiók, akihez a felhasználók intézik majd a kérdéseket.
+        theme: 
+          logo_legend: Tölts fel egy logót a csoport számára. Legfeljebb 2MB lehet.
+          title: Csoport témájának beállítása

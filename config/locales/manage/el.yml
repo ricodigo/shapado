@@ -1,7 +1,8 @@
 # Messages for Greek (Ελληνικά)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Discon
+# Author: Evropi
 el: 
   admin: 
     manage: 
@@ -35,6 +36,9 @@ el:
           reputation_rewards_subtitle: Κατάλογος ανταμοιβών υπόληψης
           title: Ανταμοιβές
         share: 
+          ends_with_example: "π.χ. #shapado"
+          question_must_include_example: "π.χ. #iAsk"
+          starts_with_example: "π.χ. #qa"
           title: Διαμοιρασμός
         theme: 
           logo_legend: Φορτώστε ένα λογότυπο για την ομάδα σας, θα πρέπει να είναι μικρότερο από 2MB.

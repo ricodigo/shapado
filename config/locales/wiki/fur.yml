@@ -1,0 +1,22 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  wiki: 
+    actions: 
+      all_history: Torne al storic
+      back_to_question: Torne ae domande
+      revert: Ripristine cheste version
+      show_diff: Confronte lis versions selezionadis
+    diff: 
+      title: Difarencis tra %{prev} e %{curr}
+    history: 
+      current_version: Version atuâl
+      previous_versions: Versions precedentis
+      title: Storic (%{count})
+      version: Version
+      version_summary: Somari de version
+    model: 
+      attributes: 
+        message: Somari

@@ -1,0 +1,74 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      group: 
+        default_tags: برچسبهای پیش فرض
+        description: توضیحات
+        domain: دامنه
+        enable_latex: فعال سازی LaTex
+        fb_button: فعال کردن دکمه "like" فیس بوک (مغایر با خصوصی بودن اطلاعات)
+        forum: امکان دادن بیش از یک پاسخ به یک سوال به کاربر
+        group_created_by: ساخته شده به وسیله
+        language: زبان
+        legend: افسانه
+        logo: آرم
+        may_contain_adult_content: ممکن است این سایت شامل محتوای مناسب برای بزرگسالان باشد
+        name: نام
+        openid_only: تنها افرادی که از openID استفاده می‌کنند می‌توانند به سایت دسترسی داشته باشند
+        owner: این گروه به وسیله %{login} ساخته شده است
+        registered_only: فقط افراد ثبت نام شده می‌توانند به سایت دسترسی داشته باشند
+        state: ایالت
+        subdomain: URL
+        wysiwyg_editor: فعال کردن ویرایشگر کاربرپسند
+    models: 
+      default_tags_message: نمی‌توانید بیش از ۱۰ برچسب پیشفرض داشته باشید
+      group: گروه
+      groups: گروه‌ها
+  groups: 
+    create: 
+      flash_notice: گروه شما با موفقیت ایجاد شد. هم اکنون می‌توانید پیکربندی آن را شروع کنید.
+    form: 
+      access: تنظیمات دسترسی
+      analytics_engine: موتور تجزیه و تحلیل ترافیک
+      analytics_legend: گروه قادر به استفاده از کد رهگیری خود خواهد بود
+      any_language: هر
+      custom_analytics: مجاز بودن استفاده از سیستم تجزیه و تحلیل فرافیک سفارشی (analytics)
+      custom_html: مجاز بودن HTML سفارشی
+      custom_js: مجاز بودن استفاده از کد javaScript سفارشی
+      default_tags_legend: برچسبها را با کاما جدا کنید. فقط ۱۰ برچسب پیشفرض قابل ثبت است.
+      description_legend: شما می‌توانید با استفاده از ۴۰۰ کاراکتر دربارهٔ گروه توضیح دهید
+      isolate_group: جدا کردن گروه از گروه‌های دیگر
+      legend_legend: در header استفاده خواهد شد. می‌توانید از ۴۰ کاراکتر استفاده کنید.
+      logo_legend: می‌توانید آرم گروه را آپ لود کنید. حد اکثر سایز فایل ۲ مگابایت است.
+      members_only: فقط اعضای گروه می‌توانند به این گروه دسترسی داشته باشند
+      website_analytics_id: شناسه تجزیه و تحلیل ترافیک سایت
+    group: 
+      about: درباره
+      accept_group: پذیرش گروه
+      allow_ads: مجاز کردن تبلیغات
+      close: بستن
+      close_group: بستن گروه
+      disallow_ads: ممنوع کردن تبلیغات
+    index: 
+      actives: فعال
+      filter: جستجو برای گروه
+      most_active: فعال ترین
+      name: نام
+      pendings: در انتظار
+      request_group: درخواست یک گروه جدید
+      title: گروه‌ها
+    new: 
+      title: گروه خود را بسازید
+    show: 
+      accept_group: پذیرش این گروه
+      accept_group_with_custom_ads: پذیرش گروه و صدور اجازه نمایش تبلیغات سفارشی
+      close_group: بستن این گروه
+      group_awaiting_acceptance: این گروه در انتظار پذیرش از طرف یک مدیر است
+      group_closed: این گروه بسته شد.
+      title: درباره %{name}
+      visit_group: بازدید از گروه

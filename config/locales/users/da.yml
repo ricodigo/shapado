@@ -1,6 +1,6 @@
 # Messages for Danish (Dansk)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Emilkris33
 da: 
   activerecord: 
@@ -84,6 +84,8 @@ da:
       title: Opret dig som ny bruger
     show: 
       follow: Følg
+      followers: Følgere
+      following: Følger
       title: Bruger %{user}
       unfollow: Stop med at følge
       views: visninger

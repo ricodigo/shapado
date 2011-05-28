@@ -1,0 +1,18 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  activerecord: 
+    models: 
+      vote: Vôt
+      votes: Vôts
+  votes: 
+    control: 
+      have_voted_down: Frache par ritirâ il vôt negatîf
+      have_voted_up: Frache par ritirâ il vôt positîf
+      to_vote_down: Frache par dâ un vôt negatîf
+      to_vote_up: Frache par dâ un vôt positîf
+    create: 
+      flash_notice: Graciis par vê votât!
+      unauthenticated: I utents anonims no puedin votâ

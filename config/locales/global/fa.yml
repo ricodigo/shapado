@@ -1,0 +1,60 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  feeds: 
+    feed: خبر خوان
+    post_new_questions: ارسال سوالات جدید به
+    question: اشتراک در این سوال (مطلع شدن از اتفاقاتی که برای این سوال می‌افتد)
+    questions: اشتراک در همه سوالات
+    share_on_twitter: twitter, facebook و بیشتر ...
+    tag: اشتراک در این برچسب
+    user: اشتراک در سوالات این کاربر
+  global: 
+    active: فعال سازی
+    anonymous: ناشناس
+    by: توسط
+    current: کنونی
+    from: از %{site}
+    group_not_found: صفحه %{url} موجود نیست
+    or: یا
+    permission_denied: اجازه داده نشد.
+    please_login: لطفا وارد شوید
+    preview: پیش‌نمایش
+    previous: قبلی
+    share: به اشتراک گذاشتن
+  languages: 
+    any: هر کدام
+    user: زبان ترجیح داده شدهٔ من
+  models: 
+    question: سوال
+  number: 
+    x_time: 
+      one: "%{count} دفعه"
+      other: "%{count} دفعه"
+      zero: هرگز
+  pagination: 
+    next: بعدی &raquo;
+    previous: "&laquo; قبلی"
+  scaffold: 
+    add: اضافه کردن
+    back: بازگشت
+    cancel: لغو
+    close: بستن
+    create: ساختن
+    destroy: حذف کردن
+    details: جزئیات
+    edit: ویرایش
+    more: بیشتر...
+    new: اضافه کردن %{model} جدید
+    post_as_anonymous: ارسال به عنوان ناشناس
+    save: ذخیره کردن
+    send: ارسال
+    show: نشان دادن
+    sure: آیا اطمینان دارید که می‌خواهید این %{model} پاک کنید؟
+    update: به روز رسانی
+  time: 
+    ago: "%{time} پیش"
+    today: امروز

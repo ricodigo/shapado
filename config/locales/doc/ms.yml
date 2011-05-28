@@ -1,0 +1,37 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  doc: 
+    chat: 
+      title: Bantuan Sembang
+    plans: 
+      15millions: 15 juta kunjungan sebulan
+      1million: 1 juta kunjungan sebulan
+      247_all_support: Sokongan 24/7 berasaskan web, e-mel, sembang dan telefon
+      5millions: 5 juta kunjungan sebulan
+      all_support: Bantuan berasaskan web, e-mel, sembang dan telefon
+      basic_restrictions: Tiada iklan tempahan dan tiada UI yang boleh ditempah sepenuhnya
+      beta_info: Buat masa ini, semua tapak adalah percuma dan menikmati pilihan-pilihan yang sama dengan pelan Optimum, cuma khidmat bantuannya hanya berasaskan web, e-mel dan ruang sembang.
+      big_sites: Tapak trafik besar
+      custom_ads: Gunakan iklan sendiri
+      custom_analytics: Statistik trafik
+      custom_domain: Domain tempahan
+      custom_themes: Manfaatkan tema tempahan yang kami sediakan
+      custom_ui: UI yang boleh ditempah sepenuhnya
+      free_plan: pelan percuma
+      getting_popular: Makin popular
+      huge_sites: Tapak trafik besar
+      month: bulan
+      page_views: Untuk tapak Kecil/Persendirian
+      plans: Pelan
+      private_site: Bolehkan capaian persendirian/awam
+      small_private: Tapak Kecil/Persendirian
+      start_monetizing: mulakan pengewangan
+      support: Bantuan
+      title: Pelan dan harga
+      unlimited: Trafik tanpa had setiap bulan
+      we_offer: Kami juga menawarkan
+      web_support: Sokongan berasaskan web
+      with_unlimited: dengan trafik tanpa had, tanpa iklan tempahan, tanpa domain tempahan.

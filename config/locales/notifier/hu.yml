@@ -1,0 +1,38 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  notifier: 
+    earned_badge: 
+      message1: "%{badge} jelvényt szereztél itt: %{app}"
+      message2: "A jelvény leírása:"
+    favorited: 
+      message2: "A kérdés szövege:"
+      message3: "Itt tekintheted meg:"
+    give_advice: 
+      message1: "%{user} feltett egy kérdést, amire lehet, hogy tudsz válaszolni:"
+      message2: "Itt válaszolhatsz a kérdésre:"
+      message3: "Ha ismersz valakit, aki megválaszolhatja a kérdést, küld el neki ezt a linket:"
+      message4: Ha nem kapunk választ tőled, mást fogunk megkérni. Természetesen ekkor még mindig bármikor válaszolhatsz.
+    global: 
+      hi: Szia, %{user}!
+      user_page: felhasználói lap
+    new_answer: 
+      message: "%{user} a következőt válaszolta a(z) %{question} kérdésre: %{new_answer}"
+    new_comment: 
+      message: "%{user} a következő megjegyzést fűzte a(z) %{question} kérdéshez: %{new_comment}"
+    new_feedback: 
+      message1: "%{user} <%{email}> visszajelzést küldött"
+      message2: "Egy névtelen felhasználó visszajelzést küldött a következő IP-címről: %{ip}"
+      message3: "E-mail cím: %{email}"
+      message4: "Tárgy: %{subject}"
+    report: 
+      message1: Jelentés a(z) %{group} csoportról
+      message2: "%{date} óta"
+      message3: "%{questions} kérdést írtak"
+      message4: "%{answers} válasz született"
+      message5: "%{votes} szavazat érkezett"
+      message6: "%{badges} jelvény került kiosztásra"
+      message7: A fiókhoz %{users} felhasználó tartozik.
+      message8: "A csoportot a következő hivatkozásra kattintva teheted meg: %{link}"

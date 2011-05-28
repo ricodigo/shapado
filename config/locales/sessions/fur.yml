@@ -1,0 +1,22 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  sessions: 
+    create: 
+      flash_error: No si à podût jentrâ come '%{login}'
+      flash_notice: Jentrât cun sucès
+    destroy: 
+      flash_notice: Tu sês jessût.
+    new: 
+      log_in: Jentre
+      not_registered: No tu sês ancjemò regjistrât?
+      registered: Sêstu za regjistrât?
+      remember_me: Visiti di me
+      sign_in: Jentre
+      signup: Regjistriti
+      with_authentication: Jentre cul nestri sisteme di autenticazion
+      with_facebook: Jentre cun Facebook
+      with_openid: Jentre cun OpenID
+      with_twitter: Jentre cun Twitter

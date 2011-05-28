@@ -1,0 +1,20 @@
+# Messages for Marathi (मराठी)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Htt
+mr: 
+  activerecord: 
+    attributes: 
+      answer: 
+        link: दुवा
+    models: 
+      answers: उत्तरे
+  answers: 
+    create: 
+      flash_notice: धन्यवाद!
+    edit: 
+      title: उत्तर संपादन करताना
+    form: 
+      answer_label: प्रश्नास उत्तर द्या
+      comment_submit: शेरा
+      submit: उत्तर

@@ -1,7 +1,8 @@
 # Messages for Greek (Ελληνικά)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Discon
+# Author: Evropi
 el: 
   activerecord: 
     attributes: 
@@ -9,6 +10,7 @@ el:
         default_tags: Προεπιλεγμένες ετικέτες
         description: Περιγραφή
         domain: Domain
+        enable_latex: Ενεργοποίηση LaTeX
         fb_button: Ενεργοποίηση του κομβίου "like" του Facebook (χωρίς προστασία προσωπικών δεδομένων)
         forum: Να επιτρέπονται περισσότερες από μία απαντήσεις από κάθε χρήστη
         group_created_by: Δημιουργήθηκε από

@@ -1,0 +1,44 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  devise: 
+    confirmations: 
+      confirmed: A fiókod meg van erősítve. Most már bejelentkezhetsz.
+      link: Nem kaptad meg a megerősítéshez szükséges utasításokat?
+      send_instructions: Néhány percen belül kapsz egy e-mailt a fiókod megerősítéséhez szükséges utasításokkal
+    mailer: 
+      confirmation_instructions: Megerősítési utasítások
+      reset_password_instructions: Utasítások új jelszó kéréséhez
+      unlock_instructions: Feloldási utasítások
+    passwords: 
+      link: Elfelejtetted a jelszavadat?
+      send_instructions: Néhány percen belül kapsz egy e-mailt az új jelszó kéréséhez szükséges utasításokkal
+      updated: A jelszavad megváltozott. Most már bejelentkezhetsz.
+    registrations: 
+      destroyed: Viszlát! A fiókodat töröltük. Reméljük, hamarosan újra láthatunk.
+      link: Regisztráció
+      signed_up: Regisztráltál.
+      updated: Frissítetted a fiókodat.
+    sessions: 
+      facebook_actions: 
+        sign_in: Bejelentkezés
+        sign_out: Kijelentkezés
+      facebook_authenticity_token: Valami rosszul sült el. Biztonsági okokból kérjük, hogy jelentkezz be újra.
+      facebook_invalid: Nem sikerült bejelentkezni. Érvénytelen fiók.
+      facebook_timeout: A Facebook-munkamenet lejárt. Jelentkezz be újra a folytatáshoz.
+      inactive: A fiókod még nincs megerősítve.
+      invalid: Érvénytelen e-mail cím vagy jelszó.
+      invalid_token: Érvénytelen hitelesítési token.
+      link: Bejelentkezés
+      locked: A fiókod zárolva van.
+      signed_in: Bejelentkezve.
+      signed_out: Kijelentkezve.
+      timeout: A munkameneted lejárt. Jelentkezz be újra a folytatáshoz.
+      unauthenticated: Be kell jelentkezned vagy regisztrálnod a folytatás előtt.
+      unconfirmed: Meg kell erősítened a fiókodat a folytatás előtt.
+    unlocks: 
+      link: Nem kaptad meg a feloldáshoz szükséges utasításokat?
+      send_instructions: Néhány perc múlva kapsz egy e-mailt a fiók feloldásához szükséges utasításokkal.
+      unlocked: A fiókod feloldva, most már bejelentkezhetsz.

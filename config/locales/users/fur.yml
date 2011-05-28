@@ -1,0 +1,66 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: ativât ai
+        activation_code: Codiç di ativazion
+        age: Etât
+        asked_by: domandât di
+        avatar: Figure dal profîl
+        birthday: Complean
+        created_at: regjistrât
+        current_password: Password atuâl
+        email: Pueste eletroniche
+        fullname: Non complet
+        hide_country: No stâ mostrâ il gno paîs
+        language: Lenghe
+        language_filter: Filtre par lenghe
+        last_logged_at: viodût
+        login: Non utent
+        name: Non vêr
+        password: Password
+        preferred_languages: "Tu vuelis lei domandis tes lenghis ca sot:"
+        preferred_tags: Etichetis preferidis
+        reputation: Reputazion
+        timezone: Fûs orari
+        updated_at: inzornât ai
+        website: Sît web
+    models: 
+      user: Utent
+      users: Utents
+  users: 
+    actions: 
+      vote_down: Vôt negatîf
+      vote_up: Vôt positîf
+    anonymous_form: 
+      never_shown: mai mostrât
+    create: 
+      flash_notice: Graziis par jessiti regjistrât!
+    edit: 
+      submit: Salve
+      title: Impuestazions
+    form: 
+      language: Lenghis dopradis pe interface dal sît
+      notifications: Notifichis
+      show_more_lang: Mostre altris lenghis
+    index: 
+      filter: Cîr utents
+      name: Non
+      newest: I plui gnûfs
+      oldest: I plui vieris
+      reputation: Reputazion
+      title: Ducj i utents
+    new: 
+      submit: Regjistriti
+      title: Regjistriti come gnûf utent
+    show: 
+      follow: Seguìs
+      followers: Lu seguissin
+      following: Al seguìs
+      title: Utent %{user}
+      unfollow: No stâ plui seguî
+      views: viodudis

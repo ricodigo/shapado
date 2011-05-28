@@ -1,0 +1,142 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  activerecord: 
+    attributes: 
+      question: 
+        answers: Mga kasagutan
+        asked_by: Itinanong ni
+        body: Katawan
+        closed: Isinara na
+        created_at: Naitanong na
+        language: Wika
+        tags: Mga tatak
+        title: Pamagat
+        updated_at: naisapanahon
+        updated_by: isinapanahon ni
+        views: Mga pagtanaw
+        votes: Mga boto
+    models: 
+      question: Katanungan
+      questions: Mga katanungan
+  questions: 
+    answer: 
+      add_comment: Magdagdag ng puna...
+      flag: Watawat
+      pick_answer: Piliin bilang katugunan
+      unset_answer: Huwag itakda ang katugunan?
+    create: 
+      flash_notice: Matagumpay na nalikha ang tanong.
+    edit: 
+      title: Binabago ang tanong
+    flag: 
+      title: Iwatawat ang tanong
+    form: 
+      adult_content: Ang katanungang ito ay naglalaman ng bagay na pangtao na nasa wastong gulang.
+      body_tip: Ano ba ang tanong mo? Maging mapaglarawan.
+      language_tip: Piliin ang wikang ginamit sa pagtatanong.
+      tags_tip: Gamitin ang mga tatak upang makapagdagdag ng mas marami pang mga kabatiran patungkol sa tanong mo.
+    index: 
+      active: Masigla
+      active_tooltip: Mga tanong na naisapanahon kamakailan lamang
+      ask_question: Itanong ang tanong
+      empty: Wala pang nagtatanong ng anumang mga tanong.  Maging pinakauna!
+      help_to_answer: Tulungan kaming sumagot
+      hot: Mainit
+      hot_tooltip: Mga katanungan na may pinakamaraming paggalaw sa loob ng huling 5 mga araw
+      newest: Pinakabago
+      newest_tooltip: Mga tanong na pinakakamakailan lamang itinanong
+      oldest: Pinakaluma
+      title: Lahat ng mga katanungan
+      unanswered_questions: Mga tanong na hindi pa nasasagot
+      votes: Mga boto
+      votes_tooltip: Mga tanong na may pinakamaraming mga boto
+    model: 
+      messages: 
+        empty_tags: Paumanhin, kailangan mong gumamit ng kahit na isang tatak.
+        title_too_long: Napakahaba ng pamagat.  Hindi ito dapat maglaman ng mahigit kaysa 100 mga panitik.
+        too_many_tags: Paumanhin, makapagpapasok ka lamang ng pinakamataas ang 9 na mga tatak.
+        too_short: Tila napakaikli.  Mangyaring gumamit na mas marami pang mga salita kaysa sa %{count} upang maging mas tiyak.
+    move: 
+      group_label: "Ilipat sa pangkat sa pamamagitan ng punglo:"
+      submit: Ilipat!
+      title: "Ilipat ang tanong: %{title}"
+    move_to: 
+      group_dont_exists: Hindi umiiral ang pangkat na %{group}
+      success: Inilipat ang tanong papunta sa %{group}
+    new: 
+      how_to_ask: Paano magtanong
+      title: Itanong ang katanungan
+    question: 
+      accepted_tooltip: Ang katanungang ito ay may isang sagot na tinanggap na
+    retag: 
+      title: Tatakang muli
+    retag_form: 
+      cancel: Huwag ituloy
+      submit: Isapanahon ang mga tatak!
+      title: Isapanahon ang mga tatak
+    retag_to: 
+      failure: Paumanhin, hindi maisapanahon ang mga tatak.
+      success: Matagumpay na naisapanahon ang mga tatak.
+    revert: 
+      title: Ibalik sa dati ang tanong
+    shared: 
+      flag: Watawat
+    show: 
+      accepted_tooltip: Isa sa mga sagot ay tinanggap bilang tamang kasagutan.
+      another_answers: Iba pang mga sagot
+      answers: Mga kasagutan
+      answers_title: 
+        one: "%{count} kasagutan"
+        other: "%{count} mga kasagutan"
+      asked_on: itinanong sa
+      ban: Ipagbawal
+      close: Isara
+      close_reason: "Naisara na ang tanong dahil sa sumusunod na kadahilanan:"
+      edit_request: Baguhin ang kahilingan
+      favorite_tooltip: Idagdag ang katanungang ito sa mga kinagigiliwan mo
+      flag: Watawat
+      flagged_as: Iwinatawat bilang
+      flags: Iniulat bilang
+      last_activity: Pinakabagong paggalaw
+      open: Buksan
+      related_questions: Kaugnay na mga katanungan
+      request_closing: Hilingin ang pagsasara
+      request_closing_details: Hilinging isara ang tanong na ito
+      request_opening: Hilingin ang pagbubukas na muli
+      request_opening_details: Hilinging buksang muli ang tanong na ito
+      requested_close_as: Hiniling mong isara ang katanungang ito bilang
+      requested_reopening: Hiniling mong buksang muli ang tanong na ito
+      retag: Tatakang muli
+      retract_request: Bawiin ang kahilingan
+      share: Ibahagi ang tanong na ito sa
+      share_on: Ibahagi ang tanong na ito sa %{site}
+      solution: Katugunan
+      to_answer_question: upang masagot ang tanong na ito
+      unauthenticated_retag: Kailangan mo ng isang akawnt upang magtatak na muli ng mga katanungan
+      unfavorite_tooltip: Tanggalin ang tanong na ito mula sa mga kinagigiliwan mo
+      unwatch_tooltip: Itigil ang pagbabantay ng katanungang ito
+      viewed: natingnan na
+      watch_tooltip: Bantayan ang tanong na ito
+    solve: 
+      flash_notice: Nalutas na ang tanong.
+    tags: 
+      filter: Maghanap ng mga tatak
+      title: Mga tatak
+      tooltip: Ipakita ang mga tanong na tinatakan ng %{tag}
+    unanswered: 
+      empty: Ang pangkat na ito ay wala ng anumang mga tanong na hindi pa nasasagot.
+      expert: Mga dalubhasa
+      my_tags: Mga tatak ko
+      tags: Mga tatak na hindi pa nasasagot
+      title: Mga tanong na hindi pa nasasagot.
+    unsolve: 
+      flash_notice: Ang tanong ay hindi na nalutas na.
+    unwatch: 
+      success: Hindi ka na makakatanggap pa ng mga pabatid sa pamamagitan ng e-liham para sa bawat bagong kasagutan sa katanungang ito.
+    update: 
+      flash_notice: Matagumpay na naisapanahon ang tanong.
+    watch: 
+      success: Makakatanggap ka na ngayon ng mga pabatid sa pamamagitan ng e-liham para sa bawat isang bagong kasagutan sa tanong na ito.

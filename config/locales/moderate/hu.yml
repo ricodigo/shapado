@@ -1,0 +1,16 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  admin: 
+    moderate: 
+      index: 
+        all: Összes
+        ban: Kitiltás
+        banned: Kitiltott kérdések
+        content: Tartalom
+        flagged: Megjelölt kérdések
+        item_title: Cím
+        need_tags: Újracímkézés
+        title: Modrálás

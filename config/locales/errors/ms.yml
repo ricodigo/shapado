@@ -1,0 +1,22 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  errors: 
+    forbidden: 
+      explanation: Anda tiada hak yang dikehendaki untuk mencapai laman ini.
+      title: Capaian ditolak
+    go_to: Pergi ke laman %{link}
+    help_us_answer: Bantu kami menjawab %{link}
+    internal_error: 
+      explanation: Kami telah dimaklumkan pasal isu ini dan akan menyiasatnya tidak lama lagi.
+      title: Maafkan kami, ada sesuatu yang tak kena.
+    not_found: 
+      explanation: Mungkin anda telah tersalah taipkan alamat, atau laman itu sudah berpindah.
+      title: Laman tidak dijumpai.
+    options_label: "Perkara lain untuk dicuba:"
+    search: Cari
+    unprocessable_entity: 
+      explanation: Mungkin anda cuba mengubah sesuatu di luar kebenaran capaian anda.
+      title: Perubahan yang anda kehendaki itu telah ditolak.

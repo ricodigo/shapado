@@ -1,0 +1,43 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  notifier: 
+    earned_badge: 
+      message1: Nagkamit ka ng isang tsapang %{badge} sa %{app}
+      message2: "Paglalarawan ng tsapa:"
+      message3: Makikita mo ang lahat ng mga tsapa sa iyong %{user_page}
+    favorited: 
+      message1: Idinagdag ni %{user} ang katanungan mo bilang isang kinagigiliwan sa %{group}
+      message2: "Ang teksto ng katanungan mo:"
+      message3: "Makikita mo ito rito:"
+    follow: 
+      message1: Sinusundan na ngayon ni %{user} ang mga katanungan at mga kasagutan mo sa %{app}
+      message2: Maaari mo siyang sundan pabalik sa pamamagitan ng pagpindot sa pindutang "Sundan" sa kanyang %{user_page}
+    give_advice: 
+      message1: "Katatanung pa lamang ni %{user} ng isang tanong na maaari mong mabigyan ng kasagutan:"
+      message2: "Upang makasagot, tumugon lamang sa mensaheng ito rito:"
+      message3: "O, kung may kakilala kang maaari makapagbigay ng sagot, ipadala sa kanila ang kawing na ito na pangsangguni:"
+      message4: Kapag hindi kami nakakuha kaagad ng isang kasagutan mula sa iyo, magtatanong kami sa ibang tao.  Maaari mo pa rin itong sagutin kung kailan mo naisin.
+    global: 
+      hi: Kumusta %{user},
+      user_page: pahina ng tagagamit
+    new_answer: 
+      message: Nagbigay ng kasagutang %{new_answer} si %{user} sa katanungang %{question}
+    new_comment: 
+      message: Nagbigay ng punang %{new_comment} si %{user} hinggil sa katanungang %{question}
+    new_feedback: 
+      message1: Nagpadala ng isang punang-tugon ang tagagamit na si %{user} <%{email}>
+      message2: Nagpadala ang isang hindi nagpapakilalang tagagamit ng isang punang-tugon mula sa tirahan ng IP na %{ip}
+      message3: "Tirahan ng e-liham: %{email}"
+      message4: "Paksa: %{subject}"
+    report: 
+      message1: Ulat para sa pangkat na %{group}
+      message2: Magmula noong %{date}
+      message3: Nalikha ang mga katanungang %{questions}
+      message4: "%{answers} mga sagot ang nalikha na"
+      message5: "%{votes} mga boto ang nagawa na"
+      message6: "%{badges} mga tsapa ang naigawad na"
+      message7: Ang akawnt ay may %{users} na mga tagagamit.
+      message8: Dalawin ang pangkat mo sa %{link}

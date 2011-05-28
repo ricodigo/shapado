@@ -1,0 +1,93 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: binuhay sa
+        activation_code: Kodigo ng pagbuhay
+        age: Gulang
+        asked_by: itinanong ni
+        avatar: Larawan ng balangkas
+        birthday: Kaarawan
+        created_at: sumali na
+        current_password: Pangkasalukuyang hudyat
+        email: E-liham
+        fullname: Buong pangalan
+        hide_country: Huwag ipakita ang bansa ko
+        language: Wika
+        language_filter: Salain ayon sa wika
+        last_logged_at: nakita na
+        login: Pangalan ng tagagamit
+        name: Tunay na pangalan
+        password: Hudyat
+        password_confirmation: Katiyakan ng hudyat
+        preferred_languages: "Nais mong magbasa ng mga katanungan na nasa sumusunod na mga wika:"
+        preferred_tags: Nais na mga tatak
+        reputation: Dangal
+        timezone: Sona ng oras
+        updated_at: isinapanahon sa
+        website: Websayt
+    models: 
+      user: Tagagamit
+      users: Mga tagagamit
+  users: 
+    actions: 
+      edit_others_posts: Baguhin ang mga pagpapaskil ng iba
+      edit_wiki_post: Baguhin ang mga pagpapaskil sa wiki
+      flag: Watawat
+      retag_others_questions: Muling tatakan ang mga katanungan ng iba
+      vote_down: Bumoto ng paibaba
+      vote_to_close_any_question: Hilingin ang pagsasara ng anumang katanungan
+      vote_to_close_own_question: Hilingin ang pagsasara ng sarili mong katanungan
+      vote_up: Bumotong paitaas
+    anonymous_form: 
+      never_shown: hindi ipinapakita kailanman
+    create: 
+      flash_error: Paumanhin, hindi namin maihanda ang akawnt na iyan.  Mangyaring subukan ulit, o makipag-ugnayan sa tagapangasiwa (nasa itaas ang kawing).
+      flash_notice: Salamat sa pagpapatala!
+    edit: 
+      enable_twitter: Paganahin ang mga akawnt mo ng Facebook o Twitter
+      submit: Sagipin
+      title: Mga katakdaan
+    follow: 
+      flash_notice: Idinagdag ang tagagamit na si %{user} magmula sa mga kaibigan mo
+    form: 
+      activities_notification: Tumanggap ng mga pabatid ng e-liham tungkol sa mga gawain ng sistema katulad ng nakamit na mga tsapa, bagong mga tagasunod, atbp.
+      avatar_tip: Baguhin ang larawan mo ng balangkas na ginagamit ang Gravatar
+      give_advice_notification: Tumanggap ng mga pabatid ng e-liham tungkol sa mga katanungan na nasa loob ng iyong larangan ng kadalubhasaan
+      information: Kabatiran
+      language: Wikang ginagamit para sa ugnayang-mukha ng sityo
+      new_answer_notification: Kumuha ng mga pabatid ng e-liham para sa bagong mga kasagutan
+      notifications: Mga pagpapabatid
+      reports_notification: Tumanggap ng isang ulat na may pinakabagong gawain ng pangkat (para lamang sa mga tagapangasiwa ng pangkat)
+      show_more_lang: Magpakita ng marami pang mga wika
+    index: 
+      empty: Walang mga kasapi ang pangkat na ito.  Lumahok sa pamamagitan ng pagsali sa pangkat na ito.
+      filter: Maghanap ng mga tagagamit
+      name: Pangalan
+      name_tooltip: Mga tagagamit na inayos ayon sa abakada
+      newest: Pinakabago
+      newest_tooltip: Mga tagagamit na kasasali pa lamang
+      oldest: Pinakaluma
+      oldest_tooltip: Mga tagagamit na nauna sa pagsali
+      reputation: Dangal
+      reputation_tooltip: Mga tagagamit na inayos ayon sa mas mataas na dangal
+      title: Lahat ng mga tagagamit
+    messages: 
+      errors: 
+        reputation_needed: Kailangan mo ng isang dangal na %{min_reputation} upang %{action}
+    new: 
+      submit: Magpatala
+      title: Magpatala bilang isang bagong tagagamit
+    show: 
+      follow: Sundan
+      followers: Mga tagasunod
+      following: Sinusundan si
+      title: Tagagamit %{user}
+      unfollow: Huwag sundan
+      views: mga tanawin
+    unfollow: 
+      flash_notice: Tinanggal ang tagagamit na si %{user} magmula sa mga kaibigan mo

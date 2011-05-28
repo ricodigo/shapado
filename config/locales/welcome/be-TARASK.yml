@@ -1,0 +1,60 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: EugeneZelenko
+# Author: Jim-by
+be-TARASK: 
+  welcome: 
+    confirm_age: 
+      notice: Вы можаце ўвайсьці на гэтую старонку, калі Вам ня меней 18 гадоў, ці, хаця б дасягнулі ўзросту паўналецьця па заканадаўству той краіны, у якой жывяце, ці з якой адкрываеце гэтую старонку.
+      over_18: Мне болей 18 гадоў
+      under_18: Мне меней 18 гадоў
+      warning: "ПАПЯРЭДЖАНЬНЕ: Гэтая старонка можа ўтрымліваць матэрыялы толькі для дарослых."
+    facts: 
+      features: 
+        cols: 
+          adaptable: лёгкая адаптацыя
+          foss: свабодная/адкрытая крыніца
+          joel: я зраблю кагосьці багацей?
+          multilanguage: шматмоўны
+          multitopic: шматтэмны
+        shapado: 
+          adaptable: так!
+          foss: так!
+          joel: не :/
+          multilanguage: так!
+          multitopic: так!
+        stackexchange: 
+          adaptable: не
+          foss: не
+          joel: так!
+          multilanguage: не
+          multitopic: не
+      prices: 
+        cols: 
+          onsite: на сайце
+        shapado: 
+          large: прыкладна $500
+          medium: <=== тое самае
+          onsite: прыкладна $0 на Вашым сэрвэры
+          small: верагодна ад $50 да $100/штомесяц ў большасьці хостынг-правайдараў
+        stackexchange: 
+          large: $1299/штомесяц
+          medium: $999/штомесяц
+          onsite: $2500/штомесяц
+          small: $129/штомесяц
+    feedback: 
+      captcha_error: Калі ласка, вырашыце простую матэматычную задачу
+      email_description: Калі ласка, падайце Ваш адрас электроннай пошты, каб мы маглі адказаць на Вашае паведамленьне
+      feedback_description: Апісаньне
+      feedback_title: Назва
+      title: Даслаць водгук
+    index: 
+      active: Актыўны
+      browse_all_or_by_tags: Глядзіце %{full_list_of_questions} ці %{browse_by_tags}
+      browse_by_tags: прагляд па тэгах
+      create_own_site: Стварыць уласны сайт пытаньняў і адказаў за 8 сэкундаў бясплатна
+      full_list_of_questions: поўны сьпіс пытаньняў
+      hot: Актуальна
+      quick_question: Задайце пытаньне, мы знойдзем каго-небудзь для адказу
+      recent_questions: Апошнія пытаньні

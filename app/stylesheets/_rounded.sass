@@ -1,6 +1,5 @@
-
-=rounded(!topleft, !topright, !bottomright, !bottomleft)
-  :-moz-border-radius= !topleft !topright !bottomright !bottomleft
-  :-webkit-border-radius= !topleft !topright !bottomright !bottomleft
-  :-khtml-border-radius= !topleft !topright !bottomright !bottomleft
-  :border-radius= !topleft !topright !bottomright !bottomleft
+=rounded($topleft, $topright, $bottomright, $bottomleft)
+  -moz-border-radius: $topleft $topright $bottomright $bottomleft
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft
+  -khtml-border-radius: $topleft $topright $bottomright $bottomleft
+  border-radius: $topleft $topright $bottomright $bottomleft

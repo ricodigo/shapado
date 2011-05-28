@@ -1,0 +1,20 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  comments: 
+    create: 
+      flash_notice: Terima kasih atas ulasan anda
+    edit: 
+      title: Sunting ulasan
+    shared: 
+      add_comment: Tambahkan ulasan...
+      comment_submit: Ulas
+      reply: Balas
+      said: berkata
+    update: 
+      flash_notice: Ulasan berjaya dikemas kini.
+  models: 
+    comment: Ulasan
+    comments: Ulasan

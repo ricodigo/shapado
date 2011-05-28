@@ -1,12 +1,13 @@
 # Messages for Pashto (پښتو)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
 ps: 
   layouts: 
     application: 
       ask_question: پوښتنه پوښتل
       badges: نښانونه
+      forgot: هېر شوی دې دی؟
       home: کور
       languages: ژبې
       log_in: ننوتل
@@ -24,6 +25,7 @@ ps:
     manage: 
       announcements: خبرتياوې
       constrains: غوښتنې
+      content: منځپانګه
       domain: شپول
       members: غړي
       pages: مخونه

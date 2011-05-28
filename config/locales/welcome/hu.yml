@@ -1,0 +1,56 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  welcome: 
+    confirm_age: 
+      notice: Csak akkor léphetsz be az oldalra, ha legalább 18 éves vagy, vagy legalább elérted a nagykorúságot azon a joghatósági területen, ahol élsz vagy ahonnan hozzáférsz ehhez az oldalhoz.
+      over_18: Elmúltam 18 éves
+      under_18: Fiatalabb vagyok 18-nál
+      warning: "FIGYELMEZTETÉS: Ez az oldal tartalmazhat kifejezetten felnőtteknek szánt tartalmat."
+    facts: 
+      features: 
+        cols: 
+          adaptable: rugalmas
+          foss: ingyenes/nyílt forráskódú
+          joel: gazdagítom joelt?
+          multilanguage: többnyelvű
+          multitopic: több témájú
+        shapado: 
+          adaptable: igen!
+          foss: igen!
+          joel: nem :/
+          multilanguage: igen!
+          multitopic: igen!
+        stackexchange: 
+          adaptable: nem
+          foss: nem
+          joel: igen!
+          multilanguage: nem
+          multitopic: nem
+      prices: 
+        shapado: 
+          large: olyan $500 körül
+          medium: <=== ugyanennyi
+          onsite: kb. $0 a saját szervereden
+          small: körülbelül $50 és $100 között, havonta a legtöbb tárhelyszolgáltatónál
+        stackexchange: 
+          large: $1299 havonta
+          medium: $999 havonta
+          onsite: $2500 havonta
+          small: $129 havonta
+    feedback: 
+      captcha_error: Kérjük, oldd meg ezt az egyszerű matematikai műveletet
+      email_description: Kérjük, add meg az e-mail címedet, hogy válaszolhassunk az üzenetedre
+      feedback_description: Leírás
+      feedback_title: Cím
+      title: Visszajelzés küldése
+    index: 
+      active: Aktív
+      browse_all_or_by_tags: "%{full_list_of_questions} megtekintése vagy %{browse_by_tags}"
+      browse_by_tags: böngészés címkék szerint
+      create_own_site: Készítsd el saját kérdés és válasz-oldaladat 8 másodperc alatt, ingyen
+      full_list_of_questions: A kérdések teljes listájának
+      quick_question: Kérdezz, és mi találunk valakit, aki megválaszolja
+      recent_questions: Friss kérdések

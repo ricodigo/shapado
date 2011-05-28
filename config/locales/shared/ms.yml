@@ -1,0 +1,12 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  shared: 
+    current_tags: 
+      title: Tag yang dipilih
+    topbar: 
+      admin: Pentadbir
+      logged_as: Log masuk sebagai %{login}
+      user_page: Laman saya

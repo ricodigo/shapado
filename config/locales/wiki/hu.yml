@@ -1,0 +1,22 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  wiki: 
+    actions: 
+      all_history: Vissza a laptörténethez
+      back_to_question: Vissza a kérdéshez
+      revert: Visszaállítás erre a változatra
+      show_diff: Kiválasztott változatok összehasonlítása
+    diff: 
+      title: "%{prev} és %{curr} közötti eltérések"
+    history: 
+      current_version: Aktuális változat
+      previous_versions: Korábbi változatok
+      title: Laptörténet (%{count})
+      version: Változat
+      version_summary: Változat összefoglalója
+    model: 
+      attributes: 
+        message: Összefoglaló

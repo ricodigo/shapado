@@ -1,0 +1,12 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  shared: 
+    current_tags: 
+      title: Kiválasztott címkék
+    topbar: 
+      admin: Adminisztráció
+      logged_as: Bejelentkezve %{login} néven
+      user_page: Saját oldalam

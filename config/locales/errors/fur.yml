@@ -1,0 +1,17 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  errors: 
+    forbidden: 
+      title: Acès dineât
+    go_to: Va ae pagjine %{link}
+    help_us_answer: Judinus a rispuindi a %{link}
+    internal_error: 
+      explanation: O sin stâts informâts dal probleme e lu cjalarin in curt.
+      title: Nus displâs, ma alc al è lât stuart.
+    not_found: 
+      title: La pagjine no je stade cjatade.
+    options_label: "Altris robis di provâ:"
+    search: Cîr

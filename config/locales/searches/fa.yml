@@ -1,0 +1,14 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  searches: 
+    form: 
+      clear: پاک کردن
+      search_box_title: بررسی کنید که آیا سوال شما قبلا پاسخ داده شده است
+      tags_tip: برای مشخص کردن برچسب ها از [tag] استفاده کنید.
+    index: 
+      empty: برای جستجوی شما هیچ سوالی یافت نشد.
+      search_text: سوالات شامل
+      tags: در این برچسب ها

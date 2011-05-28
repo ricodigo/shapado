@@ -1,0 +1,24 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  mailers: 
+    notifications: 
+      earned_badge: 
+        subject: Nagkamit ka ng isang tsapa sa %{group}!
+      favorited: 
+        subject: Idinagdag ni %{login} ang tanong mo bilang isang kinagigiliwan!
+      follow: 
+        subject: Si %{login} ay sinusundan ka na ngayon sa %{app}
+      give_advice: 
+        friend_subject: "Kailangan ng tulong ng kaibigan mo: %{question_title}"
+        subject: "Kailangan namin ang payo mo: %{question_title}"
+      new_answer: 
+        subject_friend: Sinagot ng kaibigan mong si %{login} ang tanong na %{title}
+        subject_other: Sinagot ni %{login} ang tanong na %{title}
+        subject_owner: Sinagot ni %{login} ang tanong mong %{title}
+      new_comment: 
+        subject: Pumuna si %{login} sa %{group}
+      report: 
+        subject: Ulat para sa pangkat na %{group} ng %{app}

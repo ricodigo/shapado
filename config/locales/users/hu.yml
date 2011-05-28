@@ -1,0 +1,93 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: Aktiválás ideje
+        activation_code: Aktivációs kód
+        age: Kor
+        asked_by: kérdezte
+        avatar: Profilkép
+        birthday: Születésnap
+        created_at: csatlakozás ideje
+        current_password: Jelenlegi jelszó
+        email: E-mail cím
+        fullname: Teljes név
+        hide_country: Ne jelenjen meg az országom
+        language: Nyelv
+        language_filter: Szűrés nyelv szerint
+        last_logged_at: legutóbb itt járt
+        login: Felhasználónév
+        name: Valódi név
+        password: Jelszó
+        password_confirmation: Jelszó megerősítése
+        preferred_languages: "Azon nyelvek, melyeken kérdéseket szeretnél olvasni:"
+        preferred_tags: Előnyben részesített címkék
+        reputation: Hírnév
+        timezone: Időzóna
+        updated_at: Frissítés ideje
+        website: Weboldal
+    models: 
+      user: felhasználó
+      users: felhasználó
+  users: 
+    actions: 
+      edit_others_posts: Más bejegyzéseinek szerkesztése
+      edit_wiki_post: Wikibejegyzések szerkesztése
+      flag: Megjelölés
+      retag_others_questions: Más kérdéseinek újracímkézése
+      vote_down: Leszavazás
+      vote_to_close_any_question: Bármelyik kérdés lezárásának kérése
+      vote_to_close_own_question: Saját kérdés lezárásának kérése
+      vote_up: Felszavazás
+    anonymous_form: 
+      never_shown: soha sem látható
+    create: 
+      flash_error: Sajnáljuk, de nem sikerült létrehozni a fiókot. Próbáld újra, vagy lépj kapcsolatba az adminisztrátorral (link fentebb).
+      flash_notice: Köszönjük a regisztrációt!
+    edit: 
+      enable_twitter: Facebook vagy Twitter fiókok engedélyezése
+      submit: Mentés
+      title: Beállítások
+    follow: 
+      flash_notice: "%{user} hozzáadva a barátaidhoz"
+    form: 
+      activities_notification: E-mailes értesítések a rendszer tevékenységeiről, például a szerzett jelvényekről, új követőkről stb.
+      avatar_tip: A profilképed a Gravatar használatával változtatható meg
+      give_advice_notification: E-mailes értesítések a szakterületedhez tartozó kérdésekről
+      information: Információ
+      language: Az oldal felületén használt nyelv
+      new_answer_notification: E-mailes értesítések az új kérdésekről
+      notifications: Értesítések
+      reports_notification: Jelentés kérése a legújabb csoportbeli tevékenységekről (csak csoportadminisztrátoroknak)
+      show_more_lang: További nyelvek megjelenítése
+    index: 
+      empty: Ennek a csoportnak nincs egyetlen tagja sem. Működj közre, csatlakozz a csoporthoz!
+      filter: Felhasználók keresése
+      name: Név
+      name_tooltip: Felhasználók betűrendben
+      newest: Legújabb
+      newest_tooltip: Legutóbb csatlakozott felhasználók
+      oldest: Legrégebbi
+      oldest_tooltip: Legrégebben csatlakozott felhasználók
+      reputation: Hírnév
+      reputation_tooltip: Nagyobb hírnévvel rendelkező felhasználók
+      title: Összes felhasználó
+    messages: 
+      errors: 
+        reputation_needed: "Legalább %{min_reputation} hírnévre van szükséged a következő művelet végrehajtásához: %{action}"
+    new: 
+      submit: Regisztráció
+      title: Regisztráció új felhasználóként
+    show: 
+      follow: Követés
+      followers: Követők
+      following: Követed
+      title: "Felhasználó: %{user}"
+      unfollow: Követés vége
+      views: megtekintés
+    unfollow: 
+      flash_notice: "%{user} eltávolítva a barátaid közül"

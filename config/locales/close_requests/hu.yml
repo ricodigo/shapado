@@ -1,0 +1,33 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  close_requests: 
+    create: 
+      flash_notice: A lezárási kérelem sikeresen létrejött
+    destroy: 
+      flash_notice: A lezárási kérelem sikeresen törölve
+    edit: 
+      title: Lezárási kérelem szerkesztése
+    form: 
+      close_with_reason: "Kérdés lezárása a következő ok miatt:"
+      dupe: Duplikátum
+      no_question: Nem kérdés
+      not_relevant: Nem releváns
+      ot: Nem témába vágó
+      request_closing_details: Kérés lezárásának kérelmezése
+      spam: Spam
+    index: 
+      title: Lezárási kérelmek listája
+    model: 
+      attributes: 
+        comment: Megjegyzés
+        reason: Ok
+        user: Felhasználó
+      messages: 
+        already_requested: Korábban már kérted a kérés lezárását
+      name: Jelentés lezárása
+      prural_name: Jelentések lezárása
+    update: 
+      flash_notice: A lezárási kérelem sikeresen frissítve

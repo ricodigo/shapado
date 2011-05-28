@@ -1,0 +1,16 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  ads: 
+    ad_links: Új %{type}-hirdetés hozzáadása
+    create: 
+      success: A hirdetés sikeresen létrejött.
+    index: 
+      add_adbard: Új Ad Bard-hirdetés
+      add_adsense: Új Google AdSense-hirdetés
+      title: Hirdetések
+    name: "Név:"
+    position: "Elhelyezés:"
+    title: Új %{type}-hirdetés hozzáadása

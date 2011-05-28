@@ -1,0 +1,20 @@
+# Messages for Turkish (Türkçe)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: 82-145
+# Author: Szoszv
+tr: 
+  activerecord: 
+    attributes: 
+      answer: 
+        link: Bağlantı
+    models: 
+      answer: Cevap
+      answers: Cevaplar
+  answers: 
+    create: 
+      flash_notice: Teşekkürler!
+    form: 
+      comment_label: Bu cevabı yorumla
+      comment_submit: Yorum
+      submit: Cevap

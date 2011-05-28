@@ -1,6 +1,7 @@
 # Messages for Swedish (Svenska)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
+# Author: Lokal Profil
 # Author: Tobulos1
 sv: 
   admin: 
@@ -34,3 +35,5 @@ sv:
           ends_with_example: "t.ex. #shapado"
           question_must_include_example: "t.ex. #iAsk"
           twitter_account: Det Twitter-konto dina användare kommer att ställa frågor till.
+        theme: 
+          logo_legend: Ladda upp en logotyp för din grupp. Det måste vara mindre än 2MB.

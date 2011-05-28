@@ -1,0 +1,16 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      member: 
+        role: Szerepkörök
+  members: 
+    form: 
+      login_tip: Keresés gépelés közben
+    index: 
+      manage_members_title: Tagok kezelése
+      title: A(z) %{name} csoport tagjai
+      title_isolate: A(z) %{name} tagjai

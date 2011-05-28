@@ -1,0 +1,20 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  comments: 
+    create: 
+      flash_notice: از نظر شما متشکریم
+    edit: 
+      title: ویرایش نظر
+    shared: 
+      add_comment: نظر دادن...
+      comment_submit: نظر
+      reply: پاسخ دادن
+      said: گفته
+    update: 
+      flash_notice: نظر با موفقیت به روز شد
+  models: 
+    comment: نظر
+    comments: نظرات
