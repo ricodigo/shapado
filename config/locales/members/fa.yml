@@ -1,0 +1,17 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      member: 
+        role: نقش
+  members: 
+    form: 
+      login_tip: جستجو در حین تایپ
+    index: 
+      manage_members_title: مدیریت اعضا
+      title: اعضای گروه متعلق به %{name}
+      title_isolate: اعضای %{name}

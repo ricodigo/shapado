@@ -3,17 +3,20 @@ $(document).ready(function() {
   $("label#rqlabel").hide();
 
   $(".text_field#question_title").focus( function() {
-    highlightEffect($("#sidebar .help"))
+    highlightEffect($("#sidebar .help"));
   });
 
   $("#related_questions").hide();
 
-  $("#ask_question").searcher({url : "/questions/related_questions.js",
+  $(".ask_question #ask_question").searcher({url : "/questions/related_questions.js",
                               target : $("#related_questions"),
                               fields : $("form#ask_question input[type=text][name*=question]"),
                               behaviour : "focusout",
                               timeout : 2500,
-                              extraParams : { 'format' : 'js', 'per_page' : 5 },
+                              extraParams : { 'format' : 'js',
+                                              'per_page' : 5,
+                                              mini: true
+                              },
                               before_query: function(target) {
                                 target.show();
                               },

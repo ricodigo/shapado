@@ -49,10 +49,10 @@ base: &common
 
   exception_notification:
     activate: true
-    exception_sender_address:
-      "[Shapado] error notifier <error-notifier@example.com>"
+    exception_sender_address: error-notifier@example.com
     exception_recipients:
     - admin@example.com
+    - dev1@example.com
 
 development:
   <<: *common

@@ -1,35 +1,51 @@
-.widgets-admin
-  %h1
-    =t(".description")
+%h1
+  Widgets
+%p.description
+  =t(".description")
 
+%ul.admin-nav
+  %li.mainlist_widgets
+    = link_to t(".mainlist_widgets"), widgets_path(:tab=>"mainlist"), :title => t(".mainlist_widgets_title")
+  %li.question_widgets
+    = link_to t(".question_widgets"), widgets_path(:tab=>"question"), :title => t(".question_widgets_title")
+  %li.question_widgets
+    = link_to t(".external_widgets"), widgets_path(:tab=>"external"), :title => t(".external_widgets_title")
+
+.widgets-admin
   %ul
     %li
       -form_tag widgets_path(:tab => @active_subtab), :class => "add-widget" do
         .field
           = label :limit, t(".new_widget", :default => "Add new widget"), :class => "label"
-          = select :widget, "_type", Widget.types(params[:tab]).map {|w| [w.sub("Widget", "").titleize, w]}
+          = select :widget, "_type", Widget.types(params[:tab],current_group.has_custom_ads).map {|w| [w.sub("Widget", "").titleize, w]}
+          -if @active_subtab != "external"
+            = select :widget, "position", WidgetList::POSITIONS.map {|ps| [ps.titleize, ps]}
+          -else
+            = hidden_field_tag "widget[position]", "sidebar"
         .buttons
           =submit_tag t("scaffold.add"), :class => "save"
         .clear
-    -@widgets.each do |widget|
-      %li{:id => widget.name}
-        .widget_description
-          %h2
-            = widget.name
-            %small
-              = link_to t("scaffold.destroy"), widget_path(widget), :method => :delete, :confirm => t("scaffold.sure", :model => "widget")
-          %p
-            = widget.description # do not escape
 
-          .display
-            = render :partial => "#{widget.partial_name}_settings", :locals => {:widget => widget}
-          .controls
-            -form_tag move_widget_path(widget, :tab => @active_subtab), :class => "vote_box" do
-              = image_submit_tag("to_vote_up.png", :name=>"move_to", :value => "up")
-              = image_submit_tag("to_vote_down.png", :name=>"move_to", :value => "down")
-            .clear
-        - unless widget.question_only? || params[:tab] == 'external'
-          .widget_show
-            = render :partial => widget.partial_name, :locals => {:widget => widget}
-        .clear
+    -if @active_subtab != "external"
+      %li
+        Header
+      -@widget_list.header.each do |widget|
+        =render "widget", :widget => widget, :position => "header"
 
+      %li
+        Sidebar
+      -@widget_list.sidebar.each do |widget|
+        =render "widget", :widget => widget, :position => "sidebar"
+
+      %li
+        Navbar
+      -@widget_list.navbar.each do |widget|
+        =render "widget", :widget => widget, :position => "navbar"
+
+      %li
+        Footer
+      -@widget_list.footer.each do |widget|
+        =render "widget", :widget => widget, :position => "footer"
+    -else
+      -@widget_list.sidebar.each do |widget|
+        =render "widget", :widget => widget, :position => "sidebar"

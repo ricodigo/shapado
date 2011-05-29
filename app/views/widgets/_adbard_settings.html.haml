@@ -1,0 +1,9 @@
+.field
+  = label :host_id, t('widgets.settings.host_id'), :class => "label"
+  = text_field_tag "settings[host_id]", widget.settings["host_id"], :class => "text_field"
+
+.field
+  = label :site_key, t('widgets.settings.site_key'), :class => "label"
+  = text_field_tag "settings[site_key]", widget.settings["site_key"], :class => "text_field"
+
+= render :partial => "shared/external_widget_settings", :locals => {:widget => widget}

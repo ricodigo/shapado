@@ -1,0 +1,20 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  comments: 
+    create: 
+      flash_notice: Köszönjük a hozzászólásodat
+    edit: 
+      title: Hozzászólás szerkesztése
+    shared: 
+      add_comment: Hozzászólás hozzáadása...
+      comment_submit: hozzászólás
+      reply: Válasz
+      said: írta
+    update: 
+      flash_notice: Hozzászólás sikeresen frissítve.
+  models: 
+    comment: hozzászólás
+    comments: hozzászólás

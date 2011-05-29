@@ -1,0 +1,51 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  layouts: 
+    application: 
+      ask_question: Itanong
+      badges: Mga tsapa
+      forgot: Nakalimutan?
+      home: Tahanan
+      languages: Mga wika
+      log_in: Lumagda
+      logged: Nakalagda bilang %{login}
+      logout: Umalis sa pagkakalagda
+      manage_ads: Mamahala ng mga patalastas
+      moderate: Katamtaman
+      now: ngayon na!
+      openid: 
+        explaination: "Kung nais mong magpatala o lumagdang papasok lamang, mangyaring piliin ang iyong tagapagbigay ng OpenID:"
+      pages: Mga pahina
+      questions: Mga katanungan
+      questions_in: Mga katanungan sa loob ng
+      questions_tagged: tinatakan ng
+      search: Hanapin
+      settings: Mga pagtatakda
+      signup: Magpatala
+      subscribe: Pumayag na tumanggap ng sipi
+      tags: Mga tatak
+      title: Mga Katanungan at Mga Kasagutan
+      unanswered: Hindi pa nasasagot
+      users: Mga tagagamit
+      welcome_from: Maligayang pagdating! Maaari kang
+    manage: 
+      actions: Mga galaw
+      announcements: Mga pahayag
+      constrains: Mga kinakailangan
+      content: Nilalaman
+      dashboard: Kabitang-pisara
+      domain: Nasasakupan
+      general: Pangkalahatan
+      members: Mga kasapi
+      pages: Mga pahina
+      properties: Mga pag-aari
+      reputation: Dangal
+      rewards: Mga gantimpala
+      stats: Estadistika
+      theme: Tema
+      widgets: Mga widyet
+    notifications: 
+      message: Kung ayaw mo nang makatanggap ng kusang mga pagpapabatid mula sa %{domain}, baguhin ang mga nais mo na nasa loob ng tanawan ng mga pabatid.

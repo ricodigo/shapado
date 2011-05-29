@@ -1,0 +1,31 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  widgets: 
+    badges: 
+      description: Ez a widget a kérdések vagy felhasználók által szerzett legújabb jelvényeket jeleníti meg
+      title: Legújabb jelvények
+    groups: 
+      description: Ez a widget a legújabb csoportokat jeleníti meg
+      title: Legújabb csoportok
+    index: 
+      description: A nyilak segítségével mozgathatod a widgeteket
+      title: Oldalsávi minialkalmazások beállítása
+    pages: 
+      description: Ez a widget a wikioldalak listáját jeleníti meg.
+      new: Új oldal hozzáadása
+      title: Wikioldalak
+    tag_cloud: 
+      description: Ez a widget egy címkefelhőt jelenít meg
+      title: Címkefelhő
+    top_groups: 
+      description: Ez a widget a legjobb öt csoportot jeleníti meg
+      title: Legjobb 5 csoport
+    top_users: 
+      description: Ez a widget a legjobb öt felhasználót jeleníti meg
+      title: Legjobb 5 felhasználó
+    users: 
+      description: Ez a widget a frissen regisztrált tagokat jeleníti meg
+      title: Legújabb felhasználók

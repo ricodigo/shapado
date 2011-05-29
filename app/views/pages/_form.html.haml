@@ -30,7 +30,7 @@
   .group
     = f.label :language, t(:language, :scope => "activerecord.attributes.question"), :class => "label"
     -lang = @page.new? ? current_user.main_language : @page.language
-    = f.select :language, languages_options(current_user.preferred_languages)+[[t("languages.any"), ""]], {:selected => lang}, :class => "select"
+    = f.select :language, languages_options(current_user.preferred_languages)+[[t("preferred_languages.any"), ""]], {:selected => lang}, :class => "select"
     .description
       = t(".language_tip")
 -else

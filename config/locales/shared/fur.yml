@@ -1,0 +1,9 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  shared: 
+    topbar: 
+      logged_as: Jentrât come %{login}
+      user_page: La mê pagjine

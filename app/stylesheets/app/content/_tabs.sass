@@ -1,0 +1,110 @@
+// ========================================================================
+//    Document   	:   _action-tabs.sass
+//    Created on 	:   Nov16 - 2010, 21:06 pm
+//    Author      	:   @dgfrancisco
+//    Client     	:   Shapado
+//    Description	:   Estilos para los tabs de contenido con sus filtros
+//========================================================================
+#main-content-wrap
+  background-color: #fff
+  overflow: hidden
+  margin-bottom: 10px
+
+  h1
+    font-size: 25px
+    font-weight: bold
+    padding: 20px 20px 0 20px
+    margin: 0 0 10px 0
+
+  p.description
+    padding: 0 20px 20px 20px
+    margin: 0 0 20px 0
+    font-size: 13px
+    border-bottom: 1px solid #f1f1f1
+
+  ul.content-tabs
+    overflow: hidden
+    background-color: #f0f0f0
+
+    li
+      float: left
+      display: inline
+
+      a
+        padding: 12px 15px 10px 36px
+        display: block
+        border-bottom: 1px solid transparent
+        color: #999
+        font-size: 12px
+        text-transform: uppercase
+        &:hover
+          color: #000
+          background-color: #e5e5e5
+
+    li.questions a
+      background: url("/images/q-icon-medium.gif") 7px 50%  no-repeat
+
+    li.answers a
+      background: url("/images/ans-icon-medium.gif") 7px 50%  no-repeat
+
+    li.unanswered a
+      background: url("/images/noans-icon-medium.gif") 7px 50%  no-repeat
+
+    li.activity a
+      background: url("/images/activity-iacon.gif") 7px 50%  no-repeat
+
+.questions ul.content-tabs li.questions a, .answers ul.content-tabs li.answers a, .unanswered ul.content-tabs li.unanswered a
+  -moz-border-radius: 3px 3px 0 0 !important
+  -webkit-border-radius: 3px 3px 0 0 !important
+  -o-border-radius: 3px 3px 0 0 !important
+  -khtml-border-radius: 3px 3px 0 0 !important
+  border-radius: 3px 3px 0 0 !important
+  color: #000 !important
+  background-color: #fff !important
+
+.questions ul.content-tabs li.questions a:hover, .answers ul.content-tabs li.answers a:hover, .unanswered ul.content-tabs li.unanswered a:hover
+  background-color: #fff !important
+
+
+
+// FILTERS
+.filters
+  width: 100%
+  padding: 0
+  border-bottom: 1px solid #f1f1f1
+
+  ul
+    height: 28px
+    width: 100%
+    display: block
+
+    header
+      float: left
+      display: inline
+      padding: 12px
+      font-size: 13px
+      font-weight: bold
+
+    li
+      float: left
+      display: inline
+      border: none
+      a
+        display: block
+        padding: 12px 12px 10px 12px
+        background: none
+        color: #999
+        font-size: 13px
+        &:hover
+          color: #000
+
+.questions .newest li.newest a, .questions .hot li.hot a, .questions .votes li.votes a
+  border-bottom: 2px solid $orange !important
+  color: #000
+
+.answers .newest li.newest a, .answers .hot li.hot a, .answers .votes li.votes a, .unanswered .newest li.newest a, .unanswered .hot li.hot a, .unanswered .votes li.votes a
+  border-bottom: 2px solid $blue !important
+  color: #000 !important
+
+
+

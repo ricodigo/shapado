@@ -5,79 +5,71 @@
 //    Client     		:   Shapado
 //    Description	:   Estilos de la aplicacion y los llamados a reset y el setup basico del portal
 //========================================================================
-
 // BASIC SETUP
 //========================================================================
-//    Description	:   Definiciones globales de variables, colore, degradados, sombras, transformaciones, etc
 @import "setup"
 
 
 // BASIC STYLES
 //========================================================================
-//    Description	:   Limpieza de Etiquetas html
-@import "lib/reset"
+@import "reset"
+@import "app/messages"
+@import "app/pagination"
+@import "app/advertisement"
+@import "app/drop-menus"
 
 
 // BASIC LAYOUT
 //========================================================================
-//    Description	:   Todos los estilos muy generales de la app, diagramacion, modulos laterales, mensajes, paginacion, publicidad, brand
-@import "app/basics"
+@import "app/brand"
+@import "app/layout"
+@import "app/footer"
+@import "app/topBar"
+@import "app/topTabs"
 
 
-// USER ZONE
+// ADMIN
 //========================================================================
-//    Description	:   Estilos para las zonas de ususario y los modulos nuevos al logearce
-@import "app/user-side"
-//@import "superfish"
-
+@import "app/content/admin/profile"
+@import "app/content/admin/widgets"
+@import "app/content/admin/announcements"
+@import "app/content/admin/members"
+@import "app/content/admin/moderate"
 
 // WIDGETS
 //========================================================================
-//    Description	:   Estilos para cada widget, generales y particulares
-@import "app/widgets"
-
-
-// ACTION TABS
-//========================================================================
-//    Description	:   Estilo spara los tabs de las principales acciones en el top del site
-@import "app/action-tabs"
-
-
-// MAIN CONTENT TABS
-//========================================================================
-//    Description	:   Estilos para los tabs de contenido con sus filtros, no su contenido
-@import "app/main-tabs"
-
+//    Description :   Estilos para cada widget, generales y particulares
+@import "app/widgets/customLinks"
+@import "app/widgets/tags"
+@import "app/widgets/networks"
+@import "app/widgets/badges"
+@import "app/widgets/top_groups"
+@import "app/widgets/top_users"
 
 // MAIN CONTENT
 //========================================================================
-//    Description	:   Estilos para los contenidos del home
-@import "app/main-content"
+@import "app/content/tabs"
+@import "app/content/main"
 
-	
-// QUESTION CONTENT
-//========================================================================
-//    Description	:   Estilos para los despliegues de preguntas
-@import "app/question"
+@import "app/content/question/question"
+@import "app/content/question/toolbar"
+@import "app/content/more/badges"
+@import "app/content/more/groups"
+@import "app/content/question/actionPanels"
+@import "app/content/question/tags"
+@import "app/content/question/answers"
+@import "app/content/question/comments"
+
+@import "app/content/editors/jhtmlarea"
+@import "app/content/editors/markdown"
+@import "app/content/editors/markdown_editor"
+
 
 // FORMS
 //========================================================================
-//    Description	:   Estilos para los forms
-@import "app/forms"
+@import "app/forms/general"
 
-// FORM EDITOR
+
+//UIJQuery
 //========================================================================
-//    Description	:   Estilos para las opciones de texto enriquecido en los forms
-@import "jhtmlarea"
-@import "markdown"
-@import "markdown_editor"
-
-
-// BADGES
-//========================================================================
-//    Description	:   Estilos para cada badge
-@import "app/badges"
-	
-	
-//@import "navigation"
-
+@import "public/stylesheets/ui-lightness/jquery-ui.css"

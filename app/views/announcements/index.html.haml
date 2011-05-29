@@ -1,26 +1,24 @@
--content_for :subtabs do
-  .navtitle
-    = t(".title")
-    -if @announcements
-      == (#{@announcements.total_entries})
+%h1
+  = t('.title')
+%p.description
+  = t('.description')
+
+.list-announcements
+  %ul
+    -@announcements.each do |announcement|
+      %li
+        %h2
+          = markdown(announcement.message)
+        .date
+          = "#{Time.at(announcement.starts_at).strftime("<b>%x</b> %X")} - #{Time.at(announcement.ends_at).strftime("<b>%x</b> %X")}".html_safe
+        -if announcement.only_anonymous
+          %strong
+            = "[#{t("activerecord.attributes.announcement.only_anonymous")}]"
+        = link_to t("announcements.actions.delete"), announcement_path(announcement), :method => :delete
 
 - form_for(@announcement, :html=>{:class => "form", :id => "new_announcement"}) do |f|
   = render :partial => "form", :locals => {:f => f}
 
-  .group.navform
-    = f.submit t('scaffold.create')
-
-%ul.items#announcements
-  -@announcements.each do |announcement|
-    %li.item
-      .stats
-        .box
-          = link_to t("announcements.actions.delete"), announcement_path(announcement), :method => :delete
-      .summary
-        %h3
-          = markdown(announcement.message)
-        = "#{announcement.starts_at.strftime("<b>%x</b> %X")} - #{announcement.ends_at.strftime("<b>%x</b> %X")}".html_safe
-        -if announcement.only_anonymous
-          %strong
-            = "[#{t("activerecord.attributes.announcement.only_anonymous")}]"
-
+  .form-options
+    .buttons
+      = f.submit t('scaffold.create'), :class => "save"

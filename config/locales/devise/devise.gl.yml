@@ -1,0 +1,34 @@
+# Messages for Galician (Galego)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Toliño
+gl: 
+  devise: 
+    confirmations: 
+      link: Non recibiu as instrucións de confirmación?
+    mailer: 
+      confirmation_instructions: Instrucións de confirmación
+      reset_password_instructions: Instrucións de restablecemento do contrasinal
+      unlock_instructions: Instrucións de desbloqueo
+    passwords: 
+      link: Esqueceu o contrasinal?
+    registrations: 
+      link: Crear unha conta
+      signed_up: Xa está inscrito.
+      updated: Actualizou a súa conta.
+    sessions: 
+      facebook_actions: 
+        sign_in: Acceder
+        sign_out: Saír
+      facebook_invalid: Non puido acceder ao sistema. Conta inválida.
+      facebook_timeout: A súa sesión do Facebook caducou. Inicie sesión de novo para continuar.
+      inactive: A súa conta aínda non está confirmada.
+      invalid: Enderezo de correo electrónico ou contrasinal inválidos.
+      invalid_token: Pase de autenticación inválido.
+      link: Acceder
+      locked: A súa conta está bloqueada.
+      signed_in: Accedeu ao sistema.
+      signed_out: Saíu do sistema.
+      timeout: A súa sesión caducou. Inicie sesión de novo para continuar.
+    unlocks: 
+      link: Non recibiu as instrucións de desbloqueo?

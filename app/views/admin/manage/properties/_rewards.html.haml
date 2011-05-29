@@ -2,10 +2,10 @@
 %h2.title
   =t(".reputation_rewards_subtitle")
 
-%small
+%p
   =t(".reputation_rewards_description")
 
 = render :partial => "groups/reputation_rewards_form", :object => f
 
 .buttons
-  = f.submit t('scaffold.update')
+  = f.submit t('scaffold.update'), :class => "save"

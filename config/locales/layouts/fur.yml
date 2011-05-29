@@ -1,0 +1,39 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  layouts: 
+    application: 
+      ask_question: Fâs une domande
+      forgot: Dismenteât?
+      home: Inizi
+      languages: Lenghis
+      log_in: Jentre
+      logged: Jentrât come %{login}
+      logout: Jes
+      moderate: Modere
+      now: cumò!
+      pages: Pagjinis
+      questions: Domandis
+      questions_in: Domandis in
+      questions_tagged: etichetadis cun
+      search: Cîr
+      settings: Impuestazions
+      signup: Regjistriti
+      tags: Etichetis
+      title: Domandis e rispuestis
+      unanswered: Cence rispueste
+      users: Utents
+      welcome_from: Benvignût! Tu puedis
+    manage: 
+      actions: Azions
+      content: Contignût
+      domain: Domini
+      general: Gjenerâl
+      members: Membris
+      pages: Pagjinis
+      properties: Propietâts
+      reputation: Reputazion
+      stats: Statistichis
+      theme: Teme

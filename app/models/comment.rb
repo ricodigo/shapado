@@ -8,7 +8,7 @@ class Comment
 
   identity :type => String
 
-  field :body, :type =>  String, :required => true
+  field :body, :type =>  String
   field :language, :type =>  String, :default => "en"
   field :banned, :type =>  Boolean, :default => false
 
@@ -19,14 +19,15 @@ class Comment
 
   embedded_in :commentable, :inverse_of => :comments
 
+  validates_presence_of :body
   validates_presence_of :user
 
   def group
-    commentable.group
+    self._parent.group
   end
 
   def commentable_type
-    commentable.class.to_s
+    self._parent.class.to_s
   end
 
   def can_be_deleted_by?(user)
@@ -40,10 +41,11 @@ class Comment
 
   def find_question
     question = nil
-    if self.commentable.kind_of?(Question)
-      question = self.commentable
-    elsif self.commentable.respond_to?(:question)
-      question = self.commentable.question
+    commentable = self._parent
+    if commentable.kind_of?(Question)
+      question = commentable
+    elsif commentable.respond_to?(:question)
+      question = commentable.question
     end
 
     question

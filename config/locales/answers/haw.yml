@@ -1,0 +1,29 @@
+# Messages for Hawaiian (Hawai`i)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Kolonahe
+haw: 
+  activerecord: 
+    attributes: 
+      answer: 
+        body: Kino
+        created_at: Pane ʻia
+        link: Loulou
+    models: 
+      answer: Pane
+      answers: Pane
+  answers: 
+    create: 
+      flash_error: "Ua hewa ka hoʻohui ʻana i kāu pane.\nHoʻomanaʻo e pili ana:\n- ʻAe ʻole i nā pane hakahaka a kākau hou.\n- Pono ʻoe e kali no 20 mau kekona ma mua o kou hoʻokmo pane hou ʻana.\n- Hiki iā ʻoe ke hoʻokomo i hoʻokahi pane wale nō no kekahi nīnau."
+      flash_notice: Mahalo!
+    edit: 
+      title: Ke hoʻoponopono nei i ka pane
+    form: 
+      answer_label: Pane i kēia nīnau
+      comment_label: Manaʻo puka i kēia pane
+      comment_submit: Manaʻo
+      submit: Pane
+    revert: 
+      title: Hoʻi hope i ka pane
+    update: 
+      flash_notice: Ua hoʻohou ʻia kēia pane.

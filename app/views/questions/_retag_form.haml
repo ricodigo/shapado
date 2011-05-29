@@ -1,7 +1,7 @@
 = form_for @question, :url => retag_to_question_path(@question.id), :html => {:class => "form retag-form"} do |f|
-  = f.label :tags, "#{t(:tags, :scope => "activerecord.attributes.question")}", :class => "label"
-  = f.text_field :tags, :value => @question.tags.join(", "), :class => "text_field autocomplete_for_tags"
+  .field
+    = f.text_field :tags, :value => @question.tags.join(", "), :class => "text_field autocomplete_for_tags"
   .buttons
     = link_to t('.cancel'), question_path(@question), :class => 'cancel-retag'
     = t("global.or")
-    = submit_tag t(".submit")
+    = submit_tag t(".submit"), :class => 'save'

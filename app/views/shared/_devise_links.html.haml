@@ -1,18 +1,18 @@
-- if controller_name != 'sessions'
-  = link_to t('devise.sessions.link'), new_session_path(resource_name)
-  %br
+%ul.options
+  - if controller_name != 'sessions'
+    %li
+      = link_to t('devise.sessions.link'), new_session_path(resource_name)
+  %li
+    = link_to t('devise.registrations.link'), new_user_path
 
-= link_to t('devise.registrations.link'), new_user_path
-%br
+  - if devise_mapping.recoverable? && controller_name != 'passwords'
+    %li
+      = link_to t('devise.passwords.link'), new_password_path(resource_name)
 
-- if devise_mapping.recoverable? && controller_name != 'passwords'
-  = link_to t('devise.passwords.link'), new_password_path(resource_name)
-  %br
+  - if devise_mapping.confirmable? && controller_name != 'confirmations'
+    %li
+      = link_to t('devise.confirmations.link'), new_confirmation_path(resource_name)
 
-- if devise_mapping.confirmable? && controller_name != 'confirmations'
-  = link_to t('devise.confirmations.link'), new_confirmation_path(resource_name)
-  %br
-
-- if devise_mapping.lockable? && controller_name != 'unlocks'
-  = link_to t('devise.unlocks.link'), new_unlock_path(resource_name)
-  %br
+  - if devise_mapping.lockable? && controller_name != 'unlocks'
+    %li
+      = link_to t('devise.unlocks.link'), new_unlock_path(resource_name)

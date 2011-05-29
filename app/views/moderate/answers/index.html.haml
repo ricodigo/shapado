@@ -1,0 +1,19 @@
+%section.questions-index.moderate-answers
+  -form_tag moderate_answers_path do
+    -@answers.each do |answer|
+      %article
+        %h2
+          = check_box_tag "answer_ids[]", answer.id
+        %p
+          = render :partial => "flags/list", :locals=> {:flaggeable => answer}
+        %p
+          &= answer.banned
+        %p
+          = link_to answer.body, question_answer_path(answer.question, answer)
+
+  = will_paginate @answers
+  
+  .buttons
+    = submit_tag "ban"
+    = t("global.or")
+    = submit_tag "unban"

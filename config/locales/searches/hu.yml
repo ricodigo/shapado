@@ -1,0 +1,12 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  searches: 
+    form: 
+      clear: Törlés
+      search_box_title: Ellenőrizd, hogy ezt a kérdést nem tették-e már fel
+    index: 
+      empty: A keresésed nem felelt meg egyetlen kérdésnek sem.
+      search_text: "Kérdések, melyek a következőt tartalmazzák:"

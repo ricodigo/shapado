@@ -1,0 +1,27 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  activerecord: 
+    attributes: 
+      page: 
+        js: JavaScript
+    models: 
+      page: Pagjine
+      pages: Pagjinis
+  pages: 
+    actions: 
+      create_page: Cree une gnove pagjine
+      edit_page: Modifiche pagjine
+      title: Azions
+    edit: 
+      title: Daûr a modificâ la pagjine
+    form: 
+      language_tip: Lenghe de pagjimne
+    index: 
+      create_page: Cree une gnove pagjine
+      title: Liste des pagjinis
+      written_in: Scrite par %{language}
+    new: 
+      title: Gnove pagjine

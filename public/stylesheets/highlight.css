@@ -1,0 +1,56 @@
+.normal_key {
+  font-weight: bold;
+}
+.normal_value {
+
+}
+
+.pk_key {
+  font-size: 18px;
+  color: blue;
+}
+.pk_value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.type_key {
+  font-size: 18px;
+  color: blue;
+}
+.type_value {
+  font-size: 18px;
+  font-weight: bold;
+  color: magenta
+}
+
+.fk_key {
+  color: red;
+}
+.fk_value {
+
+}
+
+.date_key {
+  color: green;
+}
+.date_value {
+
+}
+
+.name_key {
+  font-size: 18px;
+  color: blue;
+}
+.name_value {
+  font-size: 18px;
+  font-weight: bold;
+  color: magenta
+}
+
+.private_key {
+  color: #aaa;
+}
+.private_value {
+  color: #aaa;
+}

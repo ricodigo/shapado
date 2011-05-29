@@ -1,0 +1,23 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: EugeneZelenko
+# Author: Jim-by
+be-TARASK: 
+  sessions: 
+    create: 
+      flash_error: Немагчыма ўвайсьці ў сыстэму як «%{login}»
+      flash_notice: Вы ўвайшлі ў сыстэму пасьпяхова
+    destroy: 
+      flash_notice: Вы выйшлі з сыстэмы.
+    new: 
+      log_in: Увайсьці
+      not_registered: Яшчэ не зарэгістраваны?
+      registered: Ужо зарэгістраваны?
+      remember_me: Запамятаць мяне
+      sign_in: Увайсьці
+      signup: Зарэгіструйцеся
+      with_authentication: Увайсьці праз нашую сыстэму аўтэнтыфікацыі
+      with_facebook: Уваход у сыстэму з дапамогай Facebook
+      with_openid: Уваход у сыстэму з дапамогай OpenID
+      with_twitter: Уваход у сыстэму з дапамогай Twitter

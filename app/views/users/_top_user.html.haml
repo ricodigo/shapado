@@ -1,0 +1,17 @@
+%ul.user-list.sf-menu
+  %li.user
+    //= link_to "#{avatar_img(current_user, {:size =>24})} #{current_user.login}", user_path(current_user)
+    = link_to current_user.login, user_path(current_user)
+    = avatar_img(current_user, {:size =>"small"})
+    %ul
+      %li
+        =link_to t('.profile'), user_path(current_user)
+      %li
+        =link_to t('users.edit.settings'), settings_path
+      %li
+        =link_to t('.my_karma', :karma =>current_user.reputation_on(current_group))
+      %li
+        =link_to t('.connect'), social_connect_path
+
+  %li.logout
+    =link_to t("layouts.application.logout"), destroy_user_session_path

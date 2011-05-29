@@ -1,0 +1,22 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  open_requests: 
+    create: 
+      flash_notice: درخواست باز کردن دوباره با موفقیت ساخته شد
+    destroy: 
+      flash_notice: درخواست باز کردن دوباره با موفقیت حذف شد
+    edit: 
+      title: ویرایش درخواست دوباره باز کردن
+    form: 
+      request_opening_details: درخواست باز کردن دوباره این سوال
+    index: 
+      title: فهرست درخواست های باز کردن
+    model: 
+      prural_name: درخواست باز کردن دوباره
+    new: 
+      title: درخواست باز کردن مجدد
+    update: 
+      flash_notice: درخواست باز کردن مجدد با موفقیت به روز شد

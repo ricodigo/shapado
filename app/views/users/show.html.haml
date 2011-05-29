@@ -1,12 +1,12 @@
 #users_show
   %section.userData
     .avatar
-      = gravatar @user.email.to_s, :size => 128
+      = avatar_img @user, :size => "big"
       -if current_user == @user
-      %P
-        =link_to "Editar perfil", settings_path
-    
-    %h3 Badges
+        %p
+          = link_to t('.edit_profile'), settings_path
+
+    %h3= t("activerecord.models.badges")
     %ul.badges
       -@badges.each do |badge|
         %li
@@ -21,30 +21,30 @@
 
         %small
           = t(:created_at, :scope => "activerecord.attributes.user")
-          = t("time.ago", :time => time_ago_in_words(@user.created_at))
+          %time{:datetime => @user.created_at.iso8601}
+            = t("time.ago", :time => time_ago_in_words(@user.created_at))
         |
         %small
           = t(:last_logged_at, :scope => "activerecord.attributes.user")
-          hace 5 min
+          %time{:datetime => @user.last_logged_at.iso8601}
+            = t("time.ago", :time => time_ago_in_words(@user.last_logged_at))
 
-        -if @user.website      
+        -if @user.website
           %p
             =t(:website, :scope => "activerecord.attributes.user")
-            =link_to h(@user.website), h(@user.website), :rel => "nofollow"
+            %a{:rel => "nofollow", :href =>  @user.website }= @user.website
 
         .description
           %p
             = markdown(@user.bio)
 
-
-          
       %ul.profile-stats
         %li
           %strong
             =format_number(@user.reputation_on(current_group))
           %small
             = t(:reputation, :scope => "activerecord.attributes.user")
-       
+
         %li
           %strong
             =format_number(@user.config_for(current_group).views_count.to_i)
@@ -52,12 +52,12 @@
             = t(".views")
         %li
           %strong
-            500
+            = @user.following_count
           %small
             = t('.following')
         %li
           %strong
-            100
+            = @user.followers_count
           %small
             = t('.followers')
         -if current_user != @user
@@ -66,39 +66,24 @@
               =link_to "- #{t(".unfollow")}", unfollow_user_path(@user), :class => "unfollow_link", 'data-class' => "follow_link", 'data-title' => t(".follow"), 'data-undo' => follow_user_path(@user)
           -else
             %li.follow
-              =link_to "+ #{t(".follow")}", follow_user_path(@user), :class => "follow_link", 'data-class' => "unfollow_link", 'data-title' => t(".unfollow"), 'data-undo' => unfollow_user_path(@user) 
-      .clear 
+              =link_to "+ #{t(".follow")}", follow_user_path(@user), :class => "follow_link", 'data-class' => "unfollow_link", 'data-title' => t(".unfollow"), 'data-undo' => unfollow_user_path(@user)
+      .clear
 
-    #main-content-wrap.answers{:class => @active_tab}
+    #main-content-wrap{:class => @active_tab}
       %nav{:class => @active_subtab }
         %ul.content-tabs
-          %li.questions
-            = link_to "Preguntas", user_path(@user, params.merge(:a_sort=>"newest")), :rel => "nofollow"
-          %li.answers
-            =link_to "Respuestas", url_for(:answers => 1)
-          %li.follow
-            =link_to "Follow", "#"
-          %li.activity
-            =link_to "Activity", "#"
+          = tab_entry "li", t(:questions, :scope => "activerecord.models"), user_path(@user), {:selected => "active"}, {:class => "questions"}
+          = tab_entry "li", t(:answers, :scope => "activerecord.models"), answers_user_path(@user), {:selected => "active"}, {:class => "answers"}
+          = tab_entry "li", t('global.following'), follows_user_path(@user), {:selected => "active"}, {:class => "follow"}
+          = tab_entry "li", t(:activity, :scope => "activerecord.models"), activity_user_path(@user), {:selected => "active"}, {:class => "activity"} #i18n
       %section.filters{:class => @active_subtab }
         %ul
-          %header 
-            = number_with_delimiter(@answers.total_entries)
-            =t(:answers, :scope => "activerecord.models")  
-            = "- Sort By:"
-          %li.newest
-            = link_to t("questions.index.newest"), user_path(@user, params.merge(:a_sort=>"newest")), :rel => "nofollow"
-          %li.hot
-            = link_to t("questions.index.oldest"), user_path(@user, params.merge(:a_sort=>"oldest")), :rel => "nofollow"
-          %li.votes
-            = link_to t("questions.index.votes"), user_path(@user, params.merge(:a_sort=>"votes")), :rel => "nofollow"
+          = render "users/show/user_#{params[:action]}_filters"
 
+      = render "users/show/user_#{params[:action]}_content"
 
-      -@answers.each do |answer|
-      -next if answer.question.banned
-        = render :partial => "answers/answer", :object => answer
     .additional_info
-      = will_paginate @answers, :param_name => "answers_page"
-        
+      = will_paginate @resources
 
-    
+
+

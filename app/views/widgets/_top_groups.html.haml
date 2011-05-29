@@ -1,15 +1,21 @@
-.module
+.top_groups.module
   %h3
     =t(".title")
   -widget.top_groups.each do |group|
+
     %section
-      =link_to image_tag(logo_path(group), :width => 32, :height => 32), domain_url(:custom => group.domain)
-      %p
-        %b
-          = link_to h(group.name), domain_url(:custom => group.domain)
-        %i="#{group.members.count} Members"
-        %br
-        &= truncate(strip_tags(group.description), :length => 35)
+
+      .avatar
+        =link_to image_tag(logo_path(group, "medium")), domain_url(:custom => group.domain)
+
+      .data
+        %h5
+          %b
+            = link_to h(group.name), domain_url(:custom => group.domain)
+          %small
+            ="#{group.members.count} Members"
+        %p
+          &= truncate(strip_tags(group.description), :length => 50)
 
   %footer
     =link_to t("scaffold.more"), groups_path

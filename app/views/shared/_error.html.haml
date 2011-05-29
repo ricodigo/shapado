@@ -1,20 +1,20 @@
 -content_for :subtabs do
   .navtitle
-    %h1= title
+    %h1= raw(title)
 
 .error-dialog
   #dialog-content
     %span.left
       = image_tag(error_image)
     %span.left
-      %p= explanation
+      %p= raw(explanation)
       .error-options
         %b= t("errors.options_label")
         %ul.list
           %li
-            = t("errors.go_to", :link =>link_to(t("layouts.application.home"), domain_url(:custom => current_group.domain)))
+            = raw(t("errors.go_to", :link =>link_to(t("layouts.application.home"), domain_url(:custom => current_group.domain))))
           %li
-            = t("errors.help_us_answer", :link => link_to(t("layouts.application.questions"), questions_path))
+            = raw(t("errors.help_us_answer", :link => link_to(t("layouts.application.questions"), questions_path)))
           %li
             -form_tag search_path, :class => "form", :method => :get do
               =t("errors.search")

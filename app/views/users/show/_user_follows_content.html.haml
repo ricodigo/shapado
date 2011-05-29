@@ -1,0 +1,8 @@
+
+-@resources.each do |resource|
+  -if ["followers", "following"].include? @active_subtab.to_s
+    = render :partial => "users/user", :object => resource
+  -elsif "answers" == @active_subtab.to_s
+    = render "answers/answer", :question => resource.question, :answer => resource
+  -else
+    = render :partial => "questions/question", :object => resource

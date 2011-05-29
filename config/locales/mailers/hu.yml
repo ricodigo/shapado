@@ -1,0 +1,24 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  mailers: 
+    notifications: 
+      earned_badge: 
+        subject: "Jelvényt szereztél a következő csoportban: %{group}!"
+      favorited: 
+        subject: "%{login} a kedvencei közé helyezte a kérdésedet!"
+      follow: 
+        subject: "%{login} követ téged a következő helyen: %{app}"
+      give_advice: 
+        friend_subject: "A barátodnak segítségre van szüksége: %{question_title}"
+        subject: "Szükségünk lenne a tanácsodra: %{question_title}"
+      new_answer: 
+        subject_friend: "A barátod, %{login}, megválaszolta a következő kérdést: %{title}"
+        subject_other: "%{login} válaszolt a következő kérdésre: %{title}"
+        subject_owner: "%{login} megválaszolta a következő kérdésedet: %{title}"
+      new_comment: 
+        subject: "%{login} hozzászólt a következő csoportban: %{group}"
+      report: 
+        subject: Jelentés a(z) %{app} %{group} csoportjáról

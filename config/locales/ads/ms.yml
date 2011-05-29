@@ -1,0 +1,16 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  ads: 
+    ad_links: Tambahkan iklan %{type} yang baru
+    create: 
+      success: Iklan berjaya dicipta.
+    index: 
+      add_adbard: Tambahkan iklan Ad Bard yang baru
+      add_adsense: Tambahkan iklan Google AdSense yang baru
+      title: Iklan
+    name: "Nama:"
+    position: "Kedudukan:"
+    title: Tambahkan iklan %{type} yang baru

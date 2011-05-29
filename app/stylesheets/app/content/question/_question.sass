@@ -1,0 +1,118 @@
+// ========================================================================
+//    Document    :   _question.sass
+//    Created on  :   Nov14 - 2010, 20:29 pm
+//    Author      :   @dgfrancisco
+//    Client      :   Shapado
+//    Description :   Estilos para los despliegues de las preguntas
+//========================================================================
+.question
+  #main-content-wrap
+    border: none
+    background: transparent
+
+section.main-question
+  +normal-radius
+  background: #fff url("/images/q-icon-medium.gif") 15px 15px  no-repeat
+  margin-bottom: 15px
+  position: relative
+
+  h1
+    font-size: 28px
+    line-height: 32px
+    font-weight: bold
+    margin: 10px 20px 10px 50px !important
+    padding: 0 !important
+    letter-spacing: -0.5px
+    text-shadow: 1px 1px 2px #e5e5e5
+    border: 0px !important
+
+    &.version
+      font-size: 18px
+      line-height: 20 px
+      margin: 10px 20px 10px 50px
+    br
+      margin-bottom: 10px
+    small
+      a
+        font-size: 12px
+        color: #000
+        font-style: italic !important
+        &:hover
+          border-bottom: 1px dotted
+
+    small.version
+      font-size: 15px
+      font-style: italic !important
+
+    small.current
+      color: #c00
+      font-weight: bold
+
+    small.verion-nav
+      float: right
+      font-size: 12px
+      color: #666
+      a
+        margin: 0 3px
+        color: $orange
+        &:hover
+          border-bottom: 1px dotted
+        &.revert
+          color: #c00
+
+  .description
+    margin: 0 20px 10px 50px !important
+    p
+      font-size: 13px
+      line-height: 16px
+      color: #606060
+      margin: 0 !important
+      padding: 0 !important
+      border: 0px !important
+
+    img
+      border: 1px solid #e5e5e5
+      max-width: 700px
+
+    .thumb
+      background-color: #fcfcfc
+      min-width: 130px
+      min-height: 95px
+      margin: 0 0 10px 0
+      padding: 10px
+      .video_thumbnail
+        margin: 0 auto
+        cursor: pointer
+      .play_button
+        border: none
+        margin: -80px auto 0 auto
+        cursor: pointer
+
+    #attachments_list
+      margin: 10px 0 10px 10px
+      .header
+        font-weight: bold
+        margin-bottom: 5px
+      li
+        list-style: disc
+        list-style-position: inside
+        margin: 3px 10px
+        a
+          color: #000
+          &:hover
+            color: $orange
+            border-bottom: 1px dotted
+
+  .stats
+    margin: 0 20px 20px 35px
+    p
+      font-size: 10px
+      margin: 0 0 10px 0 !important
+      color: #999
+      font-style: italic
+      padding: 0 !important
+      border: 0px !important
+      strong
+        font-weight: bold
+        margin: 0 0 0 10px
+        font-style: italic

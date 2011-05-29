@@ -4,9 +4,13 @@ class Answer
   include MongoidExt::Filter
   include MongoidExt::Random
 
-  include Support::Versionable
+  include MongoidExt::Versioning
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :question, :body, :language, :scope => [:group_id]
+
   identity :type => String
 
   field :body, :type => String, :required => true
@@ -38,12 +42,12 @@ class Answer
   index :question_id
 
   embeds_many :flags, :as => "flaggable"
-  embeds_many :comments, :as => "commentable", :order => "created_at asc"
+  embeds_many :comments, :as => "commentable"
 
   validates_presence_of :user_id
   validates_presence_of :question_id
 
-  versionable_keys :body
+  versionable_keys :body, :owner_field => "updated_by_id"
   filterable_keys :body
 
   validate :disallow_spam

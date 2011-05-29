@@ -1,0 +1,64 @@
+.invitation-container
+  - if @invitation.state?(:pending)
+    %h1= t('.welcome')
+    %h2
+      = t('.description', :group => @group.name)
+    #invitations-points
+      %div
+        = image_tag('/images/point1.png')
+        = t('.point1')
+      %div
+        = image_tag('/images/point2.png')
+        = t('.point2')
+      %div
+        = image_tag('/images/point3.png')
+        = t('.point3')
+      %div
+        = image_tag('/images/point4.png')
+        = t('.point4')
+
+    %p.clear
+      #twitter-and-facebook
+        = link_to t('.facebook_connect'), '/users/auth/facebook', :class => 'auth-provider', :id => 'facebook_auth'
+        = t('global.or')
+        = link_to t('.twitter_connect'), '/users/auth/twitter', :class => 'auth-provider', :id => 'twitter_auth'
+        - if current_group.is_social_only_signup?
+          - linkedin = link_to 'LindedIn', '/users/auth/linkedin', :class => 'auth-provider'
+          - identica = link_to 'Identi.ca', '/users/auth/identica', :class => 'auth-provider'
+          %p=raw t('.other_social_options', :linkedin => linkedin, :identica => identica)
+        - elsif current_group.is_all_signup?
+          = t('.other_connect')
+          = render "shared/login_drop_down"
+    %h1
+      = t('.create_account')
+  - elsif @invitation.state?(:connect)
+    - form_for current_user, :html => {:class => "form", :multipart => true} do |f|
+      .field
+        = f.label :name, t(:name, :scope => "activerecord.attributes.user"), :class => "label"
+        = f.text_field :name, :class => "text_field"
+      .field
+        = f.label :email, t(:email, :scope => "activerecord.attributes.user"), :class => "label"
+        = f.text_field :email, :class => "text_field"
+      .field
+        = f.label :password, t(:password, :scope => "activerecord.attributes.user"), :class => "label"
+        = f.password_field :password, :class => "text_field"
+      .field
+        = f.label :password_confirmation, t(:password_confirmation, :scope => "activerecord.attributes.user"), :class => "label"
+        = f.password_field :password_confirmation, :class => "text_field"
+      .field
+        = label :final_step, t('.final_step')
+        = hidden_field_tag 'invitation_id', @invitation.id
+        = hidden_field_tag 'next_step', 'confirm'
+      .form-options
+        .buttons
+          = submit_tag t('.create_account_step2'), :class => "save"
+  - elsif @invitation.state?(:confirm)
+    = render :partial => "shared/social_connect"
+    = link_to t('global.next_button'), "?step=find_friends&id=#{params[:id]}"
+  - elsif @invitation.state?(:find_friends)
+    %h1
+      = t('.follow_things')
+    = t('.follow_things_description')
+    = render :partial => "shared/suggestions", :locals => {:limit => 10, :no_title => true}
+    = link_to t('.done'), "?step=follow_suggestions&id=#{params[:id]}"
+

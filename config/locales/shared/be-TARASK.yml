@@ -1,0 +1,12 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Jim-by
+be-TARASK: 
+  shared: 
+    current_tags: 
+      title: Выбраныя тэгі
+    topbar: 
+      admin: Адміністратар
+      logged_as: Увайшлі як %{login}
+      user_page: Мая старонка

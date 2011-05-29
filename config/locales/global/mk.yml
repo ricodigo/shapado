@@ -1,12 +1,12 @@
 # Messages for Macedonian (Македонски)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Bjankuloski06
 mk: 
   feeds: 
     feed: Канал
     post_new_questions: поставај нови прашања на
-    question: претплати се на прашањево
+    question: Претплати се на прашањево
     questions: претплати се на сите прашања
     share_on_twitter: Twitter, Facebook и повеќе...
     tag: претплати се на ознаката
@@ -28,32 +28,32 @@ mk:
     any: било кој
     user: мои претпочитани јазици
   models: 
-    question: прашање
+    question: Прашање
   number: 
     x_time: 
       one: "%{count} пат"
       other: "%{count} пати"
-      zero: никогаш
+      zero: Никогаш
   pagination: 
     next: Следна &raquo;
     previous: "&laquo; Претходна"
   scaffold: 
-    add: додај
-    back: назад
-    cancel: откажи
-    close: затвори
-    create: создај
-    destroy: избриши
-    details: подробно
-    edit: уреди
-    more: повеќе ...
-    new: додај нов %{model}
+    add: Додај
+    back: Назад
+    cancel: Откажи
+    close: Затвори
+    create: Создај
+    destroy: Избриши
+    details: Подробно
+    edit: Уреди
+    more: Повеќе ...
+    new: Додај %{model}
     post_as_anonymous: Објави анонимно
-    save: зачувај
-    send: испрати
-    show: прикажи
-    sure: дали сте сигурни дека сакате да го избришете овој %{model} ?
-    update: поднови
+    save: Зачувај
+    send: Испрати
+    show: Прикажи
+    sure: Дали сте сигурни дека сакате да го избришете овој %{model} ?
+    update: Поднови
   time: 
     ago: пред %{time}
     today: денес

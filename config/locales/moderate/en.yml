@@ -15,8 +15,10 @@ en:
         retag_tooltip: Questions without tags
         flagged: Flagged
         flagged_tooltip: Questions flagged by the users
-        to_close: To close
-        to_close_tooltip: Questions with voted to close by the users
+        to_close: Closing requests
+        to_close_tooltip: Questions users requested to be closed
+        to_open: Reopen requests
+        to_open_tooltip: Closed questions users requested to reopen
 
   admin:
     moderate:

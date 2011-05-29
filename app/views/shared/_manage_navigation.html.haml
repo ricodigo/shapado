@@ -1,25 +1,47 @@
 .module.user-zone
   %nav
-    %h3 Group options
+    %h3= t('.title_options')
     %ul
       %li.properties
-        =link_to t("layouts.manage.properties"), manage_properties_path
-      %li.widgets
-        =link_to t("layouts.manage.widgets"), widgets_path
+        =link_to t("layouts.manage.general"), manage_properties_path
+      %li.share
+        =link_to t("global.share"), manage_properties_path(:tab => "share")
+      %li.theme
+        = link_to t("layouts.manage.theme"), manage_properties_path(:tab => "theme")
+      %li.constrains
+        = link_to t("layouts.manage.constrains"), constrains_configs_path
+      %li.rewards
+        = link_to t("layouts.manage.rewards"), manage_properties_path(:tab => "rewards")
+      %li.domain
+        = link_to t("layouts.manage.domain"), manage_properties_path(:tab => "domain")
+  .clear
+
+
+.module.user-zone
+  %nav
+    %h3= t('.title_content')
+    %ul
       -if current_group.has_custom_html
         %li.content
           =link_to t("layouts.manage.content"), manage_content_path
-      %li.announcements
-        = link_to t("layouts.manage.announcements"), announcements_path
-
-      -if current_group.has_custom_ads
-        %li.ads
-          =link_to t("layouts.application.manage_ads"), ads_path
       %li.members
         = link_to t("layouts.manage.members"), members_path
+      %li.invitations
+        = link_to t("layouts.manage.invitations"), manage_invitations_path
       %li.social
         = link_to t("layouts.manage.social"), manage_social_path
   .clear
+
+.module.user-zone
   %nav
+    %h3= t('.title_features')
     %ul
-      =render :partial => "admin/manage/properties/subtabs"
+      %li.widgets
+        = link_to t("layouts.manage.widgets"), widgets_path
+      -if current_group.has_custom_html
+      %li.announcements
+        = link_to t("layouts.manage.announcements"), announcements_path
+      -if current_group.has_custom_ads
+        %li.ads
+          =link_to t("layouts.application.manage_ads"), ads_path
+  .clear

@@ -4,4 +4,4 @@
   = t("notifier.global.hi", :user => h(@user.login))
   %br
   %br
-  = t("notifier.new_comment.message", :user => h(@comment.user.login), :new_comment => new_comment, :question => question)
+  =raw t("notifier.new_comment.message", :user => h(@comment.user.login), :new_comment => new_comment, :question => question)

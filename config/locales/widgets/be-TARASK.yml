@@ -1,0 +1,27 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: EugeneZelenko
+# Author: Jim-by
+be-TARASK: 
+  widgets: 
+    badges: 
+      description: Гэты элемэнт кіраваньня паказвае апошнія ўзнагароды атрыманыя карыстальнікамі ці пытаньнямі
+      title: Апошнія ўзнагароды
+    groups: 
+      description: Гэты элемэнт кіраваньня паказвае апошнія групы
+      title: Апошнія групы
+    index: 
+      description: Выкарыстоўвайце стрэлкі для перамяшчэньня Вашых элемэнтаў кіраваньня
+      title: Кіраваньне элемэнтамі бакавой панэлі
+    tag_cloud: 
+      title: Воблака тэгаў
+    top_groups: 
+      description: Гэты элемэнт кіраваньня паказвае пяць лепшых групаў
+      title: 5 лепшых групаў
+    top_users: 
+      description: Гэты элемэнт кіраваньня паказвае пяць самых актыўных карыстальнікаў
+      title: 5 самых актыўных карыстальнікаў
+    users: 
+      description: Гэты элемэнт кіраваньня паказвае апошніх зарэгістраваных карыстальнікаў
+      title: Апошнія карыстальнікі

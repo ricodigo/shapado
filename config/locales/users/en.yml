@@ -1,5 +1,13 @@
 en:
   users:
+    user_bar:
+      signed_as: Signed in as
+      not_logged_in: 'Not logged in'
+      create_account: Create an account
+    top_user:
+      profile: Profile
+      my_karma: 'My karma: %{karma}'
+      connect: Connect
     index:
       title: All users
       empty: "This group does not have any members. Participate by joining this group."
@@ -16,10 +24,15 @@ en:
     new:
       title: Sign up as a new user
       submit: Sign up
+      join_group: Join %{group}
+      description: Become a part of this community to ask, answer and learn!
     edit:
       title: Settings
       submit: Save
       enable_twitter: Enable your Facebook or Twitter accounts
+    change_password:
+      title: Change password
+      submit: Change my password
     show:
       title: "User %{user}"
       follow: Follow
@@ -27,10 +40,11 @@ en:
       views: views
       followers: Followers
       following: Following
+      edit_profile: Edit profile
     follow:
-      flash_notice: "The user %{user} was added to your friends"
+      flash_notice: "You are now following %{user}."
     unfollow:
-      flash_notice: "The user %{user} was removed from your friends"
+      flash_notice: "You are not following %{user} anymore."
     update_followed_tags:
       followed:
         flash_notice: "You are now following the tag %{tag}."
@@ -59,8 +73,8 @@ en:
       errors:
         reputation_needed: "You need a reputation of %{min_reputation} to %{action}"
     actions:
-      vote_up: Vote up
-      vote_down: Vote down
+      vote_up: Upvote
+      vote_down: Downvote
       flag: Flag
       edit_others_posts: "Edit other's posts"
       edit_wiki_post: "Edit wiki posts"

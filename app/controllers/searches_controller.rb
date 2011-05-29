@@ -6,7 +6,7 @@ class SearchesController < ApplicationController
           :show => [[:votes, %w(votes_average desc)], [:oldest, %w(created_at asc)], [:newest, %w(created_at desc)]]
 
   def index
-    options = {:per_page => 25, :page => params[:page] || 1}
+    options = {}
     unless params[:q].blank?
       pharse = params[:q]
       @search_tags = pharse.scan(/\[(\w+)\]/).flatten
@@ -34,7 +34,7 @@ class SearchesController < ApplicationController
 
         @highlight = @questions.parsed_query[:tokens].to_a
       else
-        @questions = Question.paginate(options)
+        @questions = Question.where(options).paginate(paginate_opts(params))
       end
     else
       @questions = []

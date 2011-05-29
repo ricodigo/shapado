@@ -1,0 +1,98 @@
+
+// BASICS FOR DROP MENUES TO WORK - never touch it :) - themes after this lines
+// ***************************************************************************************************************
+// How this work: Add the styles that you need for your menu then
+// add the class .sf-menu to the parent for drop and thats it, just change the theme of it
+
+ul.sf-menu
+  list-style: none
+
+  li
+    float: left    // Define a horizonal menu for vertical drops
+    position: relative
+
+    &:hover
+      visibility: inherit   // fixes IE7 - sticky bug
+      outline:  0
+
+  a
+    display:  block
+    position:  relative
+
+  a.sf-with-ul
+    min-width:  1px // trigger IE7 hasLayout so spans position accurately
+
+    .sf-sub-indicator
+      position: absolute
+      display: block
+      right: 7px
+      top: 14px
+      width: 15px
+      height: 15px
+      text-indent: -999em
+      overflow: hidden
+
+  ul
+    position: absolute
+    top: -999em
+    li
+      width: 100%
+
+  li:hover ul, li.sfhover ul
+    top: 0 // match top ul.sf-menu li item height
+    z-index: 99
+    outline:  0
+    width: auto
+
+  li:hover li ul, li.sfhover li ul, li li:hover li ul, li li.sfHover li ul
+    top: -999em
+  li li:hover ul, li.sfhover ul, li li li:hover ul, li li li.sfHover ul
+    left: 10em // match ul width
+    top: 0
+    outline:  0
+
+
+// THEME FOR TOP BAR MENUS
+// ***************************************************************************************************************
+.top-bar .user-list, .top-bar .group-list, .top-bar .auth-list
+  a
+  li // 1th level
+    li // 2th level
+      background:  #e5e5e5
+      li // 3th
+    &.sfHover:hover
+      background-color: #fff
+      a
+        color: #000
+
+    &:hover ul, &.sfhover ul
+      top: 39px !important
+      right: 0 !important
+
+  ul
+    +menu-shadow
+    li
+      border-top: 1px dotted #f1f1f1
+
+    a
+      padding: 8px 10px !important
+      border: 0 !important
+      color: #000 !important
+      font-weight: normal !important
+      background-color: #fff !important
+      &:hover
+        +orange-gradient
+        color: #fff !important
+
+  a.sf-with-ul
+    padding-right:  30px !important // padding for the arrow icon
+
+  .sf-sub-indicator
+    background: url("/images/question-toolbar-icons-small.png") 0 -387px no-repeat !important
+
+.top-bar .user-list
+  &:hover ul, &.sfhover ul
+    width: 120px
+
+.top-bar .auth-list
+  &:hover ul, &.sfhover ul

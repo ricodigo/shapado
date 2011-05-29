@@ -1,0 +1,26 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  activerecord: 
+    attributes: 
+      answer: 
+        body: Cuarp
+        created_at: Rispuindût
+        link: Leam
+    models: 
+      answer: Rispueste
+      answers: Rispuestis
+  answers: 
+    create: 
+      flash_notice: Graziis!
+    edit: 
+      title: Daûr a modificâ la rispueste
+    form: 
+      answer_label: Rispuint ae domande
+      comment_label: Scrîf un coment par cheste rispueste
+      comment_submit: Coment
+      submit: Rispuint
+    update: 
+      flash_notice: La rispueste e je stade inzornade cun sucès.

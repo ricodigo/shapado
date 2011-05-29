@@ -1,11 +1,13 @@
--content_for :subtabs do
-  .navtitle
-    = t(".title")
+%h1
+  = t('.join_group', :group => current_group.name)
+%p.description
+  = t('.description')
 
 - @user.password = @user.password_confirmation = nil
 = error_messages_for :user
 - form_for @user, :url => users_path, :html => {:class => "form"} do |f|
+  = hidden_field_tag 'invitation_id', params[:invitation_id]
   =render :partial => "form", :locals => {:f => f}
-  .group.navform
-    = submit_tag t('.submit')
 
+  .buttons
+    = submit_tag t('.submit'), :class => "save"

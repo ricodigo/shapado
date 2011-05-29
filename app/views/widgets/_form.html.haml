@@ -1,0 +1,5 @@
+-form_for(widget, :url => widget_path(widget, :tab => tab), :class => "form") do
+  = hidden_field_tag "position", position
+  = render :partial => "#{widget.partial_name}_settings", :locals => {:widget => widget}
+  .buttons
+    = submit_tag t("scaffold.update"), :class => "save"

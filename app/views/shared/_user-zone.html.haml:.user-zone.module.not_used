@@ -1,0 +1,53 @@
+.user-zone.module{:class => @current_class}
+  -if !logged_in?
+    /=multiauth_menu("Sign In")
+    = multiauth_dropdown("Sign Inooo")
+  -else
+    .avatar
+      = avatar_img(current_user, :size => "small")
+
+    .greeting
+      %small Welcome
+      -if logged_in?
+        %b=current_user.login
+    .clear
+
+    %nav.user-nav
+      -if current_user.mod_of?(current_group)
+        %ul
+          %li
+            = link_to "moderate", moderate_path
+          %li
+            = link_to "admin", manage_properties_path
+      .clear
+
+      %ul
+        %li.active
+          =link_to "Mi perfil", user_path(current_user)
+        %li
+          =link_to "Mi Karma: #{current_user.reputation_on(current_group)}"
+        %li
+          =link_to "Followed", feed_user_path(current_user)
+        %li
+          =link_to "All", questions_path
+        %li
+          =link_to "By Me", by_me_user_path(current_user)
+        %li
+          =link_to "Preferred", preferred_user_path(current_user)
+        %li
+          =link_to "Contributed", contributed_user_path(current_user)
+        %li
+          =link_to "Collaborate!", expertise_user_path(current_user)
+        %li
+          =link_to "FAQ"
+        %li.log-out
+          =link_to t("layouts.application.logout"), destroy_user_session_path
+      .clear
+
+      -current_user.searches.where(:group_id => current_group.id).each do |search|
+        %ul
+          %li
+            =link_to search.name, search_path(search)
+      .clear
+    .open
+      =link_to "View all"

@@ -10,21 +10,28 @@
 
   %body
     = render :partial => "shared/analytics"
-    #container
-      #header
-        #main-bar
-          #logo
-            -if current_group.has_logo?
-              =link_to image_tag(logo_path(current_group), :class => "group_logo", :width => current_group.logo_info["width"], :height => current_group.logo_info["height"]), domain_url(:custom => current_group.domain)
-            -else
-              = link_to image_tag("default_logo.png", :class => "group_logo"), domain_url(:custom => current_group.domain)
-          .clear
-      #wrapper
-        #main
-          #block-text.block
-            .content
-              %p.markdown
-                = show_flash_messages(:class => "flash", :markdown => true)
-              .inner
-                = yield
-                .clear
+    #container{:class => @current_class}
+
+      %nav.top-bar
+        %ul.group-list.sf-menu
+          = render "groups/top_grouplist"
+          -if !logged_in?
+          - else
+            //-if current_user.mod_of?(current_group)
+            = render "admin/manage/top_admin"
+            = render "admin/moderate/top_moderate"
+
+        .searcher
+          = form_tag search_index_path, :method => :get, :id => "search" do
+            .field
+              = text_field_tag :q, params[:q]
+
+        -if !logged_in?
+          = multiauth_dropdown("Sign In")
+        -else
+          = render "users/top_user"
+
+      %section.sessions
+        #main-content-wrap
+          = show_flash_messages(:class => "flash", :markdown => true)
+          = yield

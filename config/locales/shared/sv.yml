@@ -1,0 +1,9 @@
+# Messages for Swedish (Svenska)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Lokal Profil
+sv: 
+  shared: 
+    topbar: 
+      logged_as: Inloggad som %{login}
+      user_page: Min sida

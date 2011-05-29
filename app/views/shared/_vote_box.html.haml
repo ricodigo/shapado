@@ -1,6 +1,6 @@
--if !closed && (logged_in? && voteable.user != current_user) || !logged_in?
+-if !closed && (logged_in? && (voteable.user != current_user)) || !logged_in?
   -vote = current_user.vote_on(voteable) if logged_in?
-
+  = vote
   %form{:action=> url, :method=>'post', :class=>'vote_form'}
     = token_tag
     %p.vote_box

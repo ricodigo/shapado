@@ -50,5 +50,9 @@ module Jobs
         Notifier.deliver_follow(current_user, user, current_group)
       end
     end
+
+    def self.on_new_invitation(invitation_id)
+      Notifier.new_invitation(invitation_id).deliver
+    end
   end
 end

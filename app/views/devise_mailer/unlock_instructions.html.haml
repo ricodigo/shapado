@@ -1,10 +1,10 @@
 %p
-  Hello
+  = t('devise.mailer.hello')
   = @resource.email
   \!
 %p
-  Your account has been locked due to an excessive amount of unsuccessful sign in attempts.
+  = t('devise.mailer.unlock.instruction1')
 %p
-  Click the link below to unlock your account:
+  = t('devise.mailer.unlock.instruction2')
 %p
-  = link_to 'Unlock my account', unlock_url(@resource, :unlock_token => @resource.unlock_token)
+  = link_to t('devise.mailer.unlock.link'), unlock_url(@resource, :unlock_token => @resource.unlock_token)

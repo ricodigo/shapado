@@ -1,0 +1,161 @@
+// ========================================================================
+//    Document     :   _main.sass
+//    Created on   :   MAR 21 - 2011, 6:17 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description  :
+//========================================================================
+#main-content-wrap, .users-main-content
+  section
+    width: 100%
+
+    .empty
+      margin: 20px
+      border: 1px solid $orange
+      padding: 25px 25px 25px 130px
+      background-color:  $lightOrange
+      overflow: hidden
+
+      img
+        float: left
+        margin: 0 20px 0 0
+
+      h2
+        font-size: 20px
+        font-weight: bold
+        margin: 3px 0 7px 0
+        text-shadow: 1px 1px 2px #e5e5e5
+
+      p
+        font-size: 14px
+
+
+    article
+      border-bottom: 1px solid #f1f1f1
+      padding: 30px 20px
+      color: #666
+
+      .user-data
+        font-size: 12px
+        margin: 0 0 10px 20px
+        a:hover
+          border-bottom: 1px dotted
+        i
+          font-size: 10px
+          font-style: italic
+          margin: 0 5px 0 0
+
+      h2
+        padding-left: 20px
+        margin: 0 0 5px 0
+        a
+          font-size: 20px
+          line-height: 22px
+          color: $dark
+          display: block
+          &:hover
+            color: #000
+
+      .tags
+        display: none
+        clear: both
+        margin: 0 0 13px 20px
+        ul li
+          float: left
+          display: inline
+          font-size: 11px
+          a
+            margin: 0 0 0 7px
+            &:hover
+              border-bottom: 1px dotted
+
+      .toolbar
+        clear: both
+        display: block
+        border: 0px !important
+        ul
+          li.answers, li.votes, li.followers
+            float: left
+            margin-right: 5px
+            margin-left: 0
+            form
+              float: left
+              margin: 0 4px 0 0
+            a
+              background: #fff url("/images/ans-icon-small-light.gif") 0 1px  no-repeat
+              margin: 0
+              padding: 0 0 0 20px
+              font-size: 12px
+            a:hover
+              background-color: #fff
+              color: #000
+
+          li.votes
+            width: 150px
+            height: 15px
+            position: relative
+            form
+              width: auto
+              margin: 0 -13px 0 0 !important
+            a
+              background-image: none !important
+              background-color: transparent !important
+            img
+              position: absolute
+              top: 0
+
+          li
+            float: right
+            display: inline
+            margin-left: 5px
+            a
+              +small-radius
+              color: #666
+              padding: 3px 7px
+              font-size: 11px
+              background-color: #f1f1f1
+            a:hover
+              background-color: #e5e5e5
+              color: #000
+
+.questions, #users_show .questions
+  section
+    article
+      h2
+        background: url("/images/q-icon-small.gif") 0 2px  no-repeat !important
+
+.answers, #users_show .answers
+  section
+    article
+      h2
+        background: url("/images/ans-icon-small.gif") 0 1px  no-repeat !important
+      p
+        padding: 0 0 0 20px !important
+        border: 0px !important
+        margin: 0 0 5px 0 !important
+        background: url("/images/q-icon-small.gif") 0 2px  no-repeat !important
+
+.unanswered, #users_show .unanswered
+  section
+    article
+      h2
+        background: url("/images/q-icon-small.gif") 0 2px  no-repeat !important
+
+.admin-nav
+  margin: -20px 0 0 0
+  border-bottom: 1px solid #e5e5e5
+  height: 31px
+  li
+    float: left
+    display: inline
+    a
+      padding: 10px 15px
+      display: block
+      border-bottom: 1px solid #f1f1f1
+      border-right: 1px solid #f1f1f1
+      color: #999
+      font-size: 11px
+      text-transform: uppercase
+      &:hover
+        background-color: #f1f1f1
+        color: #000

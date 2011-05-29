@@ -2,8 +2,9 @@ en:
   announcements:
     index:
       title: Announcements
+      description: Manage and create new announcements that will be shown site wide to your visitors.
     create:
-      success: 'Announcement was successfully created.'
+      success: 'Your announcement was successfully created.'
     form:
     actions:
       title: Actions

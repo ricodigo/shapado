@@ -1,0 +1,152 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    models: 
+      badge: jelvény
+      badges: jelvény
+  badges: 
+    index: 
+      description: Ez az összes jelvény, ami megszerezhető. Oszd meg tudásodat, és szerezz jelvényeket!
+      title: Jelvények
+    shared: 
+      addict: 
+        description: Meglátogatta az oldalt 20 egymást követő napon
+        name: Függő
+      autobiographer: 
+        description: Kitöltötte a felhasználói profil összes mezőjét
+        name: Önkéntes életrajzíró
+      celebrity: 
+        description: Több, mint 100 követője van
+        name: Híresség
+      citizen_patrol: 
+        description: Megjelölte az első bejegyzést
+        name: Polgárőr
+      civic_duty: 
+        description: 300 alkalommal szavazott
+        name: Polgári kötelesség
+      cleanup: 
+        description: Első alkalommal állított vissza
+        name: Takarítás
+      commentator: 
+        description: 10 hozzászólást írt
+        name: Kommentátor
+      critic: 
+        description: Az első alkalommal szavazott negatívan
+        name: Kritikus
+      disciplined: 
+        description: Törölte saját bejegyzését 3 vagy magasabb pontszám esetén
+        name: Fegyelmezett
+      editor: 
+        description: Első alkalommal szerkesztett bejegyzést
+        name: Szerkesztő
+      effort_medal: 
+        description: 100 pozitív szavazata van
+        name: Erőfeszítés-érem
+      enlightened: 
+        description: Van egy válasza, amit elfogadtak, és legalább 10 felszavazást kapott
+        name: Felvilágosult
+      famous_question: 
+        description: Feltett egy kérdést, aminek több, mint 10 000 megtekintése van
+        name: Híres kérdés
+      fanatic: 
+        description: Meglátogatta az oldalt 100 egymást követő napon
+        name: Fanatikus
+      favorite_question: 
+        description: Feltett egy kérdést, amit több, mint 25 felhasználó helyezett a kedvencei közé
+        name: Kedvenc kérdés
+      friendly: 
+        description: Első alkalommal követett valakit
+        name: Barátságos
+      good_answer: 
+        description: Megoldott egy olyan kérdést, aminél átlagosan több, mint 25 szavazat van
+        name: Jó válasz
+      good_question: 
+        description: Feltett egy olyan kérdést, aminél átlagosan több, mint 25 szavazat van
+        name: Jó kérdés
+      great_answer: 
+        description: Van olyan válasza, amit 100 alkalommal szavaztak fel
+        name: Remek válasz
+      great_question: 
+        description: Feltett egy olyan kérdést, amit legalább 100-szor szavaztak fel
+        name: Nagy kérdés
+      guru: 
+        description: Megoldott egy olyan kérdést, aminél átlagosan több, mint 40 szavazat van
+        name: Guru
+      inquirer: 
+        description: Első alkalommal tett fel kérdést
+        name: Érdeklődő
+      interesting_person: 
+        description: Több, mint 10 követője van
+        name: Érdekes személy
+      merit_medal: 
+        description: 200 pozitív szavazatot szerzett
+        name: Kiérdemelt érem
+      necromancer: 
+        description: Megválaszolt egy olyan kérdést 60 nappal később, legalább 5 szavazattal
+        name: Halottidéző
+      nice_answer: 
+        description: Van olyan válasza, amit 10 alkalommal szavaztak fel
+        name: Szép válasz
+      nice_question: 
+        description: Feltett egy olyan kérdést, amit legalább 10-szer szavaztak fel
+        name: Szép kérdés
+      notable_question: 
+        description: Feltett egy kérdést, aminek több, mint 2500 megtekintése van
+        name: Figyelemre méltó kérdés
+      organizer: 
+        description: Első alkalommal címkézett újra
+        name: Szervező
+      peer_pressure: 
+        description: Törölte saját bejegyzését -3 vagy kisebb pontszám esetén
+        name: A nép nyomása
+      pioneer: 
+        description: A legelső felhasználók egyike
+        name: Úttörő
+      popstar: 
+        description: 500 pozitív szavazata van, legfeljebb 10 negatív
+        name: Popsztár
+      popular_person: 
+        description: Több, mint 50 követője van
+        name: Népszerű személy
+      popular_question: 
+        description: Feltett egy kérdést, aminek több, mint 1000 megtekintése van
+        name: Népszerű kérdés
+      rockstar: 
+        description: 1000 pozitív szavazata van, legfeljebb 10 negatív
+        name: Rocksztár
+      scholar: 
+        description: Megválaszolta első saját kérdését elfogadott válasszal
+        name: Tudós
+      self-learner: 
+        description: Megválaszolta saját kérdését kérdést úgy, hogy legalább 3 felszavazást kapott
+        name: Magától tanuló
+      service_medal: 
+        description: 300 pozitív szavazata van
+        name: Érdemérem
+      shapado: 
+        description: Meglátogatta az oldalt 8 egymást követő napon
+      stellar_question: 
+        description: Feltett egy olyan kérdést, amit 100 felhasználó helyezett a kedvencei közé
+        name: Népszerű kérdés
+      student: 
+        description: Feltett egy olyan kérdést, aminél legalább egy felszavazás történt
+        name: Tanuló
+      supporter: 
+        description: Első alkalommal szavazott pozitívan
+        name: Támogató
+      troubleshooter: 
+        description: Első alkalommal válaszolt
+        name: Hibaelhárító
+      tutor: 
+        description: Megoldott egy olyan kérdést, aminél átlagosan több, mint 2 szavazat van
+        name: Oktató
+    show: 
+      description: "Azon felhasználók listája, akik megszerezték ezt a jelvényt. Legutóbb a következő személyek kapták meg:"
+      earned: megszerezte
+      for_tag_bronze: "200 szavazat a következő címkénél: %{tag}"
+      for_tag_gold: "1000 szavazat a következő címkénél: %{tag}"
+      for_tag_silver: "400 szavazat a következő címkénél: %{tag}"
+      title: "Jelvény: %{type}"

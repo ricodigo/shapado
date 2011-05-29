@@ -1,8 +1,8 @@
 %div{:data => {:role => "page"}}
   %div{:"data-role" => "header"}
     %h1
-      New Question
-    = link_to 'Home', '/mobile', "class" => "ui-btn-right"
+      = t('.title')
+    = link_to t('global.home'), '/mobile', "class" => "ui-btn-right"
 
 
   %div{:"data-role" => "content"}
@@ -13,8 +13,8 @@
       =render "followup_form.html.haml", local_assigns
 
       -if @question.position
-        = hidden_field_tag "question[position][lat]", @question.position.lat, :class => "lat_input"
-        = hidden_field_tag "question[position][long]", @question.position.long, :class => "long_input"
+        = hidden_field_tag "question[position][lat]", @question.position["lat"], :class => "lat_input"
+        = hidden_field_tag "question[position][long]", @question.position["long"], :class => "long_input"
       %div{:"data-role"=>"fieldcontain"}
         = f.label :title, "#{t(:title, :scope => "activerecord.attributes.question")}*", :class => "label"
         = f.text_field :title, :class => "text_field"

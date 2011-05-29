@@ -20,3 +20,5 @@ en:
         subject: "Report for the group %{group} of %{app}"
       created_flag:
         subject: "New post flagged on %{group}"
+      new_invitation:
+        subject: "%{user} is inviting you to join %{group}"

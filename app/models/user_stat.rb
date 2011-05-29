@@ -4,11 +4,11 @@ class UserStat
 
   identity :type => String
 
-  field :answer_tags, :type => Array
-  field :question_tags, :type => Array
-  field :expert_tags, :type => Array
+  field :answer_tags, :type => Array, :default => []
+  field :question_tags, :type => Array, :default => []
+  field :expert_tags, :type => Array, :default => []
 
-  field :tag_votes, :type => Hash
+  field :tag_votes, :type => Hash, :default => {}
 
   referenced_in :user
 

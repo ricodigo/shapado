@@ -1,0 +1,11 @@
+%header
+  = number_with_delimiter(@resources.total_entries)
+  = t(:activities, :scope => "activerecord.models")
+  \-
+  = t('global.sort_by')
+%li.newest
+  = link_to t("questions.index.newest"), activity_user_path(@user, params.merge(:a_sort=>"newest")), :rel => "nofollow"
+%li.hot
+  = link_to t("questions.index.oldest"), activity_user_path(@user, params.merge(:a_sort=>"oldest")), :rel => "nofollow"
+%li.votes
+  = link_to t("questions.index.votes"), activity_user_path(@user, params.merge(:a_sort=>"votes")), :rel => "nofollow"

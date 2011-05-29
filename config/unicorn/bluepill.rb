@@ -1,14 +1,14 @@
-Rails.root = ENV["RAILS_ROOT"] || ENV["PWD"] || File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
+RAILS_ROOT = ENV["RAILS_ROOT"] || ENV["PWD"] || File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
 rails_env = ENV["RAILS_ENV"] || 'production'
 
-puts ">> Starting bluepill with Rails.root=#{Rails.root} and Rails.env=#{rails_env}"
+puts ">> Starting bluepill with RAILS_ROOT=#{RAILS_ROOT} and RAILS_ENV=#{rails_env}"
 
-Bluepill.application("shapado", :log_file => Rails.root + "log/bluepill.log") do |app|
+Bluepill.application("shapado", :log_file => RAILS_ROOT + "/log/bluepill.log") do |app|
   app.process("unicorn-shapado") do |process|
-    process.pid_file = File.join(Rails.root, 'tmp', 'pids', 'unicorn.pid')
-    process.working_dir = Rails.root
+    process.pid_file = File.join(RAILS_ROOT, 'tmp', 'pids', 'unicorn.pid')
+    process.working_dir = RAILS_ROOT
 
-    process.start_command = "unicorn_rails -Dc #{Rails.root}/config/unicorn/unicorn.rb -E #{rails_env}"
+    process.start_command = "unicorn_rails -Dc #{RAILS_ROOT}/config/unicorn/unicorn.rb -E #{rails_env}"
     process.stop_command = "kill -QUIT {{PID}}"
     process.restart_command = "kill -USR2 {{PID}}"
 

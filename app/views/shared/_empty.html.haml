@@ -1,0 +1,7 @@
+.empty
+  =image_tag("empty.png")
+  %h2
+    = t('.title')
+  %p
+    - link = link_to t('ask_a_question'), new_question_path
+    =raw t('.description', :ask_a_question_link => link)

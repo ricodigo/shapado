@@ -2,6 +2,7 @@ en:
   notifier:
     global:
       hi: "Hi %{user},"
+      hi_no_user: "Hi,"
       user_page: "user page"
     favorited:
       message1: "%{user} added your answer on %{group} as a favorite"
@@ -45,3 +46,7 @@ en:
     admin_login:
       subject: "Alert: admin connection"
       message1: "User %{user} has connected as admin at %{time} with the ip %{ip}."
+    new_invitation:
+      subject: "%{user} has invited you to %{group}"
+      message1: "Click here to accept the invitation %{link}"
+      message2: "The %{group} team."

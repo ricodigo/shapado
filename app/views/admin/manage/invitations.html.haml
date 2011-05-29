@@ -1,0 +1,14 @@
+%h1
+  Invitations
+%p.description
+  Share your app and content to every one
+%ul.admin-nav
+  %li.invite
+    = link_to t(".invite"), manage_invitations_path(:tab=>"invite"), :title => t(".invite_title")
+  %li.invitations
+    = link_to t(".invitations"), manage_invitations_path(:tab=>"invitations"), :title => t(".invitations_title")
+
+= render :partial => "admin/manage/properties/#{@active_subtab}"
+
+
+= yield :after_form

@@ -1,0 +1,73 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      group: 
+        default_tags: Alapértelmezett címkék
+        description: Leírás
+        domain: Domainnév
+        enable_latex: LaTeX engedélyezése
+        fb_button: Facebookos Tetszik gomb engedélyezése (a titoktartásnak nem felel meg)
+        forum: Több, mint egy válasz engedélyezése egy felhasználótól
+        group_created_by: "létrehozta:"
+        language: Nyelv
+        legend: Jelmagyarázat
+        logo: Logó
+        may_contain_adult_content: Ez az oldal felnőtteknek szóló tartalommal is rendelkezhet
+        name: Név
+        openid_only: Csak OpenID-t használó felhasználók férhetnek hozzá az oldalhoz
+        owner: A csoportot %{login} hozta létre
+        registered_only: Csak regisztrált személyek férhetnek hozzá az oldalhoz
+        state: Állapot
+        subdomain: URL-cím
+        wysiwyg_editor: Felhasználóbarát szerkesztő engedélyezése
+    models: 
+      default_tags_message: Nem lehet tíznél több alapértelmezett címkéd
+      group: csoport
+      groups: csoportok
+  groups: 
+    create: 
+      flash_notice: A csoportod sikeresen létrejött. Elkezdheted a konfigurálását.
+    form: 
+      access: Hozzáférési beállítások
+      analytics_engine: Analitikai motor
+      analytics_legend: A csoport a saját követőkódját használhatja
+      any_language: Bármelyik
+      custom_analytics: Egyedi analitika engedélyezése
+      custom_html: Egyedi HTML engedélyezése
+      custom_js: Egyedi JavaScript engedélyezése
+      default_tags_legend: Vesszővel válaszd el a címkéket. Csak 10 alapértelmezett címkét lehet megadni.
+      description_legend: 400 karakter áll rendelkezésre a csoport leírására.
+      isolate_group: Csoport elszigetelése más csoportoktól
+      legend_legend: Ez lesz használva a fejlécben. 40 karakter áll rendelkezésre.
+      logo_legend: Feltölthetsz egy logót a csoportnak. A fájlméret maximum 2MB.
+      members_only: Csak a csoport tagjai férhetnek hozzá a csoporthoz
+      website_analytics_id: A weboldal analitikai azonosítója
+    group: 
+      about: Célja
+      accept_group: Csoport elfogadása
+      allow_ads: Hirdetések engedélyezése
+      close: Bezárás
+      close_group: Csoport bezárása
+      disallow_ads: Hirdetések tiltása
+    index: 
+      actives: Aktív
+      filter: Csoportok keresése
+      most_active: Legaktívabb
+      name: Név
+      pendings: Függőben levő
+      request_group: Új csoport kérése
+      title: Csoportok
+    new: 
+      title: Csoport létrehozása
+    show: 
+      accept_group: Csoport elfogadása
+      accept_group_with_custom_ads: Csoport elfogadása és egyedi hirdetések engedélyezése
+      close_group: Csoport bezárása
+      group_awaiting_acceptance: A csoport moderátor elfogadására vár
+      group_closed: Ez a csoport le volt zárva.
+      title: A(z) %{name} célja
+      visit_group: Csoport megtekintése

@@ -1,0 +1,14 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  searches: 
+    form: 
+      clear: Nete
+      search_box_title: Controle che la tô domande no sedi za stade fate
+      tags_tip: Dopre [tag] par specificâ lis etichetis.
+    index: 
+      empty: La tô ricercje no corispuint a nissune domande.
+      search_text: Domandis che a contegnin
+      tags: cun chestis etichetis

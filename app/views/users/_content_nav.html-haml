@@ -3,7 +3,7 @@
     %li.questions
       =link_to t("layouts.application.questions"), questions_link
     %li.answers
-      =link_to "Respuestas", url_for(:answers => 1)
+      =link_to t("activerecord.models.answers"), url_for(:answers => 1)
     %li.unanswered
       =link_to t("layouts.application.unanswered"), url_for(:unanswered => 1)
 

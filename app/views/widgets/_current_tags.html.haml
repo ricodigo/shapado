@@ -5,10 +5,10 @@
     .content.tag-list
       -self.current_tags.each do |tag|
         %span.tag{:class => "tag_#{h(tag)}"}
-          = link_to h(tag), question_tag(:tags => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
+          = link_to h(tag), tag_path(:id => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
           -tags = (self.current_tags - [tag])
           -if tags.empty?
-            = link_to "-", url_for, :class => "remove_tag"
+            = link_to "-", tag_path(:id => self.current_tags.join("+")), :class => "remove_tag"
           -else
-            = link_to "-", url_for(:tags => tags.join("+")), :class => "remove_tag"
+            = link_to "-", tag_path(:id => tags.join("+")), :class => "remove_tag"
     .clear

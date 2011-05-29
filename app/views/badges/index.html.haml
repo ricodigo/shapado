@@ -1,15 +1,20 @@
-.badges
-  %h1
-    = t(".description")
-  .container
-    %ul
-      - @badges.each do |badge|
-        %li
-          .badge_item
-            = render :partial => "badges/badge", :object => badge, :locals => {:hide_user => true}
-            .counter
-              == × #{badge["count"]}
-          .badge_description
-            =badge.description
-          .clear
+%h1
+  Badges
+%p.description
+  = t(".description")
+.content
+  %ul
+    - @badges.each do |badge|
+
+      %li
+        .badge_item{:class => badge.type}
+
+          %a.badge{:href => badge_path(:id => badge.token), :title => badge.description}
+            =h badge.name
+
+          .counter
+            == × #{badge["count"]}
+        .badge_description
+          =badge.description
+        .clear
 

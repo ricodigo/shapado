@@ -1,7 +1,11 @@
 en:
   groups:
+    top_grouplist:
+      active_site: "Active site:"
     index:
       title: Groups
+      description: This is the list of public groups that have been created. Use the search input below to filter groups. You can also %{link}.
+      create_your_own: create your own group
       filter: "Search for groups"
       actives: Active
       pendings: Pending
@@ -27,6 +31,8 @@ en:
       title: Create your group
     create:
       flash_notice: Your group was successfully created. You can now start configuring it.
+    edit:
+      title: Edit your group
     form:
       description_legend: You have 400 characters to describe the group.
       legend_legend: "It will be used in the header. You have 40 characters."
@@ -42,6 +48,10 @@ en:
       analytics_engine: Analytics engine
       website_analytics_id: Website Analytics ID
       analytics_legend: The group will be able to use its own tracking code
+      signup_all: 'All (users can sign up with email, OpenId, Facebook, Twitter etc)'
+      signup_noemail: 'No email/password (users sign up with OpenId, Facebook, Twitter)'
+      signup_social: 'Social only (users can only sign up with Facebook, Twitter, LinkedIn and Identica)'
+      signup_email: 'Email only (users can only sign up with their email/password)'
     connect_group_to_twitter:
       success_twitter_connection: Congratulation, you connected your Twitter account successfully!
       failed_twitter_connection: Sorry, something went wrong. Try again please.
@@ -65,7 +75,7 @@ en:
         default_tags: "Default tags"
         logo: Logo
         forum: Allow more than one answer by user
-        openid_only: Only people using OpenID can access the site
+        signup_type: What method can your users use to sign up
         registered_only: Only registered people can access the site
         may_contain_adult_content: This site may contain adult content
         wysiwyg_editor: Enable user-friendly editor

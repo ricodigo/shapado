@@ -1,38 +1,5 @@
 en:
   welcome:
-    facts:
-      prices:
-        cols:
-          onsite: on site
-        stackexchange:
-          small: $129/month
-          medium: $999/month
-          large: $1299/month
-          onsite: $2500/month
-        shapado:
-          small: probably like $50 to $100/month on most hosting providers
-          medium: <=== ditto
-          large: probably like $500
-          onsite: probably $0 on your own server
-      features:
-        cols:
-          adaptable: adaptable
-          multitopic: multi-topic
-          multilanguage: multi-language
-          foss: free/open source
-          joel: will i make joel richer?
-        stackexchange:
-          adaptable: no
-          multitopic: no
-          multilanguage: no
-          foss: no
-          joel: yes!
-        shapado:
-          adaptable: yes!
-          multitopic: yes!
-          multilanguage: yes!
-          foss: yes!
-          joel: "no :/"
     feedback:
       title: Send your feedback
       feedback_title: Title
@@ -40,8 +7,8 @@ en:
       email_description: Please provide your email address so we can answer your message
       captcha_error: Please, solve a simple math operation
     index:
-      hot:     Hot
-      active:  Active
+      hot: Hot
+      active: Active
       recent_questions: Recent questions
       quick_question: Ask a question, we will find someone to answer
       create_own_site: "Create your own Q&amp;A site in 8 seconds for free"

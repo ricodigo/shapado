@@ -1,0 +1,20 @@
+# Messages for Croatian (Hrvatski)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ex13
+hr: 
+  activerecord: 
+    attributes: 
+      announcement: 
+        ends_at: Završava na
+        message: Poruka
+        only_anonymous: Samo za anonimne suradnike
+        starts_at: Počinje u
+  announcements: 
+    actions: 
+      delete: Ukloni
+      title: Radnje
+    create: 
+      success: Najava je uspješno kreiran.
+    index: 
+      title: Najave

@@ -1,20 +1,18 @@
-Por:   
+Por:
 -bronze, silver, gold = user.badges_count_on(current_group)
 -unless user.nil?
   =link_to h(user.login), user_path(user), :class => "user-link"
-  
--if user.owner_of?(current_group)
-  %i.owner{:title => "admin"}
-    [ Admin ]
-  
--elsif user.mod_of?(current_group)
-  %i.mod{:title => "moderator"}
-    [ Moderator ]
-      
--elsif user.editor_of?(current_group)
-  %i.editor{:title => "editor"}
-    [ Editor ]
-      
+  -if user.owner_of?(current_group)
+    %i.owner{:title => "admin"}
+      [ Admin ]
+
+  -elsif user.mod_of?(current_group)
+    %i.mod{:title => "moderator"}
+      [ Moderator ]
+
+  -elsif user.editor_of?(current_group)
+    %i.editor{:title => "editor"}
+      [ Editor ]
+
 -else
   = t('users.deleted')
-  

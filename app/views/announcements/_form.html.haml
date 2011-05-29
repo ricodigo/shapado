@@ -1,21 +1,22 @@
-.group
-  = f.label :message, t(:message, :scope => "activerecord.attributes.announcement"), :class => "label"
+.announcements
+  %h1
+    = t(:message, :scope => "activerecord.attributes.announcement")
+
   -if current_group.wysiwyg_editor
     = f.text_area :message, :class => "text_area", :id => "wysiwyg_editor", :value => markdown(@announcement.message)
   -else
     = f.text_area :message, :class => "text_area", :id => "markdown_editor"
 
-    #markdown_preview.markdown
-      =markdown(@announcement.message)
+  =markdown(@announcement.message)
 
-.group
-  = f.label :starts_at, t(:starts_at, :scope => "activerecord.attributes.announcement"), :class => "label"
-  = f.datetime_select :starts_at, :default => Time.zone.now.at_midnight
+  .field.date-msg
+    = f.label :starts_at, t(:starts_at, :scope => "activerecord.attributes.announcement")
+    = f.datetime_select :starts_at, :default => Time.zone.now.at_midnight
 
-.group
-  = f.label :ends_at, t(:ends_at, :scope => "activerecord.attributes.announcement"), :class => "label"
-  = f.datetime_select :ends_at, :default => Time.zone.now.at_midnight.tomorrow
+  .field.date-msg
+    = f.label :ends_at, t(:ends_at, :scope => "activerecord.attributes.announcement")
+    = f.datetime_select :ends_at, :default => Time.zone.now.at_midnight.tomorrow
 
-.group
-  = f.check_box :only_anonymous, :class => "checkbox"
-  = f.label :only_anonymous, t(:only_anonymous, :scope => "activerecord.attributes.announcement"), :class => "radio"
+  .checkbox
+    = f.check_box :only_anonymous, :class => "checkbox"
+    = f.label :only_anonymous, t(:only_anonymous, :scope => "activerecord.attributes.announcement")

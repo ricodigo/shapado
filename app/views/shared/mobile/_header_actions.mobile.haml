@@ -1,12 +1,13 @@
+
 -session[:user_return_to] = "/mobile"
 %div{:"data-inline" => "true", "class" => "ui-btn-right"}
   -if @question
-    %a{:href=>question_path(@question, :format => "mobile", :actions => true), :"data-rel" => "dialog", :"data-transition" => "flip", "data-icon" => "gear"}
+    %a{:href=>question_path(@question, :format => "mobile", :actions => true), :"data-role" => "button", :"data-rel" => "dialog", :"data-transition" => "flip", "data-icon" => "gear"}
       actions
   -if logged_in?
     /= link_to "Profile", "#", "data-icon" => "arrow-d"
-    = link_to "Logout", destroy_user_session_path(:format => :mobile), "data-icon" => "arrow-d"
-    = link_to 'Ask Question', new_question_path(:format => "mobile"), "data-icon" => "plus", "data-theme" => "e"
+    = link_to t('devise.sessions.sign_out'), destroy_user_session_path(:format => :mobile), :"data-role" => "button", "data-icon" => "arrow-d"
+    = link_to t('layouts.application.ask_question'), new_question_path(:format => "mobile"), :"data-role" => "button", "data-icon" => "plus", "data-theme" => "e"
   -else
-    %a{:href=>new_user_session_path(:format => :mobile), :"data-rel" => "dialog", :"data-transition" => "flip"}
+    %a{:href=>new_user_session_path(:format => :mobile), :"data-role" => "button", :"data-rel" => "dialog", :"data-transition" => "flip"}
       login

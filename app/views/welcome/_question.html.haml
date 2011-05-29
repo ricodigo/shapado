@@ -26,7 +26,7 @@
   %span
     .question_header
       .gravatar.item
-        = gravatar(question.user.email.to_s, :size => 48)
+        = avatar_img(question.user, :size => "medium")
       = link_to h(question.title), question_path(question), :title => truncate(question.body, :length => 200)
 
     .tag-list.left

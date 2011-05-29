@@ -4,6 +4,7 @@ require File.expand_path('../boot', __FILE__)
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
+
 #require 'goalie/rails'
 
 # If you have a Gemfile, require the gems listed there, including any gems
@@ -29,7 +30,12 @@ module Shapado
     # Activate observers that should always be running
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
-    config.action_mailer.delivery_method = :sendmail
+    if AppConfig.smtp["activate"]
+      config.action_mailer.delivery_method = :smtp
+    else
+      config.action_mailer.delivery_method = :sendmail
+    end
+    config.action_mailer.default_url_options = {:host => AppConfig.domain}
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -40,6 +46,7 @@ module Shapado
     config.i18n.default_locale = :en
 
     # middlewares
+    config.middleware.use "BugHunter::Middleware"
     config.middleware.use "DynamicDomain"
     config.middleware.use "MongoidExt::FileServer"
     if AppConfig.recaptcha["activate"]

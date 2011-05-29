@@ -23,11 +23,15 @@
     %ul{:data => {:role => "listview", :filter => "true"}}
       -@questions.each do |question|
         %li
-          = link_to question.title, question_path(question, :format => "mobile")
-          -if question.closed
-            [closed]
-          -if question.answered
-            [answered]
+          %a{:href => question_path(question, :format => "mobile")}
+            = question.title
+            -if question.closed
+              %strong
+                [closed]
+            -if question.answered
+              %strong
+                [answered]
+
 
           %a{:href=>question_path(question, :format => "mobile", :actions => true), :"data-rel" => "dialog", :"data-transition" => "flip", "data-icon" => "gear"}
             actions
@@ -36,4 +40,4 @@
             =question.answers_count
             answers
   %div{:data => {:role => "footer"}}
-    =will_paginate(@questions)
+    =will_paginate(@questions, :renderer => Shapado::Utils::JqmPaginator)

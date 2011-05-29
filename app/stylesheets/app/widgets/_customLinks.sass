@@ -1,0 +1,22 @@
+// WIDGET - Custom Links
+//========================================================================
+.widget-links
+  ul
+    li
+      a
+        padding: 5px
+        display: block
+        color: $dark
+        &:first-letter
+          text-transform: capitalize
+        &:hover
+          +orange-gradient
+          +normal-radius
+          color: #fff
+
+    li.active a, li.active a:hover
+      background-color: #eee
+      background-image: none !important
+      +normal-radius
+      color: #000
+      text-shadow: 1px 1px 1px #fff !important

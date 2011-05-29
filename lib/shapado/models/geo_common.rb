@@ -5,15 +5,22 @@ module Models
 
     included do
       field :address, :type => Hash, :default => {}
-      field :position, :type => GeoPosition, :default => GeoPosition.new(0, 0)
+      field :position, :type => Hash, :default => {"lat" => 0, "long" => 0}
       index [[:position, Mongo::GEO2D]]
-      scope :near, lambda { |point, opts| {:position => {:$near => point, :$maxDistance => 6}}.merge(opts) }
+
+      before_save :float_position
+
+      def float_position
+        position["lat"] = Float(position["lat"]||0)
+        position["long"] = Float(position["long"]||0)
+      end
     end
 
     module InstanceMethods
-      def set_address
-        lat = self["position"].lat
-        long = self["position"].long
+
+    def set_address
+        lat = self["position"]["lat"]
+        long = self["position"]["long"]
         if lat != 0 || long != 0
           self["address"] = Nominatim::Place.new(lat, long).get_address
           self.save
@@ -37,8 +44,8 @@ module Models
         end
       end
 
-      def point
-        @_point ||= [self.position["lat"], self.position["long"]]
+      def point(max_distance=6)
+        @_point ||= self.position.merge({:$maxDistance=>6})
       end
     end
   end

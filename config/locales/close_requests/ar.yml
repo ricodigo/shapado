@@ -1,0 +1,22 @@
+# Messages for Arabic (العربية)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: OsamaK
+ar: 
+  close_requests: 
+    destroy: 
+      flash_notice: حُذف طلب الإغلاق بنجاح
+    form: 
+      close_with_reason: إغلاق هذا السؤال لهذا السبب
+      dupe: مكرر
+      no_question: ليس سؤالا
+      not_relevant: لا علاقة
+      ot: خارج الموضوع
+      spam: سخام
+    model: 
+      attributes: 
+        comment: تعليق
+        reason: السبب
+        user: المستخدم
+    update: 
+      flash_notice: حُدّث طلب الإغلاق بنجاح

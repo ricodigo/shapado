@@ -1,0 +1,17 @@
+.field
+  = label :client, t('widgets.settings.client'), :class => "label"
+  = text_field_tag "settings[client]", widget.settings["client"], :class => "text_field"
+
+.field
+  = label :slot, t('widgets.settings.slot'), :class => "label"
+  = text_field_tag "settings[slot]", widget.settings["slot"], :class => "text_field"
+
+.field
+  = label :width, t('widgets.settings.width'), :class => "label"
+  = text_field_tag "settings[width]", widget.settings["width"], :class => "text_field"
+
+.field
+  = label :height, t('widgets.settings.height'), :class => "label"
+  = text_field_tag "settings[height]", widget.settings["height"], :class => "text_field"
+
+= render :partial => "shared/external_widget_settings", :locals => {:widget => widget}

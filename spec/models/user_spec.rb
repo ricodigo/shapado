@@ -104,27 +104,104 @@ describe User do
     end
 
     describe "User#remove_preferred_tags" do
+      it "remove the tags a, b" do
+        @group = Group.make(:owner => @user)
+        @user.add_preferred_tags(["a", "b", "c"], @group)
+        @user.reload
+        @user.remove_preferred_tags(["a", "b"], @group)
+        @user = User.find(@user.id)
+        @user.config_for(@group).preferred_tags.should == ["c"]
+        @group.destroy
+      end
     end
 
     describe "User#preferred_tags_on" do
+      it "should return a,b,c tags" do
+        @group = Group.make(:owner => @user)
+        @user.add_preferred_tags(["a", "b", "c"], @group)
+        @user = User.find(@user.id)
+        @user.preferred_tags_on(@group).should == ["a", "b", "c"]
+        @group.destroy
+      end
     end
 
-    describe "User#update_language_filter" do
+    describe "User#language_filter=" do
+      it "should set the language filter" do
+        @user.language_filter.should == "user"
+        @user.language_filter= "es"
+        @user.language_filter.should == "es"
+      end
+
+      it "should not set the language filter when is not a avaible filter" do
+        @user.language_filter.should == "user"
+        @user.language_filter= "x"
+        @user.language_filter.should_not == "x"
+      end
     end
 
     describe "User#languages_to_filter" do
+      it "should return the AVAILABLE_LANGUAGES" do
+        @user.language_filter="any"
+        @user.languages_to_filter.should == AVAILABLE_LANGUAGES
+      end
+
+      it "should return the user's preferred languages" do
+        @user.language_filter="user"
+        @user.preferred_languages = ["en", "es"]
+        @user.languages_to_filter.should == @user.preferred_languages
+      end
+
+      it "should return the user's language filter" do
+        @user.language_filter="es"
+        @user.languages_to_filter.should == ["es"]
+      end
     end
 
     describe "User#is_preferred_tag?" do
+      it "should return the tag" do
+        @group = Group.make(:owner => @user)
+        @user.add_preferred_tags(["a", "b", "c"], @group)
+        @user = User.find(@user.id)
+        @user.is_preferred_tag?(@group, "a").should == "a"
+        @group.destroy
+      end
     end
 
     describe "User#admin?" do
+      it "should return true when the user's role is admin" do
+        @user.role = "admin"
+        @user.admin?.should == true
+      end
+
+      it "should return false when the user's role is not admin" do
+        @user.role = "user"
+        @user.admin?.should == false
+      end
     end
 
     describe "User#age" do
+      it "should return 18" do
+        @user.birthday = 18.years.ago
+        @user.age == 18
+      end
     end
 
     describe "User#can_modify?" do
+      it "should can modify the question" do
+        Activity.stub!(:create!)
+        @question = Question.make(:user => @user)
+        @user.can_modify?(@question)
+      end
+    end
+
+    describe "User#can_create_reward?" do
+      it "return true when the question was created more than 2 days ago" do
+        Activity.stub!(:create!)
+        @question = Question.make(:user => @user, :created_at => 3.days.ago)
+        @user.update_reputation(76, @question.group)
+        @user.reload
+        @user.can_create_reward?(@question).should == true
+      end
     end
 
     describe "User#groups" do
@@ -134,6 +211,7 @@ describe User do
     end
 
     describe "User#role_on" do
+
     end
 
     describe "User#owner_of?" do

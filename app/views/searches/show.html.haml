@@ -1,9 +1,9 @@
-= render "shared/content-nav", :questions_link => search_path(@search)
+= render "shared/content-nav", :questions_link => {"controller" => "questions", "action" => "index"}
 
 Searching:
 = @search.query
 
-=link_to "delete", search_path(@search), :method => :delete
+=link_to t('scaffold.destroy'), search_path(@search), :method => :delete
 
 %section
   = render 'shared/posts'

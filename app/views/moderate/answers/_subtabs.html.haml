@@ -1,0 +1,7 @@
+%section.filters{:class => @active_subtab }
+  %ul
+    %header Filter:
+    %li.flagged
+      = link_to t("moderate.questions.subtabs.flagged"), moderate_answers_path, :title => t("moderate.questions.subtabs.flagged_tooltip")
+    %li.banned
+      = link_to t("moderate.questions.flagged.banned"), moderate_answers_path(:filter => "banned"), :title => t("moderate.questions.subtabs.flagged_tooltip")

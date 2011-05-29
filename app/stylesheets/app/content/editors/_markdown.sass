@@ -1,0 +1,102 @@
+.markdown
+  width: 93% !important
+  textarea
+    border: 1px solid #cccccc
+    font-size: 13px
+    padding: 10px
+    width: 96.5%
+    margin-bottom: 10px
+    height: 100px
+  ol
+    list-style: inside decimal
+    margin: 10px 0 20px 0
+    li
+      margin: 0 0 7px 0
+      font-size: 12px
+      line-height: 18px
+      color: #666
+      a:hover
+        border-bottom: 1px dotted
+  p
+    margin: 0 0 10px 0
+  pre
+    background-color: #fffbeb
+    padding: 10px
+    line-height: 16px
+
+#markdown_editor
+  border: 1px solid #cccccc
+  font-size: 13px
+  padding: 10px
+  width: 95.5%
+  margin-bottom: 10px
+  height: 100px
+  &:hover, &:focus
+    border-color: $orange
+
+.markdown_toolbar
+  list-style: none
+  border: 1px solid #d7d7d7
+  background-color: #F6F6F6
+  overflow: hidden
+  margin-bottom: 10px !important
+  li
+    a
+      width: 24px
+      height: 16px
+      padding: 0 !important
+      background-image: url(/images/markdown_icons.gif) !important
+      span
+        display: none
+
+  #markdown_italics_button
+    background-position: 0 -119px
+
+  #markdown_bold_button
+    background-position: 0 -102px
+
+  #markdown_link_button
+    background-position: 0 0
+
+  #markdown_image_button
+    background-position: 0 -170px
+
+  #markdown_unordered_list_button
+    background-position: 0 -34px
+
+  #markdown_ordered_list_button
+    background-position: 0 -51px
+
+  #markdown_quote_button
+    background-position: 0 -68px
+
+  #markdown_code_button
+    background-position: 0 -136px
+
+  #markdown_help_button
+    background-position: 0 -153px
+
+  #markdown_heading_button
+    background-position: 0 -85px
+
+  #markdown_latex_button
+    background-position: 0 -306px
+
+.resizeHandle
+  overflow: hidden
+  width: 22px
+  height: 5px
+  margin-left: auto
+  margin-right: auto
+  background-image: url(/images/handle.png)
+  cursor: n-resize
+
+#markdown_preview
+  width: 96.5%
+  p
+    font-size: 13px
+    line-height: 18px
+    margin-bottom: 20px
+    color: $dark
+    strong
+      font-weight: bold

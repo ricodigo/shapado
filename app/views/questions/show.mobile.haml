@@ -1,27 +1,27 @@
-=javascript_include_tag "modules/editor"
--qpath = question_path(@question, :format => :mobile)
+= javascript_include_tag "modules/editor"
+- qpath = question_path(@question, :format => :mobile)
 
--if params[:actions]
+- if params[:actions]
   %div{:data => {:role => "page"}}
     %div{:"data-role"=>"header", :"data-theme"=>"d", :"data-position"=>"inline"}
       %h1
-        Actions
+        = t('global.actions')
 
     %div{:"data-role" => "content", :"data-theme" => "c"}
       %p
-        What do you want to do?
-      =link_to "View", qpath, :"data-role" => "button", :"data-theme" => "e"
+        = t('global.what_to_do')
+      = link_to t('global.view'), qpath, :"data-role" => "button", :"data-theme" => "e"
       -if logged_in?
         -if current_user.can_modify?(@question)
-          =link_to "Edit", edit_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+          = link_to t('scaffold.edit'), edit_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
 
-        =link_to "Vote Up", question_votes_path(@question, :vote_up => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
-        =link_to "Vote Down", question_votes_path(@question, :vote_down => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
-        -if @question.follower?(current_user)
-          =link_to "Unfollow", unfollow_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+        = link_to t('users.action.vote_up'), question_votes_path(@question, :vote_up => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
+        = link_to t('users.actions.vote_down'), question_votes_path(@question, :vote_down => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
+        - if @question.follower?(current_user)
+          = link_to t('global.unfollow'), unfollow_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
         -else
-          =link_to "Follow", follow_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
-      =link_to "All Questions", questions_path(:format => :mobile), :"data-role" => "button", :"data-theme" => "b"
+          = link_to t('global.follow'), follow_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+      = link_to t('questions.index.title'), questions_path(:format => :mobile), :"data-role" => "button", :"data-theme" => "b"
 -else
   - question_body = find_and_preserve(shapado_auto_link(markdown(@question.body.present? ? @question.body : @question.title)))
   %div{:data => {:role => "page"}}
@@ -29,7 +29,7 @@
       %h1
         = @question.title[0,20]+"..."
 
-      =render "shared/mobile/header_actions"
+      = render "shared/mobile/header_actions"
 
       %div{:"data-role" => "navbar"}
         %div{:"data-role" => "controlgroup", :"data-type" => "horizontal"}
@@ -53,9 +53,9 @@
         %h3
           Answers
           %span{:class=>"ui-li-count"}
-            =@answers.total_entries
+            = @answers.total_entries
 
-        -@answers.each do |answer|
+        - @answers.each do |answer|
           %div{:"data-role" => "content"}
             = render "answered_by.html.haml", :answer => answer, :question => @question
             %a{:href=>question_answer_path(@question, answer, :format => "mobile", :actions => true), :"data-role" => "button", :"data-rel" => "dialog", :"data-transition" => "flip", "data-icon" => "gear", :"data-inline" => "true"}
@@ -63,8 +63,8 @@
           .markdown
             =find_and_preserve(shapado_auto_link(markdown(answer.body), :link_users => true))
 
-      -if !@question.closed
-        =form_for @answer, :url => question_answers_path(@question.id, :format => :mobile), :html => {:class => "add_answer"} do |f|
+      - if !@question.closed
+        = form_for @answer, :url => question_answers_path(@question.id, :format => :mobile), :html => {:class => "add_answer"} do |f|
           %h3
             Answer the question
           %div{:"data-role"=>"fieldcontain"}
@@ -84,4 +84,4 @@
               = submit_tag t('answers.form.submit'), :class => "save"
 
     %div{:"data-role" => "footer"}
-      =will_paginate(@answers)
+      = will_paginate(@answers)

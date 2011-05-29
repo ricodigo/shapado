@@ -1,0 +1,16 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  admin: 
+    moderate: 
+      index: 
+        all: Semua
+        ban: Larang
+        banned: Soalan yang dilarang
+        content: Kandungan
+        flagged: Soalan berbendera
+        item_title: Tajuk
+        need_tags: Tag semula
+        title: Kawal selia

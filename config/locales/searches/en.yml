@@ -1,9 +1,12 @@
 en:
   searches:
     index:
+      found_results: %{quantity} results were found.
       empty: "Your search did not match any questions."
       tags: within these tags
       search_text: Questions containing
+      advanced_search: advanced search
+      description: Use the %{link} options to get fine-grained results.
     form:
       clear: Clear
       search_box_title: "Check whether your question has already been asked"

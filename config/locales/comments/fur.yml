@@ -1,0 +1,20 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  comments: 
+    create: 
+      flash_notice: Graziis pal to coment
+    edit: 
+      title: Modifiche il coment
+    shared: 
+      add_comment: Zonte un coment...
+      comment_submit: Coment
+      reply: Rispuint
+      said: al à dit
+    update: 
+      flash_notice: Il coment al è stât inzornât cun sucès.
+  models: 
+    comment: Coment
+    comments: Coments

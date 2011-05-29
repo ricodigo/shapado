@@ -1,0 +1,15 @@
+# Messages for Marathi (मराठी)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Htt
+mr: 
+  activerecord: 
+    attributes: 
+      announcement: 
+        ends_at: "येथे संपते:"
+        message: संदेश
+        starts_at: "येथून सुरू:"
+  announcements: 
+    actions: 
+      delete: काढा
+      title: क्रिया

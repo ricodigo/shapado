@@ -1,9 +1,5 @@
-
--post.versioned_keys.each do |key|
-  -data = version.data[key]
-  -if !data.blank?
-    %h2=t(key, :scope => scope)
+- version.data.each do |key,value|
+  %div{:class => key}
     -if key.to_s == "body"
-      = find_and_preserve(shapado_auto_link(markdown(data)))
-    -else
-      &= data.is_a?(Array) ? data.join(", ") : data
+      =find_and_preserve(shapado_auto_link(markdown(value)))
+

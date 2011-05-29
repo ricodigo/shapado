@@ -1,24 +1,20 @@
--content_for :subtabs do
-  .navtitle
-    =h t(".title", :type => @badge.name)
-
 #badges_show
-  %h2.title
-    %span.counter
-      =@badges.total_entries
-    =t(".description")
-
   .description
-    = render :partial => "badges/badge", :object => @badge, :locals => {:hide_user => true}
-    -if @badge.for_tag || !Badge.TOKENS.include?(@badge.token)
-      = t(".for_tag_#{@badge.type}", :tag => render_tag(@badge.token))
-    -else
+    .name
+      = render :partial => "badges/badge", :object => @badge, :locals => {:hide_user => true}
+    %p
       = @badge.description
-  /Users
-  %ul.items#users
-    -@users.each do |user|
-      = render :partial => "user", :object => user, :locals => {:badge => @badge}
 
-  #additional_info
-    =will_paginate @badges
-    .clear
+  .counter
+    %p
+      %b
+        =@badges.total_entries
+      =t(".description")
+
+  .users
+    %ul
+      -@users.each do |user|
+        = render :partial => "user", :object => user, :locals => {:badge => @badge}
+
+  =will_paginate @badges
+  .clear

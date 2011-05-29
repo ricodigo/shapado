@@ -1,5 +1,7 @@
 en:
   questions:
+    history:
+      back: "← back to question"
     index:
       title: All questions
       hot:     Hot
@@ -16,6 +18,11 @@ en:
       votes_tooltip:  Questions with the most votes
       newest_tooltip: The most recently asked questions
     show:
+      create_reward: Create reward
+      create_reward_description: Reward the best answer with some of your own karma.
+      follow_up: Follow up
+      follow_up_description: Create a new question based on this post.
+      more_actions: More actions
       answers: Answers
       another_answers: Other answers
       solution: Solution
@@ -63,11 +70,17 @@ en:
       unfavorite_tooltip: "Remove this answer from your favorites"
     question:
       accepted_tooltip: This question has an answer that has been accepted
+      wiki_title: 'Wiki: %{title}'
+      answers_number: '%{quantity} answers'
+      votes_number: '%{quantity} votes'
+      answer_verb: Answer
     form:
       body_tip: What is your question? Be descriptive.
       language_tip: Select the language the question is asked in.
       tags_tip:  Use tags to add more information about your question.
       adult_content: This question contains adult material.
+      add_attachment: Add attachment
+      remove_attachment: Remove
     flag:
       title:   Flag question
     edit:
@@ -84,6 +97,7 @@ en:
       filter: Search for tags
     new:
       title: Ask question
+      description: Please be descriptive and make sure to add related tags so that your question can be found easily.
       how_to_ask: How to ask
     create:
       flash_notice: "The question was successfully created."

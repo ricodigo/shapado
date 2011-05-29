@@ -1,7 +1,8 @@
-
-%ul#attachments_list
-  -attachments.each_file do |key, file|
-    %li
-      = link_to file.name, question_attachment_path(question.group, question, file, key)
-      -if editing
-        = link_to t("scaffold.destroy"), remove_attachment_question_path(question, :attach_id => key), :class => "remove_attachment_link"
+-attachments.each_file do |key, file|
+  #attachments_list
+    .header Attached files:
+    %ul
+      %li
+        = link_to file.name, question_attachment_path(question.group, question, file, key)
+        -if editing
+          = link_to t("scaffold.destroy"), remove_attachment_question_path(question, :attach_id => key), :class => "remove_attachment_link"

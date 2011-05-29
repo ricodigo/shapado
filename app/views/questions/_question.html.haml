@@ -13,63 +13,55 @@
     - last_target_date = question.updated_at
     - owner = question.user unless question.anonymous
 
-  %article{:class => class_for_question(question)}
+  %article{:class => class_for_question(question), :id => question.id}
     -cache("question_on_index_#{question.id}_#{I18n.locale}") do
       %h2
-        = link_to title, question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
+        -if question.wiki
+          = link_to t('.wiki_title', :title => title), question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
+        -else
+          = link_to title, question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
     .user-data
       -if owner
         =render :partial => "users/user_data", :locals => {:user => owner}
       -else
-        Por:
+        =# i18n
+        By:
         =t("global.anonymous")
-      = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question)+"##{last_target_id}"
-    -if question.wiki
-      Wiki
+      %time{:pubdate => "pubdate", :datetime => last_target_date.iso8601}
+        = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question, :anchor => last_target_id)
+
 
     .tags
-      -if question.tags.empty? && logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
-      %ul
-        %li
-          Tags:
-        -question.first_tags.each do |tag|
-          %li{:class => "tag_#{h(tag)}"}
-            = tag_link(tag)
-        %li
-          = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag', :class => "important"
-      .clear
+      -if !question.tags.empty? && logged_in? && (current_user.can_modify?(question) || current_user.can_retag_others_questions_on?(current_group))
+        %ul
+          %li
+            Tags:
+          -question.first_tags.each do |tag|
+            %li{:class => "tag_#{h(tag)}"}
+              = tag_link(tag)
+          %li
+            = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag', :class => "retag"
+        .clear
 
     .toolbar
       %ul
         %li.answers
-          = link_to "#{format_number(question.answers_count)} #{t(:answers, :scope => "activerecord.attributes.question")}", question_path(question)
+          = link_to t('.answers_number', :quantity => format_number(question.answers_count)), question_path(question)
 
         -if question.followers_count.to_i > 0
           %li.followers
-            = "#{format_number(question.followers_count)} followers"
+            = t('.followers_number', :quantity => format_number(question.followers_count))
 
-        %li.votes
-          -unless question.closed
-            -if logged_in? && (vote = current_user.vote_on(question))
-              -if vote < 0
-                = image_tag "edit-dele  te.png"
-              -else
-                = image_tag "dialog-ok-apply.png"
-            -elsif current_user != question.user
-              = form_tag question_votes_path(question), :class => "vote-up-form" do
-                .fields
-                  = hidden_field_tag "source", questions_path, :id =>  "source_#{question.id}"
-                  = image_submit_tag("dialog-ok.png", :name=>"vote_up", :value=>"1", :title => t("votes.control.to_vote_up"), :class => "quick-vote-button")
-          = link_to "#{format_number(question.votes_average)} #{t(:votes, :scope => "activerecord.attributes.question")}"
+        -if !logged_in? || (current_user != question.user && current_user.has_flagged?(question).nil?)
+          %li.spam
+            = link_to t(".flag", :default => :"questions.show.flag"), new_question_flag_path(question), :class => "flag-link-index", :rel => 'nofollow'
 
         %li
-          =link_to "Reportar", "#"
+          -if !logged_in? || !question.follower?(current_user)
+            =link_to t('global.follow'), follow_question_path(question)
 
         %li
-          =link_to "Seguir", follow_question_path(question)
-
-        %li
-          =link_to "Responder", question_path(question)+"#to_answer"
+          =link_to t('.answer_verb'), question_path(question, :anchor => "to_answer")
 
     .clear
 

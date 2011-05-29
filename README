@@ -44,10 +44,10 @@ sudo gem install bundler
 == Postfix config
 
 add the following text to /etc/aliases
-    shapado: "|/usr/local/bin/rvm 1.9.2 exec PATH/to/shapado/script/handle_email"
+    shapado: "|/usr/local/rvm/bin/rvm 1.9.2 exec PATH/to/shapado/script/handle_email"
 
 in /etc/postfix/main.cf
-    default_privs = krawek
+    default_privs = shapado
 
 then type
     sudo newaliases

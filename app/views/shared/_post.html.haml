@@ -1,0 +1,10 @@
+-if for_answers
+  /Answers
+  -questions.each do |question|
+    -answer = find_answer(question)
+    = render "answers/answer", :question => question, :answer => answer if answer
+
+-else
+  /Questions
+  -questions.each do |question|
+    = render "questions/question", :question => question

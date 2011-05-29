@@ -1,0 +1,4 @@
+qqq:
+  questions:
+    question:
+      answer_verb: 'this is the verb Answer, eg. it should be translated Répondre or Responder in French and Spanish instead of réponse and respuesta'

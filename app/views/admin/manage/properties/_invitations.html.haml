@@ -1,0 +1,10 @@
+%ul
+  - current_user.pending_invitations(current_group).each do |invitation|
+    %li
+      = invitation.email
+      = form_tag revoke_invitation_path(invitation), :class => "form", :multipart => true, :method => :post do
+        = hidden_field_tag :source, domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "invitations", :tab => @active_subtab)
+        = submit_tag t('.revoke_button')
+      = form_tag resend_invitation_path(invitation), :class => "form", :multipart => true, :method => :post do
+        = hidden_field_tag :source, domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "invitations", :tab => @active_subtab)
+        = submit_tag t('.resend_button')

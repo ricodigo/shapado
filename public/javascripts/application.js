@@ -1,5 +1,15 @@
 $(document).ready(function() {
   $('ul.sf-menu').superfish();
+  $('.auth-provider').click(function(){
+      var authUrl = $(this).attr('href');
+      $.cookie('pp', 1);
+      var pparg;
+      (authUrl.indexOf('?')==-1)? pparg = '?pp=1' : pparg = '&pp=1'
+      window.open(authUrl+pparg, 'openid_popup', 'width=900,height=680');
+      return false;
+  })
+
+  $('.lang-fields').tabs();
 
   init_geolocal();
   $("form.nestedAnswerForm").hide();
@@ -78,7 +88,7 @@ $(document).ready(function() {
   sortValues('#language_filter', 'option',  ':lt(2)', 'text', null);
   sortValues('#user_language', 'option',  false, 'text', null);
   sortValues('#lang_opts', '.radio_option', false, 'attr', 'id');
-  sortValues('#question_language', 'option', false, 'text', null);
+  sortValues('select#question_language', 'option', false, 'text', null);
 
   $('.langbox.jshide').hide();
   $('.show-more-lang').click(function(){
@@ -183,7 +193,7 @@ function sortValues(selectID, child, keepers, method, arg){
   var sortedVals = $.makeArray($(selectID+' '+child)).sort(function(a,b){
     return $(a)[method](arg) > $(b)[method](arg) ? 1: -1;
   });
-  $(selectID).empty().html(sortedVals);
+  $(selectID).html(sortedVals);
   if(keepers)
     $(selectID).prepend(any);
   // needed for firefox:
@@ -218,7 +228,6 @@ function init_geolocal(){
 }
 
 function initFollowTags(){
-  console.log('beep')
   $(".follow-tag, .unfollow-tag").live("click", function(event) {
     var link = $(this);
     if(!link.hasClass('busy')){
@@ -258,6 +267,16 @@ function initFollowTags(){
   })
 }
 
+function getUrlVars() {
+  var vars = {}, hash;
+  var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  for(var i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split('=');
+    vars[hash[0]] = hash[1];
+  }
+  return vars;
+}
+
 // Script for HTML5 tags, so IE will see it and use it
 document.createElement('header');
 document.createElement('footer');
@@ -266,4 +285,3 @@ document.createElement('aside');
 document.createElement('nav');
 document.createElement('article');
 document.createElement('hgroup');
-

@@ -4,13 +4,11 @@ module Shapado
       def self.included(base)
         base.class_eval do
           helper_method :logo_path, :css_group_path,
-                        :favicon_group_path, :tag_icon_path, :avatar_user_path,
+                        :favicon_group_path, :tag_icon_path,
+                        :avatar_user_path,
+                        :logo_group_path,
                         :question_attachment_path
         end
-      end
-
-      def logo_path(group)
-        "/_files/groups/logo/#{group.id}"
       end
 
       def css_group_path(group)
@@ -28,8 +26,20 @@ module Shapado
         "/_files/tags/icon/#{group.id}/#{tag_name}"
       end
 
-      def avatar_user_path(user)
-        "/_files/users/avatar/#{user.id}"
+      def avatar_user_path(user, size = nil)
+        prefix = "avatar"
+        if !size.nil? && ["big", "medium", "small"].include?(size)
+          prefix = size
+        end
+        "/_files/users/#{prefix}/#{user.id}"
+      end
+
+      def logo_path(group, size = nil)
+        prefix = "logo"
+        if !size.nil? && ["big", "medium", "small"].include?(size)
+          prefix = size
+        end
+        "/_files/groups/#{prefix}/#{group.id}"
       end
 
       def question_attachment_path(group,question, file, attach_id)

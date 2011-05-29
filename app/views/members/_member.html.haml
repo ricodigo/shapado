@@ -1,39 +1,38 @@
 -membership = member.config_for(@group)
 -can_modify_member = logged_in? && (current_user.admin? || current_user != member ) && current_user.owner_of?(@group)
-
-%li.item
-  / Member Stats
-  .stats
-    .box.votes
-      .counter{:class => class_for_number(member.questions.count) }
-        =format_number(member.questions.count)
-      .text
+%ul
+  %li
+    / Member Stats
+    .stats
+      %p
+        %b
+          =format_number(member.questions.count)
         = t(:questions, :scope => "activerecord.models")
-    .box.answers
-      .counter
-        =format_number(member.answers.count)
-      .text
+      %p
+        %b
+          =format_number(member.answers.count)
         = t(:answers, :scope => "activerecord.models")
-    .box.views
-      .counter{:class => class_for_number(member.reputation_on(current_group)) }
-        =format_number(member.reputation_on(current_group))
-      .text
+
+      %p
+        %b
+          =format_number(member.reputation_on(current_group))
         = t(:reputation, :scope => "activerecord.attributes.user")
-  / Member Summary
-  .summary
-    %h3
-      = link_to h(member.login), user_path(member)
-    .bio
-      =find_and_preserve(auto_link(member.bio))
-    .tag-list
-      -if can_modify_member
-        -form_tag(member_path(member.id), :class => "form", :method => :put) do |f|
-          = select_tag :role, options_for_select(Membership::ROLES, membership.role)
-          = submit_tag t("scaffold.update")
-      -else
-        &= membership.role
-    .owner-data
-      %strong
-        registered
+
+    .user-info
+      %h2
+        = link_to h(member.login), user_path(member)
+      %p.description
+        =find_and_preserve(auto_link(member.bio))
+      %small
         = t("time.ago", :time => time_ago_in_words(member.created_at))
-  .clear
+
+    -if can_modify_member
+      -form_tag(member_path(member.id), :class => "form", :method => :put) do |f|
+        .field
+          = select_tag :role, options_for_select(locales_roles, membership.role)
+        .buttons
+          = submit_tag t("scaffold.update"), :class => "save"
+    -else
+      &= membership.role
+
+

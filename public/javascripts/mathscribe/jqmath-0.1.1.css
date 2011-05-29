@@ -1,0 +1,70 @@
+/* "fm" classes are mostly for imitating MathML in browsers without it; we try to roughly mimic
+	Firefox's MathML layout, which seems better than http://www.w3.org/TR/mathml-for-css/ */
+
+/* Cambria [Math]'s line height currently (2/11) confuses most non-Microsoft browsers: */
+math.fm, .fm-math	{ font-family: STIXGeneral, 'DejaVu Serif', 'DejaVu Sans',
+						/* Cambria, 'Cambria Math', */ Times, 'Lucida Sans Unicode',
+						OpenSymbol, 'Standard Symbols L', serif; line-height: 1.2 }
+math.fm mo, .fm-mo, .ma-sans-serif
+/* some (cbt/browsershots) IE7s require no line break before 'Lucida Sans Unicode': */
+{ font-family: STIXGeneral, 'DejaVu Sans', 'DejaVu Serif', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
+						'Arial Unicode MS', 'Lucida Grande', Times,
+						OpenSymbol, 'Standard Symbols L', sans-serif }
+* html math.fm, * html .fm-math, * html math.fm mo, * html .fm-mo, * html .IE6-LSU
+					{ font-family: 'Lucida Sans Unicode' !important }	/* IE <=6 only */
+mo.fm-radic			{ font-family: 'Lucida Sans Unicode', 'Lucida Grande',
+						Verdana, sans-serif !important }
+.ma-script			{ font-family:
+						'England Hand DB', 'Embassy BT', 'Amazone BT', 'Bank Script D',
+						'URW Chancery L', 'Lucida Calligraphy', 'Apple Chancery',
+						'Monotype Corsiva', Corsiva,
+						'Vivaldi D', Gabriola, 'Segoe Script', cursive }
+.ma-fraktur			{ font-family: UnifrakturMaguntia, Impact, fantasy }
+/* .ma-double-struck currently ignored */
+
+.fm-mi-length-1		{ font-style: italic }
+
+.ma-bold			{ font-weight: bold }
+.ma-nonbold			{ font-weight: normal }
+.ma-upright			{ font-style: normal !important }
+.ma-italic			{ font-style: italic }
+
+math.fm.ma-block	{ display: block; text-align: center; text-indent: 0;
+						page-break-inside: avoid }
+
+/* note an operator might be 'mo' or "embellished": */
+.fm-separator		{ padding: 0 0.56ex 0 0 }
+.fm-infix-loose		{ padding: 0 0.56ex }	/* typically a relation */
+.fm-infix			{ padding: 0 0.44ex }
+.fm-thin-space		{ padding: 0 0 0 0.33ex }	/* avoid bad font support for \u2009 &thinsp; */
+.fm-prefix			{ padding: 0 0.33ex 0 0 }
+.fm-postfix			{ padding: 0 0 0 0.33ex }
+.fm-prefix-tight	{ padding: 0 0.11ex 0 0 }
+.fm-postfix-tight	{ padding: 0 0 0 0.11ex }
+/* fences should have no padding */
+
+.fm-large-op		{ font-size: 1.3em }
+.fm-inline .fm-large-op	{ font-size: 1em }
+
+math.fm mrow		{ white-space: nowrap }
+
+.fm-vert			{ display: inline-block; vertical-align: middle }
+
+math.fm table, math.fm tbody, math.fm tr, math.fm td	/* reset to default(?) styles */
+					{ border: 0; padding: 0; margin: 0; outline: 0 }
+
+math.fm table		{ border-collapse: collapse; text-align: center;
+						table-layout: auto; float: none }
+
+.fm-frac			{ padding: 0 1px }
+td.fm-den-frac		{ border-top: solid thin !important }
+
+sup.fm-root			{ font-size: 0.6em }
+.fm-radicand		{ padding: 0 1px 0 0; border-top: solid; margin-top: 0.1em }
+
+.fm-script			{ font-size: 0.71em }
+.fm-script .fm-script .fm-script	{ font-size: 1em }
+
+td.fm-underover-base	{ line-height: 1 }
+
+math.fm td.fm-mtd	{ padding: 0.5ex 0.4em !important; vertical-align: baseline !important }

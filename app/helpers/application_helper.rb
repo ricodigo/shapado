@@ -1,5 +1,11 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def known_languages(user, group)
+    return group.languages unless logged_in?
+    languages = user.preferred_languages & group.languages
+    (languages.empty?)? group.languages : languages
+  end
+
   def multiauth_dropdown(title)
     render 'shared/login_menu', :title => title
   end
@@ -14,56 +20,16 @@ module ApplicationHelper
     end
   end
 
-  def context_panel_ads(group)
-    if AppConfig.enable_adbard && request.domain == AppConfig.domain &&
-        !Adbard.where(:group_id => current_group.id).first
-      adbard = "<!--Ad Bard advertisement snippet, begin -->
-        <script type='text/javascript'>
-        var ab_h = '#{AppConfig.adbard_host_id}';
-        var ab_s = '#{AppConfig.adbard_site_key}';
-        </script>
-        <script type='text/javascript' src='http://cdn1.adbard.net/js/ab1.js'></script>
-        <!--Ad Bard, end -->"
-    else
-      adbard = ""
-    end
-    if group.has_custom_ads == true
-      ads = []
-      Ad.where(:group_id => group.id,:position =>'context_panel').each do |ad|
-        ads << ad.code
-      end
-      ads << adbard
-      return ads.join.html_safe unless ads.empty?
-    end
+  def language_json
+    languages = []
+    I18n.t('languages').keys.each do |k| languages << {:caption => I18n.t("languages.#{k}"),
+        :value=>I18n.t("languages.#{k}"), :code => k} end
+    languages.to_json
   end
 
-  def header_ads(group)
-    if group.has_custom_ads
-      ads = []
-      Ad.where(:group_id => group.id,:position => 'header').each do |ad|
-        ads << ad.code
-      end
-      return ads.join.html_safe  unless ads.empty?
-    end
-  end
-
-  def content_ads(group)
-    if group.has_custom_ads
-      ads = []
-      Ad.where(:group_id => group.id,:position => 'content').each do |ad|
-        ads << ad.code
-      end
-      return ads.join.html_safe  unless ads.empty?
-    end
-  end
-
-  def footer_ads(group)
-    if group.has_custom_ads
-      ads = []
-      Ad.where(:group_id => group.id,:position => 'footer').each do |ad|
-        ads << ad.code
-      end
-      return ads.join.html_safe  unless ads.empty?
+  def preferred_languages_code(entity, language_method)
+    entity.send(language_method).map do |code|
+      I18n.t("languages.#{code}")+":#{code}"
     end
   end
 
@@ -74,12 +40,9 @@ module ApplicationHelper
   end
 
   def language_select(f, question, opts = {})
-    selected = if question.new?
-      logged_in? ? current_user.main_language : question.language
-    else
-      question.language
-    end
-    languages = logged_in? ? current_user.preferred_languages : current_group.languages
+
+
+    languages = current_group.languages
 
     f.select :language, languages_options(languages), {:selected => selected}, {:class => "select"}.merge(opts)
   end
@@ -100,6 +63,14 @@ module ApplicationHelper
     languages.collect do |lang|
       [language_desc(lang), lang]
     end
+  end
+
+  def locales_roles
+    roles = []
+    Membership::ROLES.each do |role|
+      roles << [I18n.t("roles.#{role}"), role]
+    end
+    roles
   end
 
   def tag_cloud(tags = [], options = {}, limit = nil)
@@ -239,7 +210,7 @@ module ApplicationHelper
   end
 
   def class_for_question(question)
-    klass = ""
+    klass = "Question "
 
     if question.accepted
       klass << "accepted"
@@ -287,8 +258,7 @@ module ApplicationHelper
 
   def clean_seo_keywords(tags, text = "")
     if tags.size < 5
-
-      text.scan(/(\S+)/) do |s|
+      text.scan(/\S+/) do |s|
         word = s.to_s.downcase
         if word.length > 3 && !tags.include?(word)
           tags << word
@@ -331,7 +301,9 @@ module ApplicationHelper
 
   def include_latex
     if current_group.enable_latex
-      require_js domain_url(:custom => current_group.domain)+'/javascripts/jsMath/easy/load.js'
+      require_css 'http://fonts.googleapis.com/css?family=UnifrakturMaguntia'
+      require_css domain_url(:custom => current_group.domain)+'/javascripts/mathscribe/jqmath-0.1.1.css'
+      require_js domain_url(:custom => current_group.domain)+'/javascripts/mathscribe/jqmath-etc-0.1.1.min.js'
     end
   end
 
@@ -431,16 +403,16 @@ module ApplicationHelper
         follow_data = 'follow-tag'
         data_title = t("global.follow")
         title = t("global.unfollow")
-        path = unfollow_tags_user_path(current_user)
-        data_undo = follow_tags_user_path(current_user)
+        path = unfollow_tags_users_path(:tags => tag.name)
+        data_undo = follow_tags_users_path(:tags => tag.name)
       else
         follow_data = 'unfollow-tag'
         follow_class = 'follow-tag'
         data_title = t("global.unfollow")
         title = t("global.follow")
         opt = 'add'
-        path = follow_tags_user_path(current_user)
-        data_undo = unfollow_tags_user_path(current_user)
+        path = follow_tags_users_path(:tags => tag.name)
+        data_undo = unfollow_tags_users_path(:tags => tag.name)
       end
       link_to title, path, :class => follow_class, 'data-tag' => tag.name, 'data-class' => follow_data, 'data-title' => data_title, 'data-undo' => data_undo
     end

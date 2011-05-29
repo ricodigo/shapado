@@ -56,10 +56,10 @@ class OpenRequestsController < ApplicationController
     if @question.closed && @question.close_reason_id == @open_request.id
       @question.closed = false
     end
-    @question.open_requests.delete(@open_request)
 
+    @open_request.destroy
     @question.decrement(:open_requests_count => 1)
-    @question.save # FIXME: use modifiers
+    @question.save
     flash[:notice] = t(:flash_notice, :scope => "open_requests.destroy")
     respond_to do |format|
       format.html { redirect_to(question_path(@question)) }

@@ -1,0 +1,33 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  close_requests: 
+    create: 
+      flash_notice: Permohonan menutup soalan berjaya dibuat
+    destroy: 
+      flash_notice: Permohonan menutup soalan berjaya dipadamkan
+    edit: 
+      title: Sunting permintaan menutup
+    form: 
+      close_with_reason: Menutup soalan ini atas sebab ini
+      dupe: Ulangan (Duplikat)
+      no_question: Bukan soalan
+      not_relevant: Tidak relevan
+      ot: Luar topik
+      request_closing_details: Pohon supaya soalan ini ditutup
+      spam: spam
+    index: 
+      title: Senarai permohonan menutup soalan
+    model: 
+      attributes: 
+        comment: Ulasan
+        reason: Sebab
+        user: Pengguna
+      messages: 
+        already_requested: Anda sudah memohon untuk menutup soalan ini
+      name: Permohonan menutup soalan
+      prural_name: Permohonan menutup soalan
+    update: 
+      flash_notice: Permohonan menutup soalan berjaya dikemas kini

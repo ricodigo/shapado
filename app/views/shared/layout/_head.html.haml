@@ -8,7 +8,7 @@
   -@feed_urls.each do |title, url|
     %link{:rel=>"alternate", :type=>"application/atom+xml", :title => title, :href=> url}
 
-= raw(javascript_include_merged(:base))
+= include_javascripts(:base)
 = yield :js
 = stylesheet_link_tag 'compoments/dialog.css', :media => 'screen, projection'
 = stylesheet_link_tag 'jquery-ui.css', :media => 'screen, projection'

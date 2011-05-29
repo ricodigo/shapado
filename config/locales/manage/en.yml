@@ -1,8 +1,19 @@
 en:
   admin:
     manage:
+      top_admin:
+        title: Admin
+        site: Site
+
+      invitations:
+        title: Invitations
+        invite: Invite people
+        invitations: Sent invitations
+        invite_title: Invite people by email
+        invitations_title: List of all the invitations you've sent
       social:
         title: Social media interaction
+        description: Connect your group to your social networks
         post_to_twitter: Post to Twitter
         ask_from_twitter: Ask from Twitter
         facebook_app: Facebook App
@@ -15,6 +26,7 @@ en:
         twitter_account_title: Configure your Twitter account that will be used to post to Twitter
       content:
         title: Custom content
+        description: Configure your group with custom text and styling
         question_prompt: Question prompt
         question_help: Question help
         head: header
@@ -22,6 +34,16 @@ en:
         top_bar: Top bar
         top_bar_tip: Enter one link per line
       properties:
+        title: Group properties
+        invite:
+          title: Invite people by email
+          emails_instructions: "Enter emails separated by coma"
+          user_role: "Invite users as"
+          invite: Invite people
+          invitations: Sent invitations
+        invitations:
+          revoke_button: "Revoke"
+          resend_button: "Resend"
         post_to_twitter:
           post_to_twitter: Post activities to Twitter
           send_questions_to_twitter: Send all questions to Twitter
@@ -37,6 +59,7 @@ en:
           starts_with_example: "e.g. #qa"
           ends_with_example: "e.g. #shapado"
           add_tags: Add tags to your tweets
+          title: Tag your tweets
         ask_from_twitter:
           asking_from_twitter: Asking questions from Twitter
           question_must_include: Question must include the following tag to be tweeted.
@@ -72,7 +95,7 @@ en:
           reputation_rewards_subtitle: List of reputations rewards
           reputation_rewards_description: This form allows you to configure how users can win and lose reputation points for a given action
         theme:
-          title: Set the group's theme
+          title: Pick and customize your theme
           logo_legend: Upload a logo for your group. It must be smaller than 2MB.
         domain:
           title: Set your domain
@@ -84,3 +107,4 @@ en:
           instruction5: "Once this is done, after an hour or so, your domain www.%{subdomain} should point to %{appdomain}."
           instruction6: "When this is the case, come back here and put your domain name www.%{subdomain} in the field below and press the button 'update'. If you have questions, ask us in the %{chat_url} or on our support forum."
           warning: Are you sure you want to change your domain?
+

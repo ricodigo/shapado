@@ -1,7 +1,7 @@
 
--form_for full_scope+[@comment], :html => {:class => "form"} do
-  = render :partial => "comments/form", :locals => local_assigns
+-form_for full_scope+[@comment], :html => {:class => "form"} do |f|
+  = render :partial => "comments/form", :locals => local_assigns.merge(:f => f)
   .group.navform
-    = submit_tag t("scaffold.update")
+    = submit_tag t("scaffold.update"), :class => "save"
     = t("global.or")
     = link_to t("scaffold.cancel"), params[:source], :class => "cancel cancel_edit_comment"

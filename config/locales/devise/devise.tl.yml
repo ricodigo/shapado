@@ -1,0 +1,44 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  devise: 
+    confirmations: 
+      confirmed: Natiyak na ang akawnt mo.  Naipatala ka na ngayon.
+      link: Hindi nakatanggap ng mga tuntunin ng pagtitiyak?
+      send_instructions: Makakatanggap ka sa loob ng ilang mga minuto ng isang e-liham na may panuto tungkol sa kung paano titiyakin ang akawnt mo.
+    mailer: 
+      confirmation_instructions: Mga tagubilin sa pagtitiyak
+      reset_password_instructions: Muling itakda ang mga tagubilin na panghudyat
+      unlock_instructions: Buksan ang mga Panuto
+    passwords: 
+      link: Nakalimutan ang hudyat?
+      send_instructions: Makakatanggap ka sa loob ng ilang mga minuto ng isang e-liham na may panuto tungkol sa kung paano itakdang muli ang hudyat mo.
+      updated: Nabago na ang hudyat mo. Nakalagda ka nang papasok.
+    registrations: 
+      destroyed: Paalam!  Hindi itinuloy ang akawnt mo.  Umaasa kaming magkikita tayong muli sa lalong madaling panahon.
+      link: Magpatala
+      signed_up: Nakapagpatala ka na.
+      updated: Isinapanahon mo ang iyong akawnt.
+    sessions: 
+      facebook_actions: 
+        sign_in: Lumagdang papasok
+        sign_out: Lumagdang papalabas
+      facebook_authenticity_token: Nagkaroon ng suliranin. Para sa mga dahilang pangkaligtasan, mangyaring lumagda uling papasok.
+      facebook_invalid: Hindi makalagdang papasok.  Hindi katanggap-tanggap na akawnt.
+      facebook_timeout: Nagtapos na laang panahon para sa Facebook.  Mangyaring lumagda uli na papasok upang makapagpatuloy.
+      inactive: Hindi pa natitiyak ang akawnt mo.
+      invalid: Hindi katanggap-tanggap na tirahan ng e-liham o hudyat.
+      invalid_token: Hindi katanggap-tanggap na kahalip ng pagpapatotoo.
+      link: Lumagdang papasok
+      locked: Nakakandado ang akawnt mo.
+      signed_in: Nailagdang papasok.
+      signed_out: Nailagdang papalabas.
+      timeout: Natapos na ang laang panahon para sa iyo.  Mangyaring lumagdang papasok uli upang makapagpatuloy.
+      unauthenticated: Kailangan mong lumagdang papasok o magpatala bago magpatuloy.
+      unconfirmed: Dapat mong tiyakin ang akawnt mo bago magpatuloy.
+    unlocks: 
+      link: Hindi mo natanggap ang mga panuto sa pagtatanggal ng kandado?
+      send_instructions: Makakatanggap ka sa loob ng ilang mga minuto ng isang e-liham na may panuto tungkol sa kung paano tanggalin ang kandado ng akawnt mo.
+      unlocked: Nabuksan na ang akawnt mo.  Nailagda ka nang papasok.

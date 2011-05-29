@@ -1,0 +1,34 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  doc: 
+    chat: 
+      title: Csevegéses ügyfélszolgálat
+    plans: 
+      15millions: 15 millió oldalmegtekintés havonta
+      1million: 1 millió oldalmegtekintés havonta
+      247_all_support: Webalapú, e-mailes, csevegéses és 24/7-es telefonos támogatás
+      5millions: 5 millió oldalmegtekintés havonta
+      all_support: Webalapú, e-mailes, csevegéses és telefonos támogatás
+      basic_restrictions: Egyedi hirdetések és teljesen átalakítható felület nélkül
+      beta_info: Jelenleg minden oldal ingyenes, és minden oldal ugyanazon beállításokat használhatja, mint az Optimum megoldás esetén, kivéve a támogatást, mert csak webalapú, e-mailes és csevegéses alapú működik.
+      big_sites: Nagy forgalmú oldalaknak
+      custom_ads: Saját hirdetések használata
+      custom_analytics: Forgalmi statisztikák
+      custom_domain: Egyedi domainnév
+      custom_themes: Előre elkészített témáink használata
+      custom_ui: Teljesen testreszabható felület
+      free_plan: ingyenes változatot
+      getting_popular: Egyre népszerűbbeknek
+      huge_sites: Óriási forgalmú oldalaknak
+      month: hónap
+      page_views: Kicsi/privát oldalaknak
+      private_site: Privát/nyilvános hozzáférés engedélyezése
+      small_private: Kicsi/privát oldalaknak
+      support: Támogatás
+      unlimited: Korlátlan forgalom havonta
+      we_offer: Kínálunk
+      web_support: Webalapú támogatás
+      with_unlimited: is, korlátlan forgalommal, de egyedi hirdetések és domainnév nélkül.

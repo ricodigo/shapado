@@ -1,0 +1,13 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    models: 
+      favorite: مورد علاقه
+      favorites: مورد علاقه ها
+  unfavorites: 
+    create: 
+      success: سوال از سوالات محبوب شما حذف شد
+      unauthenticated: شما برای حذف کردن یک مورد محبوب به یک حساب کاربری نیاز دارید

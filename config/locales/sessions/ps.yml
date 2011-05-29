@@ -1,0 +1,16 @@
+# Messages for Pashto (پښتو)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ahmed-Najib-Biabani-Ibrahimkhel
+ps: 
+  sessions: 
+    create: 
+      flash_notice: په برياليتوب سره ورننوتلۍ
+    destroy: 
+      flash_notice: تاسې له غونډال نه ووتلۍ.
+    new: 
+      log_in: ننوتل
+      remember_me: ما په ياد لره
+      sign_in: ننوتل
+      signup: نومليکل
+      with_facebook: د فېس بوک له لارې ننوتل

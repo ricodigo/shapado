@@ -24,6 +24,8 @@ class Admin::ManageController < ApplicationController
                      [:ask_from_twitter, "ask_from_twitter"],
                      [:facebook_app, "facebook_app"],
                      [:twitter_account, "twitter_account"]]
+  subtabs :invitations => [[:invite, "invite"],
+                     [:invitations, "invitations"]]
 
   def dashboard
   end
@@ -42,6 +44,7 @@ class Admin::ManageController < ApplicationController
   end
 
   def content
+    @active_subtab ||= "question_prompt"
     unless @group.has_custom_html
       flash[:error] = t("global.permission_denied")
       redirect_to domain_url(:custom => @group.domain, :controller => "manage",
@@ -51,6 +54,11 @@ class Admin::ManageController < ApplicationController
 
   def social
     @active_subtab ||= "post_to_twitter"
+  end
+
+  def invitations
+    @active_subtab ||= "invite"
+    @invitation = Invitation.new
   end
   protected
   def check_permissions

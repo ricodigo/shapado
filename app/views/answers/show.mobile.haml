@@ -1,27 +1,27 @@
--qpath = question_path(@question, :format => :mobile)
--apath = question_answer_path(@question, @answer, :format => :mobile)
+- qpath = question_path(@question, :format => :mobile)
+- apath = question_answer_path(@question, @answer, :format => :mobile)
 
--if params[:actions]
+- if params[:actions]
   %div{:data => {:role => "page"}}
     %div{:"data-role"=>"header", :"data-theme"=>"d", :"data-position"=>"inline"}
       %h1
-        Actions
+        = t('global.actions')
 
     %div{:"data-role" => "content", :"data-theme" => "c"}
       %p
-        What do you want to do?
-      =link_to "View", apath, :"data-role" => "button", :"data-theme" => "e"
-      -if logged_in?
-        -if current_user.can_modify?(@question)
-          =link_to "Edit", edit_question_answer_path(@question, @answer, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+        = t('global.what_to_do')
+      = link_to t('global.view'), apath, :"data-role" => "button", :"data-theme" => "e"
+      - if logged_in?
+        - if current_user.can_modify?(@question)
+          = link_to t('scaffold.edit'), edit_question_answer_path(@question, @answer, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
 
-        =link_to "Vote Up", question_answer_votes_path(@question, @answer, :vote_up => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
-        =link_to "Vote Down", question_answer_votes_path(@question, @answer, :vote_down => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
-        -if favorite_for?(current_user)
-          =link_to "Unfavorite", unfavorite_question_answer_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+        = link_to t('users.action.vote_up'), question_answer_votes_path(@question, @answer, :vote_up => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
+        = link_to t('users.actions.vote_down'), question_answer_votes_path(@question, @answer, :vote_down => true, :source => qpath), :method => :post, :"data-role" => "button", :"data-theme" => "c"
+        - if favorite_for?(current_user)
+          = link_to t(".unfavorite"), unfavorite_question_answer_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
         -else
-          =link_to "Favorite", favorite_question_answer_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
-      =link_to "View Question", qpath, :"data-role" => "button", :"data-theme" => "b"
+          = link_to t(".favorite"), favorite_question_answer_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
+      = link_to t('global.view_question'), qpath, :"data-role" => "button", :"data-theme" => "b"
 -else
   = include_latex
   - question_body = find_and_preserve(shapado_auto_link(markdown(@question.body.present? ? @question.body : @question.title)))
@@ -31,7 +31,7 @@
       %h1
         = @question.title[0,20]+"..."
 
-      =render "shared/mobile/header_actions"
+      = render "shared/mobile/header_actions"
 
     %div{:"data-role" => "content"}
       %h1

@@ -12,6 +12,8 @@ sender_email = ENV["SENDER"]
 recipient_email = ENV["RECIPIENT"]
 
 to, question_id = recipient_email.split("@").first.split("+", 2)
+exit if question_id.nil?
+
 group_slug, question_id = question_id.split("-", 2)
 
 mail = Mail.read_from_string(STDIN.read)
@@ -27,16 +29,30 @@ end
 data["subdomain"] = group_slug
 data["created_at"] = mail.date
 
+body_lines = []
 if mail.multipart?
   mail.parts.each do |part|
     if !part.attachment? && part.content_type =~ /text/
-      data["body"] = part.body.decoded
+      part.body.decoded.each_line do |line|
+        break if line =~ /^>  %%.+%%$/
+        body_lines << line
+      end
       break
     end
   end
 else
-  data["body"] = mail.body.decoded
+  data["body"] = ""
+  mail.body.decoded.each_line do |line|
+    break if line =~ /^>  %%.+%%$/
+    body_lines << line
+  end
 end
+
+if body_lines.size > 2
+  body_lines.pop
+  body_lines.pop
+end
+data["body"] = body_lines.join("\n")
 
 path = "#{EMAIL_DIR}/#{group_slug}"
 FileUtils.mkpath(path)

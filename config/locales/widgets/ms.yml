@@ -1,0 +1,31 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  widgets: 
+    badges: 
+      description: Widget ini memaparkan lencana terkini yang diraih oleh pengguna atau soalan
+      title: Lencana terkini
+    groups: 
+      description: Widget ini memaparkan kumpulan terbaru
+      title: Kumpulan terbaru
+    index: 
+      description: Gunakan anak panah untuk mengalihkan widget-widget anda
+      title: Uruskan widget bar sisi
+    pages: 
+      description: Widget ini memaparkan senarai laman wiki
+      new: Tambahkan laman baru
+      title: Laman wiki
+    tag_cloud: 
+      description: Widget ini memaparkan awan tag
+      title: Awan tag
+    top_groups: 
+      description: Widget ini memaparkan lima kumpulan paling aktif
+      title: 5 kumpulan terunggul
+    top_users: 
+      description: Widget ini memaparkan lima pengguna paling aktif
+      title: 5 pengguna teratas
+    users: 
+      description: Widget ini memaparkan ahli-ahli yang baru berdaftar
+      title: Pengguna terkini

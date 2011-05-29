@@ -1,20 +1,22 @@
 %nav
   %ul.content-tabs
     %li.questions
-      =link_to t("layouts.application.questions"), questions_link
+      =link_to t("layouts.application.questions"), url_for(questions_link)
     %li.answers
-      =link_to "Respuestas", url_for(:answers => 1)
+      =link_to t('activities.activerecord.models.answers'), url_for(questions_link.merge(:answers => 1))
     %li.unanswered
-      =link_to t("layouts.application.unanswered"), url_for(:unanswered => 1)
+      =link_to t("layouts.application.unanswered"), url_for(questions_link.merge(:unanswered => 1))
     %li.activity
-      =link_to "Activity", "#"
+      =link_to t('activities.activerecord.models.activity'), activities_path(:context => (params[:context]||params[:action]))
 
   %section.filters{:class => @active_subtab }
     %ul
-      %header Sort By:
+      %header= t('global.sort_by')
+      %li.activity
+        = link_to t("questions.index.active"), questions_path(:sort=>"activity"), :title => t("questions.index.active_tooltip"), :rel => "nofollow"
       %li.newest
-        = link_to t("questions.index.newest"), url_for(params.merge(:sort=>"newest")), :title => t("questions.index.newest_tooltip")
+        = link_to t("questions.index.newest"), url_for(params.merge(questions_link).merge(:sort=>"newest")), :title => t("questions.index.newest_tooltip")
       %li.hot
-        = link_to t("questions.index.hot"), url_for(params.merge(:sort=>"hot")), :title => t("questions.index.hot_tooltip"), :rel => "nofollow"
+        = link_to t("questions.index.hot"), url_for(params.merge(questions_link).merge(:sort=>"hot")), :title => t("questions.index.hot_tooltip"), :rel => "nofollow"
       %li.votes
-        = link_to t("questions.index.votes"), url_for(params.merge(:sort=>"votes")), :title =>  t("questions.index.votes_tooltip"), :rel => "nofollow"
+        = link_to t("questions.index.votes"), url_for(params.merge(questions_link).merge(:sort=>"votes")), :title =>  t("questions.index.votes_tooltip"), :rel => "nofollow"

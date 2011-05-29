@@ -1,6 +1,10 @@
 
 class CloseRequest
   include Mongoid::Document
+  include Shapado::Models::Trackable
+
+  track_activities :user, :reason, :comment, :closeable, :scope => [:group_id], :target => :closeable
+
   REASONS = %w{dupe ot no_question not_relevant spam}
 
   identity :type => String
@@ -23,6 +27,13 @@ class CloseRequest
 
   def decrement_counter
     self._parent.decrement(:close_requests_count => 1)
+  end
+
+  def self.humanize_action(action)
+    case action
+    when "create"
+      "requested_to_close"
+    end
   end
 
   protected

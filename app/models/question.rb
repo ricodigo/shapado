@@ -8,9 +8,12 @@ class Question
   include MongoidExt::Random
   include MongoidExt::Storage
 
-  include Support::Versionable
+  include MongoidExt::Versioning
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :title, :language, :scope => [:group_id]
 
   index :tags
 
@@ -106,21 +109,19 @@ class Question
 #   validates_true_for :tags, :logic => lambda { |q| q.tags.size <= 9},
 #                      :message => lambda { |q| I18n.t("questions.model.messages.too_many_tags") if q.tags.size > 9 }
 
-  versionable_keys :title, :body, :tags
+  versionable_keys :title, :body, :tags, :owner_field => "updated_by_id"
   filterable_keys :title, :body
   language :language
 
   before_save :update_activity_at
   validate :update_language, :on => :create
 
-  validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES, :if => lambda {AppConfig.enable_i18n}
-
   validate :group_language
   validate :disallow_spam
   validate :check_useful
 
   def self.minimal
-    without(:_keywords, :followers, :flags, :close_requests, :open_requests, :versions)
+    without(:_keywords, :close_requests, :open_requests, :versions)
   end
 
   def followed_up_by
@@ -337,6 +338,17 @@ class Question
     end
   end
 
+  def self.humanize_action(action)
+    case action
+    when "create"
+      "asked"
+    when "update"
+      "changed"
+    when "destroy"
+      "deleted"
+    end
+  end
+
   protected
   def self.map_filter_operators(quotes, ops)
     mongoquery = {}
@@ -388,8 +400,10 @@ class Question
   end
 
   def group_language
-    if self.group.present? && (!self.group.language.nil? && self.group.language != self.language)
-      self.errors.add :language, I18n.t("questions.model.messages.not_group_languages")
+    if AppConfig.enable_i18n && self.group.present?
+      unless self.group.languages.include? self.language || self.language
+        self.errors.add :language, I18n.t("questions.model.messages.not_group_languages")
+      end
     end
   end
 

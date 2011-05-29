@@ -12,7 +12,7 @@
 
 
 -content_for :sidebar do
-  = render "shared/widgets", :context => 'mainlist'
+  = render "shared/widgets", :context => 'mainlist', :position => 'sidebar'
 
 -@tags.each do |tag|
   = render "tag", :tag => tag

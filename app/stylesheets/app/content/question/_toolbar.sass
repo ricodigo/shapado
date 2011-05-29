@@ -1,0 +1,150 @@
+.toolbar
+  border-top: 1px solid #e5e5e5
+
+  ul.drop-menu
+    margin: 0
+    +none-radius
+    height: 25px
+
+    li
+      float: left
+      display: inline
+      position: relative
+      &:hover
+        visibility: inherit
+      &:hover ul, &.sfHover ul
+        right: -5px
+        top: 25px
+        z-index: 99
+
+      a
+        display: block
+        position: relative
+        padding: 5px 7px 7px 25px
+        color: #999
+        border-right: 1px solid #e5e5e5
+        background: url("/images/question-toolbar-icons-small.png") 5px 5px  no-repeat
+        &:hover
+          color: #000
+          background-color: #f9f9f9 !important
+      a.active
+        background-color: $lightBlue
+        color: #000
+        &:hover
+          background-color: $lightBlue !important
+
+      ul
+        position: absolute
+        top: -999em
+        width: 130px
+        left: -1px
+        +none-radius
+
+        li:first-child
+          border-top: 1px solid #ddd
+
+        li
+          width: 100%
+          border-left: 1px solid #ddd
+          border-bottom: 1px solid #ddd
+          background-color: #fff
+          a:first-letter
+            text-transform: uppercase
+
+// Icons for each
+ul.drop-menu
+  li.spam
+    padding-top: 5px
+    padding-left: 7px
+    background-color: $lightRed
+    span
+      float: left
+      color: $red
+    a
+      float: right
+      margin: -5px 0 0 0 !important
+      background: none
+      padding-left: 7px
+      color: #eb9696
+      margin: 0
+      &:hover
+        background-color: $red !important
+        color: #fff
+      	      
+    a#destroy_question_flag_link
+      border-left: 1px solid #e5e5e5
+      margin-left: 10px !important
+      border-color: #f4b6b6
+
+  .answer #add_answer
+    background-position: 5px 5px
+    &:hover, &.active
+      background-position: 5px -25px
+
+  .comment #add_question_comment
+    background-position: 5px -699px
+    &:hover, &.active
+      background-position: 5px -679px
+
+  .follow
+    .follow-q
+      background-position: 6px -262px
+    .follow-q:hover
+      background-position: 6px -242px
+    .unfollow-q
+      background-position: 6px -218px
+    .unfollow-q:hover
+      background-position: 6px -194px
+
+  .share_on #share_question
+    background-position: 5px -123px
+    &:hover, &.active
+      background-position: 5px -99px
+
+  .more a
+    background-position: 5px -382px !important
+
+  .activity a
+    background-position: 5px -75px !important
+    &:hover, &.active
+      background-position: 5px -51px !important
+
+  .followUp a
+    background-position: 6px -607px !important
+    &:hover, &:active
+      background-position: 6px -581px !important
+
+  .close a
+    background-position: 5px -358px !important
+    &:hover, &.active
+      background-position: 5px -330px !important
+
+  #request-close-link
+    background-position: 5px -657px !important
+    &:hover
+      background-position: 5px -634px !important
+
+  .delete a
+    background-position: 5px -547px !important
+    &:hover, &.active
+      background-position: 5px -519px !important
+
+  .edit-q a
+    background-position: 5px -306px !important
+    &:hover, &.active
+      background-position: 5px -283px !important
+
+  .ban a
+    background-position: 5px -170px !important
+    &:hover, &.active
+      background-position: 5px -146px !important
+
+  #flag_question
+    background-position: 5px -722px
+    &:hover
+      background-position: 5px -744px
+
+  .add_reward a
+    background-position: 5px -767px !important
+    &:hover
+      background-position: 5px -787px !important

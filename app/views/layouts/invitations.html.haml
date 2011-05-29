@@ -1,0 +1,46 @@
+!!! 5
+%html{"xml:lang" => I18n.locale, :lang => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title
+      &= page_title
+    = render "shared/layout/css"
+
+    = raw(current_group.head_tag)
+    = render "shared/layout/meta"
+    <!--[if lt IE 8]><link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/ie7.css"><![endif]-->
+    = render "shared/layout/javascript"
+    <link type="text/css" rel="stylesheet" media="screen" href="http://jqueryui.com/themes/base/jquery.ui.tabs.css">
+
+    = csrf_meta_tag
+
+  %body
+    = render "shared/analytics"
+    #container{:class => @current_class}
+
+      %nav.top-bar
+        %ul.group-list.sf-menu
+          = render "groups/top_grouplist"
+          -if !logged_in?
+          - else
+            //-if current_user.mod_of?(current_group)
+            = render "admin/manage/top_admin"
+            = render "admin/moderate/top_moderate"
+
+        .searcher
+          = form_tag search_index_path, :method => :get, :id => "search" do
+            .field
+              = text_field_tag :q, params[:q]
+
+
+        -if !logged_in?
+          /=multiauth_menu("Sign In")
+          = multiauth_dropdown("Sign In")
+        -else
+          = render "users/top_user"
+
+      %section.invitations-panel
+        = yield
+        .clear
+
+
+      = render "shared/layout/footer"

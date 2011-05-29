@@ -1,0 +1,45 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  devise: 
+    confirmations: 
+      confirmed: حساب شما تایید شده. اکنون شما وارد شده اید.
+      link: دستور العمل تایید را دریافت نکردید؟
+      send_instructions: به زودی ایمیلی شامل دستورالعمل چگونگی تایید حسابتان دریافت خواهید کرد.
+    mailer: 
+      confirmation_instructions: دستورالعمل‌های تأیید
+      reset_password_instructions: تنظیم مجدد رمز عبور
+      unlock_instructions: دستورالعملهای باز کردن قفل حساب
+    passwords: 
+      link: رمز خود را فراموش کرده اید؟
+      send_instructions: در کمتر از چند دقیقه شما ایمیلی شامل دستورالعمل تنظیم مجدد رمز عبورتان دریافت خواهید کرد
+      updated: رمز عبور شما تغییر کرد. اکنون شما وارد شده اید.
+    registrations: 
+      destroyed: خداحافظ! حساب شما لغو شد. امیدواریم شما را به زودی دوباره ببینیم.
+      link: ثبت نام
+      signed_up: شما ثبت نام شدید.
+      updated: شما حساب خود را به روز کردید.
+    sessions: 
+      facebook_actions: 
+        sign_in: ورود
+        sign_out: خروج
+      facebook_authenticity_token: اتفاقی نا مشخص افتاده. به دلایل امنیتی فطفا دوباره وارد شوید.
+      facebook_invalid: نمی‌توانم وارد شوم. حساب نامعتبر است.
+      facebook_timeout: جلسه کاری شما در فیس بوک منقضی شده. لطفا دوباره وارد شوید تا بتوانید ادامه دهید.
+      inactive: حساب شما هنوز تایید نشده است.
+      invalid: رمز عبور یا آدرس ایمیل نا معتبر
+      invalid_token: نشانه تصدیق نا معتبر است.
+      link: ورود
+      locked: حساب شما قفل شده است.
+      signed_in: وارد شدید
+      signed_out: خارج شدید
+      timeout: جلسه کاری شما منقضی شده لطفا برای ادامه دوباره وارد شوید.
+      unauthenticated: باید یا وارد سیستم شوید یا ثبت نام کنید تا بتوانید کار خود را ادامه دهید.
+      unconfirmed: قبل از ادامه باید حساب خود را تایید کنید.
+    unlocks: 
+      link: آیا دستورالعمل باز کردن قفل را دریافت نکردید؟
+      send_instructions: به زودی ایمیلی شامل دستورالعمل چگونگی باز کردن قفل حسابتان دریافت خواهید کرد.
+      unlocked: قفل حساب شما باز شد. اکنون شما وارد شده اید.

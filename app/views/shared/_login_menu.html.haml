@@ -1,26 +1,12 @@
-- count = 0
-%ul.sf-menu
+%ul.user-list.sf-menu
+  - unless current_group.is_email_only_signup?
+    %li
+      %a
+        = t('devise.sessions.link')
+      = render "shared/login_drop_down"
+  - else
+    %li
+      = link_to t('devise.sessions.link'), new_user_session_path
   %li
-    %a
-      LogIn
-    %ul
-      - entries = multiauth_providers.keys
-      -first_section = entries[0, 5]
-      -last_section = entries[5, entries.size]
+    = link_to t('layouts.application.join_group', :group => current_group.name), new_user_path
 
-      -first_section.each do |provider|
-        -config = multiauth_providers[provider]
-        %li
-          =link_to(provider, "/users/auth/#{config["openid"] ? "open_id?openid_url=#{config["openid"]}" : "#{provider.underscore}"}", :class => "#{provider} #{config["class"]}", :id => "btn_#{count+=1}" )
-      %li
-        %a
-          More...
-        %ul
-          -last_section.each do |provider|
-            -config = multiauth_providers[provider]
-            %li
-              =link_to(provider, "/users/auth/#{config["openid"] ? "open_id?openid_url=#{config["openid"]}" : "#{provider.underscore}"}", :class => "#{provider} #{config["class"]}", :id => "btn_#{count+=1}" )
-  %li
-    %a
-      Join to Shapado
-.clear

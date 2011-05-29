@@ -1,4 +1,8 @@
--current_group.send(:"#{context}_widgets").each do |widget|
-  - unless (widget.question_only? && !@question)
+-widget_list = current_group.send(:"#{context}_widgets")
+-if widget_list
+  - widget_list.send(position).each do |widget|
     .widget.block{:id => widget.name}
       = render :partial => widget.partial_name, :locals => {:widget => widget}
+
+/   -if position == (widget.position || "sidebar")
+/     - unless widget.question_only? && !@question

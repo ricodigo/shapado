@@ -1,0 +1,13 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    models: 
+      favorite: kedvencek
+      favorites: kedvenc
+  favorites: 
+    create: 
+      success: A kérdés bekerült a kedvenceid közé
+      unauthenticated: Fiókra van szükséged kedvencek felvételéhez

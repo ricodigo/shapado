@@ -6,6 +6,7 @@ class Membership < EmbeddedHash
   field :group_id, :type => String
 
   field :reputation, :type => Float, :default => 0.0
+
   field :profile, :type => Hash, :default => {} # custom user keys
 
   field :votes_up, :type => Float, :default => 0.0
@@ -24,6 +25,8 @@ class Membership < EmbeddedHash
   field :silver_badges_count,       :type => Integer, :default => 0
   field :gold_badges_count,         :type => Integer, :default => 0
   field :is_editor,                 :type => Boolean, :default => false
+
+  field :comments_count,            :type => Integer, :default => 0
 
   validates_inclusion_of :role,  :in => ROLES
 end

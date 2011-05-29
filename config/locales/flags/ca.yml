@@ -1,7 +1,8 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Papapep
+# Author: SMP
 ca: 
   activerecord: 
     attributes: 
@@ -14,8 +15,19 @@ ca:
     create: 
       flash_error: No podeu marcar això
       flash_notice: Gràcies pel vostre informe
+    destroy: 
+      flash_notice: La vostra marca ha estat revocada de manera correcta.
+    edit: 
+      title: Edita la marca de %{model}
     form: 
       attention: Cal actuació del moderador
-      label: Marqueu amb compte
+      label: Si us plau, tingueu cura en marcar
       offensive: Llenguatge ofensiu o abusiu.
       spam: Correu brossa
+    model: 
+      messages: 
+        already_requested: Ja heu marcat aquest %{model}
+    new: 
+      title: Marca %{model}
+    update: 
+      flash_notice: La pregunta marcada ha estat actualitzada correctament.

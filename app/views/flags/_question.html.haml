@@ -1,0 +1,10 @@
+
+%section.main-question#question
+  %h1
+    = t("flags.#{flag.new_record? ? "new" : "edit"}.title", :model => I18n.t("activerecord.models.#{@resource.class.to_s.tableize.singularize}"))
+    = link_to resource.title, question_path(resource)
+
+  .description.markdown
+    = resource.body
+
+

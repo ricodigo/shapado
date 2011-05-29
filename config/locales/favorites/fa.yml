@@ -1,0 +1,14 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    models: 
+      favorite: مورد علاقه
+      favorites: مورد علاقه‌های شما
+  favorites: 
+    create: 
+      success: این سوال به سوالات محبوب شما اضافه شد
+      unauthenticated: برای اضافه کردن سوال یا جواب محبوبتان به یک حساب نیاز دارید

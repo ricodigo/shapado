@@ -1,19 +1,26 @@
+%section.main-question#question
+  %h1
+    &= @question.title
 
--content_for :subtabs do
-  .navtitle
-    = t(".title", :title => h(@question.title))
+  .description.markdown
+    %p
+      = @question.body
 
-#move_question
-  .markdown{:style => "width: 92%"}
-    = markdown(@question.body)
+  .stats
+    %p
+      %strong
+        = t('activerecord.attributes.question.created_at')
+      = t("time.ago", :time => time_ago_in_words(@question.created_at))
+      %strong
+        = t('questions.show.viewed')
+      = t('number.x_time', :count => number_with_delimiter(@question.views_count))
+      %strong
+        = t("questions.show.last_activity")
+      = t("time.ago", :time => time_ago_in_words(@question.activity_at))
 
-  .tag-list
+  %ul.tag-list
     -@question.tags.each do |tag|
-      %span.tag
+      %li
         = link_to h(tag), url_for(:controller => "questions", :action => "index", :tags => tag), :rel => "tag"
-  %div
-    %b
-      = t("questions.show.asked_on")
-      = link_to h(@question.group.name), domain_url(:custom => @question.group.domain)
 
-  = render :partial => "questions/retag_form"
+= render :partial => "questions/retag_form"

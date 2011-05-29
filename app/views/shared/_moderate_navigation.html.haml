@@ -1,7 +1,10 @@
-%ul
-  %li.retag
-    =link_to t( ".questions", :default => :"layouts.application.questions"), moderate_questions_path
-  %li.flags
-    =link_to t(".answers", :default => :"activerecord.models.answers"), moderate_answers_path
-  %li.close
-    =link_to t(".users", :default => :"layouts.application.users"), moderate_users_path
+%nav
+  %ul.content-tabs
+    %li.questions
+      =link_to t("layouts.application.questions"), moderate_questions_path
+    %li.answers
+      =link_to t('answers.activerecord.models.answers'), moderate_answers_path
+    %li.users
+      =link_to t("layouts.application.users"), moderate_users_path
+
+  = render "subtabs"

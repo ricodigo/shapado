@@ -8,6 +8,11 @@
       %h4
         = t(".how_to_ask")
       = raw(current_group.question_help)
+%h1
+  = t(".title")
+%p.description
+  = t(".description")
+
 
 - form_for(@question, :html=>{:class => "question-form", :id => "ask_question", :multipart => true}) do |f|
   =render :partial => "form", :locals => {:f => f}

@@ -1,4 +1,4 @@
-= javascript_include_merged(:show).html_safe
+= include_javascripts(:show)
 = include_latex
 
 - @current_class = 'question hentry entry post'
@@ -34,74 +34,70 @@
 
   .description.markdown
     = question_body
-    -if AppConfig.mailing && AppConfig.mailing["activate"]
-      answer by email:
-      = mail_to @question.email
     = render "reward_info"
+    = render "attachments", :question => @question, :attachments => @question.attachments, :editing => false
     .clear
 
   .stats
     %p
-      %strong 
+      %strong
         = t('activerecord.attributes.question.created_at')
-      = t("time.ago", :time => time_ago_in_words(@question.created_at))
-      %strong 
+      %time{:datetime => @question.created_at.iso8601}
+        = t("time.ago", :time => time_ago_in_words(@question.created_at))
+      %strong
         = t('questions.show.viewed')
       = t('number.x_time', :count => number_with_delimiter(@question.views_count))
-      %strong 
+      %strong
         = t("questions.show.last_activity")
       = t("time.ago", :time => time_ago_in_words(@question.activity_at))
-      
 
-  .attachments
-    = render "attachments", :question => @question, :attachments => @question.attachments, :editing => false
+  .comments
+    -@question.comments.each do |comment|
+      = render :partial => "comments/comment", :object => comment, :locals => {:source => @quetion, :mini => true}
 
   .toolbar
     %ul.drop-menu
       %li.answer
-        = link_to "Responder", "#", :id => "add_answer"
+        = link_to t(".answer", :default => "Answer"), "#", :id => "add_answer"
 
       %li.comment
-        = link_to "Comentar", "#", :id => "add_question_comment"
+        = link_to t(".comment", :default => "Comment"), "#", :id => "add_question_comment"
 
       %li.follow
         - if current_user && @question.follower?(current_user)
-          = link_to "Unfollow", unfollow_question_path(@question), :class => 'unfollow-q question-action', "data-undo" =>  follow_question_path(@question), "data-title" => t(".watch_tooltip"), :title => t(".unwatch_tooltip"), :id => "watch-question"
+          = link_to t('global.unfollow'), unfollow_question_path(@question), :class => 'unfollow-q question-action', "data-undo" =>  follow_question_path(@question), "data-title" => t(".watch_tooltip"), :title => t(".unwatch_tooltip"), :id => "watch-question"
         - else
-          = link_to "Follow", follow_question_path(@question), :title => t(".watch_tooltip"), :class => 'follow-q question-action', "data-undo" =>  unfollow_question_path(@question), "data-title" => t(".unwatch_tooltip"), :id => "watch-question"
+          = link_to t('global.follow'), follow_question_path(@question), :title => t(".watch_tooltip"), :class => 'follow-q question-action', "data-undo" =>  unfollow_question_path(@question), "data-title" => t(".unwatch_tooltip"), :id => "watch-question"
 
       - if !@flag.new_record?
         %li.spam
-          = "#{t('.flagged_as')} #{t(@flag.reason, :scope=>'flags.form')}"
+          %span
+            = "#{t('.flagged_as')} #{t(@flag.reason, :scope=>'flags.form')}"
           = link_to t("scaffold.edit"), edit_question_flag_path(@question,@flag), :id => "edit_question_flag_link", :class => "flag-link", :rel => 'nofollow'
           = link_to t("scaffold.destroy"), question_flag_path(@question,@flag), :id => "destroy_question_flag_link", :rel => 'nofollow', :confirm => "are you sure?", :method => :delete
+
       - elsif logged_in? && current_user != @question.user
-        %li.spam
+        %li.no-spam
           = link_to t(".flag"), new_question_flag_path(@question), :id => "flag_question", :class => "flag-link", "data-lazy" => "1", :rel => 'nofollow'
 
       %li.share_on
-        = link_to "Compartir", "#", :id => "share_question"
+        = link_to t('global.share'), "#", :id => "share_question"
 
       %li.more.current
-        = link_to "More actions"
+        = link_to t('.more_actions')
         %ul
-          - if logged_in?
-            - if (current_user.can_modify?(@question) || current_user.owner_of?(@question.group))
-              %li.activity
-                = link_to t(".history", :default => "history"), history_question_path(@question)
+          %li.activity
+            = link_to t(".history", :default => "history")+" (#{@question.versions_count})", history_question_path(@question)
 
           %li.followUp
-            = link_to "Follow Up", new_question_path(:from_question => @question.id), :rel => "nofollow"
-
-          -if logged_in? && current_user.can_create_reward?(@question)
-            %li
-              = link_to "Create Reward", "#", :rel => "nofollow", :id => "add_reward"
+            = link_to t('.follow_up'), new_question_path(:from_question => @question.id), :rel => "nofollow", :title => t('.follow_up_description')
 
           - if logged_in?
-            %li.close
-              -if !@question.closed
-                = link_to t('.close'), question_close_requests_path(@question)
-          - if logged_in?
+            -if current_user.can_create_reward?(@question)
+              %li.add_reward
+                = link_to t('.create_reward'), "#", :rel => "nofollow", :id => "add_reward", :title => t('.create_reward_description')
+
+
             - if show_close_request_form
               %li.spam
                 -if !@close_request.new_record?
@@ -110,17 +106,16 @@
                   = link_to t(".retract_request"), question_close_request_path(@question,@close_request), :id => "destroy_question_close_request_link", :rel => 'nofollow', :confirm => "are you sure?", :method => :delete
                 = link_to t(".request_closing"), @close_request.new_record? ? new_question_close_request_path(@question) : edit_question_close_request_path(@question, @close_request), :id => "request-close-link", "data-lazy" => "1", :rel => 'nofollow', :title => t('.request_closing_details')
 
-
-            - if (current_user.can_modify?(@question) || current_user.owner_of?(@question.group))
-              %li.delete
-                = link_to t("scaffold.destroy"), question_path(@question.id), :confirm => "are you sure?", :method => :delete
-
             - if (@question.wiki && current_user.can_edit_wiki_post_on?(@question.group)) || current_user.can_edit_others_posts_on?(@question.group) || current_user.can_modify?(@question)
               %li.edit-q
                 = link_to t('scaffold.edit'), edit_question_path(@question)
+            - if (current_user.can_modify?(@question) || current_user.owner_of?(@question.group))
+              %li.delete-q
+                = link_to t("scaffold.destroy"), question_path(@question), :confirm => "are you sure?", :method => :delete
 
-          %li.ban
-            = link_to @question.banned ? t(".unban") : t(".ban"), manage_moderate_questions_path(:question_ids => [@question.id], :commit => @question.banned ? "unban": "ban"), :method => :put, :confirm => "are you sure?"
+            -if current_user.mod_of?(@question.group) && !@question.closed
+              %li.close
+                = link_to t('.close'), question_close_requests_path(@question)
 
           - if show_open_request_form
             -if !@open_request.new_record?
@@ -136,11 +131,18 @@
               %li.open
                 = link_to t(".request_opening"), new_question_open_request_path(@question), :id => "request-open-link", :rel => 'nofollow', :title => t('.request_opening_details')
 
+            - if (current_user.can_modify?(@question) || current_user.owner_of?(@question.group))
+              %li.ban
+                = link_to @question.banned ? t(".unban") : t(".ban"), manage_moderate_questions_path(:question_ids => [@question.id], :commit => @question.banned ? "unban": "ban"), :method => :put, :confirm => "are you sure?"
+              %li.delete
+                = link_to t("scaffold.destroy"), question_path(@question.id), :confirm => "are you sure?", :method => :delete
+
+
     #panel-forms
       = render "reward_form"
 
       -unless @question.closed
-        =form_for [@question, @answer ||= Answer.new], :html => {:class => "add_answer"} do |f|
+        =form_for [@question, @answer ||= Answer.new], :html => {:class => "add_answer markdown"} do |f|
 
           = render :partial => "answers/form", :locals => {:f => f, :markdown => true, :question => @question}
 
@@ -153,12 +155,18 @@
               .checkbox
                 = f.label :anonymous, t("scaffold.post_as_anonymous"), :class => "radio"
                 = f.check_box :anonymous, {:class => "checkbox"}, true, false
+
+            -if AppConfig.mailing && AppConfig.mailing["activate"]
+              .column.by_mail
+                %a{:href => "mailto:#{@question.email}"}
+                  Answer by email
+
             .buttons
               = submit_tag t('answers.form.submit'), :class => "save"
               = link_to t('scaffold.cancel'), '', :class => 'cancel'
               = t("global.or")
 
-        =form_for [@question, @comment ||= Comment.new], :html => {:class => "add_question_comment"} do |f|
+        =form_for [@question, @comment ||= Comment.new], :html => {:class => "add_question_comment markdown"} do |f|
           = render :partial => "comments/form", :locals => {:f => f, :markdown => true, :commentable => @question, :source => question_url(@question)}
 
           .field.form-options
@@ -199,10 +207,10 @@
 
 %ul.tag-list
   %li.title
-    Topics:
+    = t('global.tags_label')
   - @question.tags.each do |tag|
     %li
-      = link_to h(tag), tag_path(:id => tag), :rel => "tag"
+      = link_to h(tag), tag_path(:id => tag), :rel => "tag", :class => 'tag'
   - if logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
     %li.retag
       = link_to t('.retag'), retag_question_path(@question), :id => 'retag'
@@ -214,7 +222,7 @@
 
   %section.filters
     %ul{:class => @active_subtab.to_s}
-      %header Sort By:
+      %header= t('global.sort_by')
       %li.newest-active
         = link_to t("questions.index.newest"), question_path(@question, :sort=>"newest", :anchor => "answers"), :rel => "nofollow"
       %li.votes-active
@@ -222,7 +230,7 @@
       %li.oldest-active
         = link_to t("questions.index.oldest"), question_path(@question, :sort=>"oldest", :anchor => "answers"), :rel => "nofollow"
       %li
-        = link_to "Respuesta elegida"
+        = link_to t('.solution')
 
   .error
     - source = question_path(@question)
@@ -234,15 +242,16 @@
       = link_to @question.follow_up.original_question.title, question_path(@question.follow_up.original_question)+"##{@question.follow_up.original_answer_id}"
 
     -if @question.followed_up_by.limit(1).count > 0
-      %h1 Followed by:
+      %h1= t('global.followed_by')
       -@question.followed_up_by.all.each do |child|
         = link_to child.title, question_path(child)
 
     - if @question.closed && @question.close_reason.present?
-      #close_reason
+      #close_reason.pacho
         = t(".close_reason")
         = t(@question.close_reason.reason, :scope=>"close_requests.form")
         - if !@question.close_reason.comment.empty?
+        
           .comment
             =find_and_preserve(shapado_auto_link(@question.close_reason.comment))
 
@@ -258,4 +267,4 @@
 
 
 -content_for :sidebar do
-  = render "shared/widgets", :context => 'question'
+  = render "shared/widgets", :context => 'question', :position => 'sidebar'

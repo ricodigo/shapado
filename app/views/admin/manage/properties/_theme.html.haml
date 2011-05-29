@@ -1,14 +1,20 @@
-.field
-  = f.label :logo, t('logo', :scope => "activerecord.attributes.group"), :class => "label"
-  -unless @group.new?
-    = image_tag(logo_path(@group))
-  %br
-  = f.file_field :logo
+%h2
+  = t('.title')
+
+.field.group-logo
+  .img-up
+    = f.label :logo, t('logo', :scope => "activerecord.attributes.group"), :class => "label"
+    -unless @group.new?
+      = image_tag(logo_path(@group))
+    = f.file_field :logo
+  .size
+
+    = text_field_tag "group[logo_info][width]", @group.logo_info["width"] || 215
+    %span x
+    = text_field_tag "group[logo_info][height]", @group.logo_info["height"] || 60
+
   %small
     = t('.logo_legend')
-  = text_field_tag "group[logo_info][width]", @group.logo_info["width"] || 215
-  x
-  = text_field_tag "group[logo_info][height]", @group.logo_info["height"] || 60
 
 .field
   = f.label :custom_favicon, "Favicon", :class => "label"
@@ -22,11 +28,11 @@
   = f.label :theme, t(:theme, :scope => "activerecord.attributes.group", :default => "Theme" ), :class => "label"
   = f.select :theme, AVAILABLE_THEMES, {}, :class => "choose_theme"
 
-.group
-  = field.label :custom_css, "Custom css", :class => "label"
+.field
+  = f.label :custom_css, "Custom css", :class => "label"
   -custom_css = ""
   -@group.has_custom_css? ? custom_css = @group.custom_css.read : custom_css = ""
   = f.text_area :custom_css, :value => custom_css, :class => "text_area"
 
 .buttons
-  = f.submit t('scaffold.update')
+  = f.submit t('scaffold.update'), :class => "save"

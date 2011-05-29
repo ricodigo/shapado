@@ -1,0 +1,285 @@
+// ========================================================================
+//    Document     :   _login.sass
+//    Created on   :   MAR 03 - 2010, 12:37 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description  :   Login module
+//========================================================================
+.sf-menu
+  margin: 0
+  padding: 0
+  list-style: none
+  *
+    margin: 0
+    padding: 0
+    list-style: none
+  line-height: 1.0
+  ul
+    position: absolute
+    top: -999em
+    width: 10em
+    li
+      width: 100%
+  li
+    &:hover
+      visibility: inherit
+      /* fixes IE7 'sticky bug' */
+    float: left
+    position: relative
+  a
+    display: block
+    position: relative
+  li
+    &:hover ul, &.sfHover ul
+      left: 0
+      top: 2.5em
+      /* match top ul list item height */
+      z-index: 99
+
+ul.sf-menu li
+  &:hover li ul, &.sfHover li ul
+    top: -999em
+  li
+    &:hover ul, &.sfHover ul
+      left: 10em
+      /* match ul width */
+      top: 0
+    &:hover li ul, &.sfHover li ul
+      top: -999em
+    li
+      &:hover ul, &.sfHover ul
+        left: 10em
+        /* match ul width */
+        top: 0
+
+.sf-menu
+  float: left
+  margin-bottom: 1em
+  a
+    border-left: 1px solid #fff
+    border-top: 1px solid #CFDEFF
+    padding: .75em 1em
+    text-decoration: none
+    /* visited pseudo selector so IE6 applies text colour */
+    color: #13a
+    &:visited
+      /* visited pseudo selector so IE6 applies text colour */
+      color: #13a
+  li
+    background: #BDD2FF
+    li
+      background: #AABDE6
+      li
+        background: #9AAEDB
+    &:hover, &.sfHover
+      background: #CFDEFF
+      outline: 0
+  a
+    &:focus, &:hover, &:active
+      background: #CFDEFF
+      outline: 0
+    &.sf-with-ul
+      padding-right: 2.25em
+      min-width: 1px
+      /* trigger IE7 hasLayout so spans position accurately */
+
+.sf-sub-indicator
+  position: absolute
+  display: block
+  right: .75em
+  top: 1.05em
+  /* IE6 only */
+  width: 10px
+  height: 10px
+  text-indent: -999em
+  overflow: hidden
+  background: url('/images/superfish/arrows-ffffff.png') no-repeat -10px -100px
+  /* 8-bit indexed alpha png. IE6 gets solid image only */
+
+a
+  > .sf-sub-indicator
+    top: .8em
+    background-position: 0 -100px
+  &:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator
+    background-position: -10px -100px
+
+li
+  &:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator
+    background-position: -10px -100px
+
+.sf-menu ul
+  .sf-sub-indicator
+    background-position: -10px 0
+  a
+    > .sf-sub-indicator
+      background-position: 0 0
+    &:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator
+      background-position: -10px 0
+  li
+    &:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator
+      background-position: -10px 0
+
+/*** shadows for all but IE6 **/
+
+.sf-shadow ul
+  background: url('/images/superfish/shadow.png') no-repeat bottom right
+  padding: 0 8px 9px 0
+  -moz-border-radius-bottomleft: 17px
+  -moz-border-radius-topright: 17px
+  -webkit-border-top-right-radius: 17px
+  -webkit-border-bottom-left-radius: 17px
+  &.sf-shadow-off
+    background: transparent
+
+// Login Box
+//======================================================================
+ul.sf-menu
+  width: 100%
+  list-style: none
+  margin: -6px 0
+  li:first-child
+    margin-right: 8px
+  li:last-child
+    border-right: 1px dotted $blue
+    a
+      padding-left: 10px !important
+  li
+    background: transparent
+    float: right
+    margin: 0
+    text-align: center
+    position: relative
+    &:hover
+      visibility: inherit
+    &:hover ul, &.sfHover ul
+      left: 0
+      top: 27px
+      z-index: 99
+      background: none
+      background-color: $darkBlue
+      padding: 0
+      margin: 0
+      +none-radius
+      width: 250px
+    &:hover li ul, &.sfHover li ul
+      top: 0
+    a
+      color: #000
+      padding: 7px 10px
+      display: block
+      border: 0px
+      cursor: pointer
+      position: relative
+      line-height: 14px
+      &:focus, &:hover, &:active
+        outline: 0
+      &:hover
+        +blue-gradient
+        color: #fff
+      &.sf-with-ul
+        padding-right: 30px
+        min-width: 1px
+
+  li.sfHover .sf-with-ul
+    +blue-gradient
+    color: #fff
+
+  //drop Menu
+  ul
+    position: absolute
+    top: -999em
+    li:last-child
+      border: 0px !important
+    li
+      margin: 0 !important
+      float: left
+      &:hover ul, &.sfHover ul
+        left: -190px
+        top: 29px
+      &:hover li ul, &.sfHover li ul
+        top: -999em
+      a
+        width: 18px
+        height: 15px
+        overflow: hidden !important
+        text-indent: -10000px
+      .Google, .Google:hover
+        background: url("/images/social_google_buzz_box.png") no-repeat 50% 50% !important
+      .Twitter, .Twitter:hover
+        background: url("/images/social_twitter_box_blue.png") no-repeat 50% 50% !important
+      .Facebook, .Facebook:hover
+        background: url("/images/social_facebook_box_blue.png") no-repeat 50% 50%!important
+      .Yahoo, .Yahoo:hover
+        background: url("/images/social_yahoo_box_lilac.png") no-repeat 50% 50%!important
+      .AOL, .AOL:hover
+        background: url("/images/aol.png") no-repeat 50% 50%!important
+      .MyOpenID, .MyOpenID:hover
+        background: url("/images/button-white.png") no-repeat 50% 50%!important
+      .Wordpress, .Wordpress:hover
+        background: url("/images/wordpress.png") no-repeat 50% 50%!important
+      .Blogger, .Blogger:hover
+        background: url("/images/blogger.png") no-repeat 50% 50%!important
+      .Flickr, .Flickr:hover
+        background: url("/images/social_flickr_box.png") no-repeat 50% 50%!important
+      .Launchpad, .Launchpad:hover
+        background: url("/images/button-white.png") no-repeat 50% 50%!important
+      .Identica, .Identica:hover
+        background: url("/images/identica.png") no-repeat 50% 50%  !important
+      .Github, .Github:hover
+        background: url("/images/button-white.png") no-repeat 50% 50%  !important
+      .LinkedIn, .LinkedIn:hover
+        background: url("/images/linkedin.png") no-repeat 50% 50%  !important
+      .Vidoop, .Vidoop:hover
+        background: url("/images/button-white.png") no-repeat 50% 50% !important
+      .ClaimID, .ClaimID:hover
+        background: url("/images/button-white.png") no-repeat 50% 50% !important
+      .Technorati, .Technorati:hover
+        background: url("/images/social_technorati_box_green.png") no-repeat 50% 50% !important
+      .Verisign, .Verisign:hover
+        background: url("/images/button-white.png") no-repeat 50% 50% !important
+      .LiveJournal, .LiveJournal:hover
+        background: url("/images/livejournal.png") no-repeat 50% 50% !important
+      .MySpace, .MySpace:hover
+        background: url("/images/myspace.png") no-repeat 50% 50% !important
+      .OpenId, .OpenId:hover
+        background: url("/images/openid.png") no-repeat 50% 50% !important
+      &:hover
+        background-color: $blue !important
+
+// Menu Trigger
+.sf-sub-indicator
+  position: absolute
+  display: block
+  right: 10px
+  top: 8px
+  width: 10px
+  height: 10px
+  text-indent: -999em
+  overflow: hidden
+  background: url('/images/superfish/arrows-ffffff.png') no-repeat 0 -100px
+a
+  > .sf-sub-indicator
+    background-position: 0 -100px
+  &:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator
+    background-position: -10px -100px
+li
+  &:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator
+    background-position: -10px -100px
+.sf-menu ul
+  .sf-sub-indicator
+    background-position: -10px 0
+  a
+    > .sf-sub-indicator
+      background-position: 0 0
+    &:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator
+      background-position: -10px 0
+  li
+    &:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator
+      background-position: -10px 0
+
+//Menu 3th lavel
+ul li ul li a.sf-with-ul
+  text-indent: 0 !important
+  min-width: 1px
+  .sf-sub-indicator
+    display: none

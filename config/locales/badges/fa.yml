@@ -1,0 +1,154 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+# Author: Persianizer
+fa: 
+  activerecord: 
+    models: 
+      badge: نشان
+      badges: نشان‌ها
+  badges: 
+    index: 
+      description: تمام نشان‌هایی که می‌توانید به دست آورید. دانش خود را به اشتراک بگذارید و نشان به دست آورید.
+      title: نشانها
+    shared: 
+      addict: 
+        description: برای ۲۰ روز پی در پی هر روز به سایت آمده
+        name: معتاد
+      autobiographer: 
+        description: تمام فیلدهای پروفایل کاربری را پر کرده است.
+        name: نویسنده شرح حال خود (اتوبیوگرافر)
+      celebrity: 
+        description: بیش از ۱۰۰ پیرو پیدا کرده است
+        name: شهرت
+      citizen_patrol: 
+        description: برای اولین بار یک پست را علامت زده
+        name: پاسدار سهروندان
+      civic_duty: 
+        description: ۳۰۰ بار رای داده
+        name: وضیفه مدنی
+      cleanup: 
+        description: اولین بازگردانیش را انجام داده
+        name: پاکسازی
+      commentator: 
+        description: ۱۰ نظر داده‌است
+        name: مفسر
+      critic: 
+        description: برای اولین بار رای منفی داده است
+        name: منتقد
+      disciplined: 
+        description: پست خود با امتیاز ۳ یا بیشتر را پاک کرده
+        name: منظم
+      editor: 
+        description: برای اولین بار یک پست را ویرایش کرده
+        name: ویراستار
+      effort_medal: 
+        description: ۱۰۰ رای مثبت داده
+        name: مدال تلاش
+      enlightened: 
+        description: دارای جوابی است که با حداقل ۱۰ رای مثبت پذیرفته شده‌است
+        name: روشن
+      famous_question: 
+        description: سوالی پرسیده که ۱۰٬۰۰۰ بار دیده شده است
+        name: سوال معروف
+      fanatic: 
+        description: برای ۱۰۰ روز متوالی هر روز از سایت دیدن کرده
+        name: متعصب
+      favorite_question: 
+        description: سوالی پرسیده که ۲۵ کاربر آن را سوال مورد علاقه خود کرده‌اند
+        name: سوال مورد علاقه
+      friendly: 
+        description: برای اولین بار شروع به پیروی از کسی کرده
+        name: خودمانی
+      good_answer: 
+        description: پاسخی داده که به میانگین رای بیش از ۲۵ رسیده
+        name: جواب خوب
+      good_question: 
+        description: سوالی پرسیده که به میانگین ۲۵ رای رسیده
+        name: سوال خوب
+      great_answer: 
+        description: دارای جوابی با ۱۰۰ رای مثبت است
+        name: جواب عالی
+      great_question: 
+        description: سوالی پرسیده که به آن ۱۰۰ رای مثبت داده شده
+        name: سوال عالی
+      guru: 
+        description: به سوالی با میانگین بیش از ۴۰ رای یک راه حل ارایه کردم
+        name: معلم
+      inquirer: 
+        description: برای اولین بار سوال پرسیده است
+        name: سوال کننده
+      interesting_person: 
+        description: بیش از ۱۰ نفر او را دنبال می‌کنند
+        name: شخص جالب
+      merit_medal: 
+        description: بیش از ۲۰۰ رای مثبت به او داده شده
+        name: مدال شایستگی
+      necromancer: 
+        description: سوالی پاسخ داده که ۶۰ روز بعد حداقل ۵ رای دارد
+        name: غیب گو
+      nice_answer: 
+        description: جوابی داده که ۱۰ بار به آن رای مثبت داده شده
+        name: جواب خوب
+      nice_question: 
+        description: سوالی پرسیده که ۱۰ بار به آن رای مثبت داده شده
+        name: سوال خوب
+      notable_question: 
+        description: سوالی پرسیده که ۲۵۰۰ بار از آن دیدن شده
+        name: سوال قابل توجه
+      organizer: 
+        description: برای اولین بار برچسب‌های یک سوال را عوض کرد
+        name: سازمان دهنده
+      peer_pressure: 
+        description: پست خود با امتیاز -3 یا کمتر را پاک کرده
+        name: فشار همتایان
+      pioneer: 
+        description: از اولین کاربرانی که ثبت نام کرده‌اند بوده‌است
+        name: پیشگام
+      popstar: 
+        description: دارای ۵۰۰ رای مثبت و حد اکثر ۱۰ رای منفی است
+        name: پاپ استار
+      popular_person: 
+        description: دارای بیش از ۵۰ پیرو شده است
+        name: شخص محبوب
+      popular_question: 
+        description: سوالی با ۱٬۰۰۰ بازدید پرسیده است
+        name: سوال محبوب
+      rockstar: 
+        description: دارای ۱٬۰۰۰ رای مثبت و حد اکثر ۱۰ رای منفی است
+        name: راک استار
+      scholar: 
+        description: برای اولین بار سوال خود را جواب داده و جواب را پذیرفته
+        name: محقق
+      self-learner: 
+        description: سوال خود را با حد اقل ۳ رای مثبت جواب داده
+        name: کسی که خود یاد می‌گیرد
+      service_medal: 
+        description: دارای ۳۰۰ رای مثبت است
+        name: مدال خدمت
+      shapado: 
+        description: برای ۸ روز متوالی هر روز از سایت دیدن کرده است
+      stellar_question: 
+        description: سوالی پرسیده که ۱۰۰ کاربر آن را به سوالات محبوبشان اضافه کرده اند
+        name: سوال درخشان
+      student: 
+        description: سوالی با حد اقل یک رای مثبت پرسیده
+        name: دانشجو
+      supporter: 
+        description: برای اولین بار رای مثبت داده است
+        name: پشتیبان
+      troubleshooter: 
+        description: برای اولین بار پاسخ داده است
+        name: عیب یاب
+      tutor: 
+        description: به سوالی با میانگین ۲ رای یک راه حل داده‌است
+        name: مدرس
+    show: 
+      description: "کاربرانی که این نشان را به دست آورده اند. اخیرا اعطا شده است به:"
+      earned: کسب کرده
+      for_tag_bronze: ۲۰۰ رای به برچسب %{tag}
+      for_tag_gold: ۱۰۰۰ رای به برچسب %{tag}
+      for_tag_silver: ۴۰۰ رای به برچسب %{tag}
+      title: نشان %{type}

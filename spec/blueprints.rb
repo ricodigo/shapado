@@ -1,10 +1,10 @@
 require 'sham'
-require 'faker'
+require 'ffaker'
 
 Sham.email { Faker::Internet.email }
 Sham.name  { Faker::Name.name }
 Sham.login  { Faker::Name.name }
-Sham.position(:unique => false)  { {:lat => 0, :long => 0} }
+Sham.position(:unique => false)  { {"lat" => 0, "long" => 0} }
 Sham.title { Faker::Lorem.sentence }
 Sham.body { Faker::Lorem.paragraph }
 Sham.domain { Faker::Company.name }
@@ -49,6 +49,12 @@ Answer.blueprint do
   question {Question.make}
 end
 
+Comment.blueprint do
+  body { Sham.body }
+  votes {{}}
+  user {User.make}
+end
+
 UserStat.blueprint do
   answer_tags { (0..rand(10)).to_a.map {|i| "tag#{i}"} }
   question_tags { (0..rand(10)).to_a.map {|i| "tag#{i}"} }
@@ -59,4 +65,11 @@ end
 
 CloseRequest.blueprint do
   reason { CloseRequest::REASONS[rand()*CloseRequest::REASONS.size]}
+end
+
+Search.blueprint do
+  name { Sham.name }
+  query {Faker::Lorem.sentence}
+  group {Group.make}
+  user {User.make}
 end

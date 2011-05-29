@@ -1,0 +1,22 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  sessions: 
+    create: 
+      flash_error: Nem sikerült bejelentkeztetnünk „%{login}” néven
+      flash_notice: Sikeres bejelentkezés
+    destroy: 
+      flash_notice: Kijelentkeztél
+    new: 
+      log_in: Bejelentkezés
+      not_registered: Még nem regisztráltál?
+      registered: Már regisztráltál?
+      remember_me: Emlékezzen rám
+      sign_in: Bejelentkezés
+      signup: Regisztráció
+      with_authentication: Bejelentkezés a mi hitelesítési rendszerünkkel
+      with_facebook: Bejelentkezés Facebookkal
+      with_openid: Bejelentkezés OpenID-vel
+      with_twitter: Bejelentkezés Twitterrel

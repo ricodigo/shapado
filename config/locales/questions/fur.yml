@@ -1,0 +1,80 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  activerecord: 
+    attributes: 
+      question: 
+        answers: Rispuestis
+        asked_by: Domandât di
+        body: Cuarp
+        closed: Sierât
+        created_at: Domandât
+        language: Lenghe
+        tags: Etichetis
+        title: Titul
+        updated_at: inzornade
+        updated_by: inzornade di
+        views: Viodudis
+        votes: Vôts
+    models: 
+      question: Domande
+      questions: Domandis
+  questions: 
+    answer: 
+      add_comment: Zonte un coment...
+      pick_answer: Sielç come soluzion
+    form: 
+      adult_content: La domande e conten materiâl pai adults.
+      body_tip: Cuale is la tô domande? Spieghiti ben.
+      language_tip: Sielç la lenghe doprade pe domande.
+      tags_tip: Dopre lis etichetis par zontâ altris informazions ae domande.
+    index: 
+      active: Ativis
+      ask_question: Fâs une domande
+      help_to_answer: Judinus a rispuindi
+      hot: Dibatût
+      newest: Lis plui gnovis
+      oldest: Lis plui vieris
+      title: Dutis lis domandis
+      unanswered_questions: Domandis cence rispuestis
+      votes: Vôts
+      votes_tooltip: Domandis cun plui vôts
+    new: 
+      how_to_ask: Cemût domandâ
+      title: Fâs une domande
+    retag_form: 
+      cancel: Scancele
+      submit: Inzorne lis etichetis!
+      title: Inzorne lis etichetis
+    show: 
+      accepted_tooltip: Une des domandis e je stade acetade come chê juste.
+      another_answers: Altris rispuestis
+      answers: Rispuestis
+      answers_title: 
+        one: "%{count} rispueste"
+        other: "%{count} rispuestis"
+      asked_on: domandât ai
+      close: Siere
+      edit_request: Modifiche richieste
+      favorite_tooltip: Zonte cheste domande ai tiei preferîts
+      flags: Segnalade come
+      last_activity: Ultime ativitât
+      open: Vierç
+      related_questions: Domandis leadis
+      share: Condivît cheste domande su
+      share_on: Condivît cheste domande su %{site}
+      solution: Soluzion
+      unfavorite_tooltip: Gjave cheste domande dai tiei preferîts
+      unwatch_tooltip: No stâ plui tignî di voli cheste domande
+      watch_tooltip: Ten di voli cheste domande
+    tags: 
+      filter: Cîr etichetis
+      title: Etichetis
+      tooltip: Mostre lis domandis etichetadis %{tag}
+    unanswered: 
+      expert: Esperts
+      my_tags: Lis mês etichetis
+      tags: Etichetis cence rispuestis
+      title: Domandis cence rispuestis

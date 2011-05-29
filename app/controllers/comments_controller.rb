@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
 
     if @comment.valid? && saved = (@comment.save && scope.save)
       current_user.on_activity(:comment_question, current_group)
+      current_user.increment({"membership_list.#{current_group.id}.comments_count" => 1})
       link = question_url(@question)
 
       Jobs::Activities.async.on_comment(scope.id, scope.class.to_s, @comment.id, link).commit!
@@ -70,7 +71,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       @comment = current_scope.find(params[:id])
-      @comment.body = params[:body]
+      @comment.body = params[:comment][:body]
       if @comment.valid? && scope.save
         if question_id = @comment.question_id
           Question.update_last_target(question_id, @comment)
@@ -94,6 +95,7 @@ class CommentsController < ApplicationController
   def destroy
     @scope = scope
     @scope.comments.delete_if { |f| f._id == params[:id] }
+    current_user.decrement({"membership_list.#{group.id}.comments_count" => 1})
     @scope.save!
 
     respond_to do |format|

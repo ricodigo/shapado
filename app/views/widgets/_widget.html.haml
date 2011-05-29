@@ -1,0 +1,21 @@
+%li{:id => widget.name}
+  .widget_description
+    %h2
+      = widget.name.titleize
+      %small
+        = link_to t("scaffold.destroy"), widget_path(widget, :tab => @active_subtab||"mainlist", :position => position), :method => :delete, :confirm => t("scaffold.sure", :model => "widget")
+    %p
+      = widget.description # do not escape
+
+    .display
+      = render "form", :widget => widget, :position => position, :tab => @active_subtab||"mainlist"
+    .controls
+      -form_tag move_widget_path(widget, :tab => @active_subtab||"mainlist"), :class => "vote_box" do
+        = hidden_field_tag "position", position
+        = image_submit_tag("to_vote_up.png", :name=>"move_to", :value => "up")
+        = image_submit_tag("to_vote_down.png", :name=>"move_to", :value => "down")
+      .clear
+  - unless widget.question_only? || params[:tab] == 'external'
+    .widget_show
+      = render :partial => widget.partial_name, :locals => {:widget => widget}
+  .clear

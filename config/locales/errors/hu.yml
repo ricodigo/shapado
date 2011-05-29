@@ -1,0 +1,22 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  errors: 
+    forbidden: 
+      explanation: Nincs megfelelő jogosultságod a lap eléréséhez.
+      title: Hozzáférés megtagadva
+    go_to: Menj a(z) %{link} lapra
+    help_us_answer: "Segíts megválaszolni a következő kérdést: %{link}"
+    internal_error: 
+      explanation: Értesültünk a hibáról, és hamarosan megnézzük, mi lehet az oka.
+      title: Sajnáljuk, de valami elromlott.
+    not_found: 
+      explanation: Lehet, hogy elírtad a címet, vagy a lapot áthelyezték.
+      title: Lap nem található.
+    options_label: "Próbálj más dolgokat:"
+    search: Keresés
+    unprocessable_entity: 
+      explanation: Lehet, hogy olyan dolgot próbáltál meg módosítani, amihez nem volt hozzáférésed.
+      title: Az általad kért módosítás vissza lett utasítva.

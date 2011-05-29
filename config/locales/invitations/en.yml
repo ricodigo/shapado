@@ -1,0 +1,27 @@
+en:
+  invitations:
+    resend:
+      flash_notice: "Your invitation has been resent successfully."
+    revoke:
+      flash_notice: "Your invitation has been revoked successfully."
+    create:
+      flash_notice: "Your invitations were sent successfully."
+    accept:
+      welcome: Welcome
+      description: %{group} is an ever improving collection of questions and answers about any topic.
+      point1: Ask experts who know about a given topic.
+      point2: Follow topics and answer questions that interest you.
+      point3: Vote and edit answers and wiki pages to better them. Win badges
+      point4: Answer from your email client with no fuss.
+      create_account: Create an account (1 of 2)
+      facebook_connect: Connect with your Facebook Account
+      twitter_connect: Connect with your Twitter Account
+      other_connect: 'or use '
+      other_social_options: 'You can also use %{linkedin} and %{identica}.'
+      final_step: Final step (2 of 2)
+      create_account_step2: Create Account
+      find_friends: "Find friends and connect:"
+      follow_things: Follow Tags and People
+      follow_things_description: Questions related to these will appear on your feed.
+      done: 'Done!'
+

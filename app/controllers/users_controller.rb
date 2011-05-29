@@ -1,21 +1,44 @@
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:edit, :update,
                                            :follow, :follow_tags,
-                                           :unfollow_tags]
+                                           :unfollow_tags, :connect, :social_connect]
+  skip_before_filter :check_group_access, :only => :auth
+  before_filter :find_user, :only => [:show, :answers, :follows, :activity]
   tabs :default => :users
+
+  before_filter :check_signup_type, :only => [:new]
+
+  tab_config = [[:newest, [:created_at, Mongo::DESCENDING]],
+                [:hot, [:hotness, Mongo::DESCENDING]],
+                [:votes, [:votes_average, Mongo::DESCENDING], [:created_at, Mongo::DESCENDING]],
+                [:oldest, [:created_at, Mongo::ASCENDING]]]
 
   subtabs :index => [[:reputation, "reputation"],
                      [:newest, %w(created_at desc)],
                      [:oldest, %w(created_at asc)],
                      [:name, %w(login asc)],
-                     [:near, ""]]
+                     [:near, ""]],
+          :show => [[:votes, [[:votes_average, :desc], [:created_at, :desc]]],
+                    [:views, [:views, :desc]],
+                    [:newest, [:created_at, :desc]],
+                    [:oldest, [:created_at, :asc]]],
+        :answers => [[:votes, [[:votes_average, :desc], [:created_at, :desc]]],
+                    [:views,  [:views, :desc]],
+                    [:newest, [:created_at, :desc]],
+                    [:oldest, [:created_at, :asc]]],
+        :follows => [[:questions, []],
+                     [:following, []],
+                     [:followers, []]],
+        :by_me => tab_config,
+        :preferred => tab_config,
+        :expertise => tab_config,
+        :feed => tab_config,
+        :contributed => tab_config
 
   def index
     set_page_title(t("users.index.title"))
 
     order = current_order
-    options =  {:per_page => params[:per_page]||24,
-               :page => params[:page] || 1}
     conditions = {}
     conditions = {:login => /^#{Regexp.escape(params[:q])}/} if params[:q]
 
@@ -24,9 +47,9 @@ class UsersController < ApplicationController
     end
 
     @users = if order.blank?
-               current_group.users(conditions.merge(:near => current_user.point)).paginate(options)
+               current_group.users(conditions.merge(:near => current_user.point)).paginate(paginate_opts(params))
              else
-               current_group.users(conditions).order_by(order).paginate(options)
+               current_group.users(conditions).order_by(order).paginate(paginate_opts(params))
              end
     respond_to do |format|
       format.html
@@ -46,12 +69,14 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
+    @user.preferred_languages = current_languages.to_a
     @user.timezone = AppConfig.default_timezone
   end
 
   def create
     @user = User.new
-    @user.safe_update(%w[login email name password_confirmation password preferred_languages website
+    @user.preferred_languages = params[:preferred_languages].split(',') if params[:languages]
+    @user.safe_update(%w[login email name password_confirmation password  website
                          language timezone identity_url bio hide_country], params[:user])
     if params[:user]["birthday(1i)"]
       @user.birthday = build_date(params[:user], "birthday")
@@ -63,6 +88,11 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       sweep_new_users(current_group)
+      if !params[:invitation_id].blank?
+        @user.accept_invitation(params[:invitation_id])
+        @invitation = Invitation.find(params[:invitation_id])
+        @invitation.confirm if @invitation
+      end
       flash[:notice] = t("flash_notice", :scope => "users.create")
       sign_in_and_redirect(:user, @user) # !! now logged in
     else
@@ -72,51 +102,62 @@ class UsersController < ApplicationController
   end
 
   def show
-    conds = {}
-    conds[:se_id] = params[:se_id] if params[:se_id]
-    @user = User.find_by_login_or_id(params[:id], conds)
-    raise Goalie::NotFound unless @user
-
-    set_page_title(t("users.show.title", :user => @user.login))
-
-    @q_sort, order = active_subtab(:q_sort)
-    @questions = @user.questions.paginate(:page=>params[:questions_page],
-                                          :order => order,
-                                          :per_page => 10,
-                                          :group_id => current_group.id,
-                                          :banned => false,
-                                          :anonymous => false)
-
-    @a_sort, order = active_subtab(:a_sort)
-    @answers = @user.answers.paginate(:page=>params[:answers_page],
-                                      :order => order,
-                                      :group_id => current_group.id,
-                                      :per_page => 10,
-                                      :banned => false,
-                                      :anonymous => false)
-
-    @badges = @user.badges.paginate(:page => params[:badges_page],
-                                    :group_id => current_group.id,
-                                    :per_page => 25)
-
-    @f_sort, order = active_subtab(:f_sort)
-
-    @favorites = @user.favorites(:group_id => current_group.id).
-      paginate(:page => params[:favorites_page],
-               :per_page => 25,
-               :order => order
-               )
-
-    add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
-
-    @user.viewed_on!(current_group) if @user != current_user && !is_bot?
+    @resources = @user.questions.where(:group_id => current_group.id,
+                                       :banned => false,
+                                       :anonymous => false).
+                       order_by(current_order).
+                       paginate(paginate_opts(params))
 
     respond_to do |format|
       format.html
-      format.atom
+      format.atom { @questions = @resources }
       format.json {
         render :json => @user.to_json(:only => %w[name login membership_list bio website location language])
       }
+    end
+  end
+
+  def answers
+    @resources = @user.answers.where(:group_id => current_group.id,
+                                     :banned => false,
+                                     :anonymous => false).
+                              order_by(current_order).
+                              paginate(paginate_opts(params))
+    respond_to do |format|
+      format.html{render :show}
+    end
+  end
+
+  def follows
+    case @active_subtab.to_s
+    when "following"
+      @resources = @user.following.paginate(paginate_opts(params))
+    when "followers"
+      @resources = @user.followers.paginate(paginate_opts(params))
+    when "answers"
+      @resources = Answer.where(:favoriter_ids.in => [@user.id],
+                                :banned => false,
+                                :group_id => current_group.id,
+                                :anonymous => false).
+      order_by(current_order).
+      paginate(paginate_opts(params))
+    else
+      @resources = Question.where(:follower_ids.in => [@user.id],
+                                :banned => false,
+                                :group_id => current_group.id,
+                                :anonymous => false).
+                          order_by(current_order).
+                          paginate(paginate_opts(params))
+    end
+    respond_to do |format|
+      format.html{render :show}
+    end
+  end
+
+  def activity
+    @resources = @user.activities.paginate(paginate_opts(params))
+    respond_to do |format|
+      format.html{render :show}
     end
   end
 
@@ -139,8 +180,8 @@ class UsersController < ApplicationController
       @user.password_confirmation = params[:user][:password_confirmation]
     end
 
-    @user.safe_update(%w[login email name language timezone preferred_languages
-                         notification_opts bio hide_country website avatar use_gravatar], params[:user])
+    @user.preferred_languages = params[:preferred_languages].split(',') if params[:languages]
+    @user.safe_update(%w[login email name language timezone notification_opts bio hide_country website avatar use_gravatar], params[:user])
 
     if params[:user]["birthday(1i)"]
       @user.birthday = build_date(params[:user], "birthday")
@@ -149,9 +190,20 @@ class UsersController < ApplicationController
     Jobs::Users.async.on_update_user(@user.id, current_group.id).commit!
 
     preferred_tags = params[:user][:preferred_tags]
+
     if @user.valid? && @user.save
+      if params[:user][:avatar]
+        Jobs::Images.async.generate_user_thumbnails(@user.id).commit!
+      end
       @user.add_preferred_tags(preferred_tags, current_group) if preferred_tags
-      redirect_to root_path
+      if params[:next_step]
+        current_user.accept_invitation(params[:invitation_id])
+        @invitation = Invitation.find(params[:invitation_id])
+        @invitation.confirm if @invitation
+        redirect_to accept_invitation_path(:step => params[:next_step], :id => params[:invitation_id])
+      else
+        redirect_to root_path
+      end
     else
       render :action => "edit"
     end
@@ -180,14 +232,14 @@ class UsersController < ApplicationController
 
   def preferred
     @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
-    tags = @user.config_for(current_group).preferred_tags
+    @current_tags = tags = @user.config_for(current_group).preferred_tags
 
     find_questions(:tags.in => tags)
   end
 
   def expertise
     @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
-    tags = @user.stats(:expert_tags).expert_tags # TODO: optimize
+    @current_tags = tags = @user.stats(:expert_tags).expert_tags # TODO: optimize
 
     find_questions(:tags.in => tags)
   end
@@ -195,7 +247,7 @@ class UsersController < ApplicationController
   def contributed
     @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
 
-    find_questions(:contributor_ids => @user.id)
+    find_questions(:contributor_ids.in => @user.id)
   end
 
   def connect
@@ -302,7 +354,25 @@ class UsersController < ApplicationController
 
   def suggestions
   end
+
+  def auth
+    if params["pp"]
+      cookies["pp"] = 1
+    end
+    head :status => 404
+  end
+
+  def social_connect
+  end
+
   protected
+  def check_signup_type
+    if current_group.is_social_only_signup? ||
+        current_group.is_email_only_signup?
+      redirect_to '/'
+    end
+  end
+
   def active_subtab(param)
     key = params.fetch(param, "votes")
     order = "votes_average desc, created_at desc"
@@ -317,6 +387,18 @@ class UsersController < ApplicationController
         order = "created_at asc"
     end
     [key, order]
+  end
+
+  def find_user
+    conds = {}
+    conds[:se_id] = params[:se_id] if params[:se_id]
+    @user = User.find_by_login_or_id(params[:id], conds)
+    raise Goalie::NotFound unless @user
+    set_page_title(t("users.show.title", :user => @user.login))
+    @badges = @user.badges.where(:group_id => current_group.id).
+                           paginate(paginate_opts(params))
+    add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
+    @user.viewed_on!(current_group) if @user != current_user && !is_bot?
   end
 end
 

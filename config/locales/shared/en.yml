@@ -1,8 +1,33 @@
 en:
   shared:
+    login_drop_down:
+      with_google: with Google
+      with_facebook: with Facebook
+      with_twitter: with Twitter
+      with_linked_in: with LinkedIn
+      with_identica: with Identi.ca
+      with_openid: with OpenID
+      with_user_pass: user/password
+    social_connect:
+      find_friends_facebook: Find friends on Facebook
+      find_friends_twitter: Find friends on Twitter
+      find_friends_linked_in: Find friends on LinkedIn
+      find_friends_identica: Find friends on Identi.ca
     topbar:
       logged_as: "Logged in as %{login}"
       admin: Admin
       user_page: My page
     current_tags:
       title: Selected tags
+    manage_navigation:
+      title_options: Group options
+      title_content: Group content
+      title_features: Group features
+    empty:
+      title: Sorry! There's not much to see here.
+      description: Be the first to %{ask_a_question_link}!
+      ask_a_question: ask a question
+    layout:
+      footer:
+        cc_footer: 'All Shapado.com content and data are available under the %{cc_link} license'
+        powered_by: Powered by %{source_link} %{version} under the #{agpl_link}

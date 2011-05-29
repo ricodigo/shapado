@@ -14,7 +14,7 @@ class DynamicDomain
 
     env["rack.session.options"][:domain] = host
 
-    @app.call(env)
+    @app.call(env||{})
   end
 
   def custom_domain?(host)

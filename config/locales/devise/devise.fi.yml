@@ -1,6 +1,6 @@
 # Messages for Finnish (Suomi)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Centerlink
 # Author: Nike
 fi: 
@@ -14,7 +14,7 @@ fi:
       reset_password_instructions: Ohjeet salasanan alustamiseen
       unlock_instructions: Poista ohjeiden lukitus
     passwords: 
-      link: Unohtuiko salasana?
+      link: Unohditko salasanasi?
       send_instructions: Saat muutaman minuutin kuluttua sähköpostiviestin, joka sisältää ohjeet salasanan alustamisesta.
       updated: Salasanasi on vaihdettu. Olet nyt kirjautunut sisään.
     registrations: 

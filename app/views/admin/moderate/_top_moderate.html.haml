@@ -1,0 +1,10 @@
+%li
+  = link_to t('layouts.application.moderate'), moderate_path
+  %ul
+    %li
+      = link_to t(:questions, :scope => "activerecord.models"), moderate_questions_path
+    %li
+      = link_to t(:answers, :scope => "activerecord.models"), moderate_answers_path
+    %li
+      = link_to t(:users, :scope => "activerecord.models"), moderate_users_path
+

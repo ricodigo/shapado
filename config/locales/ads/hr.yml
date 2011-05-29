@@ -1,0 +1,12 @@
+# Messages for Croatian (Hrvatski)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ex13
+hr: 
+  ads: 
+    create: 
+      success: Oglas je uspješno kreiran.
+    index: 
+      title: Oglasi
+    name: "Ime:"
+    position: "Pozicija:"

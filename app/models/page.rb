@@ -4,9 +4,13 @@ class Page
   include MongoidExt::Slugizer
   include MongoidExt::Tags
   include MongoidExt::Storage
-  include Support::Versionable
+  include MongoidExt::Versioning
 
   include Mongoid::Timestamps
+  include Shapado::Models::Trackable
+
+  track_activities :user, :title, :language, :scope => [:group_id]
+
 
   identity :type => String
   field :title, :type => String
@@ -25,7 +29,7 @@ class Page
   file_key :js
   file_key :css
 
-  versionable_keys :title, :body, :tags
+  versionable_keys :title, :body, :tags, :owner_field => "updated_by_id"
 
   validates_presence_of :group
   validates_uniqueness_of :title, :scope => [:group_id, :language]

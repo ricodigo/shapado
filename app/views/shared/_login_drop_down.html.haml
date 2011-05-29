@@ -1,0 +1,41 @@
+/- unless current_group.is_social_only_signup?
+/  %ul
+/    - count = 0
+/    - entries = multiauth_providers.keys
+/    - first_section = entries[0, 20]
+/    - first_section.each do |provider|
+/      - config = multiauth_providers[provider]
+/      %li
+/        = link_to(provider, "/users/auth/#{config["openid"] ? "open_id?openid_url=#{config["openid"]}" : "#{provider.underscore}"}", :class => "#{provider} #{config["class"]} auth-provider", :id => "btn_#{count+=1}" )
+/- else
+/  %ul
+/    %li
+/      = link_to t('invitations.accept.facebook_connect'), '/users/auth/facebook', :class => 'auth-provider Facebook', :id => 'facebook'
+/    %li
+/      = link_to t('invitations.accept.twitter_connect'), '/users/auth/twitter', :class => 'auth-provider Twitter', :id => 'twitter'
+/    %li
+/      = link_to t('invitations.accept.twitter_connect'), '/users/auth/linked_in', :class => 'auth-provider LinkedIn', :id => 'linked_in'
+/    %li
+/      = link_to t('invitations.accept.twitter_connect'), '/users/auth/identica', :class => 'auth-provider Identica', :id => 'identica'
+
+%ul
+  - unless current_group.is_social_only_signup?
+    %li
+      = link_to t('.with_google'), '/users/auth/open_id?openid_url=https://www.google.com/accounts/o8/id', :class => 'auth-provider Google', :id => 'google'
+  - if current_group.has_facebook_login?(multiauth_providers.keys.include? 'Facebook')
+    %li
+      = link_to t('.with_facebook'), '/users/auth/facebook', :class => 'auth-provider Facebook', :id => 'facebook'
+  - if multiauth_providers.keys.include? 'Twitter'
+    %li
+      = link_to t('.with_twitter'), '/users/auth/twitter', :class => 'auth-provider Twitter', :id => 'twitter'
+  - if multiauth_providers.keys.include? 'LinkedIn'
+    %li
+      = link_to t('.with_linked_in'), '/users/auth/linked_in', :class => 'auth-provider LinkedIn', :id => 'linked_in'
+  - if multiauth_providers.keys.include? 'Identica'
+    %li
+      = link_to t('.with_identica'), '/users/auth/identica', :class => 'auth-provider Identica', :id => 'identica'
+  - unless current_group.is_social_only_signup?
+    %li
+      = link_to t('.with_openid'), '/users/login?open_id=1', :class => 'auth-provider OpenID', :id => 'openid'
+    %li
+      = link_to t('.with_user_pass'), '/users/login', :class => 'auth-provider login', :id => 'login'

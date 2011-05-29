@@ -1,6 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Kjell
 # Author: Protozoan
 # Author: Siebrand
@@ -60,7 +60,7 @@ nl:
       activities_notification: E-mails ontvangen over systeemactiviteiten zoals verdiende speldjes, nieuwe volgers, enzovoort.
       avatar_tip: Uw profielafbeelding wijzigen via gravatar
       give_advice_notification: E-mail ontvangen over vragen in uw expertisegebied
-      information: Informatie
+      information: Gegevens
       language: Taal die gebruikt wordt voor de interface van de site
       new_answer_notification: E-mail ontvangen over nieuwe antwoorden
       notifications: Kennisgevingen

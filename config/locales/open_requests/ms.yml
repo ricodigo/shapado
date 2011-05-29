@@ -1,0 +1,22 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  open_requests: 
+    create: 
+      flash_notice: Permohonan pembukaan semula berjaya dicipta
+    destroy: 
+      flash_notice: Permohonan pembukaan semula berjaya dihapuskan
+    edit: 
+      title: Sunting permohonan buka semula
+    form: 
+      request_opening_details: Pohon supaya soalan ini dibuka semula
+    index: 
+      title: Senarai permohonan buka semula
+    model: 
+      prural_name: Permohonan pembukaan semula
+    new: 
+      title: Permohonan pembukaan semula
+    update: 
+      flash_notice: Permohonan pembukaan semula berjaya dikemas kini

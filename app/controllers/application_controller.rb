@@ -23,6 +23,9 @@ class ApplicationController < ActionController::Base
   before_filter :check_group_access
   before_filter :set_locale
   before_filter :find_languages
+  before_filter :share_variables
+  before_filter :check_social
+
   layout :set_layout
 
   helper_method :recaptcha_tag
@@ -31,6 +34,14 @@ class ApplicationController < ActionController::Base
   rescue_from Mongoid::Errors::DocumentNotFound, :with => :render_404
 
   protected
+
+  def check_social
+    if logged_in? && current_group.is_social_only_signup? &&
+        !current_user.is_socially_connected?
+      redirect_to social_connect_path if params[:controller] == 'questions'
+    end
+  end
+
   def find_group
     @current_group ||= begin
       subdomains = request.subdomains
@@ -82,15 +93,14 @@ class ApplicationController < ActionController::Base
       @questions = @questions.send(key, extra_scope[key])
     end
 
-    @questions = @questions.paginate({:per_page => 25, :page => params[:page] || 1})
+    @questions = @questions.paginate(paginate_opts(params))
 
     @langs_conds = scoped_conditions[:language][:$in]
 
     if logged_in?
       feed_params = { :feed_token => current_user.feed_token }
     else
-      feed_params = {  :lang => I18n.locale,
-                          :mylangs => current_languages }
+      feed_params = {  :lang => I18n.locale, :mylangs => current_languages }
     end
     add_feeds_url(url_for({:format => "atom"}.merge(feed_params)), t("feeds.questions"))
     if params[:tags]
@@ -104,6 +114,18 @@ class ApplicationController < ActionController::Base
       format.mobile
       format.json  { render :json => @questions.to_json(:except => %w[_keywords watchers slugs]) }
       format.atom
+    end
+  end
+
+  def find_activities(conds = {})
+    #add_feeds_url(url_for({:format => "atom"}.merge(feed_params)), t("feeds.questions"))
+
+    @activities = current_group.activities.where(conds).order(:created_at.desc).
+    paginate(paginate_opts(params))
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @activities}
     end
   end
 
@@ -149,5 +171,29 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     self.current_user = resource_or_scope
     super(resource_or_scope)
+  end
+
+  def share_variables
+    Thread.current[:current_group] = current_group
+    Thread.current[:current_user] = current_user
+    Thread.current[:current_ip] = request.remote_ip
+  end
+
+  def paginate_opts(options = {})
+    per_page = 25
+    case options[:per_page]
+    when "xl"
+      per_page = 100
+    when "l"
+      per_page = 50
+    when "m"
+      per_page = 25
+    when "s"
+      per_page = 10
+    else
+      per_page = 25
+    end
+
+    {:page => options[:page], :per_page => per_page}
   end
 end

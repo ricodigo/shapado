@@ -1,0 +1,52 @@
+// ========================================================================
+//    Document     :   _userZone.sass
+//    Created on   :   MAR03 - 2011, 12:35 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description  :   Widget with links to admin and account settings
+//========================================================================
+// Zona de ususario en la columna lateral
+//========================================================================
+.user-zone
+  .avatar
+    padding: 0 5px 5px 0
+    float: left
+    a
+      border: none
+      img
+        border: 1px solid #aaa
+
+  .greeting
+    float: left
+    width: 72%
+    overflow: hidden
+    margin-bottom: 5px
+
+    small
+      display: block
+      font-size: 10px
+      color: $gray
+      margin: 2px 0
+    b
+      font-size: 12px
+
+  .open
+    display: none
+
+  nav.user-nav
+    //height: 138px
+    //overflow: hidden
+    ul
+      li
+        a
+          padding: 5px
+          display: block
+          color: $dark
+          &:first-letter
+            text-transform: capitalize
+          &:hover
+            +orange-gradient
+            color: #fff
+      li.active a, li.active a:hover
+        +orange-gradient
+        color: #fff

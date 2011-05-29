@@ -1,8 +1,9 @@
 # Messages for Telugu (తెలుగు)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Ravichandra
 # Author: Veeven
+# Author: రహ్మానుద్దీన్
 te: 
   activerecord: 
     attributes: 
@@ -24,5 +25,7 @@ te:
       comment_label: ఈ జవాబుపై వ్యాఖ్యానించండి
       comment_submit: వ్యాఖ్యానించండి
       submit: జవాబు
+    revert: 
+      title: సమాధానాన్ని వెనక్కు తీస్కోండి
     update: 
       flash_notice: జవాబు విజయవంతంగా సమర్పించబడింది.

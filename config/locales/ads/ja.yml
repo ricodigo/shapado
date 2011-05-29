@@ -1,6 +1,6 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 ja: 
   ads: 
     ad_links: 新しい広告の追加 %{type}

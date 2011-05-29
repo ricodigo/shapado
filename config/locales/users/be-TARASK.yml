@@ -1,0 +1,94 @@
+# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: EugeneZelenko
+# Author: Jim-by
+be-TARASK: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: актыўны з
+        activation_code: Код актывацыі
+        age: Узрост
+        asked_by: зададзенае
+        avatar: Выява ў профілі
+        birthday: Дзень народзінаў
+        created_at: далучыўся
+        current_password: Цяперашні пароль
+        email: Электронная пошта
+        fullname: Поўнае імя
+        hide_country: Не паказваць маю краіну
+        language: Мова
+        language_filter: Фільтар па мове
+        last_logged_at: заўважаны
+        login: Імя карыстальніка
+        name: Сапраўднае імя
+        password: Пароль
+        password_confirmation: Пацьверджаньне паролю
+        preferred_languages: "Вы жадаеце чытаць пытаньні на наступных мовах:"
+        preferred_tags: Пажаданыя тэгі
+        reputation: Рэпутацыя
+        timezone: Часавы пояс
+        updated_at: абноўленае
+        website: Ўэб-сайт
+    models: 
+      user: Карыстальнік
+      users: Карыстальнікі
+  users: 
+    actions: 
+      edit_others_posts: рэдагаваньне камэнтараў іншых карыстальнікаў
+      edit_wiki_post: Рэдагаваць вікі-запісы
+      flag: Пазначыць
+      retag_others_questions: Зьмена тэгаў пытаньняў іншых карыстальнікаў
+      vote_down: Галасаваць супраць
+      vote_to_close_any_question: запыт на закрыцьцё любога пытаньня
+      vote_to_close_own_question: запыт на закрыцьцё ўласнага пытаньня
+      vote_up: Галасаваць за
+    anonymous_form: 
+      never_shown: ніколі не паказаны
+    create: 
+      flash_error: Прабачце, але мы ня можам стварыць гэты рахунак. Калі ласка, паспрабуйце зноў, ці зьвяжыцеся з адміністратарам (спасылка пададзеная ніжэй).
+      flash_notice: Дзякуй за рэгістрацыю!
+    edit: 
+      enable_twitter: Дазволіць Вашыя рахункі на Facebook ці Twitter
+      submit: Захаваць
+      title: Налады
+    follow: 
+      flash_notice: Карыстальнік %{user} быў дададзены да Вашых сяброў
+    form: 
+      activities_notification: Атрымліваць абвяшчэньні па электроннай пошце пра сыстэмную актыўнасьць, такую як атрыманьне ўзнагародаў, новых пасьлядоўнікаў і г. д.
+      avatar_tip: Зьмяніць выяву ў Вашым профілі з дапамогай Gravatar
+      give_advice_notification: Атрымліваць абвяшчэньні па электроннай пошце пра пытаньні з Вашай вобласьці ведаў
+      information: Інфармацыя
+      language: Мова, якая выкарыстоўваецца ў інтэрфэйсе сайта
+      new_answer_notification: Атрымліваць абвяшчэньні па электроннай пошце пра новыя адказы
+      notifications: Абвяшчэньні
+      reports_notification: Атрымліваць справаздачу з апошняй актыўнасьцю групы (толькі для адміністратараў групы)
+      show_more_lang: Паказаць болей моваў
+    index: 
+      empty: У гэтай групе няма ўдзельнікаў. Далучыцеся да яе.
+      filter: Пошук карыстальнікаў
+      name: Імя
+      name_tooltip: Карыстальнікі адсартаваныя па альфабэце
+      newest: Найнавейшыя
+      newest_tooltip: Карыстальнікі, якія толькі што далучыліся
+      oldest: Найстарэйшыя
+      oldest_tooltip: Карыстальнікі, якія далучыліся першымі
+      reputation: Рэпутацыя
+      reputation_tooltip: Карыстальнікі адсартаваныя па рэпутацыі
+      title: Усе карыстальнікі
+    messages: 
+      errors: 
+        reputation_needed: Вам неабходна мець рэпутацыю ня меней чым %{min_reputation} каб %{action}
+    new: 
+      submit: Зарэгіструйцеся
+      title: Зарэгістравацца як новы карыстальнік
+    show: 
+      follow: Сачыць
+      followers: Сочаць
+      following: Сачэньне
+      title: Карыстальнік %{user}
+      unfollow: Не сачыць
+      views: прагляды
+    unfollow: 
+      flash_notice: Карыстальнік %{user} быў выдалены з Вашых сяброў

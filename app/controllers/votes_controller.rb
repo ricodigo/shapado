@@ -25,15 +25,17 @@ class VotesController < ApplicationController
 
     if state == :created
       if @voteable.class == Question
-        sweep_question(vote.voteable)
+        sweep_question(@voteable)
         Jobs::Votes.async.on_vote_question(@voteable.id, value, current_user.id, current_group.id).commit!
       elsif @voteable.class == Answer
         Jobs::Votes.async.on_vote_answer(@voteable.id, value, current_user.id, current_group.id).commit!
       end
+    elsif state == :destroyed
+      value = value * -1
     end
 
     respond_to do |format|
-      format.html{redirect_to params[:source]}
+      format.html{redirect_to params[:source]||root_path}
 
       format.js do
         if state != :error
@@ -60,23 +62,6 @@ class VotesController < ApplicationController
           render(:json => {:success => false, :message => flash[:error] }.to_json)
         end
       end
-    end
-  end
-
-  def destroy
-    @vote = Vote.find(params[:id])
-    voteable = @vote.voteable
-    value = @vote.value
-    if  @vote && current_user == @vote.user
-      @vote.destroy
-      if voteable.kind_of?(Question)
-        sweep_question(voteable)
-      end
-      voteable.remove_vote!(value, current_user)
-    end
-    respond_to do |format|
-      format.html { redirect_to params[:source] }
-      format.json  { head :ok }
     end
   end
 

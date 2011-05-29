@@ -1,0 +1,46 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  layouts: 
+    application: 
+      ask_question: Kérdés feltevése
+      badges: Jelvények
+      home: Kezdőlap
+      languages: Nyelvek
+      log_in: Bejelentkezés
+      logged: Bejelentkezve %{login} néven
+      logout: Kijelentkezés
+      manage_ads: Hirdetések kezelése
+      moderate: Moderálás
+      openid: 
+        explaination: "Ha regisztrálni szeretnél, vagy csak bejelentkezni, válaszd ki az OpenID-szolgáltatódat:"
+      pages: Lapok
+      questions: Kérdések
+      search: Keresés
+      settings: Beállítások
+      signup: Regisztráció
+      subscribe: Feliratkozás
+      tags: Címkék
+      title: Kérdések és válaszok
+      unanswered: Megválaszolatlan
+      users: Felhasználók
+    manage: 
+      actions: Műveletek
+      announcements: Közlemények
+      constrains: Követelmények
+      content: Tartalom
+      dashboard: Vezérlőpult
+      domain: Domainnév
+      general: Általános
+      members: Tagok
+      pages: Lapok
+      properties: Tulajdonságok
+      reputation: Hírnév
+      rewards: Jutalmak
+      stats: Statisztikák
+      theme: Téma
+      widgets: Minialkalmazások
+    notifications: 
+      message: Ha nem akarsz további automatikus értesítéseket a(z) %{domain} oldalról, módosítsd a beállításaidat az értesítések képernyőn.

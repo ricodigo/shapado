@@ -10,6 +10,6 @@ class MembershipList < Hash
   end
 
   def groups(conditions = {})
-    Group.where(conditions.merge({:_id => self.keys}))
+    Group.where(conditions.merge({:_id.in => self.keys}))
   end
 end

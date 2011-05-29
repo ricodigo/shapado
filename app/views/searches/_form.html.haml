@@ -1,29 +1,33 @@
+.search-form
+  - form_tag search_index_path, :method => :get do
 
-- form_tag search_index_path, :class => "form", :method => :get do
-  .field
-    = text_field_tag :q, params[:q], :class => "text_field title"
-    %small
-      = t("searches.form.tags_tip")
-  .form-options
-    .option
-      = label_tag :answered, t("answered", :scope => "activerecord.attributes.question")
-      = check_box_tag "answered"
-    .option
-      = label_tag :accepted, t("accepted", :scope => "activerecord.attributes.question")
-      = check_box_tag "accepted"
+    .fields-search
+      .field
+        = text_field_tag :q, params[:q], :class => "text_field title"
+        %small
+          = t("searches.form.tags_tip")
 
-  .clear
+      .checkbox
+        = check_box_tag "answered"
+        = label_tag :answered, t("answered", :scope => "activerecord.attributes.question")
 
-  -if current_group.languages.size>1 && AppConfig.enable_i18n
+      .checkbox
+        = check_box_tag "accepted"
+        = label_tag :accepted, t("accepted", :scope => "activerecord.attributes.question")
+
+
+    -if current_group.languages.size>1 && AppConfig.enable_i18n
+      .field
+        = label_tag :language, t(:language, :scope => "activerecord.attributes.question"), :class => "label"
+        = language_select_tag(:language)
+
     .field
-      = label_tag :language, t(:language, :scope => "activerecord.attributes.question"), :class => "label"
-      = language_select_tag(:language)
+      = label_tag :by, t(:"global.asked_by"), :class => "label"
+      = text_field_tag :user_id
 
-  .field
-    = label_tag :by, t(:"global.asked_by"), :class => "label"
-    = text_field_tag :user_id
+    .buttons
+      = link_to t(".clear"), search_index_path
+      = t("global.or")
+      = submit_tag t("layouts.application.search"), :class => "save"
 
-  .buttons
-    = submit_tag t("layouts.application.search"), :class => "button"
-    = t("global.or")
-    = link_to t(".clear"), search_index_path
+

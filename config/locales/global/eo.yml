@@ -1,9 +1,10 @@
 # Messages for Esperanto (Esperanto)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Darkweasel
 # Author: Gufulo
 # Author: LaPingvino
+# Author: Yekrats
 eo: 
   feeds: 
     feed: RSS-fonto
@@ -36,7 +37,7 @@ eo:
       other: "%{count} fojojn"
       zero: Neniam
   scaffold: 
-    add: Aldonu
+    add: Aldoni
     back: Reen
     cancel: Nuligu
     close: Fermu

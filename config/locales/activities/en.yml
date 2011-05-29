@@ -1,0 +1,14 @@
+en:
+  activity:
+    created: created
+    updated: updated
+    deleted: deleted
+    changed: changed
+    asked: asked
+    requested_to_close: requested to close
+    requested_to_open: requested to open
+    flagged: flagged
+  activerecord:
+    models:
+      activities: Activities
+      activity: Activity

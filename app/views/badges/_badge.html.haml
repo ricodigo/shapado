@@ -1,7 +1,5 @@
-%a.badge{:class => local_assigns[:mini] ? "mini" : "big", :href => badge_path(:id => badge.token), :title => badge.description}
-  %span.badgeicon{:class => badge.type}
-  =h badge.name
-
--if !local_assigns[:hide_user] && !local_assigns[:mini]
-  %span.user
-    =link_to h(truncate(badge.user.login, :length => 20)), user_path(badge.user), :title => h(badge.user.login)
+.badge_item{:class => badge.type}
+  = link_to badge.name, badge_path(badge), {:class => "badge", :title => badge.description}
+  -if !local_assigns[:hide_user] && !local_assigns[:mini]
+    %span.user
+      =link_to h(truncate(badge.user.login, :length => 20)), user_path(badge.user), :title => h(badge.user.login)

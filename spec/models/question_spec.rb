@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Question do
   before(:each) do
+    @current_user = User.make
+    Thread.current[:current_user] = @current_user
     @question = Question.make(:votes => {})
   end
 
@@ -256,17 +258,17 @@ describe Question do
       end
 
       it "should override the last activity date to the current time" do
-        @question.activity_at.strftime("%D %T").should_not == @current_time.strftime("%D %T")
+        @question.activity_at.strftime("%D %T").should_not == @current_time.utc.strftime("%D %T")
         @question.update_activity_at
         @question.reload
-        @question.activity_at.strftime("%D %T").should == @current_time.strftime("%D %T")
+        @question.activity_at.strftime("%D %T").should == @current_time.utc.strftime("%D %T")
       end
 
       it "should set the last activity date to the current time" do
         @question.stub(:new_record?).and_return(true)
-        @question.activity_at.strftime("%D %T").should_not == @current_time.strftime("%D %T")
+        @question.activity_at.strftime("%D %T").should_not == @current_time.utc.strftime("%D %T")
         @question.update_activity_at
-        @question.activity_at.strftime("%D %T").should == @current_time.strftime("%D %T")
+        @question.activity_at.strftime("%D %T").should == @current_time.utc.strftime("%D %T")
       end
     end
 

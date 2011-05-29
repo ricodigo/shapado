@@ -1,12 +1,12 @@
+%h1
+  = t(".title")
+%p.description
+
 -form_for(@group, :html => {:class => "form", :multipart => true}) do |f|
-
-  %h1
-    = t(".title")
-
   = f.error_messages
-
   = render :partial => "form", :object => f
-  .group.navform
-    = f.submit  t("scaffold.create")
-    = t("global.or")
+
+  .buttons
     = link_to  t("scaffold.back"), groups_path, :class => "cancel button"
+    = t("global.or")
+    = f.submit  t("scaffold.create"), :class => "save"

@@ -1,0 +1,91 @@
+// Forms for acions on questiosn
+//========================================================================
+#panel-forms
+  height: 100%
+  clear: both
+  background-color: $lightBlue
+  padding: 0
+
+  form
+    display: none
+    margin: 0 auto
+    padding: 20px
+    width: 90%
+    .field input.text_field
+      width: 94%
+
+// Answare panel
+.add_answer
+  margin: 0
+  padding: 0
+  .form-options .column
+    width: 150px
+    &:first-child
+      width: 60px
+      label
+        width: 40px
+
+  .by_mail a
+    padding: 0 0 0 20px
+    margin: 0 0 0 20px
+    background: url("/images/question-toolbar-icons-small.png") 0 -475px no-repeat
+    color: #000
+
+// Add Comment
+.add_question_comment
+  padding-bottom: 30px !important
+  textarea
+    width: 96.5%
+
+// Flag
+.flag_question
+  padding-bottom: 40px !important
+
+// Actions panels
+//========================================================================
+.share_question
+  h1
+    font-size: 14px
+    margin: 0
+    padding: 0
+    border: none
+    display: none
+
+  ul
+    overflow: hidden
+    width: 345px
+    margin: 0 auto
+
+    li
+      a
+        width: 24px
+        height: 24px
+        text-indent: -9999px
+        overflow: hidden
+        padding: 0
+        margin-right: 7px
+        border: none
+        float: left
+
+    li.facebook a
+      background: url("/images/share/facebook.png") 0 0 no-repeat
+    li.twitter a
+      background: url("/images/share/twitter.png") 0 0 no-repeat
+    li.identica a
+      background: url("/images/share/identi.png") 0 0 no-repeat
+    li.digg a
+      background: url("/images/share/digg.png") 0 0 no-repeat
+    li.blogger a
+      background: url("/images/share/blogger.png") 0 0 no-repeat
+    li.delicious a
+      background: url("/images/share/delicious.png") 0 0 no-repeat
+    li.linkedin a
+      background: url("/images/share/linkedin.png") 0 0 no-repeat
+    li.misterwong a
+      background: url("/images/share/mister-wong.png") 0 0 no-repeat
+    li.stumbleupon a
+      background: url("/images/share/stumbleupon.png") 0 0 no-repeat
+    li.googlebuzz a
+      background: url("/images/share/google-buzz.png") 0 0 no-repeat
+    li.friendster a
+      background: url("/images/share/frinedster.png") 0 0 no-repeat

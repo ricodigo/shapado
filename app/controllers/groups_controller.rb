@@ -1,10 +1,9 @@
 class GroupsController < ApplicationController
-  skip_before_filter :check_group_access, :only => [:logo, :css, :favicon]
-  before_filter :login_required, :except => [:index, :show, :logo, :css, :favicon]
+  before_filter :login_required, :except => [:index, :show]
   before_filter :check_permissions, :only => [:edit, :update, :close,
                                               :connect_group_to_twitter,
                                               :disconnect_twitter_group]
-  before_filter :moderator_required , :only => [:accept, :destroy]
+  before_filter :admin_required , :only => [:accept, :destroy]
   subtabs :index => [ [:most_active, "activity_rate desc"], [:newest, "created_at desc"],
                       [:oldest, "created_at asc"], [:name, "name asc"]]
   # GET /groups
@@ -20,12 +19,10 @@ class GroupsController < ApplicationController
 
     if params[:q].blank?
       @groups = Group.where(conds).order_by(current_order).
-                                   paginate(:per_page => params[:per_page] || 15,
-                                            :page => params[:page])
+                                   paginate(paginate_opts(params))
     else
       @groups = Group.filter(params[:q], options).order_by(current_order).
-                                                  paginate(:per_page => params[:per_page] || 15,
-                                                           :page => params[:page])
+                                                  paginate(paginate_opts(params))
     end
 
     respond_to do |format|
@@ -50,13 +47,7 @@ class GroupsController < ApplicationController
     else
       @group = current_group
     end
-    raise PageNotFound if @group.nil?
-
-    @comments = @group.comments.paginate(:page => params[:page].to_i,
-                                         :per_page => params[:per_page] || 10 )
-
-    @comment = Comment.new
-
+    raise Errors::DocumentNotFound if @group.nil?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -83,20 +74,20 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new
+    @group.languages = params[:languages].split(',') if params[:languages]
     @group.safe_update(%w[name legend description default_tags subdomain logo forum enable_latex
-                          custom_favicon language languages theme custom_css wysiwyg_editor], params[:group])
+                          custom_favicon language theme signup_type custom_css wysiwyg_editor], params[:group])
 
     @group.safe_update(%w[isolate domain private], params[:group]) if current_user.admin?
 
     @group.owner = current_user
     @group.state = "active"
 
-    @group.widgets << TagCloudWidget.new
-    @group.widgets << TopUsersWidget.new
-    @group.widgets << BadgesWidget.new
-
     respond_to do |format|
       if @group.save
+        @group.create_default_widgets
+
+        Jobs::Images.async.generate_group_thumbnails(@group.id)
         @group.add_member(current_user, "owner")
         flash[:notice] = I18n.t("groups.create.flash_notice")
         format.html { redirect_to(domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "properties")) }
@@ -111,10 +102,11 @@ class GroupsController < ApplicationController
   # PUT /groups/1
   # PUT /groups/1.json
   def update
+    @group.languages = params[:languages].split(',') if params[:languages]
     @group.safe_update(%w[name legend description default_tags subdomain logo logo_info forum enable_latex
                           custom_favicon language languages theme reputation_rewards reputation_constrains
-                          has_adult_content registered_only openid_only custom_css wysiwyg_editor fb_button share notification_opts], params[:group])
-
+                          has_adult_content registered_only signup_type custom_css wysiwyg_editor fb_button notification_opts], params[:group])
+    @group.share.safe_update(%w[fb_app_id fb_secret_key fb_active starts_with ends_with enable_twitter twitter_user twitter_pattern], params[:group][:share]) if params[:group][:share]
     @group.safe_update(%w[isolate domain private has_custom_analytics has_custom_html has_custom_js], params[:group]) #if current_user.admin?
     @group.safe_update(%w[analytics_id analytics_vendor], params[:group]) if @group.has_custom_analytics
     @group.custom_html.update_attributes(params[:group][:custom_html] || {}) if @group.has_custom_html
@@ -157,39 +149,12 @@ class GroupsController < ApplicationController
     redirect_to group_path(@group)
   end
 
-  def logo
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_logo?
-      send_data(@group.logo.try(:read), :filename => "logo.#{@group.logo.extension}", :type => @group.logo.content_type,  :disposition => 'inline')
-    else
-      render :text => ""
-    end
-  end
-
-  def css
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_custom_css?
-      send_data(@group.custom_css.read, :filename => "custom_theme.css", :type => "text/css")
-    else
-      render :text => ""
-    end
-  end
-
-  def favicon
-    @group = Group.find_by_slug_or_id(params[:id], :select => [:file_list])
-    if @group && @group.has_custom_favicon?
-      send_data(@group.custom_favicon.read, :filename => "favicon.ico", :type => @group.custom_favicon.content_type)
-    else
-      render :text => ""
-    end
-  end
-
   def autocomplete_for_group_slug
-    @groups = Group.all( :limit => params[:limit] || 20,
-                         :fields=> 'slug',
-                         :slug =>  /.*#{params[:term].downcase.to_s}.*/,
-                         :order => "slug desc",
-                         :state => "active")
+    Group.only(:slug).where(:slug =>  /.*#{Regexp.escape(params[:term].downcase.to_s)}.*/,
+                            :state => "active").
+                      limit(20).
+                      order_by(:slug.desc).
+                      all
 
     respond_to do |format|
       format.json {render :json=>@groups}
@@ -229,6 +194,7 @@ class GroupsController < ApplicationController
     end
   end
 
+  #FIXME is this an action?
   def connect_group_to_twitter
     token = session[:twitter_token]
     secret = session[:twitter_secret]

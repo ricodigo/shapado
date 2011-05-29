@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
       @question = current_group.questions.by_slug(params[:question_id])
       @answers = @question.answers.without(exclude)
     else
-      @answers = current_group.answers.without(exclude).paginate(:per_page => params[:per_page]||25, :page => params[:page]||1)
+      @answers = current_group.answers.without(exclude).paginate(paginate_opts(params))
     end
 
     respond_to do |format|
@@ -59,8 +59,7 @@ class AnswersController < ApplicationController
   end
 
   def show
-    @answer = current_group.answers.find(params[:id])
-    raise PageNotFound if @answer.nil?
+    @answer = current_group.answers.find!(params[:id])
     @question = @answer.question
     respond_to do |format|
       format.html
@@ -164,7 +163,7 @@ class AnswersController < ApplicationController
 
         Jobs::Activities.async.on_update_answer(@answer.id).commit!
 
-        format.html { redirect_to(question_path(@answer.question)) }
+        format.html { redirect_to(question_path(@answer.question, :anchor => "answer#{@answer.id}")) }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

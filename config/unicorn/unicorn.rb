@@ -1,7 +1,7 @@
 WD = File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
 
 # Use at least one worker per core
-worker_processes 4
+worker_processes 1
 
 # Help ensure your application will always spawn in the symlinked "current" directory that Capistrano sets up
 working_directory WD
@@ -26,13 +26,19 @@ preload_app true
 #   GC.copy_on_write_friendly = true
 
 before_fork do |server, worker|
-  old_pid = WD+'/tmp/unicorn.pid.oldbin'
+  old_pid = WD+'/tmp/pids/unicorn.pid.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
+    pid = File.read(old_pid).to_i
+
     begin
-      Process.kill("QUIT", File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-      puts ">>>>>>>> Error killing previous instance"
-    # someone else did our job for us
+      Process.kill("QUIT", pid)
+      Process.kill(0, pid)
+      Process.wait
+    rescue Errno::ECHILD, Errno::ESRCH => e
+      $stderr.puts ">> Process #{pid} has stopped"
+    rescue Errno::ENOENT => e
+      $stderr.puts ">> Error killing previous instance. #{e.message}"
+      # someone else did our job for us
     end
   end
 end

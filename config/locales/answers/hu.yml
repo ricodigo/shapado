@@ -1,0 +1,29 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      answer: 
+        body: Válasz szövege
+        created_at: "Válasz ideje:"
+        link: Hivatkozás
+    models: 
+      answer: válasz
+      answers: válasz
+  answers: 
+    create: 
+      flash_error: "Valami probléma történt a válaszod hozzáadása közben. \n  Emlékezz, hogy: \n - az üres és megismételt válaszok nem engedélyezettek, \n - várnod kell 20 másodpercet újabb válasz írása előtt, valamint\n - kérdésenként csak egy választ írhatsz."
+      flash_notice: Köszönjük!
+    edit: 
+      title: Válasz szerkesztése
+    form: 
+      answer_label: Kérdés megválaszolása
+      comment_label: Hozzászólás ehhez a válaszhoz
+      comment_submit: Hozzászólás
+      submit: Válasz
+    revert: 
+      title: Válasz visszavonása
+    update: 
+      flash_notice: Válasz sikeresen frissítve.

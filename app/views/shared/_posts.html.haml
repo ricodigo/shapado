@@ -25,12 +25,10 @@
   -if logged_in?
     = render :partial => "shared/language_filter"
 
-  = render "shared/widgets", :context => 'mainlist'
+  = render "shared/widgets", :context => 'mainlist', :position => 'sidebar'
 
--if @questions.empty? # TODO: blankslate
-  %li.highlight
-    = t(".empty")
-
+-if @questions.empty?
+  = render "shared/empty"
 
 -if params[:answers]
   /Answers

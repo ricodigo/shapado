@@ -1,0 +1,141 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      question: 
+        answers: válasz
+        asked_by: "Kérdezte:"
+        body: Szöveg
+        closed: Lezárva
+        created_at: Létrehozás ideje
+        language: Nyelv
+        tags: Címkék
+        title: Cím
+        updated_at: Frissítés ideje
+        updated_by: "Frissítette:"
+        views: megtekintés
+        votes: szavazat
+    models: 
+      question: kérdés
+      questions: kérdések
+  questions: 
+    answer: 
+      add_comment: Hozzászólás...
+      flag: Megjelölés
+      pick_answer: Megoldásnak választás
+      unset_answer: Megoldás visszavonása?
+    create: 
+      flash_notice: Kérdés sikeresen létrejött.
+    edit: 
+      title: Kérdés szerkesztése
+    flag: 
+      title: Kérdés megjelölése
+    form: 
+      adult_content: A kérdés felnőtt tartalommal rendelkezik.
+      body_tip: Mi a kérdés? Írd le megfelelően.
+      language_tip: Válaszd ki a kérdés nyelvét!
+      tags_tip: Címkék segítségével adj meg további információkat a kérdésről!
+    index: 
+      active: Aktív
+      active_tooltip: A legutóbb frissített kérdések
+      ask_question: Kérdezz
+      empty: Még senki sem kérdezett. Légy te az első!
+      help_to_answer: Segíts a válaszadásban
+      hot: Legaktívabbak
+      hot_tooltip: Azon kérdések, melyek a legtöbb aktivitással rendelkeztek az elmúlt öt napban
+      newest: Legújabb
+      newest_tooltip: A legutóbb kérdezett kérdések
+      oldest: Legrégebbi
+      title: Az összes kérdés
+      unanswered_questions: Megválaszolatlan kérdések
+      votes: szavazat
+      votes_tooltip: A legtöbb szavazattal rendelkező kérdések
+    model: 
+      messages: 
+        empty_tags: Sajnáljuk, legalább egy címkét használnod kell.
+        title_too_long: A cím túl hosszú. Nem tartalmazhat többet 100 karakternél.
+        too_many_tags: Sajnáljuk, maximum csak 9 címkét írhatsz be.
+        too_short: Túl rövidnek tűnik. Kérlek, használj %{count} szónál többet, hogy pontosan meghatározd.
+    move: 
+      group_label: "Áthelyezés a következő csoportba:"
+      submit: Áthelyezés!
+      title: "Kérdés áthelyezése: %{title}"
+    move_to: 
+      group_dont_exists: "A következő csoport nem létezik: %{group}"
+      success: "Kérdés áthelyezve a következő csoportba: %{group}"
+    new: 
+      how_to_ask: Hogyan kérdezz
+      title: Kérdés feltevése
+    question: 
+      accepted_tooltip: A kérdésre érkezett olyan válasz, amit elfogadtak
+    retag: 
+      title: Újracímkézés
+    retag_form: 
+      cancel: Mégse
+      submit: Címkék frissítése!
+      title: Címkék frissítése
+    retag_to: 
+      failure: Sajnáljük, a címkéket nem sikerült frissíteni.
+      success: A címkék sikeresen frissültek.
+    revert: 
+      title: Kérdés visszaállítása
+    shared: 
+      flag: Megjelölés
+    show: 
+      accepted_tooltip: A válaszok egyike helyes válasznak lett elfogadva.
+      another_answers: További válaszok
+      answers: Válaszok
+      answers_title: 
+        one: "%{count} válasz"
+        other: "%{count} válasz"
+      asked_on: Létrehozás ideje
+      ban: Letiltás
+      close: Lezárás
+      close_reason: "A kérdés a következő ok miatt lett lezárva:"
+      edit_request: Kérés szerkesztése
+      favorite_tooltip: Kérdés felvétele a kedvencek közé
+      flag: Megjelölés
+      flagged_as: "Megjelölve:"
+      flags: Jeletve, mint
+      last_activity: Utolsó aktivitás
+      open: Megnyitás
+      related_questions: Kapcsolódó kérdések
+      request_closing: Lezárás kérelmezése
+      request_closing_details: A kérés lezárásának kérelmezése
+      request_opening: Újbóli megnyitás kérelmezése
+      request_opening_details: A kérdés újbóli megnyitásának kérelmezése
+      requested_close_as: Kérelmezted a kérés lezárását, mivel
+      requested_reopening: Kérelmezted a kérdés újbóli megnyitását
+      retag: Újracímkézés
+      retract_request: Kérés visszavonása
+      share: Kérdés megosztása
+      share_on: "Kérés megosztása a következő oldalon: %{site}"
+      solution: Megoldás
+      unauthenticated_retag: Fiók szükséges a kérdések újracímkézéséhez
+      unfavorite_tooltip: Kérdés eltávolítása a kedvencek közül
+      unwatch_tooltip: Kérdés figyelésének vége
+      viewed: "Megtekintések:"
+      watch_tooltip: Kérdés figyelése
+    solve: 
+      flash_notice: A kérdés megoldva.
+    tags: 
+      filter: Címkék keresése
+      title: Címkék
+      tooltip: "%{tag} címkéjű kérdések megjelenítése"
+    unanswered: 
+      empty: A csoportban nincs egyetlen megválaszolatlan kérdés sem.
+      expert: Szakértők
+      my_tags: Saját címkék
+      tags: Megválaszolatlan címkék
+      title: Megválaszolatlan kérdések
+    unsolve: 
+      flash_notice: A kérdés már nincs megoldva.
+    unwatch: 
+      success: Most már nem értesülsz e-mailben a kérdésre érkező minden új válasz esetén
+    update: 
+      flash_notice: Kérdés sikeresen frissítve.
+    watch: 
+      success: Most már e-mailben értesülsz a kérdésre érkező minden új válasz esetén

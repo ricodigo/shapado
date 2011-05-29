@@ -1,0 +1,43 @@
+- langs = current_group.languages.sort
+- default_lang = langs.delete(current_group.language)
+
+.field
+  = label :title, t('widgets.settings.title'), :class => "label"
+  = label "settings[title[#{default_lang}]]", language_desc(default_lang), :class => "label"
+  = text_field_tag "settings[title[#{default_lang}]]", widget.settings["title"][default_lang], :class => "text_field"
+  .lang-fields
+    %ul
+      -langs.each do |lang|
+        %li
+          =link_to lang, "#title-#{lang}", :title => language_desc(lang)
+    -langs.each do |lang|
+      %div{:id => "title-#{lang}"}
+        =text_field_tag "settings[title[#{lang}]]", widget.settings["title"][lang], :class => "text_field"
+
+.field
+  = label :content, t('widgets.settings.content'), :class => "label"
+  = label "settings[content[#{default_lang}]]", language_desc(default_lang), :class => "label"
+  = text_field_tag "settings[content[#{default_lang}]]", widget.settings["content"][default_lang], :class => "text_field"
+  .lang-fields
+    %ul
+      -langs.each do |lang|
+        %li
+          =link_to lang, "#content-#{lang}", :title => language_desc(lang)
+    -langs.each do |lang|
+      %div{:id => "content-#{lang}"}
+        =text_area_tag "settings[content[#{lang}]]", widget.settings["content"][lang], :class => "text_field"
+
+.field
+  = label :footer, t('widgets.settings.footer'), :class => "label"
+  = label "settings[footer[#{default_lang}]]", language_desc(default_lang), :class => "label"
+  = text_field_tag "settings[footer[#{default_lang}]]", widget.settings["footer"][default_lang], :class => "text_field"
+  .lang-fields
+    %ul
+      -langs.each do |lang|
+        %li
+          =link_to lang, "#footer-#{lang}", :title => language_desc(lang)
+    -langs.each do |lang|
+      %div{:id => "footer-#{lang}"}
+        =text_field_tag "settings[footer[#{lang}]]", widget.settings["footer"][lang], :class => "text_field"
+
+= render :partial => "shared/external_widget_settings", :locals => {:widget => widget}

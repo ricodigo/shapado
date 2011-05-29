@@ -1,0 +1,11 @@
+- form_for(@invitation, :html => {:class => "form", :multipart => true}) do |f|
+  = f.error_messages
+  = hidden_field_tag :source, domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "invite", :tab => @active_subtab)
+  .field
+    = label :user_role, t(".user_role")
+    = select("invitations", "user_role", locales_roles)
+  .field
+    = label :invitations_emails, t('.emails_instructions')
+    = text_area :invitations, :emails
+  .buttons
+    = f.submit t('scaffold.create'), :class => "save"

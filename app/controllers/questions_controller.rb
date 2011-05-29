@@ -12,9 +12,12 @@ class QuestionsController < ApplicationController
   tabs :default => :questions, :tags => :tags,
        :unanswered => :unanswered, :new => :ask_question
 
-  subtabs :index => [[:newest, %w(created_at desc)], [:hot, [%w(hotness desc), %w(views_count desc)]], [:votes, %w(votes_average desc)], [:activity, %w(activity_at desc)], [:expert, %w(created_at desc)]],
-          :unanswered => [[:newest, %w(created_at desc)], [:votes, %w(votes_average desc)], [:mytags, %w(created_at desc)]],
-          :show => [[:votes, %w(votes_average desc)], [:oldest, %w(created_at asc)], [:newest, %w(created_at desc)]]
+  subtabs :index => [[:newest, [:created_at, Mongo::DESCENDING]],
+                     [:hot, [[:hotness, Mongo::DESCENDING], [:views_count, Mongo::DESCENDING]]],
+                     [:votes, [:votes_average, Mongo::DESCENDING]],
+                     [:activity, [:activity_at, :desc]], [:expert, [:created_at, Mongo::DESCENDING]]],
+          :unanswered => [[:newest, [:created_at, Mongo::DESCENDING]], [:votes, [:votes_average, Mongo::DESCENDING]], [:mytags, [:created_at, Mongo::DESCENDING]]],
+          :show => [[:votes, [:votes_average, Mongo::DESCENDING]], [:oldest, [:created_at, Mongo::ASCENDING]], [:newest, [:created_at, Mongo::DESCENDING]]]
   helper :votes
 
   # GET /questions
@@ -67,20 +70,34 @@ class QuestionsController < ApplicationController
       @question.group_id = current_group.id
     end
 
-    @question.tags += @question.title.downcase.split(",").join(" ").split(" ") if @question.title
+    text_search = @question.title || ""
+    text_search << (@question.body || "")
+    text_search << @question.tags.join
+    conditions = {group_id: @question.group_id, banned: false}
+    if params[:unanswers]
+      conditions[:answered_with_id] = nil
+    end
 
-    @questions = Question.related_questions(@question).without(:_keywords, :watchers, :flags,
-                                                               :close_requests, :open_requests, :versions).
-                                                       order_by(:answers_count.desc).
-                                                       paginate(:page => params[:page], :per_page => params[:per_page],)
+    if params[:per_page]
+      conditions[:per_page] = params[:per_page]
+    end
+
+    @questions = Question.filter(text_search, conditions)
 
     respond_to do |format|
       format.js do
         content = ''
+        settings = {}
         if !@questions.empty?
-          content = render_to_string(:partial => "questions/question",
-                           :collection  => @questions,
-                          :locals => {:mini => true, :lite => true});
+          if params[:mini]
+            content = render_to_string(:partial => "questions/question",
+                                     :collection  => @questions,
+                                     :locals => {:mini => true, :lite => true});
+          else
+            content = render_to_string(:partial => "shared/post",
+                                       :locals => {:questions => @questions,
+                                       :for_answers => params[:answers]})
+          end
         end
         render :json => {:html => content}.to_json
       end
@@ -108,10 +125,7 @@ class QuestionsController < ApplicationController
 
     @tag_cloud = Question.tag_cloud(conditions, 25)
 
-    @questions = Question.minimal.order_by(current_order).where(conditions).paginate({
-                                    :per_page => 25,
-                                    :page => params[:page] || 1,
-                                   })
+    @questions = Question.minimal.order_by(current_order).where(conditions).paginate(paginate_opts(params))
 
     respond_to do |format|
       format.html # unanswered.html.erb
@@ -124,13 +138,12 @@ class QuestionsController < ApplicationController
       format.js do
         result = []
         if q = params[:term]
-          result = Question.find_tags(/^#{Regexp.escape(q.downcase)}/i,
-                                      :group_id => current_group.id,
-                                      :banned => false)
+          result = Tag.where(:name => /^#{Regexp.escape(q.downcase)}/i,
+                    :group_id => current_group.id).order(:count => :desc)
         end
 
         results = result.map do |t|
-          {:caption => "#{t["name"]} (#{t["count"].to_i})", :value => t["name"]}
+          {:caption => "#{t.name} (#{t.count.to_i})", :value => t.name}
         end
         # if no results, show default tags
         if results.empty?
@@ -156,11 +169,12 @@ class QuestionsController < ApplicationController
     end
 
     @tag_cloud = Question.tag_cloud(:_id => @question.id, :banned => false)
-    options = {:per_page => 25, :page => params[:page] || 1,
-               :order => current_order, :banned => false}
+    options = {:banned => false}
     options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
-    options[:fields] = {:_keywords => 0}
-    @answers = @question.answers.paginate(options)
+    @answers = @question.answers.where(options).
+                                order_by(current_order).
+                                without(:_keywords).
+                                paginate(paginate_opts(params))
 
     @answer = Answer.new(params[:answer])
 
@@ -230,7 +244,7 @@ class QuestionsController < ApplicationController
         @user = User.where(:email => params[:user][:email]).first
         if @user.present?
           if !@user.anonymous
-            flash[:notice] = "The user is already registered, please log in"
+            flash[:notice] = "The user is already registered, please log in" # TODO: i18n
             return create_draft!
           else
             @question.user = @user
@@ -252,7 +266,11 @@ class QuestionsController < ApplicationController
         @question.add_contributor(@question.user)
 
         sweep_question_views
-        Magent::WebSocketChannel.push({id: "newquestion", object_id: @question.id, name: @question.title, channel_id: current_group.slug})
+        Magent::WebSocketChannel.push({id: "newquestion",
+                                       object_id: @question.id,
+                                       name: @question.title,
+                                       html: render_to_string(:partial => "questions/question", :object => @question),
+                                       channel_id: current_group.slug})
 
         current_group.tag_list.add_tags(*@question.tags)
         unless @question.anonymous
@@ -303,7 +321,8 @@ class QuestionsController < ApplicationController
       @question.updated_by = current_user
       @question.last_target = @question
 
-      tags_changes = @question.changes["tags"]
+      changes = @question.changes
+      tags_changes = changes["tags"]
 
       if @question.slug_changed?
         @question.slugs = [] if @question.slugs.nil?
@@ -320,6 +339,13 @@ class QuestionsController < ApplicationController
         if tags_changes
           Jobs::Tags.async.question_retagged(@question.id, tags_changes.last, tags_changes.first, Time.now).commit!
         end
+
+        puts ">>>>>>>>>>>>>>>> #{changes.inspect}"
+        Magent::WebSocketChannel.push({id: "updatequestion",
+                                       object_id: @question.id,
+                                       name: @question.title,
+                                       changes: changes,
+                                       channel_id: current_group.slug})
 
         if !@question.removed_tags.blank?
           flash[:warning] = I18n.t("questions.model.messages.tags_not_added",
@@ -348,6 +374,10 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     Jobs::Questions.async.on_destroy_question(current_user.id, @question.attributes).commit!
+    Magent::WebSocketChannel.push({id: "destroyquestion",
+                                   object_id: @question.id,
+                                   name: @question.title,
+                                   channel_id: current_group.slug});
 
     respond_to do |format|
       format.html { redirect_to(questions_url) }
@@ -377,10 +407,11 @@ class QuestionsController < ApplicationController
         format.json  { head :ok }
       else
         @tag_cloud = Question.tag_cloud(:_id => @question.id, :banned => false)
-        options = {:per_page => 25, :page => params[:page] || 1,
-                   :order => current_order, :banned => false}
+        options = {:banned => false}
         options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
-        @answers = @question.answers.paginate(options)
+        @answers = @question.answers.where(options).
+                                    paginate(paginate_opts(params)).
+                                    order_by(current_order)
         @answer = Answer.new
 
         format.html { render :action => "show" }
@@ -413,10 +444,11 @@ class QuestionsController < ApplicationController
         format.json  { head :ok }
       else
         @tag_cloud = Question.tag_cloud(:_id => @question.id, :banned => false)
-        options = {:per_page => 25, :page => params[:page] || 1,
-                   :order => current_order, :banned => false}
+        options = {:banned => false}
         options[:_id] = {:$ne => @question.answer_id} if @question.answer_id
-        @answers = @question.answers.paginate(options)
+        @answers = @question.answers.where(options).
+                            order_by(current_order).
+                            paginate(paginate_opts(params))
         @answer = Answer.new
 
         format.html { render :action => "show" }
@@ -508,7 +540,7 @@ class QuestionsController < ApplicationController
 
   def move_to
     @group = Group.by_slug(params[:question][:group])
-    @question = @group.questions.by_slug(params[:id])
+    @question = current_group.questions.by_slug(params[:id])
 
     if @group
       @question.group = @group
@@ -516,7 +548,8 @@ class QuestionsController < ApplicationController
       if @question.save
         sweep_question(@question)
 
-        Answer.set({"question_id" => @question.id}, {"group_id" => @group.id})
+        Answer.override({"question_id" => @question.id},
+                        {"group_id" => @group.id})
       end
       flash[:notice] = t("questions.move_to.success", :group => @group.name)
       redirect_to question_path(@question)
@@ -577,7 +610,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-
   def retag
     @question = current_group.questions.by_slug(params[:id])
     respond_to do |format|
@@ -590,7 +622,7 @@ class QuestionsController < ApplicationController
   end
 
   def twitter_share
-    @question = current_group.questions.by_slug(params[:id], :select => [:title, :slug])
+    @question = current_group.questions.only([:title, :slug]).by_slug(params[:id])
     url = question_url(@question)
     text = "#{current_group.share.starts_with} #{@question.title} - #{url} #{current_group.share.ends_with}"
 

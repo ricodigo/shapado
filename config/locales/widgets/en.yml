@@ -14,6 +14,7 @@ en:
     badges:
       title: Recent badges
       description: "This widget displays recent badges earned by users."
+      see_all: See all badges
     groups:
       title: Recent groups
       description: "This widget displays the latest groups."

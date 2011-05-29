@@ -1,11 +1,11 @@
 
 
-%h2.title
+%h1
   =t("admin.manage.properties.constrains.reputation_constrains_subtitle")
 
 =render :partial => "admin/manage/properties/subtabs"
 
-.description
+%p.description
   =t("admin.manage.properties.constrains.reputation_constrains_description")
 
 = link_to t(".current", default: "current"), domain_url(custom: @group.domain, controller: "constrains_configs", action: "index")
@@ -25,5 +25,5 @@
 
   = render :partial => "groups/reputation_constrains_form", :object => f
 
-  .group.navform
-    = f.submit t('scaffold.update')
+  .buttons
+    = f.submit t('scaffold.update'), :class => "save"

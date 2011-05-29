@@ -12,4 +12,6 @@ class Share
   field :enable_twitter, :type => Boolean, :default => false
   field :twitter_user, :type => String
   field :twitter_pattern, :type => String
+
+  embedded_in :group, :inverse_of => :share
 end

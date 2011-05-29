@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Answer do
   before(:each) do
+    @current_user = User.make
+    Thread.current[:current_user] = @current_user
     @answer = Answer.make(:votes => {})
   end
 

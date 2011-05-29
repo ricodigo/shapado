@@ -1,22 +1,14 @@
 %section.main-question
-  %h1.version
-    %small.version 
-      =t("wiki.history.version") 
+  .version
+    %small.version
+      =t("wiki.history.version")
       &=number
       = radio_button_tag("prev", number, prev.to_s == number.to_s)
       = radio_button_tag("curr", number, curr.to_s == number.to_s)
     %small.verion-nav
-      = render :partial => "diff_actions", :locals => {:post => post, :number => number}
-    %br
-    = h(@question.title)
-  .description.markdown
-    = shapado_auto_link(markdown(@question.body))
-  .messages
-    = @question.version_message
-  %ul.tag-list
-    %li.title
-      Topics:
-      =@question.tags.join(", ")
+      = render "diff_actions", :post => post, :number => number
 
-  .changes
-    = render :partial => "wiki/changes", :locals => {:post => post, :version => version, :scope => scope}
+    .changes
+      = render "changes", :post => post, :version => version, :scope => scope
+    .owner
+      = render "users/user_data", :user => version.owner

@@ -1,0 +1,14 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  searches: 
+    form: 
+      clear: Padamkan
+      search_box_title: Semak sama ada soalan anda sudah ditanya
+      tags_tip: Gunakan [tag] untuk menetapkan tag.
+    index: 
+      empty: Tiada soalan yang sepadan dengan carian anda.
+      search_text: Soalan yang mengandungi
+      tags: di dalam tag-tag ini

@@ -1,15 +1,15 @@
 # Messages for Macedonian (Македонски)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Bjankuloski06
 mk: 
   activerecord: 
     attributes: 
       flag: 
-        reason: причина
+        reason: Причина
     models: 
-      flag: знаменце
-      flags: знаменца
+      flag: Знаменце
+      flags: Знаменца
   flags: 
     create: 
       flash_error: ова не може да го означите

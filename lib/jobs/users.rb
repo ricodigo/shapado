@@ -22,32 +22,38 @@ module Jobs
     def self.get_facebook_friends(user_id)
       user = User.find(user_id)
       friends = user.facebook_client
-      user.facebook_friends_list.friends = friends["data"]
-      user.facebook_friends_list.save
-      user.save
+      external_friends_list = user.external_friends_list
+      external_friends_list.friends["facebook"] = friends["data"]
+      external_friends_list.save
     end
 
     def self.get_twitter_friends(user_id)
       user = User.find(user_id)
-      friends = user.twitter_client.friends_ids
-      user.twitter_friends_list.friends = friends
-      user.twitter_friends_list.save
+      friends = user.twitter_client.all_friends.map do |friend|
+        { "id" => friend["id_str"], "lang" => friend["id_str"],
+        "profile_image_url" => friend["profile_image_url"],
+        "name" => friend["name"] || friend["screen_name"]}
+      end
+      user.external_friends_list.friends["twitter"] = friends
+      user.external_friends_list.save
       user.save
     end
 
     def self.get_identica_friends(user_id)
       user = User.find(user_id)
       friends = user.get_identica_friends
-      user.identica_friends_list.friends = friends
-      user.identica_friends_list.save
-      user.save
+      unless friends[0]["error"]
+        user.external_friends_list.friends["identica"] = friends
+        user.external_friends_list.save
+        user.save
+      end
     end
 
     def self.get_linked_in_friends(user_id)
       user = User.find(user_id)
       friends = user.get_linked_in_friends
-      user.linked_in_friends_list.friends = friends
-      user.linked_in_friends_list.save
+      user.external_friends_list.friends["linked_in"] = friends
+      user.external_friends_list.save
       user.save
     end
   end

@@ -1,6 +1,7 @@
 - if logged_in?
-  %h3
-    =t("widgets.suggestions.title", :group => current_group.name)
+  - unless no_title
+    %h3
+      =t("widgets.suggestions.title", :group => current_group.name)
   .content
     %ul.list
       -current_user.suggestions(current_group, limit).each do |suggestion|

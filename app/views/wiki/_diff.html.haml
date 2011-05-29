@@ -1,6 +1,6 @@
 .post.diff
   .body
-    -post.versioned_keys.each do |key|
+    -versioned_keys.each do |key|
       %h2=t(key, :scope => scope)
       =post.diff(key, curr, prev)
   .clear

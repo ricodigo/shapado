@@ -13,7 +13,7 @@ $(document).ready(function() {
       $.ajax({
         url: href+'.js',
         dataType: 'json',
-        type: "POST",
+        type: "GET",
         success: function(data){
           if(data.success){
             link.attr({href: dataUndo, 'data-undo': href, 'data-title': title, 'class': dataClass, 'data-class': linkClass });

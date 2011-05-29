@@ -1,6 +1,6 @@
 
 desc "Fix all"
-task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users"] do
+task :fixall => [:init, "fixdb:create_thumbnails", "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:versions", "fixdb:ads", "fixdb:set_comment_count"] do
 end
 
 
@@ -19,6 +19,8 @@ task :init => [:environment] do
     def set_created_at; end
     def set_updated_at; end
   end
+
+  GC.start
 end
 
 namespace :fixdb do
@@ -161,11 +163,13 @@ namespace :fixdb do
     puts "updating comments"
     comments = Mongoid.database.collection("comments")
     questions = Mongoid.database.collection("questions")
+    questions.update({}, {"$set" => {:comments => []}})
+    comments.update({}, {"$set" => {:comments => []}})
 
     Mongoid.database.collection("comments").find(:_type => "Comment").each do |comment|
-        id = comment.delete("commentable_id")
-        klass = comment.delete("commentable_type")
-        collection = comments
+      id = comment.delete("commentable_id")
+      klass = comment.delete("commentable_type")
+      collection = comments
 
       %w[created_at updated_at].each do |key|
         if comment[key].is_a?(String)
@@ -177,8 +181,9 @@ namespace :fixdb do
         collection = questions;
       end
 
-        collection.update({:_id => id}, "$addToSet" => {:comments => comment})
-        comments.remove({:_id => comment["_id"]})
+      comment.delete("comments")
+      collection.update({:_id => id}, "$addToSet" => {:comments => comment})
+      comments.remove({:_id => comment["_id"]})
     end
     begin
       Mongoid.database.collection("answers").drop
@@ -212,6 +217,7 @@ namespace :fixdb do
 
       group.language = (lang == :spanish) ? 'es' : 'en'
       group.languages = DEFAULT_USER_LANGUAGES
+
       if group.valid?
         group.save
       else
@@ -229,8 +235,8 @@ namespace :fixdb do
     doc.keys.each do |key|
       User.where({:country_name => key}).all.each do |u|
         p "#{u.login}: before: #{u.country_name}, after: #{doc[key]["address"]["country"]}"
-        lat = doc[key]["lat"]
-        lon = doc[key]["lon"]
+        lat = Float(doc[key]["lat"])
+        lon = Float(doc[key]["lon"])
         User.override({:_id => u.id},
                     {:position => {lat: lat, long: lon},
                       :address => doc[key]["address"] || {}})
@@ -250,21 +256,10 @@ namespace :fixdb do
 
   task :widgets => [:init] do
     c=Group.count
-    Group.unset({}, {:widgets => true, :question_widgets => true, :mainlist_widgets => true,
-                :external_widgets => true})
+    Group.unset({}, [:widgets, :question_widgets, :mainlist_widgets, :external_widgets])
     i=0
     Group.all.each do |g|
-      [SharingButtonsWidget, ModInfoWidget, QuestionBadgesWidget,
-       QuestionStatsWidget, QuestionTagsWidget, RelatedQuestionsWidget,
-       TagListWidget, CurrentTagsWidget].each do |w|
-        widget = w.new
-        g.question_widgets << widget
-      end
-
-      [BadgesWidget, PagesWidget, TopGroupsWidget, TopUsersWidget, TagCloudWidget].each do |w|
-        g.mainlist_widgets << w.new
-      end
-      g.external_widgets << AskQuestionWidget.new
+      g.reset_widgets!
       g.save
       p "(#{i+=1}/#{c}) Updated widgets for group #{g.name}"
     end
@@ -302,9 +297,9 @@ namespace :fixdb do
 
   task :set_follow_ids => [:init] do
     p "setting nil following_ids to []"
-    FriendList.collection.update({:following_ids => nil}, {:following_ids => []})
+    FriendList.override({:following_ids => nil}, {:following_ids => []})
     p "setting nil follower_ids to []"
-    FriendList.collection.update({:follower_ids => nil}, {:follower_ids => []})
+    FriendList.override({:follower_ids => nil}, {:follower_ids => []})
     p "done"
   end
 
@@ -313,10 +308,8 @@ namespace :fixdb do
     i = 1
     p "updating #{total} users facebook friends list"
     User.all.each do |u|
-      u.facebook_friends_list = FacebookFriendsList.create
-      u.twitter_friends_list = TwitterFriendsList.create
-      u.identica_friends_list = IdenticaFriendsList.create
-      u.linked_in_friends_list = LinkedInFriendsList.create
+      u.send(:initialize_fields)
+      u.send(:create_friends_lists)
 
       p "#{i}/#{total} #{u.login}"
       i += 1
@@ -352,4 +345,125 @@ namespace :fixdb do
       u.save(:validate => false)
     end
   end
+
+  task :create_thumbnails => [:init]  do
+    Group.all.each do |g|
+      begin
+        puts "Creating thumbnails for #{g.name} #{g.id}"
+        Jobs::Images.generate_group_thumbnails(g.id)
+      rescue Mongo::GridFileNotFound => e
+        puts "error getting #{g.name}'s logo"
+      end
+    end
+  end
+
+
+  task :set_invitations_perms => [:init] do
+    p "setting invitations permissions on groups"
+    p "only owners can invite people on private group by default"
+    Group.override({:private => false}, {:invitations_perms => "owner"})
+    p "anyone can invite people on private group by default"
+    Group.override({:private => false}, {:invitations_perms => "user"})
+    p "done"
+  end
+
+  task :set_signup_type => [:init] do
+    p "setting signup type for groups"
+    Group.override({:openid_only => true}, {:signup_type => "noemail"})
+    Group.override({:openid_only => false}, {:signup_type => "all"})
+    p "done"
+  end
+
+  task :set_comment_count => [:init] do
+    questions = Mongoid.database.collection("questions")
+    answers = Mongoid.database.collection("answers")
+
+    User.only([:_id,:membership_list, :login]).all.each do |u|
+      u.membership_list.each do |group_id, vals|
+        count = 0
+        group = Group.where(:_id => group_id).only([:_id, :name]).first
+        next if group.nil?
+
+        questions.find({:group_id => group.id}, {:fields => {:user_id => 1, :"comments.user_id" => 1}}).each do |q|
+          if q["comments"]
+            q["comments"].each do |c|
+              if c["user_id"] == u.id
+                count = count + 1
+              end
+            end
+          end
+        end
+
+        answers.find({:group_id => group.id}, {:fields => {:user_id => 1, :"comments.user_id" => 1}}).each do |a|
+          if a["comments"]
+            a["comments"].each do |c|
+              if c["user_id"] == u.id
+                count = count + 1
+              end
+            end
+          end
+        end
+
+        u.override({"membership_list.#{group.id}.comments_count" => count})
+        if count > 0
+          p "#{u.login}: #{count} in #{group.name}"
+        end
+      end
+    end
+  end
+
+  task :versions => [:init] do
+    Question.only(:versions, :versions_count).each do |question|
+      next if question.versions.count > 0
+      question.override({:versions_count => 0})
+      (question[:versions]||[]).each do |version|
+        version["created_at"] = version.delete("date")
+        version["target"] = question
+
+        question.version_klass.create!(version)
+      end
+
+      question.unset({:versions => true})
+    end
+
+    Answer.only(:versions, :versions_count).each do |post|
+      next if post.versions_count.to_i > 0
+      post.override({:versions_count => 0})
+      (post[:versions]||[]).each do |version|
+        version["created_at"] = version.delete("date")
+        version["target"] = post
+
+        post.version_klass.create!(version)
+      end
+
+      post.unset({:versions => true})
+    end
+  end
+
+  task :ads => [:init]  do
+    collection = Mongoid.database.collection("ads")
+    collection.find.each do |ad|
+      group = Group.find(ad["group_id"])
+      positions = {'context_panel' => "sidebar",
+                   'header' => "header",
+                   'footer' => "footer",
+                   'content' => "navbar"}
+      widget = nil
+      case ad['_type']
+      when "Adsense"
+        widget = AdsenseWidget.new(:settings =>{:client => ad['google_ad_client'],
+                          :slot => ad['google_ad_slot'],
+                          :width => ad['google_ad_width'],
+                          :height => ad['google_ad_height']})
+      when "Adbard"
+        widget = AdbardWidget.new(:settings =>{:host_id => ad['adbard_host_id'],
+                                  :site_key => ad['adbard_site_key']})
+      end
+      widget_list = group.mainlist_widgets
+      widget_list.send(:"#{positions[ad['position']]}") << widget
+      widget.save
+    end
+    collection.remove
+  end
+
 end

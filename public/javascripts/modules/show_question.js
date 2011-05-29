@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+
 //  $(".forms form.flag_form").hide();
 //  $("#close_question_form").hide();
   $('.auto-link').autoVideo();
@@ -9,18 +10,13 @@ $(document).ready(function() {
     var form = $(this).parents("form");
     $.post(form.attr("action")+'.js', form.serialize()+"&"+btn_name+"=1", function(data){
       if(data.success){
-        form.find(".votes_average").text(data.average)
+        alert(data.average);
+        form.find(".votes_average").text(data.average);
         if(data.vote_state == "deleted") {
-          form.find("button[name=vote_down] img").attr("src", "/images/to_vote_down.png")
-          form.find("button[name=vote_up] img").attr("src", "/images/to_vote_up.png")
         }
         else {
           if(data.vote_type == "vote_down") {
-            form.find("button[name=vote_down] img").attr("src", "/images/vote_down.png")
-            form.find("button[name=vote_up] img").attr("src", "/images/to_vote_up.png")
           } else {
-            form.find("button[name=vote_up] img").attr("src", "/images/vote_up.png")
-            form.find("button[name=vote_down] img").attr("src", "/images/to_vote_down.png")
           }
         }
         showMessage(data.message, "notice")
@@ -382,5 +378,15 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
+  var anchor = document.location.hash;
+  if(anchor == "#to_answer") {
+    var add_answer = $("a#add_answer")
+    add_answer.trigger('click');
+    $('html,body').animate({scrollTop: add_answer.offset().top-100}, 1000);
+  } else if(anchor == "#to_flag") {
+    var flag_question = $("a#flag_question")
+    flag_question.trigger('click');
+    $('html,body').animate({scrollTop: flag_question.offset().top-100}, 1000);
+  }
   prettyPrint();
 });

@@ -1,7 +1,14 @@
-%ul
-  %li.retag
-    = link_to t(".retag"), moderate_questions_path, :title => t(".retag_tooltip")
-  %li.flagged
-    = link_to t(".flagged"), flagged_moderate_questions_path, :title => t(".flagged_tooltip")
-  %li.to_close
-    = link_to t(".to_close"), to_close_moderate_questions_path, :title => t(".to_close_tooltip")
+
+%section.filters{:class => @active_subtab }
+  %ul
+    %header Filter:
+    %li.retag
+      = link_to t(".retag"), moderate_questions_path, :title => t(".retag_tooltip")
+    %li.flagged
+      = link_to t(".flagged"), flagged_moderate_questions_path, :title => t(".flagged_tooltip")
+    %li.banned
+      = link_to t("moderate.questions.flagged.banned"), flagged_moderate_questions_path(:filter => "banned"), :title => t("moderate.questions.flagged.unbanned_tooltip")
+    %li.to_close
+      = link_to t(".to_close"), to_close_moderate_questions_path, :title => t(".to_close_tooltip")
+    %li.to_open
+      = link_to t(".to_open"), to_open_moderate_questions_path, :title => t(".to_open_tooltip")

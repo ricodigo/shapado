@@ -5,11 +5,11 @@
     %title
       &= page_title
 
-    %link{:rel=>"stylesheet", :href=>"/stylesheets/jm/jquery.mobile-1.0a3pre.css"}
-    = javascript_include_merged(:mobile).html_safe
-    %script{:src=>"/javascripts/jquery.mobile-1.0a3pre.js", :type => "text/javascript"}
+    %link{:rel=>"stylesheet", :href=>"/stylesheets/jquery.mobile-1.0b1pre.min.css"}
+    = include_javascripts(:mobile)
+    %script{:src=>"/javascripts/jquery.mobile-1.0b1pre.min.js", :type => "text/javascript"}
 
-    =stylesheet_link_merged(:mobile).html_safe
+    =include_stylesheets(:mobile)
 
     = csrf_meta_tag
   %body

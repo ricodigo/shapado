@@ -1,21 +1,29 @@
-var CahumaSocket = {
+var ShapadoSocket = {
   initialize: function() {
     WEB_SOCKET_SWF_LOCATION = "/javascripts/web-socket-js/WebSocketMain.swf";
 
     var config = $("#websocket");
+    this.error_count = 0;
     this.ws = new WebSocket("ws://"+config.attr("data-host")+":34567/");
     this.socket_key = null;
 
+
     this.ws.onmessage = function(evt) {
-      CahumaSocket.parse(evt.data);
+      ShapadoSocket.parse(evt.data);
     };
 
+    window.webSocketError = function(message) {
+      console.error(decodeURIComponent(message));
+      ShapadoSocket.error_count += 1;
+    }
+
     this.ws.onclose = function() {
-      setTimeout(CahumaSocket.initialize, 5000)
+      if(ShapadoSocket.error_count < 3)
+        setTimeout(ShapadoSocket.initialize, 5000)
     };
 
     this.ws.onopen = function() {
-      CahumaSocket.send({id: 'start', key: config.attr("data-key"), channel_id: config.attr("data-group")});
+      ShapadoSocket.send({id: 'start', key: config.attr("data-key"), channel_id: config.attr("data-group")});
     };
   },
   add_chat_message: function(from, message) {
@@ -24,16 +32,31 @@ var CahumaSocket = {
   parse: function(data) {
     var data = jQuery.parseJSON(data);
 
-    console.log("received: ");
-    console.log(data);
+    window.console && console.log("received: ");
+    window.console && console.log(data);
 
     switch(data.id) {
       case 'chatmessage': {
-        CahumaSocket.add_chat_message(data.from, data.message);
+        ShapadoSocket.add_chat_message(data.from, data.message);
       }
       break;
       case 'newquestion': {
-        alert("new question: "+data.name);
+        var section = $("section.questions-index");
+        section.prepend(data.html).hide().slideToggle();
+      }
+      break;
+      case 'updatequestion': {
+        var key = "article.Question#"+data.object_id;
+        for(var prop in data.changes) {
+          if(prop == "title") {
+            var n = data.changes[prop].pop();
+            $(key+" h2 a").text(n);
+          }
+        }
+      }
+      break;
+      case 'destroyquestion': {
+        $("article.Question#"+data.object_id).fadeOut();
       }
       break;
       case 'newanswer': {
@@ -48,6 +71,6 @@ var CahumaSocket = {
 };
 
 $(document).ready(function() {
-  CahumaSocket.initialize();
+  ShapadoSocket.initialize();
 });
 

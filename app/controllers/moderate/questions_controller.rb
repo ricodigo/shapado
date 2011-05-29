@@ -8,39 +8,43 @@ class Moderate::QuestionsController < ApplicationController
 
 
   def index
-    @active_subtab = "retagg"
-    options = {:banned => false,
-               :group_id => current_group.id}
+    @active_subtab = "retag"
+    options = {:banned => false}
 
-    @questions = Question.where(options.merge(:tags => {:$size => 0})).
-                                    paginate(:per_page => params[:per_page] || 25,
-                                             :page => params[:questions_page] || 1)
+    @questions = current_group.questions.where(options.merge(:tags => {:$size => 0})).
+                                         paginate(paginate_opts(params))
   end
 
   def flagged
-    options = {:group_id => current_group.id}
-    options[:banned] = false
+    options = {:banned => false}
 
     if params[:filter] == "banned"
        options[:banned] = true
+    else
+      options[:flags_count] = {:$gt => 0}
     end
 
-    @questions = current_group.questions.
-                            where(options.merge(:flags_count.gt => 0)).
+    @questions = current_group.questions.where(options).
                             order_by("flags_count desc").
-                            paginate(:per_page => params[:per_page] || 25,
-                                     :page => params[:questions_page] || 1)
+                            paginate(paginate_opts(params))
   end
 
   def to_close
-    options = {:group_id => current_group.id,
-               :closed => true}
+    options = { :closed => false}
 
     @questions = current_group.questions.
                             where(options.merge(:close_requests_count.gt => 0)).
                             order_by("close_requests_count desc").
-                            paginate(:per_page => params[:per_page] || 25,
-                                     :page => params[:questions_page] || 1)
+                            paginate(paginate_opts(params))
+  end
+
+  def to_open
+    options = {:closed => true}
+
+    @questions = current_group.questions.
+                        where(options.merge(:open_requests_count.gt => 0)).
+                        order_by("open_requests_count desc").
+                        paginate(paginate_opts(params))
   end
 
   def manage

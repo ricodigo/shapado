@@ -3,8 +3,8 @@ class TagsController < ApplicationController
   before_filter :moderator_required, :except => [:index, :show]
 
   def index
-    @tags = current_scope.paginate(:page => params[:page],
-                             :per_page => params[:per_page] || 52)
+    params[:per_page] ||= "xl"
+    @tags = current_scope.paginate(paginate_opts(params))
 
     respond_to do |format|
       format.html do
@@ -19,10 +19,10 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag_names = params[:id].split("+")
+    @current_tags = @tag_names = params[:id].split("+")
     @tags =  current_scope.where(:name.in => @tag_names)
     @questions = current_group.questions.where( :tags.in => @tag_names ).
-                          paginate(:page => params[:page], :per_page => params[:per_page]||50)
+                                         paginate(paginate_opts(params))
   end
 
   def new

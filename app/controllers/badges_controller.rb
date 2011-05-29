@@ -25,7 +25,7 @@ class BadgesController < ApplicationController
 
     @badges = Badge.where(:token => @badge.token, :group_id => current_group.id, :type => @badge.type).
                     order_by(:created_at.desc).only([:user_id]).
-                    paginate(:page => params[:page] || 1, :per_page => 25)
+                    paginate(paginate_opts(params))
 
     user_ids = @badges.map { |b| b.user_id }
     @users = User.find(user_ids)

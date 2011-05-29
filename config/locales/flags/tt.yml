@@ -1,6 +1,6 @@
 # Messages for Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: Ильнар
 tt: 
   activerecord: 

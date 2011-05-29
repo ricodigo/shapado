@@ -1,0 +1,152 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    models: 
+      badge: Lencana
+      badges: Lencana
+  badges: 
+    index: 
+      description: Semua lencana yang boleh anda raih. Kongsi pengetahuan untuk meraih lencana.
+      title: lencana
+    shared: 
+      addict: 
+        description: Mengunjungi tapak ini setiap hari selama 20 hari berturut-turut
+        name: Ketagih
+      autobiographer: 
+        description: Melengkapkan semua ruangan profil pengguna
+        name: Periwayat diri
+      celebrity: 
+        description: Diikuti oleh lebih daripada 100 pengikut
+        name: Selebriti
+      citizen_patrol: 
+        description: Menaikkan bendera pada kiriman pertama
+        name: Rukun tetangga
+      civic_duty: 
+        description: Mengundi 300 kali
+        name: Petugas sivik
+      cleanup: 
+        description: Membuat pengunduran pertama
+        name: Pembersih
+      commentator: 
+        description: Menulis 10 ulasan
+        name: Pengulas
+      critic: 
+        description: Mengundi tak setuju buat kali pertama
+        name: Pengkritik
+      disciplined: 
+        description: Memadamkan kiriman sendiri yang bermarkah 3 ke atas
+        name: Berdisiplin
+      editor: 
+        description: Menyunting kiriman buat kali pertama
+        name: Penyunting
+      effort_medal: 
+        description: Mendapat 100 undian setuju
+        name: Pingat usaha
+      enlightened: 
+        description: Mengemukakan jawapan yang diterima dengan sekurang-kurangnya 10 undian setuju
+        name: Makrifat
+      famous_question: 
+        description: Menanyakan soalan yang dikunjungi 10,000 kali
+        name: Soalan Terkenal
+      fanatic: 
+        description: Mengunjungi tapak ini setiap hari selama 100 hari berturut-turut
+        name: Fanatik
+      favorite_question: 
+        description: Menanyakan soalan yang digemari oleh 25 pengguna
+        name: Soalan kegemaran
+      friendly: 
+        description: Mulai mengikuti orang lain buat kali pertama
+        name: Mesra
+      good_answer: 
+        description: Mengemukakan jawapan yang mencapai purata lebih daripada 25 undian
+        name: Soalan bagus
+      good_question: 
+        description: Mengemukakan soalan yang mencapai purata lebih daripada 25 undian
+        name: Soalan baik
+      great_answer: 
+        description: Mengemukakan jawapan yang diundi setuju 100 kali
+        name: Jawapan hebat
+      great_question: 
+        description: Menanyakan soalan yang diundi setuju 100 kali
+        name: Soalan hebat
+      guru: 
+        description: Mengemukakan jawapan kepada soalan yang berpurata lebih daripada 40 undian
+        name: Tok Guru
+      inquirer: 
+        description: Menanyakan soalan buat julung kalinya
+        name: Penanya
+      interesting_person: 
+        description: Diikuti oleh lebih daripada 10 pengikut
+        name: Baik orangnya
+      merit_medal: 
+        description: Mendapat 200 undian setuju
+        name: Pingat merit
+      necromancer: 
+        description: Menanyakan soalan selepas lebih 60 hari kemudian dengan sekurang-kurangnya 5 undian
+        name: Ahli sihir
+      nice_answer: 
+        description: Mengemukakan jawapan yang diundi setuju 10 kali
+        name: Jawapan bagus
+      nice_question: 
+        description: Menanyakan soalan yang diundi setuju 10 kali
+        name: Soalan bagus
+      notable_question: 
+        description: Menanyakan soalan yang dikunjungi 2,500 kali
+        name: Soalan penting
+      organizer: 
+        description: Membuat tag semula pertama
+        name: Penganjur
+      peer_pressure: 
+        description: Memadamkan kiriman sendiri yang bermarkah -3 ke bawah
+        name: Tekanan daripada kawan
+      pioneer: 
+        description: Antara pengguna terawal yang mendaftar diri
+        name: Pelopor
+      popstar: 
+        description: Mendapat 500 undian setuju, maksimum 10 undian tak setuju
+        name: Bintang popular
+      popular_person: 
+        description: Diikuti oleh lebih daripada 50 pengikut
+        name: Sukaramai
+      popular_question: 
+        description: Menanyakan soalan yang dikunjungi 1,000 kali
+        name: Soalan popular
+      rockstar: 
+        description: Mendapat 1,000 undian setuju, maksimum 10 undian tak setuju
+        name: Bintang rock
+      scholar: 
+        description: Menjawab soalan pertama yang ditanyakan diri dengan jawapan yang diterima
+        name: Ilmuwan
+      self-learner: 
+        description: Menjawab soalan diri dengan sekurang-kurangnya 3 undian setuju
+        name: Belajar sendiri
+      service_medal: 
+        description: Mendapat 300 undian setuju
+        name: Pingat khidmat
+      shapado: 
+        description: Mengunjungi tapak ini setiap hari selama 8 hari berturut-turut
+      stellar_question: 
+        description: Menanyakan soalan yang disenaraikan sebagai kegemaran oleh 100 pengguna
+        name: Soalan najam
+      student: 
+        description: Menanyakan soalan yang diundi setuju sekurang-kurangnya sekali
+        name: Pelajar
+      supporter: 
+        description: Mengundi setuju buat kali pertama
+        name: Penyokong
+      troubleshooter: 
+        description: Menjawab buat julung kalinya
+        name: Penjawab
+      tutor: 
+        description: Mengemukakan jawapan kepada soalan yang berpurata lebih daripada 2 undian
+        name: Pengajar
+    show: 
+      description: "Pengguna yang meraih lencana ini. Baru-baru ini dianugerahkan kepada:"
+      earned: meraih
+      for_tag_bronze: 200 undian dalam tag %{tag}
+      for_tag_gold: 1000 undian dalam tag %{tag}
+      for_tag_silver: 400 undian dalam tag %{tag}
+      title: Lencana %{type}

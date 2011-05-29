@@ -2,6 +2,8 @@
 class CustomHtml
   include Mongoid::Document
 
+  embedded_in :group, :inverse_of => :custom_html
+
   identity :type => String
   field :top_bar, :type => String, :default => "[[faq|FAQ]]"
 

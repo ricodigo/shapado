@@ -1,25 +1,19 @@
 // ========================================================================
-//    Document   	:   _setup.sass
-//    Created on 	:   Nov14 - 2010, 20:29 pm
-//    Author      	:   @dgfrancisco
-//    Client     		:   Shapado
-//    Description	:   Variables y set up basico del portal, estas variables podran ser
-//    						cambiadas en pro de modificar colores, fuentes etc
+//    Document     :   _setup.sass
+//    Created on   :   Nov14 - 2010, 20:29 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description	 :   Variables y set up basico del portal, estas variables podran ser
+//                     cambiadas en pro de modificar colores, fuentes etc
 //========================================================================
+
 
 //  FONTS
 //========================================================================
 // Sans Serif
-$geneva: geneva, tahoma, "dejavu sans condensed", sans-serif
-$helvetica: "helvetica neue", helvetica, arial, freesans, "liberation sans", "numbus sans l", sans-serif
-$lucida: "lucida grande", "lucida sans unicode", "lucida sans", lucida, sans-serif
-$verdana: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif
-
+$Arial: Arial, Helvetica, sans-serif
 // Serif
-$georgia: georgia, "bitstream charter", "century schoolbook l", "liberation serif", times, serif
-$palatino: "palatino linotype", palatino, palladio, "urw palladio l", "book antiqua", "liberation serif", times, serif
-$times: times, "times new roman", "nimbus roman no9 l", freeserif, "liberation serif", serif
-
+$Georgia: Georgia, "Times New Roman", Times, serif
 // Monospace
 $courier: "courier new", courier, freemono, "nimbus mono l", "liberation mono", monospace
 $monaco: monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace
@@ -62,28 +56,12 @@ $link_color: $orange
 $hover_color: $darkOrange
 $active_color: $orange
 
-$highlightBg: #FFFF51
-$highlightFg: #000000
-
-//  DEFAULT BODY STYLES
-//========================================================================
-$background: white
-$font-family: $helvetica
-$font-size: $medium
-$color: $dark
-
-//  FANCY VIEW FOR HTML TAGS
+//  FANCY VIEW - CSS3
 //========================================================================
 // Quickly outline any tag for debug purposes
 =o
   background: rgba(255, 0, 0, 0.15) !important
   outline: 1px solid red !important
-
-// Cross browser box model resizing
-=box-sizing($box-sizing)
-  -moz-box-sizing: $box-sizing
-  -webkit-box-sizing: $box-sizing
-  box-sizing: $box-sizing
 
 // Cross browser opacity
 =opacity($opacity)
@@ -126,7 +104,9 @@ $color: $dark
 // Cross browser box shadow
 // If you want to have multiple box shadows, you must enclose the values in quotes (" ").
 $shadow: 0 0 10px #000
-$menu: 0 0 3px #999
+$menu: 0 2px 3px #999
+$inner: inset 2px 2px 2px #e5e5e5
+$none: 0 0 0 transparent
 
 =box-shadow($shadow)
   $shadow: unquote($shadow)
@@ -143,10 +123,28 @@ $menu: 0 0 3px #999
   o-box-shadow: $menu
   khtml-box-shadow: $menu
   box-shadow: $menu
+
+=inner-shadow($inner)
+  $shadow: unquote($inner)
+  -moz-box-shadow: $inner
+  -webkit-box-shadow: $inner
+  o-box-shadow: $inner
+  khtml-box-shadow: $inner
+  box-shadow: $inner
+
+=none-shadow($none)
+  $shadow: unquote($none)
+  -moz-box-shadow: $none
+  -webkit-box-shadow: $none
+  o-box-shadow: $none
+  khtml-box-shadow: $none
+  box-shadow: $none
+
 // Cross browser rounded corners
 $smallRadius: 3px
 $normalRadius: 5px
 $bigRadius: 20px
+$hugeRadius: 50px
 $noneRadius: 0
 
 =none-radius($noneRadius)
@@ -177,24 +175,52 @@ $noneRadius: 0
   khtml-border-radius: $bigRadius
   border-radius: $bigRadius
 
+=huge-radius($bigRadius)
+  -moz-border-radius: $hugeRadius
+  -webkit-border-radius: $hugeRadius
+  o-border-radius: $hugeRadius
+  khtml-border-radius: $hugeRadius
+  border-radius: $hugeRadius
+
 // Cross browser gradients
 =orange-gradient
   background-image: -moz-linear-gradient(top, $orange, $darkOrange) !important
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $orange),color-stop(1, $darkOrange)) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $darkOrange),color-stop(1, $orange)) !important
   filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$orange', endColorstr='$darkOrange') !important
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$orange', endColorstr='$darkOrange')" !important
   background-color: $orange
 
 =blue-gradient
   background-image: -moz-linear-gradient(top, $blue, $darkBlue) !important
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $blue),color-stop(1, $darkBlue)) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $darkBlue),color-stop(1, $blue)) !important
   filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$blue', endColorstr='$darkBlue') !important
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$blue', endColorstr='$darkBlue')" !important
   background-color: $blue
 
 =error-gradient
   background-image: -moz-linear-gradient(top, $red, $darkRed) !important
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $red),color-stop(1, $darkRed)) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $darkRed),color-stop(1, $red)) !important
   filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$red', endColorstr='$darkRed') !important
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$red', endColorstr='$darkRed')" !important
   background-color: $red
+
+// Gradiants for badges
+=gold-gradient
+  background-image: -moz-linear-gradient(top, #fbd65f, #ffff7c) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #ffff7c),color-stop(1, #fbd65f)) !important
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fbd65f', endColorstr='#ffff7c') !important
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fbd65f', endColorstr='#ffff7c')" !important
+
+=silver-gradient
+  background-image: -moz-linear-gradient(top, #c6c6c6, #e5e5e5) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #e5e5e5),color-stop(1, #c6c6c6)) !important
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c6c6c6', endColorstr='#e5e5e5') !important
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c6c6c6', endColorstr='#e5e5e5')" !important
+  background-color: #c6c6c6
+
+=bronze-gradient
+  background-image: -moz-linear-gradient(top, #e67347, #f3a273) !important
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #e67347),color-stop(1, #f3a273)) !important
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e67347', endColorstr='#f3a273') !important
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e67347', endColorstr='#f3a273')" !important
+  background-color: #e67347

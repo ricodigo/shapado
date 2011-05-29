@@ -1,0 +1,44 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  devise: 
+    confirmations: 
+      confirmed: Akaun anda telah disahkan. Anda kini didaftar masuk.
+      link: Belum menerima arahan pengesahan?
+      send_instructions: Anda akan menerima e-emel yang berisi cara untuk mengesahkan akaun anda dalam beberapa minit lagi.
+    mailer: 
+      confirmation_instructions: Arahan pengesahan
+      reset_password_instructions: Arahan mengeset semula kata laluan
+      unlock_instructions: Arahan buka kunci
+    passwords: 
+      link: Lupa kata laluan?
+      send_instructions: Anda akan menerima e-mel yang berisi arahan untuk mengeset semula kata laluan dalam beberapa minit lagi.
+      updated: Kata laluan anda sudah ditukar. Anda sudah log masuk sekarang.
+    registrations: 
+      destroyed: Akaun anda telah dibatalkan. Semoga kita bersua lagi lain hari.
+      link: Daftar diri
+      signed_up: Anda telah berdaftar.
+      updated: Anda telah mengemas kini akaun anda.
+    sessions: 
+      facebook_actions: 
+        sign_in: Daftar masuk
+        sign_out: Daftar keluar
+      facebook_authenticity_token: Maaf, nampaknya ada yang tak kena. Demi keselamatan, sila daftar masuk semula.
+      facebook_invalid: Tidak dapat daftar masuk. Akaun tidak sah.
+      facebook_timeout: Sesi Facebook luput. Sila daftar masuk lagi untuk meneruskannya.
+      inactive: Akaun anda belum disahkan.
+      invalid: Alamat e-mel atau kata laluan tidak sah.
+      invalid_token: Token pengesahan tak sah.
+      link: Daftar masuk
+      locked: Akaun anda dikunci.
+      signed_in: Didaftar masuk.
+      signed_out: Didaftar keluar.
+      timeout: Sesi anda luput. Sila daftar masuk lagi untuk meneruskannya.
+      unauthenticated: Anda perlu daftar masuk atau berdaftar sebelum meneruskannya.
+      unconfirmed: Anda perlu mengesahkan akaun anda sebelum meneruskannya.
+    unlocks: 
+      link: Belum terima arahan buka kunci?
+      send_instructions: Anda akan menerima e-emel yang berisi cara untuk membuka kunci akaun anda dalam beberapa minit lagi.
+      unlocked: Akaun anda telah dibuka kuncinya. Anda kini didaftar masuk.

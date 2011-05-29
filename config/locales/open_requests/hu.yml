@@ -1,0 +1,22 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  open_requests: 
+    create: 
+      flash_notice: Az újbóli megnyitási kérelem sikeresen lérejött.
+    destroy: 
+      flash_notice: Az újbóli megnyitási kérelem sikeresen törölve.
+    edit: 
+      title: Újbóli megnyitás kérelmének szerkesztése
+    form: 
+      request_opening_details: A kérdés újbóli megnyitásának kérelmezése
+    index: 
+      title: Újbóli megnyitási kérelmek
+    model: 
+      prural_name: Újbóli megnyitási kérelmek
+    new: 
+      title: Újbóli megnyitás kérelmezése
+    update: 
+      flash_notice: Az újbóli megnyitási kérelem sikeresen frissült.

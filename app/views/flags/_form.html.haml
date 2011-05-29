@@ -9,7 +9,7 @@
 
 -form_for object_form, :html => {:class=>klass, :id => local_assigns[:form_id]} do |f|
   = hidden_field_tag "return_to", source, :id => "flaggeable_source_#{flaggeable.class.name}_#{flaggeable.id}"
-  %h1=t(".label")
+  /%h1=t(".label")
 
   .field
     = label_tag "flag[reason]", t(:reason, :scope=>"activerecord.attributes.flag"), :class => "label"

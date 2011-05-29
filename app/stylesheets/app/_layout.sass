@@ -1,0 +1,151 @@
+// ========================================================================
+//    Document     :   _layout.sass
+//    Created on   :   Mar 03 - 2010, 11:29 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description  :   Layout front side
+//========================================================================
+@import "fancy-buttons"
+
+body
+  background: url("/images/back-site.gif") 0 0
+
+#container
+  width: 100%
+
+// Diagramation
+//========================================================================
+section
+  float: left
+
+//LEFT
+section.left-panel
+  width: 12%
+  display: inline
+  margin-left: 7px
+  background-color: #fff
+
+  .module
+    border-bottom: 1px solid #f1f1f1
+    padding: 0 10px 10px 10px
+    margin: 0 0 10px 0
+    h3
+      color: #333
+      font-size: 14px
+      font-weight: bold
+      text-shadow: 1px 1px 2px #e5e5e5
+      padding: 5px 0
+      margin-bottom: 10px
+      border-bottom: 1px dotted #f1f1f1
+
+//CENTER
+section.content-panel
+  width: 65%
+  padding: 0 0.4%
+  display: inline
+
+section.invitations-panel
+  margin: auto
+  width: 100%
+  background-color: #fff
+
+  h1
+    font-size: 16px
+    font-weight: bold
+    margin-bottom: 10px
+  .invitation-container
+    padding: 10px
+    margin: auto
+    margin-top: 50px
+    margin-bottom: 50px
+    width: 500px
+    border: 1px solid black
+    +small-radius
+
+    #invitations-points
+      margin: auto
+      margin-top: 10px
+      margin-bottom: 10px
+      width: 100%
+      text-align: center
+      div
+        padding: 2px
+        margin: auto
+        width: 109px
+        background: #E5E5E5
+        display: inline-block
+        vertical-align: middle
+        +small-radius
+        img
+          background-color: #fff
+          margin: auto
+
+#twitter-and-facebook
+  text-align: center
+  .find_friends
+    margin-top: 14px
+
+a#twitter_auth
+a#facebook_auth
+  @include fancy-button
+  +fancy-button-structure
+  +fancy-button-colors-matte(#4C6EA9)
+  +fancy-button-size(12px, 6px, 1px)
+  white-space: nowrap
+
+a#twitter_auth
+  +fancy-button-structure
+  +fancy-button-colors-matte(#A0E8EB)
+  +fancy-button-size(12px, 6px, 1px)
+  white-space: nowrap
+
+a#identica_auth
+  +fancy-button-structure
+  +fancy-button-colors-matte(#8F0000)
+  +fancy-button-size(12px, 6px, 1px)
+  white-space: nowrap
+
+a#linked_in_auth
+  +fancy-button-structure
+  +fancy-button-colors-matte(#378AB3)
+  +fancy-button-size(12px, 6px, 1px)
+  white-space: nowrap
+
+//RIGHT
+section.right-panel
+  width: 20%
+  display: inline
+  overflow: hidden
+
+  .module
+    +small-radius
+    background-color: #fff
+    margin-bottom: 5px
+    padding-bottom: 3px
+    h3
+      font-size: 14px
+      text-shadow: 1px 1px 2px #e5e5e5
+      padding: 8px
+      border-bottom: 1px solid #f1f1f1
+    section, footer
+      background-color: #fff
+      border: 0px
+      padding: 0
+      margin: 0
+    footer
+      text-align: right
+      padding: 7px 10px 5px 0
+      border-top:  1px solid #f1f1f1
+      a
+        color: #999
+        font-size: 11px
+        text-transform: italic
+        &:hover
+          color: #000
+
+//SESIONS
+section.sessions
+  margin: 0 auto !important
+  float: none !important
+  width: 700px
+  display: block !important

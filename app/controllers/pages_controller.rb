@@ -8,13 +8,14 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    options = {:page => params[:page], :per_page => params[:per_page] || 25}
+    options = {}
 
     if !logged_in? || !current_user.mod_of?(current_group)
       options[:wiki] = true
     end
 
-    @pages = current_group.pages.paginate(options)
+    @pages = current_group.pages.where(options).
+                                 paginate(paginate_opts(params))
 
     set_page_title("Wiki") # TODO: i18n
 

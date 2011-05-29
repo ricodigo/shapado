@@ -1,0 +1,4 @@
+%section
+  %h1
+    = t("flags.new.title", :model => I18n.t("activerecord.models.#{resource.class.to_s.tableize.singularize}"))
+    = link_to resource.question.title, question_path(resource.question)

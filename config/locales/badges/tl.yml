@@ -1,0 +1,152 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  activerecord: 
+    models: 
+      badge: tsapa
+      badges: mga tsapa
+  badges: 
+    index: 
+      description: Lahat ng mga tsapang makakamit mo. Ibahagi ang kaalaman mo, magkamit ng mga tsapa.
+      title: mga tsapa
+    shared: 
+      addict: 
+        description: Dumalaw sa sityo bawat araw sa loob ng 20 magkakasunod na mga araw
+        name: Sugapa
+      autobiographer: 
+        description: Napunan na ang lahat ng mga hanay ng balangkas na pangtagagamit
+        name: Manunulat ng sariling talambuhay
+      celebrity: 
+        description: Nakakuha ng mahigit kaysa 100 mga tagasunod
+        name: Tanyag na tao
+      citizen_patrol: 
+        description: Ibinandila ang unang pagpapaskil
+        name: Tanod na mamamayan
+      civic_duty: 
+        description: Bumoto ng 300 mga ulit
+        name: Tungkuling nauukol sa bayan
+      cleanup: 
+        description: Gumawa ng unang pagpapagulong na pabalik
+        name: Paglilinis
+      commentator: 
+        description: Nag-iwan ng 10 mga puna
+        name: Tagapagpaliwanag
+      critic: 
+        description: Bumoto ng negatibo sa unang pagkakataon
+        name: Manunuri
+      disciplined: 
+        description: Binura ang sariling pagpapaskil na may puntos na 3 o mas mataas
+        name: Disiplinado
+      editor: 
+        description: Nagbago ng isang pagpapaskil sa unang pagkakataon
+        name: Patnugot
+      effort_medal: 
+        description: Nakakuha ng 100 mga botong positibo
+        name: Medalya ng pagsisikap
+      enlightened: 
+        description: May isang tinanggap na sagot na hindi bababa sa 10 paitaas na mga pagboto
+        name: Napaliwanagan
+      famous_question: 
+        description: Nagtanong ng isang tanong na may 10,000 mga pagtanaw
+        name: Tanyag na tanong
+      fanatic: 
+        description: Dumalaw sa sityo bawat araw sa loob ng 100 magkakasunod na mga araw
+        name: Masugid na tagpagtangkilik
+      favorite_question: 
+        description: Nagtanong ng isang tanong na kinahiligan ng 25 mga tagagamit
+        name: Hilig na katanungan
+      friendly: 
+        description: Nagsimulang sumunod sa isang tao sa unang pagkakataon
+        name: Palakaibigan
+      good_answer: 
+        description: Nagbigay ng isang sagot na umabot sa pangkaraniwan na mahigit kaysa 25 mga boto
+        name: Mabuting sagot
+      good_question: 
+        description: Nagbigay ng isang tanong na umabot sa pangkaraniwan na mahigit kaysa 25 mga boto
+        name: Mabuting tanong
+      great_answer: 
+        description: May isang sagot na ibinotong pataas ng 100 mga ulit
+        name: Napakahusay na sagot
+      great_question: 
+        description: Nagtanong ng isang tanong na naibotong paitaas ng 100 mga ulit
+        name: Napakahusay na tanong
+      guru: 
+        description: Nagbigay ng katugunan sa isang tanong na may pangkaraniwang mahigit kaysa 40 mga boto
+        name: Tagapagturo
+      inquirer: 
+        description: Nagtanong ng isang katanungan sa unang pagkakataon
+        name: Tagapagtanong
+      interesting_person: 
+        description: Nakakakuha ng mahigit kaysa 10 mga tagasunod
+        name: Taong nakakatawag ng pansin
+      merit_medal: 
+        description: Nakakuha ng 200 mga botong positibo
+        name: Medalya ng kahalagahan
+      necromancer: 
+        description: Sumagot ng isang tanong pagkalipas ng mahigit kaysa 60 mga araw na hindi bababa sa 5 mga boto
+        name: Nakikipag-ugnayan sa kaluluwa
+      nice_answer: 
+        description: May sagot na naibotong paitaas ng 10 mga ulit
+        name: Magaling na sagot
+      nice_question: 
+        description: Nagtanong ng isang tanong na naibotong paitaas ng 10 mga ulit
+        name: Mahusay na tanong
+      notable_question: 
+        description: Nagtanong ng isang tanong na may 2,500 mga pagtanaw
+        name: Kapansin-pansing tanong
+      organizer: 
+        description: Gumawa ng unang muling pagtatatak
+        name: Tagapagtatag
+      peer_pressure: 
+        description: Binura ang sariling paskil na may puntos na -3 o mas mababa
+        name: Panggigipit ng mga kaalinsabay
+      pioneer: 
+        description: Isa sa unang mga tagagamit na nagpatala
+        name: Tagapagbunsod
+      popstar: 
+        description: May 500 mga botong positibo, 10 negatibong mga boto ang pinakamataas
+        name: Bantog na bituin
+      popular_person: 
+        description: Nakakakuha ng mahigit kaysa 50 mga tagasunod
+        name: Bantog na tao
+      popular_question: 
+        description: Nagtanong ng isang tanong na may 1000 mga pagtanaw
+        name: Sikat na tanong
+      rockstar: 
+        description: May 1,000 positibong mga pagboto, 10 negatibong mga pagboto ang pinakamataas
+        name: Mang-aawit ng Tugtuging Pangyugyog
+      scholar: 
+        description: Sinagot ang unang tanong sa sarili na may isang tinanggap na sagot
+        name: Paham
+      self-learner: 
+        description: Sumagot sa sariling tanong na hindi bababa sa 3 pataas na mga boto
+        name: Kusang nag-aaral
+      service_medal: 
+        description: May 300 mga botong positibo
+        name: Medalya ng Paglilingkod
+      shapado: 
+        description: Dumalaw sa sityo bawat araw sa loob ng 8 magkakasunod na mga araw
+      stellar_question: 
+        description: Nagtanong ng isang tanong na naidagdag sa mga nakahiligan ng 100 mga tagagamit
+        name: Namumukod-tanging tanong
+      student: 
+        description: Nagtanong ng isang tanong na hindi bababa sa isang pataas na pagboto
+        name: Mag-aaral
+      supporter: 
+        description: Bumoto ng positibo sa unang pagkakataon
+        name: Tagapagtaguyod
+      troubleshooter: 
+        description: Sumagot sa unang pagkakataon
+        name: Taga-ayos
+      tutor: 
+        description: Nagbigay ng katugunan sa isang tanong na may pangkaraniwang mahigit kaysa 2 mga boto
+        name: Tagapag-iwi
+    show: 
+      description: "Mga tagagamit na nagkamit ng tsapang ito.  Kamakailang iginawad kay:"
+      earned: nagkamit ng
+      for_tag_bronze: 200 mga boto sa loob ng tatak na %{tag}
+      for_tag_gold: 1000 mga boto sa loob ng tatak na %{tag}
+      for_tag_silver: 400 mga boto sa loob ng tatak na %{tag}
+      title: Tsapa na %{type}

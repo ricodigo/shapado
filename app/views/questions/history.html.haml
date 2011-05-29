@@ -8,7 +8,7 @@
 
   %section.main-question#question
     %h1
-      %small.version.current 
+      %small.version.current
         =t("wiki.history.current_version")
         = radio_button_tag("prev", :current, :checked => @prev == "current")
         = radio_button_tag("curr", :current, :checked => @curr == "current")
@@ -19,18 +19,20 @@
           = t('wiki.history.version_summary')
       %br
       = h(@question.title)
-      %small 
-        =link_to "← back to question", question_path(@question)
+      %small
+        =link_to t('.back'), question_path(@question)
     .description.markdown
       = shapado_auto_link(markdown(@question.body))
-      
+
     .messages
       = @question.version_message
-  
+
     %ul.tag-list
       %li.title
         Topics:
         =@question.tags.join(", ")
+    .owner
+      = render "users/user_data", :user => @question.updated_by
 
 
   #questions
@@ -39,16 +41,10 @@
       -if !version.data.empty?
         = render :partial => "wiki/version", :object => version, :locals => {:post => @question, :number => counter, :prev => @prev, :curr => @curr, :scope => "activerecord.attributes.question"}
 
-.buttons-history
-  = link_to(t("scaffold.back"), question_path(@question))
-  = t("global.or")  
-  = submit_tag t("wiki.actions.show_diff"), :value => "diff", :name => "show"
+  .buttons-history
+    = link_to(t("scaffold.back"), question_path(@question))
+    = t("global.or")
+    = submit_tag t("wiki.actions.show_diff"), :value => "diff", :name => "show"
 
 
 
-
-
-
-
-
-    

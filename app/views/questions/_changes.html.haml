@@ -1,0 +1,10 @@
+%h1
+  = h(version.data["title"])
+.description.markdown
+  = shapado_auto_link(markdown(version.data["body"]))
+.messages
+  = version.message
+%ul.tag-list
+  %li.title
+    Topics:
+    = version.data["tags"].join(", ")

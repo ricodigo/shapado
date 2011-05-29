@@ -1,12 +1,11 @@
+%h1
+  = t(".title")
+%p.description
 -form_for(@group, :html => {:class => "form", :multipart => true}) do |f|
-  %h1 Group Properties
-
   = f.error_messages
 
   =hidden_field_tag :source, domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "properties", :tab => @active_subtab)
-  =render :partial => "admin/manage/properties/subtabs"
   =render :partial => "admin/manage/properties/#{@active_subtab||'general'}", :locals => {:f => f}
-  =render :partial => "admin/manage/properties/general", :locals => {:f => f}
 
 
 = yield :after_form

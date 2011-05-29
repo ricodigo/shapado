@@ -1,0 +1,59 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  feeds: 
+    feed: Hírcsatorna
+    post_new_questions: "Új kérdések bejegyzése a következő helyre:"
+    question: Feliratkozás a kérdésre
+    questions: Feliratkozás az összes kérdésre
+    share_on_twitter: Twitter, Facebook és továbbiak...
+    tag: Feliratkozás a címkére
+    user: Feliratkozás a felhasználó kérdéseire
+  global: 
+    active: Aktiválás
+    anonymous: Nem bejelentkezett
+    by: "írta:"
+    current: Jelenlegi
+    from: "a következő oldalról: %{site}"
+    group_not_found: "A következő lap nem létezik: %{url}"
+    or: vagy
+    permission_denied: Hozzáférés megtagadva
+    please_login: Kérlek, jelentkezz be
+    preview: Előnézet
+    previous: Előző
+    share: Megosztás
+  languages: 
+    any: Bármelyik
+    user: Előnyben részesített nyelveim
+  models: 
+    question: A kérdés
+  number: 
+    x_time: 
+      one: "%{count} alkalommal"
+      other: "%{count} alkalommal"
+      zero: Soha
+  pagination: 
+    next: következő &raquo;
+    previous: "&laquo; előző"
+  scaffold: 
+    add: Hozzáadás
+    back: Vissza
+    cancel: Mégse
+    close: Bezárás
+    create: Létrehozás
+    destroy: Törlés
+    details: Részletek
+    edit: Szerkesztés
+    more: Tovább ...
+    new: Új %{model} hozzáadása
+    post_as_anonymous: Névtelen hozzászólás
+    save: Mentés
+    send: Küldés
+    show: Megjelenítés
+    sure: "Biztosan törölni szeretnéd a következőt: %{model}?"
+    update: Frissítés
+  time: 
+    ago: "%{time} ezelőtt"
+    today: ma

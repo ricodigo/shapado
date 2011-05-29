@@ -1,4 +1,1 @@
--form_for(widget, :url => widget_path(widget, :tab => params[:tab]), :class => "form") do
-  = render :partial => "shared/external_widget_settings", :locals => {:widget => widget}
-  .group.navform
-    = submit_tag t("scaffold.update"), :class => "button"
+= render :partial => "shared/external_widget_settings", :locals => {:widget => widget}

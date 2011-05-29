@@ -1,14 +1,16 @@
-%li.item
+%li
   .logo
     -if group.has_logo?
       = link_to image_tag(logo_path(group), :style => "height: 64px; width: 128px; vertical-align: top"), domain_url(:custom => group.domain)
     -else
       = image_tag("default_logo.png", :style => "height: 64px; width: 128px; vertical-align: top", :class => "group_logo")
+
   .summary
     %h3
       = link_to h(group.name), domain_url(:custom => group.domain)
     .markdown.group_description
       = auto_link(markdown(group.description))
+
   .actions
     = link_to t(".about"), group, :class => "button"
     -if logged_in?

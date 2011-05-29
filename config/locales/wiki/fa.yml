@@ -1,0 +1,22 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: MindHammerGames
+fa: 
+  wiki: 
+    actions: 
+      all_history: بازگشت به تاریخچه
+      back_to_question: بازگشت به سوال
+      revert: بازگرداندن به این نگارش
+      show_diff: مقایسه نگارشهای انتخاب شده
+    diff: 
+      title: تفاوتهای بین %{prev} و %{curr}
+    history: 
+      current_version: نگارش فعلی
+      previous_versions: نگارشهای قبلی
+      title: تاریخچه (%{count})
+      version: نگارش
+      version_summary: خلاصه نگارش
+    model: 
+      attributes: 
+        message: خلاصه

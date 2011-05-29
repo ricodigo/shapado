@@ -1,0 +1,20 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  activerecord: 
+    attributes: 
+      announcement: 
+        ends_at: Berakhir di
+        message: Pesanan
+        only_anonymous: Untuk pengguna tanpa nama sahaja
+        starts_at: Bermula di
+  announcements: 
+    actions: 
+      delete: Gugurkan
+      title: Tindakan
+    create: 
+      success: Pengumuman berjaya dicipta.
+    index: 
+      title: Pengumuman

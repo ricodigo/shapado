@@ -15,18 +15,50 @@
 
   %body
     = render "shared/analytics"
+
     #container{:class => @current_class}
+
+      %nav.top-bar
+        %ul.group-list.sf-menu
+          -if !current_group.isolate
+            = render "groups/top_grouplist"
+          -if !logged_in?
+          - else
+            -if current_user.admin_of?(current_group)
+              = render "admin/manage/top_admin"
+            -if current_user.mod_of?(current_group)
+              = render "admin/moderate/top_moderate"
+
+        .searcher
+          = form_tag search_index_path, :method => :get, :id => "search" do
+            .field
+              = text_field_tag :q, params[:q]
+
+
+        -if !logged_in?
+          /=multiauth_menu("Sign In")
+          = multiauth_dropdown("Sign In")
+        -else
+          = render "users/top_user"
 
       %section.left-panel
         .brand
           %h1
-            // Im comment this just to not see the app broken :) you can uncomment without problem	
-            //-if current_group.has_logo?
-            //=link_to image_tag(logo_path(current_group), :class => "group_logo", :width => current_group.logo_info["width"], :height => current_group.logo_info["height"]), domain_url(:custom => current_group.domain)
-            //-else
-            = link_to image_tag("shapado-brand.png", :class => "group_logo"), domain_url(:custom => current_group.domain)
+            = link_to(group_logo_img(current_group, :class => "group_logo"), domain_url(:custom => current_group.domain))
 
-        = render "shared/user-zone"
+        //= render "shared/user-zone"
+        .widget-links.module
+          %nav
+            %ul
+              = tab_entry "li", t('layouts.application.all'), questions_path, :selected => "active"
+              -if logged_in?
+                = tab_entry "li", t('layouts.application.followed'), feed_user_path(current_user), :selected => "active"
+                = tab_entry "li", t('layouts.application.by_me'), by_me_user_path(current_user), :selected => "active"
+                = tab_entry "li", t('layouts.application.preferred'), preferred_user_path(current_user), :selected => "active"
+                = tab_entry "li", t('layouts.application.contributed'), contributed_user_path(current_user), :selected => "active"
+                = tab_entry "li", t('layouts.application.collaborate'), expertise_user_path(current_user), :selected => "active"
+              %li
+                = link_to t('layouts.application.faq')
 
         = render :partial => "shared/language_filter"
 
@@ -34,16 +66,16 @@
           %nav
             %ul
               %li
-                = link_to "Random question", random_questions_path(:unanswered => true)
+                = link_to t('layouts.application.random_question'), random_questions_path(:unanswered => true)
               %li
-                = link_to "Badges", badges_path
+                = link_to t('layouts.application.badges'), badges_path
               %li
-                = link_to "Pages", pages_path
+                = link_to t('layouts.application.pages'), pages_path
 
-        =render "widgets/tag_cloud", :widget => TagCloudWidget.new
+        =#render "widgets/tag_cloud", :widget => TagCloudWidget.new
 
         .widget-networks.module
-          %p  Siguenos y comparte:
+          %h3= t('layouts.application.follow_us_and_share')
           %ul
             %li
               =link_to "Facebook", "#", :class => "facebook", :rel => "nofollow"
@@ -59,31 +91,32 @@
                   =image_tag "atom.png", :width => 20
           .clear
 
-        .add
-          %h6 Publicidad
-          =link_to image_tag "http://www.bipbanners.co.uk/assets/images/WebConveyancing_Animated_SkyScraper_Banner_Sample_1A.gif"
-        .module
-          = form_tag search_index_path, :method => :get, do
-            = text_field_tag :q, params[:q], :id => "search-field"
+
+        -if AppConfig.enable_adbard && request.domain == AppConfig.domain
+          -widget = AdbardWidget.new(:settings => {'host_id' => AppConfig.adbard_host_id, 'site_key' => AppConfig.adbard_site_key})
+          .widget.block{:id => widget.name}
+            = render :partial => widget.partial_name, :locals => {:widget => widget}
+
+        = render "shared/widgets", :context => 'mainlist', :position => 'navbar'
+
 
       %section.content-panel
-        = render "shared/action-tabs"
+        - unless params[:controller] =~ /moderate\//
+          //= render "shared/action-tabs"
+          =render "shared/quick_question_box"
+        = render "shared/widgets", :context => 'mainlist', :position => 'header'
 
         #main-content-wrap{:class => @active_tab}
+          - if params[:controller] =~ /moderate\//
+            = render "shared/moderate_navigation"
           = yield
           .clear
 
       %section.right-panel
-
-        .add
-          %h6 Publicidad
-          =link_to image_tag "banner-250x250.jpg"
-
         = yield :sidebar
 
-        = render "shared/ads/context_panel_ads"
-
         .clear
-        = render "shared/ads/footer_ads"
+
+      = render "shared/widgets", :context => 'mainlist', :position => 'footer'
 
       = render "shared/layout/footer"

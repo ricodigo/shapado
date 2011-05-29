@@ -1,0 +1,94 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  activerecord: 
+    attributes: 
+      user: 
+        activated_at: فعال شده در
+        activation_code: کد فعال سازی
+        age: سن
+        asked_by: پرسیده شده به وسیله
+        avatar: تصویر پروفایل
+        birthday: تاریخ تولد
+        created_at: عضو شده
+        current_password: رمز عبور فعلی
+        email: ایمیل
+        fullname: نام کامل
+        hide_country: کشورم را نمایش نده
+        language: زبان
+        language_filter: فیلتر کردن بر اساس زبان
+        last_logged_at: دیده شده در
+        login: نام کاربری
+        name: نام واقعی
+        password: رمز عبور
+        password_confirmation: تایید رمز عبور
+        preferred_languages: "شما می خواهید سوالات نوشته شده به این زبانها را بخوانید:"
+        preferred_tags: برچسب های مورد ترجیح
+        reputation: شهرت
+        timezone: منطقه زمانی
+        updated_at: به روز شده در
+        website: وب سایت
+    models: 
+      user: کاربر
+      users: کاربران
+  users: 
+    actions: 
+      edit_others_posts: ویرایش پست های دیگران
+      edit_wiki_post: ویرایش پست های ویکی
+      flag: علامت زدن
+      retag_others_questions: برچسب گذاری مجدد سوالات دیگران
+      vote_down: رای منفی
+      vote_to_close_any_question: درخواست بستن هر سوالی
+      vote_to_close_own_question: درخواست بستن سوال خود
+      vote_up: رای مثبت
+    anonymous_form: 
+      never_shown: هرگز نمایش داده نشده
+    create: 
+      flash_error: با عرض پوزش ما اکنون نمی توانیم حساب را بسازیم. یا بعدا دوباره سعی کنید یا با یک مدیر تماس بگیرید.( لینک در بالا قرار دارد)
+      flash_notice: از ثبت نام شما متشکریم
+    edit: 
+      enable_twitter: فعال کردن حساب فیس بوک یا تویترتان
+      submit: ذخیره کردن
+      title: تنظیمات
+    follow: 
+      flash_notice: کاربر %{user} به دوستان شما اضافه شد
+    form: 
+      activities_notification: دریافت اطلاعیه های سیستم در مورد فعالیت های سیستم مثل دنبال کننده های جدید، به دست آوردن نشان و ... با ایمیل
+      avatar_tip: با استفاده از Gravatar تصویر پروفایلتان را تغییر دهید
+      give_advice_notification: دریافت ایمیل برای سوالات جدید در زمینه ای که شما در آن تجربه دارید.
+      information: اطلاعات
+      language: زبان استفاده شده برای رابط کاربر سایت
+      new_answer_notification: دریافت ایمیل برای جواب های جدید
+      notifications: اطلاعیه ها
+      reports_notification: دریافت گزارش از آخرین فعالیت های گروه (فقط برای مدیران گروه)
+      show_more_lang: نشان دادن زبان های بیشتر
+    index: 
+      empty: این گروه هیچ عضوی ندارد. با عضو شدن در گروه مشارکت کنید
+      filter: جستجوی کاربران
+      name: نام
+      name_tooltip: کاربران مرتب شده بر اساس حروف
+      newest: جدیدترین
+      newest_tooltip: کاربرانی که به تازگی عضو شده اند
+      oldest: قدیمیترین
+      oldest_tooltip: کاربرانی که از اولینهایی بوده اند که عضو شده اند
+      reputation: شهرت
+      reputation_tooltip: کاربران مرتب شده بر اساس شهرت
+      title: تمام کاربران
+    messages: 
+      errors: 
+        reputation_needed: برای انجام %{action} به %{min_reputation} امتیاز شهرت نیاز دارید
+    new: 
+      submit: ثبت نام
+      title: ثبت نام به عنوان یک کاربر جدید
+    show: 
+      follow: دنبال کردن
+      followers: دنبال‌کنندگان
+      following: دنبال کردن
+      title: کاربر %{user}
+      unfollow: دنبال نکردن
+      views: مشاهدات
+    unfollow: 
+      flash_notice: کاربر %{user} از فهرست دوستانتان حذف شد

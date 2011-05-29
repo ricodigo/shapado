@@ -1,9 +1,11 @@
-APP_ROOT = File.expand_path("../../", __FILE__)
+require 'bundler'
+APP_ROOT = Bundler.root.to_s
+launcher = "cd #{APP_ROOT}; rvm 1.9.2 exec bundle exec"
 
-daily_report = "#{APP_ROOT}/script/daily_report production"
-cleanup = "#{APP_ROOT}/script/cleanup production"
-twitter = "#{APP_ROOT}/script/import_twitter production"
-email = "#{APP_ROOT}/script/import_email production"
+daily_report = "#{launcher} script/daily_report production"
+cleanup = "#{launcher} script/cleanup production"
+twitter = "#{launcher} script/import_twitter production"
+email = "#{launcher} script/import_email production"
 
 env "PATH", ENV["PATH"]
 set :output, "#{APP_ROOT}/log/crontab.log"

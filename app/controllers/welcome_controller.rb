@@ -20,13 +20,12 @@ class WelcomeController < ApplicationController
     if logged_in?
       feed_params = { :feed_token => current_user.feed_token }
     else
-      feed_params = {  :lang => I18n.locale,
-                          :mylangs => current_languages }
+      feed_params = { :lang => I18n.locale, :mylangs => current_languages }
     end
     add_feeds_url(url_for({:controller => 'questions', :action => 'index',
                             :format => "atom"}.merge(feed_params)), t("feeds.questions"))
 
-    @questions = Question.minimal.where(conditions).order_by(order).paginate({:per_page => 15, :page => params[:page] || 1})
+    @questions = Question.minimal.where(conditions).order_by(order).paginate(paginate_opts(params))
   end
 
   def feedback
@@ -72,7 +71,8 @@ class WelcomeController < ApplicationController
 
   def change_language_filter
     if logged_in? && params[:language][:filter]
-      current_user.update_language_filter(params[:language][:filter])
+      current_user.language_filter = params[:language][:filter]
+      current_user.save
     elsif params[:language][:filter]
       session["user.language_filter"] =  params[:language][:filter]
     end

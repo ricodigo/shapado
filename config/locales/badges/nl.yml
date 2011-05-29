@@ -1,6 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
-# Export driver: syck
+# Export driver: syck-pecl
 # Author: McDutchie
 # Author: Protozoan
 # Author: Siebrand
@@ -146,7 +146,7 @@ nl:
         description: geef een antwoord op een vraag met een gemiddelde van meer dan twee stemmen
         name: Leermeester
     show: 
-      description: "Gebruikers die dit speldje recentelijk hebben verdiend:"
+      description: "Gebruikers die dit speldje hebben verdiend. Onlangs uitgereikt aan:"
       earned: verdiend
       for_tag_bronze: tweehonderd stemmen in label %{tag}
       for_tag_gold: duizend stemmen in label %{tag}

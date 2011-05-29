@@ -8,9 +8,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = current_group.announcements.paginate(:page => params[:page],
-                                                          :per_page => params[:per_page],
-                                                          :order => "updated_at desc")
+    @announcements = current_group.announcements.order_by("updated_at desc").
+                                                 paginate(paginate_opts(params))
 
     @announcement = Announcement.new
 

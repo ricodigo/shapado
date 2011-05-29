@@ -3,8 +3,8 @@ module Jobs
     extend Jobs::Base
 
     def self.on_activity(group_id, user_id)
-      user = User.where(:_id => user_id, :select => [:_id]).first
-      group = Group.where(:_id => group_id, :select => [:_id]).first
+      user = User.where(:_id => user_id).only(:_id).first
+      group = Group.where(:_id => group_id).only(:_id).first
 
       days = user.config_for(group).activity_days
       if days > 100
@@ -28,8 +28,8 @@ module Jobs
       answer.set_address
     end
 
-    def self.on_destroy_answer(answer_id, attributes)
-      deleter = User.find!(answer_id)
+    def self.on_destroy_answer(user_id, attributes)
+      deleter = User.find!(user_id)
       group = Group.find(attributes["group_id"])
 
       if deleter.id == attributes["user_id"]
@@ -49,7 +49,7 @@ module Jobs
       group = commentable.group
       user = comment.user
 #       comment.set_address FIXME
-      if user.comments.count >= 10
+      if user.config_for(group).comments_count >= 10
         create_badge(user, group, :token => "commentator", :source => comment, :unique => true)
       end
       if user.notification_opts.comments_to_twitter

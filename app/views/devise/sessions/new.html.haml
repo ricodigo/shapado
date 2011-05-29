@@ -1,35 +1,40 @@
+%h1
+  = t('devise.sessions.signin_group', :group => current_group.name)
+%p.description
+
 = multiauth_assets
 
 -session["return_to"] = request.referrer unless request.referrer.blank?
 
-%div.login-box
-  -if current_group.registered_only
-    %h1
-      IMPORTANT: You must be logged in to see this site
+-if current_group.registered_only
+  .error
+    = t('devise.sessions.registered_only')
 
-  %h2
-    = t(".with_openid")
+-unless current_group.is_noemail_signup?
+  - unless params[:open_id]
+    -form_for :user, resource, :url => session_path(resource_name), :html => {:class => "form"} do |f|
+      .field
+        =f.label :email, t("email", :scope => "activerecord.attributes.user")
+        =f.text_field :email, :class => "text_field"
+      .field
+        =f.label :password, t("password", :scope => "activerecord.attributes.user")
+        =f.password_field :password, :class => "password"
+        - if params[:pp]
+          = hidden_field_tag :pp, 1
+      -if devise_mapping.rememberable?
+        .checkbox
+          =f.check_box :remember_me
+          =f.label :remember_me, t(".remember_me")
 
-= render :partial => "openid"
-
--unless current_group.openid_only
-  %h2
-    = t(".sign_in")
-
-  -form_for :user, resource, :url => session_path(resource_name), :html => {:class => "form"} do |f|
-    .group
-      =f.label :email, t("email", :scope => "activerecord.attributes.user"), :class => "label"
-      =f.text_field :email, :class => "text_field"
-    .group
-      =f.label :password, t("password", :scope => "activerecord.attributes.user"), :class => "label"
-      =f.password_field :password, :class => "password text_field"
-
-    -if devise_mapping.rememberable?
-      .group
-        =f.label :remember_me, t(".remember_me")
-        =f.check_box :remember_me
-
-    .group.navform
-      =f.submit "Sign in"
-
+      .buttons
+        =f.submit t('devise.sessions.link'), :class => "save"
+  - else
+    %form{"accept-charset"=>"UTF-8", :action=>"/users/auth/open_id", :class=>"form", :method=>"get"}
+      .field
+        = label_tag "OpenID", t(".openid_url")
+        = text_field_tag :openid_url, '', :class => "text_field"
+        - if params[:pp]
+          = hidden_field_tag :pp, 1
+        .buttons
+          = submit_tag t('devise.sessions.link'), :class => "save"
   = render :partial => "shared/devise_links"

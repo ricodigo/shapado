@@ -1,0 +1,32 @@
+# Messages for Persian (فارسی)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Ebraminio
+# Author: MindHammerGames
+fa: 
+  widgets: 
+    badges: 
+      description: این ویدجت نشانهای اخیرا دریافت شده به وسیله سوالات یا کاربران را نشان می دهد
+      title: نشانهای اخیر
+    groups: 
+      description: این ویدجت گروه های اخیر را نشان می دهد
+      title: گروه های اخیر
+    index: 
+      description: از فلشها برای حرکت دادن ویدجتها استفاده کنید
+      title: مدیریت ویدجتهای نوار کناری
+    pages: 
+      description: این ویدجت فهرست صفحات ویکی را نشان می دهد
+      new: اضافه کردن صفحه جدید
+      title: صفحات ویکی
+    tag_cloud: 
+      description: این ویدجت یک ابر برچسب را نشان می دهد
+      title: ابر برچسب
+    top_groups: 
+      description: این ویدجت ۵ گروه برتر را نشان می دهد
+      title: ۵ گروه برتر
+    top_users: 
+      description: این ویدجت ۵ کاربر برتر را نشان می‌دهد
+      title: ۵ کاربر برتر
+    users: 
+      description: این ویدجت کاربران تازه ثبت نام کرده را نشان می دهد
+      title: کاربران اخیر

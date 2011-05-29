@@ -6,6 +6,7 @@ en:
     position: "Position:"
     index:
       title: Ads
+      description: Manage ads
       add_adsense: Add a new Google AdSense ad
       add_adbard: Add a new Ad Bard ad
     create:

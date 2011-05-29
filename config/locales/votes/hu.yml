@@ -1,0 +1,25 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    models: 
+      vote: szavazat
+      votes: szavazat
+  votes: 
+    control: 
+      have_voted_down: Kattints ide a leszavazás visszavonásához
+      have_voted_up: Kattints ide a felszavazás visszavonásához
+      to_vote_down: Kattints ide a leszavazáshoz
+      to_vote_up: Kattints ide a felszavazáshoz
+    create: 
+      flash_error: Erre nem szavazhatsz
+      flash_notice: Köszönjük a szavazatodat!
+      unauthenticated: Anonim felhasználók nem szavazhatnak
+    destroy: 
+      flash_notice: A szavazatod sikeresen visszavonva.
+    model: 
+      messages: 
+        closed_question: Nem szavazhatsz lezárt kérdésekhez tartozó bejegyzésekre
+        vote_down_comment: A megjegyzések nem szavazhatóak le

@@ -1,11 +1,12 @@
 -title = answer.question.title
 
 %article.answer
+  %a{:name => "answer#{answer.id}"}
   %h2
     = link_to truncate(answer.body, :length => 200), question_path(answer.question), :title => title
   %p
-    Esta es deberia ser la pregunta a la cual la respuesta pertenece  
-    
+    = link_to answer.question.title, question_path(answer.question), :title => answer.question.body
+
   =format_number(answer.votes_average)
   =t(:votes, :scope => "activerecord.attributes.question")
   .clear

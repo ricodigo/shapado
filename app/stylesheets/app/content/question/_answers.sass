@@ -1,0 +1,196 @@
+/* Main Question - Answers*/
+//========================================================================
+#answers-content-wrap
+  +normal-radius
+  border: 1px solid #e5e5e5
+  background-color: #fff
+  clear: both
+  display: block
+  padding: 0 0 20px 0
+  min-height: 1000px
+
+  header
+    h3
+      background: url("/images/ans-icon-medium.gif") 10px 10px  no-repeat
+      font-size: 18px
+      padding: 11px 0 10px 40px
+
+  section.filters
+    ul
+      border-top: 1px solid $blue
+      border-bottom-color: #bee5e7
+
+    ul.newest
+      li.newest-active
+        a
+          border-bottom: 2px solid $blue
+          color: #000
+          font-weight: bold
+    ul.votes
+      li.votes-active
+        a
+          border-bottom: 2px solid $blue
+          color: #000
+          font-weight: bold
+    ul.oldest
+      li.oldest-active
+        a
+          border-bottom: 2px solid $blue
+          color: #000
+          font-weight: bold
+
+/* Main Question - Each Answer */
+//========================================================================
+article
+  border-bottom: 1px solid #e5e5e5
+  padding: 20px
+  clear: both
+  display: block
+  .content
+    clear: both
+    float: none
+    display: block
+    padding: 0 10px
+  .winner
+    float: left
+    margin-right: 10px
+  p
+    font-size: 12px
+    line-height: 15px
+    color: #888
+  h4
+    font-size: 12px
+    padding: 10px 10px 0 8px
+    float: left
+    margin: 0 0 10px 0
+    img.gravatar
+      float: left
+      margin: -5px 3px 0 0
+      border: 1px solid #fff
+    a:hover
+      border-bottom: 1px dotted
+    i
+      font-size: 10px
+      font-style: italic
+      color: #999
+  .thumb
+    width: 190px
+    height: 140px
+    position: relative
+    float: left
+    margin: 0 10px 10px 0
+    img.video_thumbnail
+      width: 100%
+      height: 100%
+      cursor: pointer
+    img.play_button
+      border: none
+      width: 38px
+      height: 33px
+      position: absolute
+      bottom: 5px
+      right: 5px
+      cursor: pointer
+
+/* Editors form output */
+//========================================================================
+.article-actions
+  float: right
+  margin: 0 5px 0 0
+  ul
+    li.current
+    li
+      float: left
+      display: inline
+      position: relative
+      background-color: #f1f1f1
+      margin: 0 0 0 3px
+      &:hover
+        visibility: inherit
+      &:hover ul, &.sfHover ul
+        left: -3px
+        top: 21px
+        z-index: 99
+      a
+        display: block
+        position: relative
+        padding: 4px 7px
+        color: #aaa
+      a:hover
+        color: #000
+        background-color: #ddd
+        border: none
+      a.active
+        background-color: $lightBlue
+        color: #000
+      a.active:hover
+        background-color: $lightBlue !important
+      ul
+        position: absolute
+        top: -999em
+        width: 130px
+        left: -1px
+        +none-radius
+        li:first-child
+          border-top: 1px solid #ddd
+        li
+          width: 100%
+          border-left: 1px solid #ddd
+          border-right: 1px solid #ddd
+          border-bottom: 1px solid #ddd
+          background-color: #fff
+          a:first-letter
+            text-transform: uppercase
+    li.votes
+      form
+        margin: 0
+        width: auto
+      p
+        width: auto !important
+        text-align: center
+        padding: 3px 0 0 0 !important
+
+        span
+          width: auto !important
+          float: left
+
+        button
+          height: 21px
+          width: 22px
+          border: none
+          margin-top: -3px
+          float: left
+
+          &.negative
+            float: left
+            margin-right: 7px
+            background: url("/images/question-toolbar-icons-small.png") 5px -403px  no-repeat
+            border-right: 1px solid #ddd
+            &:hover
+              background-color: #f00
+              background-position: 5px -418px
+          &.positive
+            float: right
+            margin-left: 7px
+            background: url("/images/question-toolbar-icons-small.png") 5px -450px  no-repeat
+            border-left: 1px solid #ddd
+            &:hover
+              background-color: #0a0
+              background-position: 5px -435px
+
+/* Closed reasons */
+//========================================================================
+#close_reason
+  display: block
+  clear: both
+  text-align: center
+  font-size: 14px
+  font-weight: bold
+  padding: 10px 0 !important
+  margin-bottom: 10px
+  text-shadow: $text-shadow
+  color: #fff
+  +error-gradient
+
+p.vote_box
+  margin: 0

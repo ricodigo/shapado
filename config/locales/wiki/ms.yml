@@ -1,0 +1,22 @@
+# Messages for Malay (Bahasa Melayu)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Anakmalaysia
+ms: 
+  wiki: 
+    actions: 
+      all_history: Kembali ke sejarah
+      back_to_question: Kembali kepada soalan
+      revert: Kembalikan ke versi ini
+      show_diff: Bandingkan versi-versi yang dipilih
+    diff: 
+      title: Perbezaan antara %{prev} dan %{curr}
+    history: 
+      current_version: Versi sekarang
+      previous_versions: Versi dahulu
+      title: Sejarah (%{count})
+      version: Versi
+      version_summary: Ringkasan versi
+    model: 
+      attributes: 
+        message: Ringkasan

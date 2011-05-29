@@ -80,6 +80,22 @@ class Notifier < ActionMailer::Base
     end
   end
 
+  def new_invitation(invitation_id)
+    @invitation = Invitation.find(invitation_id)
+    @group = @invitation.group
+    @user = @invitation.user
+    @language = @group.language
+    set_locale @language
+    mail(:to => @invitation.email, :from => from_email(@group),
+         :subject => I18n.t("mailers.notifications.new_invitation.subject",
+                            :user => @user.login,
+                            :group => @group.name, :locale => @language),
+         :date => Time.now) do |format|
+      format.text
+      format.html
+    end
+  end
+
   def new_feedback(user, subject, content, email, ip)
     @user = user
     @subject = subject
@@ -200,7 +216,7 @@ class Notifier < ActionMailer::Base
   end
 
   def from_email(group)
-    "#{group ? group.name : AppConfig.application_name} <notifications@#{ActionMailer::Base.default_url_options[:host]}>"
+    "#{group ? group.name : AppConfig.application_name} <notifications@#{Rails.application.config.action_mailer.default_url_options[:host]}>"
   end
 
   def language_for(user=nil)

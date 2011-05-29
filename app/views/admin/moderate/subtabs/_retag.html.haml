@@ -1,21 +1,13 @@
-
-%table.table
-  %tr
-    %th
-      =t("activerecord.attributes.question.title")
-    %th
-      =t("activerecord.attributes.question.body")
-    %th
-  -@questions.each do |question|
-    %tr
-      %td
-        = link_to h(question.title), question_path(question)
-      %td
-        = truncate(h(question.body), :length => 100)
-      %td
-        .tag-list
-          %span.retag
-            = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag'
+-@questions.each do |question|
+  .item
+    =t("activerecord.attributes.question.title")
+    =t("activerecord.attributes.question.body")
+    %h2
+      = link_to h(question.title), question_path(question)
+    %p
+      = truncate(h(question.body), :length => 100)
+    .tag-list
+      = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag'
 
 = will_paginate @questions
 

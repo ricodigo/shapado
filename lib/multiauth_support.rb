@@ -46,13 +46,11 @@ module MultiauthSupport
 
       uid = fields["uid"] || fields["extra"]["user_hash"]["id"]
       auth_key = "#{provider}_#{uid}"
-
-      user = User.where({:auth_keys => auth_key}).first
+      user = User.where({:auth_keys.in => [auth_key]}).first
       if user.nil?
         user = User.new(:auth_keys => [auth_key])
 
         puts ">>>>>>> #{provider} #{fields["user_info"].inspect}"
-
         user.user_info[provider] = fields["user_info"]
 
         if user.email.blank?
@@ -75,15 +73,7 @@ module MultiauthSupport
 
         return false if !user.save
       end
-      if provider == 'twitter' && user.user_info["twitter"] && user.user_info["twitter"]["old"]
-        user.user_info["twitter"] = fields["user_info"]
-        user.save(:validate => false)
-      end
-      if provider == 'facebook' && user.user_info["facebook"] && user.user_info["facebook"]["old"]
-        user.user_info["facebook"] = fields["user_info"]
-        user["facebook_token"] = fields["credentials"]["token"]
-        user.save(:validate => false)
-      end
+      user.check_user_info(fields,provider)
       user
     end
   end # ClassMethods
@@ -91,19 +81,27 @@ module MultiauthSupport
   module InstanceMethods
     def connect(fields)
       provider = fields["provider"]
+      self.check_user_info(fields, provider)
       if fields["uid"] =~ %r{google\.com/accounts/o8/} && fields["user_info"]["email"]
         fields["uid"] = "http://google_id_#{fields["user_info"]["email"]}" # normalize for subdomains
       end
 
       auth_key = "#{provider}_#{fields["uid"]}"
-      user = User.only(:id).where({:auth_keys => auth_key}).first
+      user = User.where({:auth_keys.in => [auth_key]}).first
+      self.push(:"user_info.#{provider}" => fields["user_info"])
+
       if user.present? && user.id != self.id
-        self.push(:"user_info.#{provider}" => fields["user_info"])
-
-        user.destroy if merge_user(user)
+        if merge_user(user)
+          user.destroy
+          user = self
+        end
       end
-
-      user.send("handle_#{provider}", fields) if user.respond_to?("handle_#{provider}", true)
+      user = self if user.nil?
+      if user.respond_to?("handle_#{provider}", true)
+        user.send("handle_#{provider}", fields)
+        user.save!
+        user.check_user_info(fields, provider)
+      end
 
       self.push_uniq(:auth_keys => auth_key)
     end
@@ -114,28 +112,45 @@ module MultiauthSupport
       [Question, Answer, Badge, UserStat].each do |m|
         m.override({:user_id => user.id}, {:user_id => self.id})
       end
-      if !self.facebook_login? && user.facebook_login?
-        self.facebook_friend_list.destroy &&
-        FacebookFriendList.override({:user_id => user.id}, {:user_id => self.id})
-        #self.update({ :facebook_id => user.facebook_id, :facebook_token => user.facebook_token })
-      end
-      if !self.twitter_login? && user.twitter_login?
-        self.twitter_friend_list.destroy &&
-        TwitterFriendList.override({:user_id => user.id}, {:user_id => self.id})
-        #self.update({ :twitter_id => user.twitter_id, :twitter_token => user.twitter_token,
-        #              :twitter_secret => user.twitter_secret, :twitter_login => user.twitter_login})
-      end
-      if !self.identica_login? && user.identica_login?
-        self.identica_friend_list.destroy &&
-        IdenticaFriendList.override({:user_id => user.id}, {:user_id => self.id})
-        #self.update({ :twitter_id => user.twitter_id, :twitter_token => user.twitter_token,
-        #              :twitter_secret => user.twitter_secret, :twitter_login => user.twitter_login})
+      begin
+        if user.facebook_login?
+          self.update({ :facebook_id => user.facebook_id, :facebook_token => user.facebook_token })
+          self.external_friends_list.friends["facebook"] = user.external_friends_list.friends["facebook"]
+          self.external_friends_list.save
+          self.override(:"user_info.facebook" => user.user_info["facebook"]) if user_info["facebook"].blank?
+        end
+        if user.twitter_login?
+          User.override({ :_id => self.id }, { :twitter_id => user.twitter_id, :twitter_token => user.twitter_token,
+                        :twitter_secret => user.twitter_secret, :twitter_login => user.twitter_login})
+          self.external_friends_list.friends["twitter"] = user.external_friends_list.friends["twitter"]
+          self.external_friends_list.save
+          self.override(:"user_info.twitter" => user.user_info["twitter"]) if user_info["twitter"].blank?
+        end
+        if user.identica_login?
+          User.override({ :_id => self.id }, { :identica_id => user.identica_id,
+                          :identica_secret => user.identica_secret,
+                          :identica_token => user.identica_token})
+          self.external_friends_list.friends["identica"] = user.external_friends_list.friends["identica"]
+          self.external_friends_list.save
+          self.override(:"user_info.identica" => user.user_info["identica"]) if user_info["identica"].blank?
+        end
+        if user.linked_in_login?
+          User.override({ :_id => self.id }, { :linked_in_id => user.linked_in_id,
+                          :linked_in_secret => user.linked_in_secret,
+                          :linked_in_token => user.linked_in_token})
+          self.external_friends_list.friends["linked_in"] = user.external_friends_list.friends["linked_in"]
+          self.external_friends_list.save
+          self.override(:"user_info.linked_in" => user.user_info["linked_in"]) if user_info["linked_in"].blank?
+        end
+      rescue Exception => e
+        Rails.logger.info e.message
+        return nil
       end
       user
     end
 
     def password_required?
-      return false if self[:using_openid] || self[:facebook_id].present? || self[:github_id].present?
+      return false if self[:using_openid] || self[:facebook_id].present? || self[:twitter_id].present? || self[:github_id].present?
 
       (encrypted_password.blank? || !password.blank?)
     end
@@ -151,8 +166,8 @@ module MultiauthSupport
       end
     end
 
-    def facebook_client(property = 'friends')
-      response = open(URI.encode("https://graph.facebook.com/#{self.facebook_id}/#{property}?access_token=#{self.facebook_token}")).read
+    def facebook_client(property = 'friends', params = 'fields[]=name&fields[]=picture&fields[]=locale')
+      response = open(URI.encode("https://graph.facebook.com/#{self.facebook_id}/#{property}?access_token=#{self.facebook_token}&#{params}")).read
       JSON.parse(response)
     end
 
@@ -169,15 +184,52 @@ module MultiauthSupport
     end
 
     def get_identica_friends
-      JSON.parse(identica_client.get('/api/friends/ids.json').body)
+      JSON.parse(identica_client.get('/api/statuses/friends.json').body)
     end
 
     def get_linked_in_friends
-      friends_ids = []
+      friends = []
       JSON.parse(linked_in_client.
-                 get("/v1/people/~/connections:(id)", 'x-li-format' => 'json').
-                 body)["values"].map do |x| friends_ids << x["id"] end
-      friends_ids
+                 get("/v1/people/~/connections:(id,first-name,last-name,picture-url,location)", 'x-li-format' => 'json').
+        body)["values"].map do |friend| friends << { "id" => friend["id"],
+          "name" => "#{friend["firstName"]} #{friend["lastName"]}",
+          "profile_image_url" => friend["pictureUrl"], "country-code" => friend["location"]["country"]["code"]} end
+      friends
+    end
+
+    def check_social_friends
+      if self.facebook_login? && self.facebook_friends.blank?
+        Jobs::Users.async.get_facebook_friends(self.id).commit!
+      end
+      if self.twitter_login? && self.twitter_friends.blank?
+        Jobs::Users.async.get_twitter_friends(self.id).commit!
+      end
+      if self.identica_login? && self.identica_friends.blank?
+        Jobs::Users.async.get_identica_friends(self.id).commit!
+      end
+      if self.linked_in_login? && self.linked_in_friends.blank?
+        Jobs::Users.async.get_linked_in_friends(self.id).commit!
+      end
+    end
+
+    def check_user_info(fields, provider)
+      user = self
+      if provider == 'linked_in' && user.user_info["linked_in"].blank?
+        user.user_info["linked_in"] = fields["user_info"]
+        user.save(:validate => false)
+      end
+      if provider == 'identica' && user.user_info["identica"].blank?
+        user.user_info["identica"] = fields["user_info"]
+        user.save(:validate => false)
+      end
+      if provider == 'twitter' && ((user.user_info["twitter"] && user.user_info["twitter"]["old"]) || (user.user_info["twitter"].blank?))
+        user.user_info["twitter"] = fields["user_info"]
+        user.save(:validate => false)
+      end
+      if provider == 'facebook' && ((user.user_info["facebook"] && user.user_info["facebook"]["old"]) || (user.user_info["facebook"].blank?))
+        user.user_info["facebook"] = fields["user_info"]
+        user.save(:validate => false)
+      end
     end
 
     private
@@ -185,10 +237,10 @@ module MultiauthSupport
     # "user_info"=>{"nickname"=>"profile.php?id=4332432432432", "first_name"=>"My", "last_name"=>"Name", "name"=>"My Name", "urls"=>{"Facebook"=>"http://www.facebook.com/profile.php?id=4332432432432", "Website"=>nil}},
     # "extra"=>{"user_hash"=>{"id"=>"4332432432432", "name"=>"My Name", "first_name"=>"My", "last_name"=>"Name", "link"=>"http://www.facebook.com/profile.php?id=4332432432432", "birthday"=>"06/15/1980", "gender"=>"male", "email"=>"my email", "timezone"=>-5, "locale"=>"en_US", "updated_time"=>"2010-04-01T07:27:28+0000"}}}
     def handle_facebook(fields)
-      uinfo = fields["extra"]["user_hash"]
-      self.facebook_id = fields["uid"]
-      self.facebook_token = fields["credentials"]["token"]
-      self.facebook_profile = fields["user_info"]["urls"]["Facebook"]
+      uinfo = fields["extra"]["user_hash"].clone
+      self.facebook_id = fields["uid"].to_s
+      self.facebook_token = fields["credentials"]["token"].to_s
+      self.facebook_profile = fields["user_info"]["urls"]["Facebook"].to_s
 
       if self.email.blank?
         self.email = uinfo["email"]
@@ -199,30 +251,30 @@ module MultiauthSupport
     # "extra"=>{"access_token"=>token_object, "user_hash"=>{"description"=>"desc", "screen_name"=>"nick", "geo_enabled"=>false, "profile_sidebar_border_color"=>"87bc44", "status"=>{}}},
     # "user_info"=>{"nickname"=>"nick", "name"=>"My Name", "location"=>"Here", "image"=>"http://a0.twimg.com/profile_images/path.png", "description"=>"desc", "urls"=>{"Website"=>nil}}}
     def handle_twitter(fields)
-      self.twitter_token = fields["credentials"]["token"]
-      self.twitter_secret = fields["credentials"]["secret"]
-      self.twitter_login = fields["user_info"]["nickname"]
-      self.twitter_id = fields["uid"]
+      self.twitter_token = fields["credentials"]["token"].to_s
+      self.twitter_secret = fields["credentials"]["secret"].to_s
+      self.twitter_login = fields["user_info"]["nickname"].to_s
+      self.twitter_id = fields["uid"].to_s
 
       self.login.blank? && self.login = fields["user_info"]["nickname"]
     end
 
     def handle_identica(fields)
-      self.identica_token = fields["credentials"]["token"]
-      self.identica_secret = fields["credentials"]["secret"]
-      self.identica_login = fields["user_info"]["nickname"]
-      self.identica_id = fields["extra"]["user_hash"]["id"]
+      self.identica_token = fields["credentials"]["token"].to_s
+      self.identica_secret = fields["credentials"]["secret"].to_s
+      self.identica_login = fields["user_info"]["nickname"].to_s
+      self.identica_id = fields["uid"].to_s
 
-      self.login.blank? && self.login = fields["user_info"]["nickname"]
+      self.login.blank? && self.login = fields["user_info"]["nickname"].to_s
     end
 
     def handle_linked_in(fields)
-      self.linked_in_token = fields["credentials"]["token"]
-      self.linked_in_secret = fields["credentials"]["secret"]
-      self.linked_in_id = fields["uid"]
-      self.bio.blank? && self.bio = fields["user_info"]["description"]
+      self.linked_in_token = fields["credentials"]["token"].to_s
+      self.linked_in_secret = fields["credentials"]["secret"].to_s
+      self.linked_in_id = fields["uid"].to_s
+      self.bio.blank? && self.bio = fields["user_info"]["description"].to_s
 
-      self.login.blank? && self.login = fields["user_info"]["first_name"]+fields["user_info"]["last_name"]
+      self.login.blank? && self.login = fields["user_info"]["first_name"].to_s+fields["user_info"]["last_name"].to_s
     end
   end # InstanceMethods
 end

@@ -1,0 +1,14 @@
+%h1
+  Resend unlock instructions
+%p.description
+  After several attempts to log who are not successful the account is locked for safety, here you can unlock.
+
+- form_for resource_name, resource, :url => unlock_path(resource_name) do |f|
+  = f.error_messages
+  .field
+    = f.label :email
+    = f.text_field :email
+  .buttons
+    = f.submit "Resend unlock instructions", :class => "save"
+
+= render :partial => "shared/devise_links"

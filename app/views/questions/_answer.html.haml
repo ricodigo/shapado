@@ -6,13 +6,14 @@
 - @aflag ||= Flag.new
 
 %article.answer
+  %a{:name => "answer#{answer.id}"}
   %h4
-    =render "answered_by", local_assigns
+    =render "questions/answered_by", local_assigns
 
   .article-actions
     %ul
       %li.current
-        = link_to "Actions", "#"
+        = link_to t('layouts.manage.actions'), "#"
         %ul.drop-menu
           %li.current
             -if logged_in?
@@ -34,7 +35,7 @@
             %li
               = link_to t(".history", :default => "history"), history_question_answer_path(@question, answer)
             %li
-              =link_to "Follow Up", new_question_path(:from_question => @question.id, :at => answer.id), :rel => "nofollow"
+              =link_to t('questions.show.follow_up'), new_question_path(:from_question => @question.id, :at => answer.id), :rel => "nofollow"
 
           - if logged_in? && @aflag.new_record? && current_user != answer.user
             %li
@@ -80,7 +81,7 @@
           %strong.updated{:title => answer.updated_at, :class => "relativetime"}
             = t("time.ago", :time => time_ago_in_words(answer.updated_at))
           .avatar.logo
-            = gravatar(answer.updated_by.email.to_s, :size => 32)
+            = avatar_img(answer.updated_by, :size => "small")
           .user
             = render :partial => "users/user_mini", :locals => {:user => answer.updated_by}
             -if !answer.updated_by.hide_country && answer.address.present?
@@ -92,8 +93,9 @@
 
   .clear
 
-  -answer.comments.each do |comment|
-    = render :partial => "comments/comment", :object => comment, :locals => {:source => source, :mini => true}
+  .comments
+    -answer.comments.each do |comment|
+      = render :partial => "comments/comment", :object => comment, :locals => {:source => source, :mini => true}
 
   #panel-comments
     -form_for [@question, answer, @comment ||= Comment.new], :html => {:class => "add_answer_comment_link commentForm nestedAnswerForm addNestedAnswer"} do |f|

@@ -1,32 +1,38 @@
-%h1
-  =t(".facebook_app")
+%h2
+  = t('.title')
+
 .field
-  %label.label
+  %label
     =t(".application_id")
   = text_field_tag 'group[share][fb_app_id]', @group.share.fb_app_id, :class => "text_field"
+
 .field
   %label.label
     =t(".secret_key")
   = text_field_tag 'group[share][fb_secret_key]',  @group.share.fb_secret_key, :class => "text_field"
+
 .field
-  = check_box_tag 'group[share][fb_active]', true, @group.share.fb_active, :class => "checkbox"
-  %label.radio
-    =t("global.active")
+  .checkbox
+    = check_box_tag 'group[share][fb_active]', true, @group.share.fb_active
+    %label
+      =t("global.active")
 
 %h1
   = t(".add_tags")
+
 .field
   %label.label
     =t(".tweet_starts_with")
   = text_field_tag 'group[share][starts_with]', @group.share.starts_with, :class => "text_field"
-  .description
+  %small
     = t(".starts_with_example")
+
 .field
   %label.label
     =t(".tweet_ends_with")
   = text_field_tag 'group[share][ends_with]', @group.share.ends_with, :class => "text_field"
-  .description
+  %small
     = t(".ends_with_example")
 
 .buttons
-  = f.submit t('scaffold.update')
+  = f.submit t('scaffold.update'), :class => "save"

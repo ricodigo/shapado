@@ -1,7 +1,4 @@
--form_for(widget, :url => widget_path(widget, :tab => params[:tab]), :class => "form") do
-  .group
-    = label :limit, t('widgets.settings.limit'), :class => "label"
-    = text_field_tag "settings[limit]", widget.settings["limit"],:class => "text_field"
-  = render :partial => "shared/external_widget_settings", :locals => {:widget => widget}
-  .group.navform
-    = submit_tag t("scaffold.update"), :class => "button"
+.group
+  = label :limit, t('widgets.settings.limit'), :class => "label"
+  = text_field_tag "settings[limit]", widget.settings["limit"],:class => "text_field"
+= render :partial => "shared/external_widget_settings", :locals => {:widget => widget}

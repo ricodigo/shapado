@@ -86,8 +86,8 @@ module Jobs
       end
     end
 
-    def self.on_destroy_question(question_id, attributes)
-      deleter = User.find(question_id)
+    def self.on_destroy_question(user_id, attributes)
+      deleter = User.find(user_id)
       group = Group.find(attributes["group_id"])
 
       if deleter.id == attributes["user_id"]

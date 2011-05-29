@@ -8,17 +8,12 @@
 
   -unless current_group.default_tags.empty?
     %li
-      = link_to "tags", questions_url
+      = link_to t('questions.tags.title'), questions_url
       ▼
       %ul
         -current_group.default_tags.each do |tag|
           %li
             = link_to(tag, url_for(:controller => "questions", :action => "index", :tags => tag), :rel => "tag")
-
-  -if !logged_in?
-    %li
-      = link_to 'Get the facts!', "/facts#facts"
-
 
 %span#user-actions.right
   #user-nav
@@ -27,7 +22,7 @@
         %li
           %span
             %span.gravatar
-              = gravatar current_user.email.to_s, :size => 22
+              = avatar_img(current_user, :size => "small")
               = link_to h(current_user.login), user_path(current_user)
               %span{:style => "font-size: 12px; font-weight: bold"}
                 == (#{current_user.reputation_on(current_group)})

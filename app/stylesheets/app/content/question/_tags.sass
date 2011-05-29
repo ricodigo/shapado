@@ -1,0 +1,83 @@
+ul.tag-list
+  margin: 0 20px 5px 20px
+  float: left
+  width: 80% !important
+
+  li, span.tag
+    float: left
+    display: inline
+    height: 25px
+    a
+      background: url("/images/tag-back-lt.png") left 0 no-repeat
+      margin: 0 0 0 7px
+      font-size: 11px
+      padding: 3px 7px 4px 18px
+      color: #666666
+      display: block
+      &:hover
+        background: url("/images/tag-back-lt-hover.png") left 0 no-repeat
+        color: #000
+    &.title
+      font-weight: bolder
+      font-size: 12px
+      padding: 2px 0 0 0
+    &.retag a
+      background: url("/images/tag-back-lt-retag.png") left 0 no-repeat
+      color: #fff
+
+
+// Tags feature
+//========================================================================
+.tagwrapper
+  border: 1px solid #cccccc !important
+  padding: 4px !important
+  font-size: 11px
+  margin: 5px 0 10px 0 !important
+  width: 98% !important
+  min-height: 22px !important
+
+  ul
+    margin: 0 2px !important
+    padding: 0 !important
+    border: 0px !important
+    background: none
+
+    li a
+      padding: 0 7px 0 18px !important
+      margin: 0 !important
+      background: url("/images/tag-back-lt.png") left 1px no-repeat !important
+      border: none !important
+      color: #000
+      cursor: pointer
+
+    li a:hover, li:hover a, li a.ui-state-hover, li span:hover
+      background: url("/images/tag-back-lt-hover.png") left 1px no-repeat !important
+      color: #000
+
+  input.autocomplete_for_tags
+    padding: 2px 5px 1px 5px !important
+    font-size: 11px
+    line-height: 11px
+    margin: 0
+
+//Listado de autocomplete - Menu desplegable
+.ui-autocomplete
+  width: auto !important
+  background-color: #f4f4f4
+  +none-radius
+  padding: 0 !important
+  .ui-menu-item
+    padding: 0 !important
+    border-bottom: 1px solid #e5e5e5
+    +none-radius
+    background-color: #fff !important
+    a
+      margin: 0
+      font-size: 12px
+      +none-radius
+      &:hover, &:active, &:focus, &#ui-active-menuitem
+        background: $orange !important
+        color: #fff !important
+        border-color: $orange
+        cursor: pointer
+

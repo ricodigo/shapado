@@ -1,0 +1,33 @@
+# Messages for Tagalog (Tagalog)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: AnakngAraw
+tl: 
+  close_requests: 
+    create: 
+      flash_notice: Matagumpay na nalikha ang kahilingan ng pagsasara
+    destroy: 
+      flash_notice: Matagumpay na nabura ang kahilingan ng pagsasara
+    edit: 
+      title: Baguhin ang kahilingan ng pagsasara
+    form: 
+      close_with_reason: Isinasara ang tanong na ito na ginagamit ang dahilang ito
+      dupe: Kagaya
+      no_question: Hindi isang tanong
+      not_relevant: Walang kaugnayan
+      ot: Malayo sa paksa
+      request_closing_details: Hilinging isara ang tanong na ito
+      spam: basurang liham
+    index: 
+      title: Tala ng mga kahilingan ng pagsasara
+    model: 
+      attributes: 
+        comment: Puna
+        reason: Dahilan
+        user: Tagagamit
+      messages: 
+        already_requested: Nahiling mo na ang pagsasara ang katanungang ito
+      name: Hiling ng pagsasara
+      prural_name: Mga kahilingan ng pagsasara
+    update: 
+      flash_notice: Matagumpay na naisapanahon ang kahilingan ng pagsasara

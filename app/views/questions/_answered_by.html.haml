@@ -1,4 +1,4 @@
-= gravatar(answer.user.email.to_s, :size => 20) unless answer.anonymous
+= avatar_img(answer.user, :size => "small") unless answer.anonymous
 %b.user-data
   = t('activerecord.attributes.answer.created_at')
 

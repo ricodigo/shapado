@@ -1,13 +1,14 @@
--form_for(@group, :html => {:class => "form", :multipart => true}) do |f|
-  %h1
-    Editing group
+%h1
+  = t('.title')
+%p.description
 
+-form_for(@group, :html => {:class => "form", :multipart => true}) do |f|
   = f.error_messages
   = render :partial => "form", :object => f
 
   .buttons
-    = f.submit 'Update', :class => "save"
-    = link_to 'Show', group_path(@group), :class => "button"
+    = f.submit t("scaffold.update"), :class => "save"
+    = link_to t("scaffold.show"), group_path(@group), :class => "button"
     = t("global.or")
-    = link_to 'Back', groups_path, :class => "cancel button"
+    = link_to t("scaffold.back"), groups_path, :class => "cancel button"
     = t("global.or")

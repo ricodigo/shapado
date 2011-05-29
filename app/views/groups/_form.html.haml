@@ -4,8 +4,8 @@
   = form.label :name, t('name', :scope => "activerecord.attributes.group"), :class => "label"
   = form.text_field :name, :class => "text_field"
 
-.field
-  -unless @group.has_custom_domain?
+-if @group.new? || !@group.has_custom_domain?
+  .field
     = form.label :subdomain, "URL", :class => "label"
     .domain
       %small
@@ -45,15 +45,15 @@
   .field
     .checkbox
       = form.label :private, t(".members_only"), :class => "radio"
-      = form.check_box :private, :class => "checkbox"    
+      = form.check_box :private, :class => "checkbox"
   .field
     .checkbox
       = form.label :has_custom_html, t(".custom_html"), :class => "radio"
-      = form.check_box :has_custom_html, :class => "checkbox"    
+      = form.check_box :has_custom_html, :class => "checkbox"
   .field
     .checkbox
       = form.label :has_custom_js, t(".custom_js"), :class => "radio"
-      = form.check_box :has_custom_js, :class => "checkbox"    
+      = form.check_box :has_custom_js, :class => "checkbox"
   .field
     .checkbox
       = form.label :private, t(".custom_analytics"), :class => "radio"
@@ -79,7 +79,7 @@
   .field
     .checkbox
       = form.label :enable_latex, t('enable_latex', :scope => "activerecord.attributes.group"), :class => "radio"
-      = form.check_box :enable_latex, :class => "checkbox"      
+      = form.check_box :enable_latex, :class => "checkbox"
 
   .field
     .checkbox
@@ -93,17 +93,16 @@
     .checkbox
       = form.label :forum, t('forum', :scope => "activerecord.attributes.group"), :class => "radio"
       = form.check_box :forum, :class => "checkbox"
-      
+
   .field
     .checkbox
-      = form.label :openid_only, t('openid_only', :scope => "activerecord.attributes.group"), :class => "radio"
-      = form.check_box :openid_only, :class => "checkbox"
-      
+      = form.label :signup_type, t('signup_type', :scope => "activerecord.attributes.group"), :class => "label"
+      = form.select :signup_type, [[t('.signup_all'),'all'],[t('.signup_noemail'), 'noemail'],[t('.signup_social'), 'social'],[t('.signup_email'),'email only']], :selected => 'all', :class => "select"
   .field
     .checkbox
       = form.label :registered_only, t('registered_only', :scope => "activerecord.attributes.group"), :class => "radio"
       = form.check_box :registered_only, :class => "checkbox"
-      
+
   .field
     .checkbox
       = form.label :has_adult_content, t('may_contain_adult_content', :scope => "activerecord.attributes.group"), :class => "radio"
@@ -127,16 +126,7 @@
     = form.select :language, AVAILABLE_LANGUAGES.collect {|lang| [ language_desc(lang), lang ] }, :selected => @group.language || 'en', :class => "select"
   .field
     = form.label :language, t(:languages, :scope => "activerecord.attributes.group"), :class => "label"
-    = link_to t('users.form.show_more_lang'), nil, :class => 'show-more-lang'
-
-    - [DEFAULT_USER_LANGUAGES, AVAILABLE_LANGUAGES-DEFAULT_USER_LANGUAGES].each_with_index do |langs, index|
-      -jsclass = index == 1 ? 'jshide' : ''
-      -langs.sort.each do |lang|
-        #lang_opts
-          .radio_option{:id=>language_desc(lang)}
-            = check_box_tag "group[languages][]", lang, @group.languages.include?(lang), :class => "langbox checkbox #{jsclass}"
-            %label.radio.langbox{:class=>jsclass}
-              = language_desc(lang)
+    = text_field_tag :languages, preferred_languages_code(@group, 'languages').join(','), :class => "text_field autocomplete_for_tags", 'data-opts'=> "{\"allowNewTags\": false, \"source\":#{language_json}}"
 -else
   = form.hidden_field :language, :value => (AppConfig.default_language || 'en')
 

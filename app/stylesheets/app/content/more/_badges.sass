@@ -1,0 +1,126 @@
+.badges
+
+  .content
+    padding: 10px 50px 30px 50px
+
+  ul li
+    margin-bottom: 5px
+    overflow: hidden
+
+    .badge_item
+      width: 25%
+      float: left
+
+    .badge_description
+      width: 60%
+      float: left
+      margin: 5px
+
+    .badge
+      width: 65%
+      float: left
+      padding: 5px 10px
+      display: block
+      +big-radius
+      color: #000
+      text-shadow: 1px 1px 2px #e5e5e5
+
+    .counter
+      float: left
+      width: 15%
+      font-size: 12px
+      margin: 5px
+      color: #999
+      font-style: italic
+
+.gold .badge
+  +gold-gradient
+  border: 1px solid #fbd65f
+
+.silver .badge
+  +silver-gradient
+  border: 1px solid #c6c6c6
+
+.bronze .badge
+  +bronze-gradient
+  border: 1px solid #e67347
+
+
+
+
+#badges_show
+  padding-top: 50px
+
+  .description
+    text-align: center
+    border-bottom: 1px solid #f1f1f1
+    padding-bottom: 20px
+    margin-bottom: 20px
+    p
+      font-size: 15px
+      border: none
+      margin: 0
+      padding: 0
+
+    .badge_item
+      margin: 0 0 15px 0
+      height: 38px
+      a
+        padding: 10px 30px
+        font-size: 24px
+        color: #000
+        +huge-radius
+        +menu-shadow
+        text-shadow: 1px 1px 2px #e5e5e5
+
+  .counter
+    text-align: center
+    p
+      font-size: 14px
+      color: #999
+      font-style: italic
+      b
+        color: #000
+
+  .users
+    padding: 0 50px 50px 50px
+    ul
+      li
+        border-bottom: 1px solid #f1f1f1
+        padding: 20px 0
+
+        .stats
+          width: 120px
+          float: left
+          border-right: 1px solid #f1f1f1
+          margin: 0 30px 0 0
+
+          .box
+            height: 20px
+
+            .counter
+              margin: 0
+              padding: 0
+              width: 40px
+              font-size: 12px
+              border: 0px
+
+            .text
+              margin: 0
+              padding: 0
+              float: left
+              font-size: 12px
+              width: 75px
+
+        .summary
+          float: left
+          h3
+            margin-bottom: 5px
+            a
+              font-size: 26px
+              color: #000
+              text-shadow: 1px 1px 2px #e5e5e5
+          .owner-data strong
+            font-size: 12px
+            font-style: italic
+            color: #999

@@ -1,4 +1,8 @@
 en:
+  roles:
+    user: Regular user
+    moderator: Moderator
+    owner: Owner
   pagination:
     previous: "&laquo; Previous"
     next: "Next &raquo;"
@@ -25,6 +29,8 @@ en:
   models:
     question: The question
   global:
+    size: Size
+    alphabetically: Alphabetically
     from: "from %{site}"
     permission_denied: Permission denied
     please_login: Please log in
@@ -40,7 +46,23 @@ en:
     unknown_place: Unknown
     subjetive: subjetive
     follow: Follow
+    following: Following
     unfollow: Unfollow
+    next_button: Next
+    view: View
+    view_question: View question
+    what_to_do: What do you want to do?
+    actions: Actions
+    sign_up: Sign up
+    feedback: Feedback
+    chat: Chat
+    tos: TOS
+    privacy: Privacy
+    blog: Blog
+    home: Home
+    sort_by: 'Sort by:'
+    tags_label: 'Tags:'
+    followed_by: 'Followed by:'
   feeds:
     question: Subscribe to this question
     questions: Subscribe to all questions
@@ -49,7 +71,7 @@ en:
     feed: Feed
     post_new_questions: Post new questions to
     share_on_twitter: "Twitter, Facebook and more..."
-  languages:
+  preferred_languages:
     any:     Any
     user:    My preferred languages
   number:

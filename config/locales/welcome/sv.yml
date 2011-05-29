@@ -1,0 +1,37 @@
+# Messages for Swedish (Svenska)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Lokal Profil
+# Author: Tobulos1
+sv: 
+  welcome: 
+    confirm_age: 
+      over_18: Jag är över 18
+      under_18: Jag är under 18
+    facts: 
+      features: 
+        shapado: 
+          adaptable: ja!
+          foss: ja!
+          joel: nej :/
+          multilanguage: ja!
+          multitopic: ja!
+        stackexchange: 
+          adaptable: nej
+          foss: nej
+          joel: ja!
+          multilanguage: nej
+          multitopic: nej
+      prices: 
+        shapado: 
+          large: antagligen som $500
+          medium: <=== ditto
+          onsite: förmodligen $0 på din egen server
+          small: förmodligen $50 till $100/månad på de flesta webbhotell
+        stackexchange: 
+          large: $1299/månad
+          medium: $999/månad
+          onsite: $2500/månad
+          small: $129/månad
+    index: 
+      active: Aktiv

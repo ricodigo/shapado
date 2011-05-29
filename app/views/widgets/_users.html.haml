@@ -6,7 +6,7 @@
       -widget.recent_users(current_group).each do |user|
         %li
           .gravatar
-            =gravatar(user.email.to_s, :size => 32)
+            = avatar_img(user, :size => "small")
           .item
             =link_to h(user.login), user_path(user)
             .joined

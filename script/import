@@ -42,3 +42,5 @@ puts "Updating objects..."
     coll.save(q)
   end
 end
+
+group.questions.map{|q| q.save }

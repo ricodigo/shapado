@@ -1,19 +1,14 @@
+%h1
+  Members
+%p.description
+.members
+  -if logged_in? && current_user.owner_of?(@group)
+    #manage_members
+      -form_tag(members_path, :class => "form members-form", :method => :post) do
+        =render :partial => "form"
+        .buttons
+          = submit_tag t('scaffold.add', :model => "member"), :class => "save"
 
--content_for :subtabs do
-  .navtitle
-    -if @group.isolate
-      = t(".title_isolate", :name => h(@group.name))
-    -else
-      = t(".title", :name => h(@group.name))
-
--if logged_in? && current_user.owner_of?(@group)
-  #manage_members
-    -form_tag(members_path, :class => "form", :method => :post) do
-      =render :partial => "form"
-      .group.navform
-        = submit_tag t('scaffold.add', :model => "member")
-
-%ul.items#members
   -@members.each do |member|
     = render :partial => "member", :object => member
 

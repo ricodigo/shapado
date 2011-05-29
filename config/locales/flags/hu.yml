@@ -1,0 +1,32 @@
+# Messages for Hungarian (Magyar)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Dani
+hu: 
+  activerecord: 
+    attributes: 
+      flag: 
+        reason: Ok
+    models: 
+      flag: jelölés
+      flags: jelölések
+  flags: 
+    create: 
+      flash_error: Ezt nem jelölheted meg
+      flash_notice: Köszönjük a jelentésedet
+    destroy: 
+      flash_notice: A megjelölésed sikeresen visszavonva.
+    edit: 
+      title: "%{model} jelöléseinek szerkesztése"
+    form: 
+      attention: Moderátor figyelmét igényli
+      label: Kérjük, hogy gondosan járj el a megjelöléskor
+      offensive: Sértő, gyalázkodó vagy gyűlöletbeszéd
+      spam: Spam
+    model: 
+      messages: 
+        already_requested: "Már megjelölted a következőt: %{model}"
+    new: 
+      title: "%{model} megjelölése"
+    update: 
+      flash_notice: A kérdés jelölése sikeresen frissítve.
