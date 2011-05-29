@@ -1,0 +1,55 @@
+base: &common
+  Google:
+    openid: https://www.google.com/accounts/o8/id
+  Twitter:
+    id: 'lkF7TgALEBByjdIGraMoA'
+    token: 'eImPMKhRdIUMAabeTsZE0HDKuMgyZOC8qFl2jvcxsQ'
+  Facebook:
+    id: '3009d6313f543cfc059c70e6f5b822f7'
+    token: '3963c58c29cddfd452e8f4a1676294ba'
+  Yahoo:
+    openid: http://yahoo.com
+  AOL:
+    openid: 'http://openid.aol.com/{user_name}'
+  MyOpenID:
+    openid: 'http://{user_name}.myopenid.com/'
+  Wordpress:
+    openid: 'http://{user_name}.wordpress.com/'
+  Blogger:
+    openid: 'http://{user_name}.blogspot.com/'
+  Flickr:
+    openid: 'http://flickr.com/photos/{user_name}/'
+  Launchpad:
+    openid: 'https://launchpad.net/~{user_name}'
+  Identica:
+    id: '282861c277f1bb875c369186c7615eca'
+    token: 'fe32b96d8754c3af043397f2e4d0e9fa'
+  Github:
+    id: 'a086b50bada036abe74c'
+    token: '1396558fa122a92773d8b380581bd4cddcb27859'
+  LinkedIn:
+    id: "rZ0uZNWaDgwCfg7FOYLcYzhotfsouhU9QssWSBrE4A4LZlh-KxngD0v0evXSYYwj"
+    token: "zCoTvISDEL6wJf4DP0-ATJCMqZCs6ysjNwtSGTy9_Tqbty18RyC3V3FIY1T-iay1"
+  Vidoop:
+    openid: 'http://{user_name}.myvidoop.com/'
+  ClaimID:
+    openid: 'http://claimid.com/{user_name}'
+  Technorati:
+    openid: 'http://technorati.com/people/technorati/{user_name}/'
+  Verisign:
+    openid: 'http://{user_name}.pip.verisignlabs.com/'
+  LiveJournal:
+    openid: 'http://{user_name}.livejournal.com'
+  MySpace:
+    openid: 'http://www.myspace.com/{user_name}'
+  OpenId:
+    openid: '{user_name}'
+
+development:
+  <<: *common
+
+production:
+  <<: *common
+
+test:
+  <<: *common
