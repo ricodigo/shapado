@@ -11,6 +11,9 @@ require "active_resource/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+require 'yaml'
+YAML::ENGINE.yamler= 'syck'
+
 module Shapado
   class Application < Rails::Application
     require File.expand_path('../load_config', __FILE__)
