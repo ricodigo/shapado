@@ -320,7 +320,7 @@ class Group
   end
 
   def has_facebook_login?(providers_keys)
-    (providers_keys && self.domain.index(AppConfig.domain)) || self.fb_active
+    (providers_keys && self.domain.index(AppConfig.domain)) || self.share.fb_active
   end
 
   protected
@@ -411,6 +411,7 @@ class Group
   end
 
   def set_default_theme
-    self.current_theme_id = Theme.where(:is_default => true).only(:_id).first
+    self.current_theme_id = Theme.where(:is_default => true).only(:_id).first.id
+  
   end
 end
