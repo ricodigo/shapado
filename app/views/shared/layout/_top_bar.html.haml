@@ -1,0 +1,14 @@
+.top-nav
+  .bd{:class=>"container"}
+    .top-nav-info
+      %a{:href=>"http://www.douban.com/doumail/"} 爱学客
+      =link_to t('.profile'), user_path(current_user), :"data-layout" => "user"
+      =link_to t('users.edit.settings'), settings_path
+      =link_to t("layouts.application.logout"), destroy_user_session_path 
+    .top-nav-items
+      %ul
+        %li{:class=>"on"}
+          %a{:href=>"http://www.douban.com/"} 爱学客 
+          %a{:href=>"http://www.douban.com/"} 小学版 
+          %a{:href=>"http://www.douban.com/"} 初中版 
+          %a{:href=>"http://www.douban.com/"} 高中版 

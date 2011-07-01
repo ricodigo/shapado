@@ -113,6 +113,9 @@ javascripts:
 stylesheets:
   base:
     - public/stylesheets/compiled/application.css
+    - public/stylesheets/ext.css
+    - public/stylesheets/grid.css
+    - public/stylesheets/forms.css
   jqueryui:
     - public/stylesheets/ui-lightness/jquery-ui.css
     - public/stylesheets/jquery.ui.tabs.css

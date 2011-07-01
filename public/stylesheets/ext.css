@@ -1,0 +1,21 @@
+.top-nav {
+    border-bottom: 1px dashed #D4D4D4;
+    clear: both;
+    color: #D4D4D4;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.top-nav-info {
+    float: right;
+    margin-top: 5px;
+}
+.top-nav-items {
+    float: left;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.top-nav .bd {
+    margin: 0 auto;
+    width: 950px;
+}

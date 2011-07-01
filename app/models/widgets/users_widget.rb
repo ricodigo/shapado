@@ -3,8 +3,8 @@ class UsersWidget < Widget
 
 
   def recent_users(group)
-    group.users({:per_page => self[:settings]['limit'],
-                 :page => 1}).order_by(:created_at.desc)
+    group.memberships.order_by(%W[created_at desc]).limit(self[:settings]['limit']).
+      paginate(:per_page => self[:settings]['limit'], :page => 1)
   end
 
   protected

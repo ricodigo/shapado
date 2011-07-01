@@ -105,7 +105,9 @@ class User
   end
 
   before_save :update_languages
-
+  
+  attr_accessible :remember_me
+  
   def display_name
     name.blank? ? login : name
   end
