@@ -234,12 +234,12 @@ class UsersController < ApplicationController
   end
 
   def by_me
-    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+    @user = params[:id] ? User.where(:login => params[:id]).first : current_user
     find_questions(:user_id => @user.id)
   end
 
   def preferred
-    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+    @user = params[:id] ? User.where(:login => params[:id]).first : current_user
     @current_tags = tags = @user.config_for(current_group).preferred_tags
 
     find_questions(:tags.in => tags)
