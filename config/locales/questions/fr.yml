@@ -1,6 +1,7 @@
 # Messages for French (Français)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
+# Author: Crochet.david
 # Author: Patcito
 # Author: Peter17
 fr: 
@@ -13,7 +14,7 @@ fr:
         closed: Fermée
         created_at: Posée
         language: Langue
-        tags: Tags
+        tags: Balises
         title: Titre
         updated_at: actualisée
         updated_by: actualisée par
@@ -97,7 +98,6 @@ fr:
       close: Fermer
       close_reason: "Cette question a été fermée pour la raison suivante:"
       edit_request: Modifier la demande
-      favorite_tooltip: Ajouter cette question à vos favorites
       flag: Reporter un abus
       flagged_as: Reporté comme
       flags: Reporter en tant que
@@ -117,15 +117,12 @@ fr:
       solution: Solution
       to_answer_question: pour répondre à cette question
       unauthenticated_retag: Vous devez avoir un compte utilisateur por modifier les tags
-      unfavorite_tooltip: Retirer cette question de vos favorites
-      unwatch_tooltip: Arrêter de suivre cette question
       viewed: vues
-      watch_tooltip: Suivre cette question
     solve: 
       flash_notice: La question a été résolue.
     tags: 
       filter: Recherchez des tags
-      title: Tags
+      title: Balises
       tooltip: Montrer les questions avec le tag %{tag}
     unanswered: 
       empty: Ce groupe n'a aucune question sans réponses.

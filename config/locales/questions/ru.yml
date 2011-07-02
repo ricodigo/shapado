@@ -99,7 +99,6 @@ ru:
       close: Закрыть
       close_reason: "Вопрос закрыт по следующей причине:"
       edit_request: Изменить запрос
-      favorite_tooltip: Добавить этот вопрос в избранное
       flag: Отметить
       flagged_as: С отметкой
       flags: Отмечен как
@@ -119,10 +118,7 @@ ru:
       solution: Решение
       to_answer_question: ответить на этот вопрос
       unauthenticated_retag: Для изменения тегов вопросов необходимо зарегистрировать учётную запись
-      unfavorite_tooltip: Удалить этот вопрос из списка избранных
-      unwatch_tooltip: Перестать следить за этим вопросом
       viewed: просмотрено
-      watch_tooltip: Следить за этим вопросом
     solve: 
       flash_notice: Вопрос был решён.
     tags: 

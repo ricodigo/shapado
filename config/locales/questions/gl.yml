@@ -96,7 +96,6 @@ gl:
       close: Pechar
       close_reason: "A pregunta foi pechada polo seguinte motivo:"
       edit_request: Editar a solicitude
-      favorite_tooltip: Engadir a pregunta aos seus favoritos
       flag: Informar
       flagged_as: Informado como
       flags: Informar como
@@ -116,14 +115,11 @@ gl:
       solution: Solución
       to_answer_question: para responder a esta pregunta
       unauthenticated_retag: Necesita unha conta para cambiar as etiquetas das preguntas
-      unfavorite_tooltip: Eliminar esta pregunta dos seus favoritos
-      unwatch_tooltip: Deixar de seguir esta pregunta
       viewed: visitada
-      watch_tooltip: Seguir esta pregunta
     solve: 
       flash_notice: A pregunta está resolta.
     tags: 
-      filter: Procura por etiquetas
+      filter: Procurar etiquetas
       title: Etiquetas
       tooltip: Mostrar as preguntas etiquetadas con "%{tag}"
     unanswered: 

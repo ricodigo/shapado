@@ -18,7 +18,6 @@ zh-CN:
         logo: 徽标
         may_contain_adult_content: 此网站可能包含成人内容
         name: 名称
-        openid_only: 只有使用 OpenID 的人可以访问网站
         owner: 这一组是由 %{login} 创建
         registered_only: 只有已登记的人可以访问网站
         state: 状态

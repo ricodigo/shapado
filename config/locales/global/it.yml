@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Giallu
+# Author: Rippitippi
 it: 
   feeds: 
     feed: Feed
@@ -13,6 +14,7 @@ it:
     user: Iscriviti alle domande dell'utente
   global: 
     active: Attiva
+    anonymous: Anonimo
     by: da
     current: Attuale
     from: da %{site}
@@ -23,9 +25,6 @@ it:
     preview: Anteprima
     previous: Precedenti
     share: Condividi
-  languages: 
-    any: Qualsiasi
-    user: Lingue preferite
   models: 
     question: La domanda
   number: 
@@ -47,6 +46,7 @@ it:
     edit: Modifica
     more: Altro...
     new: Aggiungi nuovo %{model}
+    post_as_anonymous: Posta come anonimo
     save: Salva
     send: Invia
     show: Mostra

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Tobulos1
+# Author: WikiPhoenix
 sv: 
   activerecord: 
     attributes: 
@@ -10,7 +11,7 @@ sv:
         description: Beskrivning
         domain: Domän
         enable_latex: Aktivera LaTeX
-        fb_button: Aktivera Facebook Gilla knappen (inte i privatlivet)
+        fb_button: Aktivera Facebooks Gilla-knapp (inte i privatlivet)
         forum: Tillåt mer än ett svar från användare
         group_created_by: skapad av
         language: Språk
@@ -18,7 +19,6 @@ sv:
         logo: Logo
         may_contain_adult_content: Denna webbplats kan innehålla vuxet innehåll
         name: Namn
-        openid_only: Endast personer med OpenID kan logga in på webbplatsen
         owner: Denna grupp skapades av %{login}
         registered_only: Endast registrerade användare kan öppna sajten
         state: Stat

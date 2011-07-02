@@ -96,7 +96,6 @@ ia:
       close: Clauder
       close_reason: "Le question ha essite claudite pro le sequente ration:"
       edit_request: Modificar requesta
-      favorite_tooltip: Adder iste question a tu favorites
       flag: Marcar
       flagged_as: Marcate como
       flags: Reportate como
@@ -116,10 +115,7 @@ ia:
       solution: Solution
       to_answer_question: pro responder a iste question
       unauthenticated_retag: Tu debe haber un conto pro re-etiquettar questiones
-      unfavorite_tooltip: Remover iste question de tu favorites
-      unwatch_tooltip: Non plus sequer iste question
       viewed: vidite
-      watch_tooltip: Sequer iste question
     solve: 
       flash_notice: Le question ha essite resolvite.
     tags: 

@@ -1,0 +1,19 @@
+# Messages for Friulian (Furlan)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Klenje
+fur: 
+  welcome: 
+    confirm_age: 
+      over_18: O ai plui di 18 agns
+      under_18: O ai mancul di 18 agns
+    feedback: 
+      captcha_error: Par plasê, scrîf la soluzion di une semplice operazion matematiche
+      feedback_description: Descrizion
+      feedback_title: Titul
+    index: 
+      active: Atîf
+      browse_by_tags: sgarfe par etichetis
+      full_list_of_questions: liste complete des domandis
+      hot: Dibatût
+      recent_questions: Domandis recentis

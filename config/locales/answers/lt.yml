@@ -1,0 +1,25 @@
+# Messages for Lithuanian (Lietuvių)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Eitvys200
+lt: 
+  activerecord: 
+    attributes: 
+      answer: 
+        created_at: Atsakyta
+    models: 
+      answer: Atsakymas
+      answers: Atsakymai
+  answers: 
+    create: 
+      flash_error: "Kažkas nutiko, pridedant jūsų atsakymą. \n  Atminkite, kad:\n -Tušti ir pasikartojantis atsakymai neleidžiami\n -Jums reikia laukti 20 sekundžių prieš siunčiant kitą atsakymą. \n -Jūs galite rašyti tik viena atsakymą į klausimą."
+      flash_notice: Ačiū!
+    edit: 
+      title: Redaguojamas atsakymas
+    form: 
+      answer_label: Atsakyti į klausimą
+      comment_label: Komentuoti šį atsakymą
+      comment_submit: Komentuoti
+      submit: Atsakyti
+    update: 
+      flash_notice: Atsakymas buvo sėkmingai atnaujintas.

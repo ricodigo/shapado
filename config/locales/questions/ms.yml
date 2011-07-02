@@ -96,7 +96,6 @@ ms:
       close: Tutup
       close_reason: "Soalan ini ditutup atas sebab berikut:"
       edit_request: Permohonan menyunting
-      favorite_tooltip: Gemari soalan ini
       flag: Bendera
       flagged_as: Dinaikkan bendera kerana
       flags: Dilaporkan kerana
@@ -116,10 +115,7 @@ ms:
       solution: Jawapan
       to_answer_question: menjawab soalan ini
       unauthenticated_retag: Anda memerlukan akaun untuk mengetag semula soalan
-      unfavorite_tooltip: Gugurkan soalan ini daripada kegemaran anda
-      unwatch_tooltip: Berhenti memantau soalan ini
       viewed: dilihat
-      watch_tooltip: Pantau soalan ini
     solve: 
       flash_notice: Soalan ini terjawab.
     tags: 

@@ -20,7 +20,6 @@ pt-BR:
         logo: Logotipo
         may_contain_adult_content: Este site pode ter conteúdo para adultos
         name: Nome
-        openid_only: Só pessoas que usam OpenID podem acessar o site
         owner: Este grupo foi criado por %{login}
         registered_only: Somente pessoas registradas podem acessar o site
         state: Estado

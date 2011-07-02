@@ -9,39 +9,6 @@ zh-CN:
       over_18: 我是年满 18 岁
       under_18: 我 18 岁以下
       warning: 警告：此页可能包含成人内容明显。
-    facts: 
-      features: 
-        cols: 
-          adaptable: 适应性强
-          foss: 自由/开放
-          joel: 我会使乔尔更丰富吗？
-          multilanguage: 多种语言
-          multitopic: 多种主题
-        shapado: 
-          adaptable: 是的！
-          foss: 是的！
-          joel: 不 :/
-          multilanguage: 是的！
-          multitopic: 是的！
-        stackexchange: 
-          adaptable: 不
-          foss: 不
-          joel: 是的！
-          multilanguage: 不
-          multitopic: 不
-      prices: 
-        cols: 
-          onsite: 在网站上
-        shapado: 
-          large: 可能像 500 元
-          medium: <=== 同上
-          onsite: 在您自己的服务器上可能为 0 元
-          small: 可能像大多数虚拟主机提供 50 元至 100 元/月
-        stackexchange: 
-          large: 1299 元/月
-          medium: 999 元/月
-          onsite: 2500 元/月
-          small: 129 元/月
     feedback: 
       captcha_error: 请解决简单的数学操作
       email_description: 请提供您的电子邮件地址，以便我们可以回答您的消息

@@ -48,4 +48,4 @@ ms:
       theme: Tema
       widgets: Widget
     notifications: 
-      message: Jika anda tidak ingin menerima pemberitahuan automatik dari %{domain} lagi, tukar keutamaan anda di skirn pemberitahuan.
+      message: Jika anda tidak ingin menerima pemberitahuan automatik dari %{group} lagi, tukar keutamaan anda di skirn pemberitahuan.

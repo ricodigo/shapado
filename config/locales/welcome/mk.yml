@@ -9,39 +9,6 @@ mk:
       over_18: Имам над 18 години
       under_18: Имам под 18 години
       warning: "ПРЕДУПРЕДУВАЊЕ: Оваа страница може да содржи материјал само за возрасни."
-    facts: 
-      features: 
-        cols: 
-          adaptable: прилагодлив
-          foss: слободен/отворен код
-          joel: ќе се збогати некој од мене?
-          multilanguage: повеќејазичен
-          multitopic: повеќетематски
-        shapado: 
-          adaptable: да!
-          foss: да!
-          joel: не :/
-          multilanguage: да!
-          multitopic: да!
-        stackexchange: 
-          adaptable: не
-          foss: не
-          joel: да!
-          multilanguage: не
-          multitopic: не
-      prices: 
-        cols: 
-          onsite: на тоа место
-        shapado: 
-          large: накај $500
-          medium: <=== исто
-          onsite: $0 на сопствен опслужувач
-          small: накај $50 до $100 месечно кај највеќето служби за вдомување
-        stackexchange: 
-          large: $1299 месечно
-          medium: $999 месечно
-          onsite: $2500 месечно
-          small: $129 месечно
     feedback: 
       captcha_error: решете ја простава задача
       email_description: наведете ваша е-пошта за да можеме да ви одговориме на пораката

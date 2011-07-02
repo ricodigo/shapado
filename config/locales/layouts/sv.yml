@@ -2,10 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Tobulos1
+# Author: WikiPhoenix
 sv: 
   layouts: 
     application: 
       ask_question: Ställ fråga
+      badges: Emblem
       forgot: Har du glömt?
       home: Hem
       languages: Språk
@@ -47,4 +49,4 @@ sv:
       theme: Tema
       widgets: Widgets
     notifications: 
-      message: Om du inte vill ta emot automatiska meddelanden från %{domain} längre, ändra dina inställningar i anmälningsskärmen.
+      message: Om du inte vill ta emot automatiska meddelanden från %{group} längre, ändra dina inställningar i anmälningsskärmen.

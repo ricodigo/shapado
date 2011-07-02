@@ -9,39 +9,6 @@ gl:
       over_18: Teño máis de 18
       under_18: Teño menos de 18
       warning: "ATENCIÓN: Esta páxina pode conter material explícito para adultos."
-    facts: 
-      features: 
-        cols: 
-          adaptable: adaptable
-          foss: código libre e aberto
-          joel: farei a Xosé máis rico?
-          multilanguage: multilingüe
-          multitopic: multitema
-        shapado: 
-          adaptable: si!
-          foss: si!
-          joel: non :/
-          multilanguage: si!
-          multitopic: si!
-        stackexchange: 
-          adaptable: non
-          foss: non
-          joel: si!
-          multilanguage: non
-          multitopic: non
-      prices: 
-        cols: 
-          onsite: no sitio
-        shapado: 
-          large: aproximadamente $500
-          medium: <=== ídem
-          onsite: aproximadamente $0 no seu propio servidor
-          small: aproximadamente de $50 a $100/mes na meirande parte dos servidores de aloxamento
-        stackexchange: 
-          large: $1299/mes
-          medium: $999/mes
-          onsite: $2500/mes
-          small: $129/mes
     feedback: 
       captcha_error: resolva a operación matemática
       email_description: escriba o seu enderezo de correo electrónico para que poidamos dar resposta á súa mensaxe
@@ -56,4 +23,4 @@ gl:
       full_list_of_questions: lista completa de preguntas
       hot: populares
       quick_question: faga unha pregunta, nós atoparemos a alguén que a responda
-      recent_questions: preguntas recentes
+      recent_questions: Preguntas recentes

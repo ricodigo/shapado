@@ -24,9 +24,6 @@ mk:
     preview: преглед
     previous: претходно
     share: сподели
-  languages: 
-    any: било кој
-    user: мои претпочитани јазици
   models: 
     question: Прашање
   number: 

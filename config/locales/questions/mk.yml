@@ -16,7 +16,7 @@ mk:
         title: наслов
         updated_at: подновено
         updated_by: подновено од
-        views: Прегледи
+        views: Посети
         votes: Гласа
     models: 
       question: прашање
@@ -96,7 +96,6 @@ mk:
       close: затвори
       close_reason: "прашањево е затворено од следнава причина:"
       edit_request: Уреди барање
-      favorite_tooltip: Бендисајте го прашањево
       flag: знаменце
       flagged_as: означени како
       flags: пријавено како
@@ -116,10 +115,7 @@ mk:
       solution: решение
       to_answer_question: за да одговорите на ова прашање
       unauthenticated_retag: треба да имате сметка за да можете да преозначувате прашања
-      unfavorite_tooltip: Отстранете го прашањево од бендисаните
-      unwatch_tooltip: престани со набљудување на прашањево
       viewed: прегледани
-      watch_tooltip: набљудувај го прашањево
     solve: 
       flash_notice: одговорот е решен.
     tags: 

@@ -19,7 +19,6 @@ br:
         logo: Logo
         may_contain_adult_content: Al lec'hienn-mañ a c'hall bezañ enni danvez evit an oadourien nemetken
         name: Anv
-        openid_only: N'eus nemet an dud a ra gant Open ID a c'hall mont war al lec'hienn
         owner: Krouet eo bet ar strollad gant %{login}
         registered_only: N'eus nemet an dud enrollet a c'hall mont war al lec'hienn
         state: Stad

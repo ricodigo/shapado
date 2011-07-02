@@ -9,37 +9,6 @@ hu:
       over_18: Elmúltam 18 éves
       under_18: Fiatalabb vagyok 18-nál
       warning: "FIGYELMEZTETÉS: Ez az oldal tartalmazhat kifejezetten felnőtteknek szánt tartalmat."
-    facts: 
-      features: 
-        cols: 
-          adaptable: rugalmas
-          foss: ingyenes/nyílt forráskódú
-          joel: gazdagítom joelt?
-          multilanguage: többnyelvű
-          multitopic: több témájú
-        shapado: 
-          adaptable: igen!
-          foss: igen!
-          joel: nem :/
-          multilanguage: igen!
-          multitopic: igen!
-        stackexchange: 
-          adaptable: nem
-          foss: nem
-          joel: igen!
-          multilanguage: nem
-          multitopic: nem
-      prices: 
-        shapado: 
-          large: olyan $500 körül
-          medium: <=== ugyanennyi
-          onsite: kb. $0 a saját szervereden
-          small: körülbelül $50 és $100 között, havonta a legtöbb tárhelyszolgáltatónál
-        stackexchange: 
-          large: $1299 havonta
-          medium: $999 havonta
-          onsite: $2500 havonta
-          small: $129 havonta
     feedback: 
       captcha_error: Kérjük, oldd meg ezt az egyszerű matematikai műveletet
       email_description: Kérjük, add meg az e-mail címedet, hogy válaszolhassunk az üzenetedre

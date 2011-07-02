@@ -96,7 +96,6 @@ nl:
       close: Sluiten
       close_reason: "De vraag is gesloten om de volgende reden:"
       edit_request: Verzoek bewerken
-      favorite_tooltip: Deze vraag aan uw favorieten toevoegen
       flag: Markeren
       flagged_as: Gemarkeerd als
       flags: Gerapporteerd als
@@ -116,10 +115,7 @@ nl:
       solution: Correct antwoord
       to_answer_question: Om deze vraag te beantwoorden
       unauthenticated_retag: U moet een gebruiker hebben om labels voor vragen te kunnen wijzigen.
-      unfavorite_tooltip: Deze vraag uit uw favorieten verwijderen
-      unwatch_tooltip: Deze vraag niet langer volgen
       viewed: bekeken
-      watch_tooltip: Deze vraag volgen
     solve: 
       flash_notice: De vraag is beantwoord.
     tags: 

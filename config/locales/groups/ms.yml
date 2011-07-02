@@ -18,7 +18,6 @@ ms:
         logo: Logo
         may_contain_adult_content: Tapak ini mungkin mengandungi kandungan dewasa
         name: Nama
-        openid_only: Hanya yang menggunakan OpenID boleh mencapai tapak ini
         owner: Kumpulan ini dicipta oleh %{login}
         registered_only: Hanya yang berdaftar yang boleh mencapai tapak ini
         state: Negara

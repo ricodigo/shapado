@@ -96,7 +96,6 @@ tl:
       close: Isara
       close_reason: "Naisara na ang tanong dahil sa sumusunod na kadahilanan:"
       edit_request: Baguhin ang kahilingan
-      favorite_tooltip: Idagdag ang katanungang ito sa mga kinagigiliwan mo
       flag: Watawat
       flagged_as: Iwinatawat bilang
       flags: Iniulat bilang
@@ -116,10 +115,7 @@ tl:
       solution: Katugunan
       to_answer_question: upang masagot ang tanong na ito
       unauthenticated_retag: Kailangan mo ng isang akawnt upang magtatak na muli ng mga katanungan
-      unfavorite_tooltip: Tanggalin ang tanong na ito mula sa mga kinagigiliwan mo
-      unwatch_tooltip: Itigil ang pagbabantay ng katanungang ito
       viewed: natingnan na
-      watch_tooltip: Bantayan ang tanong na ito
     solve: 
       flash_notice: Nalutas na ang tanong.
     tags: 

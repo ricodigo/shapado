@@ -1,11 +1,12 @@
 # Messages for French (Français)
 # Exported from translatewiki.net
 # Export driver: syck-pecl
+# Author: Crochet.david
 # Author: Patcito
 # Author: Verdy p
-fr:
-  layouts:
-    application:
+fr: 
+  layouts: 
+    application: 
       ask_question: Posez une question
       badges: Insignes
       forgot: Oublié?
@@ -17,7 +18,7 @@ fr:
       manage_ads: administrer les publicités
       moderate: Modérer
       now: now!
-      openid:
+      openid: 
         explaination: "Si vous souhaitez ouvrir un compte ou juste vous connectez, sélectionnez un fournisseur openid:"
       pages: Pages
       questions: Questions
@@ -27,12 +28,12 @@ fr:
       settings: Configuration
       signup: Créer un compte
       subscribe: S'inscrire
-      tags: Tags
+      tags: Balises
       title: questions & réponses
       unanswered: Sans réponses
       users: Utilisateurs
       welcome_from: welcome! you can
-    manage:
+    manage: 
       actions: Actions
       announcements: Annonces
       constrains: Contraintes
@@ -48,5 +49,5 @@ fr:
       stats: États
       theme: Thème
       widgets: Widgets
-    notifications:
+    notifications: 
       message: Si vous ne souhaitez plus recevoir de notifications automatiques de %{group}, vous pouvez changer votre configuration de notifications.

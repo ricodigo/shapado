@@ -8,39 +8,6 @@ ja:
       over_18: 私は18歳以上です
       under_18: 私は18歳以下です
       warning: 警告：このページはアダルトな内容を含みます！
-    facts: 
-      features: 
-        cols: 
-          adaptable: 適合性
-          foss: オープンソース
-          joel: ジョエルをリッチにする？
-          multilanguage: 複数言語
-          multitopic: マルチトピック
-        shapado: 
-          adaptable: はい！
-          foss: はい！
-          joel: no :/
-          multilanguage: はい！
-          multitopic: はい！
-        stackexchange: 
-          adaptable: いいえ
-          foss: いいえ
-          joel: はい！
-          multilanguage: いいえ
-          multitopic: いいえ
-      prices: 
-        cols: 
-          onsite: 独自サイト
-        shapado: 
-          large: 500ドル程度
-          medium: <- 左に同じ
-          onsite: 無料！
-          small: 50ドルから100ドル/月
-        stackexchange: 
-          large: 1,299ドル/月
-          medium: 999ドル/月
-          onsite: 2,500ドル/月
-          small: 129ドル/月
     feedback: 
       captcha_error: スパム防止のため、簡単な計算を行ってください
       email_description: 返信ができるよう、あなたのメールアドレスを入力してください

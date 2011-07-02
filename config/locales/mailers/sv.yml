@@ -2,9 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck-pecl
 # Author: Tobulos1
+# Author: WikiPhoenix
 sv: 
   mailers: 
     notifications: 
+      earned_badge: 
+        subject: Du har tjänat ett emblem på %{group}!
       favorited: 
         subject: "%{login} la till din fråga som en av hans/hennes favoriter!"
       follow: 

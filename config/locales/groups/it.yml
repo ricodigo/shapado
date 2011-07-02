@@ -17,7 +17,6 @@ it:
         logo: Logo
         may_contain_adult_content: Il sito può avere contenuti per adulti
         name: Nome
-        openid_only: Permetti l'accesso esclusivamente con OpenID
         owner: Questo gruppo è stato creato da %{login}
         registered_only: Solo gli utenti registrati possono accedere al sito
         state: Stato

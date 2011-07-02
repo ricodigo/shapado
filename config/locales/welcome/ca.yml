@@ -9,39 +9,6 @@ ca:
       over_18: Sóc major de 18 anys
       under_18: Sóc menor de 18 anys
       warning: "ATENCIÓ: aquesta pàgina pot contenir material adult explícit."
-    facts: 
-      features: 
-        cols: 
-          adaptable: adaptable
-          foss: lliure/de codi font obert
-          joel: Faré el Joel més ric?
-          multilanguage: multi-idioma
-          multitopic: multi-tema
-        shapado: 
-          adaptable: sí!
-          foss: sí!
-          joel: no :/
-          multilanguage: sí!
-          multitopic: sí!
-        stackexchange: 
-          adaptable: 'no'
-          foss: 'no'
-          joel: sí!
-          multilanguage: 'no'
-          multitopic: 'no'
-      prices: 
-        cols: 
-          onsite: al lloc web
-        shapado: 
-          large: probablement sobre 500$
-          medium: <=== ídem
-          onsite: probablement 0$ en el vostre propi servidor
-          small: probablement entre 50$ i 100$/mes a la majoria de proveïdors d'hostatjament
-        stackexchange: 
-          large: 1.299$/mes
-          medium: 999$/mes
-          onsite: 2.500$/mes
-          small: 129$/mes
     feedback: 
       captcha_error: Resoleu aquesta simple operació matemàtica
       email_description: Proporcioneu-vos la vostra adreça de correu electrònic així podrem respondre el vostre missatge

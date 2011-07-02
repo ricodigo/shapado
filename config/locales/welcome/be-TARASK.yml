@@ -10,39 +10,6 @@ be-TARASK:
       over_18: Мне болей 18 гадоў
       under_18: Мне меней 18 гадоў
       warning: "ПАПЯРЭДЖАНЬНЕ: Гэтая старонка можа ўтрымліваць матэрыялы толькі для дарослых."
-    facts: 
-      features: 
-        cols: 
-          adaptable: лёгкая адаптацыя
-          foss: свабодная/адкрытая крыніца
-          joel: я зраблю кагосьці багацей?
-          multilanguage: шматмоўны
-          multitopic: шматтэмны
-        shapado: 
-          adaptable: так!
-          foss: так!
-          joel: не :/
-          multilanguage: так!
-          multitopic: так!
-        stackexchange: 
-          adaptable: не
-          foss: не
-          joel: так!
-          multilanguage: не
-          multitopic: не
-      prices: 
-        cols: 
-          onsite: на сайце
-        shapado: 
-          large: прыкладна $500
-          medium: <=== тое самае
-          onsite: прыкладна $0 на Вашым сэрвэры
-          small: верагодна ад $50 да $100/штомесяц ў большасьці хостынг-правайдараў
-        stackexchange: 
-          large: $1299/штомесяц
-          medium: $999/штомесяц
-          onsite: $2500/штомесяц
-          small: $129/штомесяц
     feedback: 
       captcha_error: Калі ласка, вырашыце простую матэматычную задачу
       email_description: Калі ласка, падайце Ваш адрас электроннай пошты, каб мы маглі адказаць на Вашае паведамленьне

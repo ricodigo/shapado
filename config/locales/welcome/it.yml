@@ -10,39 +10,6 @@ it:
       over_18: Ho più di 18 anni
       under_18: Ho meno di 18 anni
       warning: "Attenzione: questa pagina potrebbe contenere materiale per adulti esplicito."
-    facts: 
-      features: 
-        cols: 
-          adaptable: adattabile
-          foss: free/open source
-          joel: renderò joel più ricco?
-          multilanguage: multi-lingua
-          multitopic: multi-argomento
-        shapado: 
-          adaptable: sì!
-          foss: sì!
-          joel: no :/
-          multilanguage: sì!
-          multitopic: sì!
-        stackexchange: 
-          adaptable: 'no'
-          foss: 'no'
-          joel: sì!
-          multilanguage: 'no'
-          multitopic: 'no'
-      prices: 
-        cols: 
-          onsite: on site
-        shapado: 
-          large: probabilmente circa $500
-          medium: <=== Idem
-          onsite: Probabilmente $0 su un proprio server
-          small: probabilmente dai $50 ai $100/mese sulla maggior parte degli hosting
-        stackexchange: 
-          large: $1299/mese
-          medium: $999/mese
-          onsite: $ 2500/mese
-          small: $129/mese
     feedback: 
       captcha_error: Risolvere questa semplice operazione matematica
       email_description: Inserire l'indirizzo email a cui inviare la risposta al vostro messaggio

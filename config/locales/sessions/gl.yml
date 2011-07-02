@@ -17,6 +17,6 @@ gl:
       sign_in: Acceder
       signup: Rexístrese
       with_authentication: Acceder co noso sistema de autenticación
-      with_facebook: Acceda co facebook
+      with_facebook: Acceda co Facebook
       with_openid: Acceda co openid
       with_twitter: Acceda co twitter

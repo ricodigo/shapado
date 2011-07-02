@@ -9,39 +9,6 @@ ms:
       over_18: Saya berusia 18 tahun ke atas
       under_18: Saya berusia di bawah 18 tahun
       warning: "AMARAN: Laman ini mungkin mengandungi kandungan yang tidak sesuai untuk golongan bawah umur 18 tahun."
-    facts: 
-      features: 
-        cols: 
-          adaptable: boleh suai
-          foss: bebas/sumber terbuka
-          joel: adakah saya akan buatkan Joel jadi lebih kaya?
-          multilanguage: pelbagai bahasa
-          multitopic: pelbagai topik
-        shapado: 
-          adaptable: ya!
-          foss: ya!
-          joel: tidak :/
-          multilanguage: ya!
-          multitopic: ya!
-        stackexchange: 
-          adaptable: tidak
-          foss: tidak
-          joel: ya!
-          multilanguage: tidak
-          multitopic: tidak
-      prices: 
-        cols: 
-          onsite: di tapak
-        shapado: 
-          large: mungkin lebih kurang $500
-          medium: <=== sama
-          onsite: mungkin $0 di pelayan anda sendiri
-          small: mungkin lebih kurang $50 hingga $100 sebulan di kebanyakan pembekal pengehosan
-        stackexchange: 
-          large: $1299/bulan
-          medium: $999/bulan
-          onsite: bulan
-          small: $129/bulan
     feedback: 
       captcha_error: Sila jawab soalan matematik yang mudah ini
       email_description: Sila nyatakan alamat e-mel anda supaya kami boleh membalas pesanan anda

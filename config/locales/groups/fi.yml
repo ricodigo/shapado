@@ -18,7 +18,6 @@ fi:
         logo: Logo
         may_contain_adult_content: Tämä sivusto voi sisältää aikuisviihdettä
         name: Nimi
-        openid_only: Vain OpenID-tunnusta käyttävät pääsevät sivustolle
         owner: "Tämän ryhmän loi: %{login}"
         registered_only: Vain rekisteröityneet käyttäjät voivat käyttää sivustoa
         state: Tila

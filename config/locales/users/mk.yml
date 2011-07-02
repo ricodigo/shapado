@@ -88,6 +88,6 @@ mk:
       following: Следи
       title: Корисник %{user}
       unfollow: повеќе не следи
-      views: прегледи
+      views: посети
     unfollow: 
       flash_notice: Корисникот %{user} е отстранет од вашите пријатели

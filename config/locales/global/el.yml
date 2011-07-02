@@ -22,9 +22,6 @@ el:
     preview: Προεπισκόπηση
     previous: Προηγούμενη
     share: Διαμοιρασμός
-  languages: 
-    any: Οποιαδήποτε
-    user: Τις προτιμώμενες γλώσσες μου
   models: 
     question: Η ερώτηση
   number: 

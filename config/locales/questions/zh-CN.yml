@@ -96,7 +96,6 @@ zh-CN:
       close: 关闭
       close_reason: 这个问题已被关闭，原因如下：
       edit_request: 编辑请求
-      favorite_tooltip: 将这一问题添加到您的收藏夹
       flag: 标志
       flagged_as: 标记为
       flags: 据报
@@ -116,10 +115,7 @@ zh-CN:
       solution: 解决方案
       to_answer_question: 要回答这个问题
       unauthenticated_retag: 您需要一个帐户重新添加问题
-      unfavorite_tooltip: 从收藏夹中删除这个问题
-      unwatch_tooltip: 停止注视这个问题
       viewed: 查看
-      watch_tooltip: 看着这一问题
     solve: 
       flash_notice: 解决了这个问题。
     tags: 

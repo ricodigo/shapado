@@ -97,7 +97,6 @@ be-TARASK:
       close: Закрыць
       close_reason: "Пытаньне было закрытае па наступнай прычыне:"
       edit_request: Рэдагаваць запыт
-      favorite_tooltip: Дадаць гэтае пытаньне ва ўлюблёныя
       flag: Пазначыць
       flagged_as: Пазначанае як
       flags: Памечанае як
@@ -117,10 +116,7 @@ be-TARASK:
       solution: Рашэньне
       to_answer_question: адказаць на гэтае пытаньне
       unauthenticated_retag: Вам неабходна мець рахунак каб зьмяняць тэгі пытаньняў
-      unfavorite_tooltip: Выдаліць гэтае пытаньне з улюблёных
-      unwatch_tooltip: Спыніць сачэньне за гэтым пытаньнем
       viewed: прагледжанае
-      watch_tooltip: Сачыць за гэтым пытаньнем
     solve: 
       flash_notice: Пытаньне было вырашанае.
     tags: 

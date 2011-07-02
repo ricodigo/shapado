@@ -13,7 +13,7 @@ gl:
   announcements: 
     actions: 
       delete: eliminar
-      title: accións
+      title: Accións
     create: 
       success: o aviso creouse correctamente.
     index: 

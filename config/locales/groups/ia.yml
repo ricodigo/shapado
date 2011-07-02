@@ -18,7 +18,6 @@ ia:
         logo: Logotypo
         may_contain_adult_content: Iste sito pote continer contento adulte
         name: Nomine
-        openid_only: Solo le personas usante OpenID pote acceder al sito
         owner: Iste gruppo esseva create per %{login}
         registered_only: Solo le personas registrate pote acceder al sito
         state: Stato

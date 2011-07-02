@@ -8,30 +8,6 @@ nb:
       over_18: Jeg er over 18
       under_18: Jeg er under 18
       warning: "ADVARSEL: Denne siden kan inneholde seksuelt materiale."
-    facts: 
-      features: 
-        cols: 
-          foss: fri/åpen kildekode
-        shapado: 
-          adaptable: ja!
-          foss: ja!
-          joel: nei :/
-          multilanguage: ja!
-          multitopic: ja!
-        stackexchange: 
-          adaptable: nei
-          foss: nei
-          joel: ja!
-          multilanguage: nei
-          multitopic: nei
-      prices: 
-        cols: 
-          onsite: på nettsted
-        stackexchange: 
-          large: $1299/måned
-          medium: $999/måned
-          onsite: $2500/måned
-          small: $129/måned
     feedback: 
       email_description: Oppgi e-postadressen din slik at vi kan svare på meldingen din
       feedback_description: Beskrivelse

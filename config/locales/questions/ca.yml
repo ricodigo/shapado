@@ -95,7 +95,6 @@ ca:
       ban: Prohibir
       close: Tanca
       close_reason: "S'ha tancat aquesta pregunta per la següent raó:"
-      favorite_tooltip: Afegiu aquesta pregunta a les vostres favorites
       flag: Marca
       flagged_as: Marcada com
       flags: Informat com a
@@ -110,10 +109,7 @@ ca:
       solution: Solució
       to_answer_question: per a respondre a aquesta pregunta
       unauthenticated_retag: Us cal tenir un compte per a recategoritzar preguntes
-      unfavorite_tooltip: Treieu aquesta pregunta de les vostres favorites
-      unwatch_tooltip: Deixa de mirar aquesta pregunta
       viewed: visualitzada
-      watch_tooltip: Mireu aquesta pregunta
     solve: 
       flash_notice: S'ha respost la pregunta.
     tags: 

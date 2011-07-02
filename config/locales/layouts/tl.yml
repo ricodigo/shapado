@@ -48,4 +48,4 @@ tl:
       theme: Tema
       widgets: Mga widyet
     notifications: 
-      message: Kung ayaw mo nang makatanggap ng kusang mga pagpapabatid mula sa %{domain}, baguhin ang mga nais mo na nasa loob ng tanawan ng mga pabatid.
+      message: Kung ayaw mo nang makatanggap ng kusang mga pagpapabatid mula sa %{group}, baguhin ang mga nais mo na nasa loob ng tanawan ng mga pabatid.

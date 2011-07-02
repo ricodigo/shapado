@@ -18,7 +18,6 @@ tl:
         logo: Logo
         may_contain_adult_content: Ang lugar na ito ay maaaring naglalaman ng nilalamang hindi pambata
         name: Pangalan
-        openid_only: Tanging mga taong gumagamit lamang ng OpenID ang makakapunta sa sityo
         owner: Ang pangkat na ito ay nilikha ni %{login}
         registered_only: Tanging mga taong nakapagpatala lamang ang maaaring makapunta sa sityo
         state: Estado

@@ -1,0 +1,16 @@
+# Messages for Lithuanian (Lietuvių)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Eitvys200
+lt: 
+  ads: 
+    ad_links: Pridėti naują %{type} reklamą
+    create: 
+      success: Reklama buvo sėkmingai sukurta.
+    index: 
+      add_adbard: Pridėti naują Ad Bard reklamą
+      add_adsense: Pridėti naują Google AdSense reklamą
+      title: Reklamos
+    name: "Pavadinimas:"
+    position: "Vieta:"
+    title: Pridėti naują %{type} reklamą

@@ -18,7 +18,6 @@ hu:
         logo: Logó
         may_contain_adult_content: Ez az oldal felnőtteknek szóló tartalommal is rendelkezhet
         name: Név
-        openid_only: Csak OpenID-t használó felhasználók férhetnek hozzá az oldalhoz
         owner: A csoportot %{login} hozta létre
         registered_only: Csak regisztrált személyek férhetnek hozzá az oldalhoz
         state: Állapot

@@ -9,39 +9,6 @@ el:
       over_18: Είμαι πάνω από 18
       under_18: Είμαι κάτω από 18
       warning: "ΠΡΟΣΟΧΗ: Το περιεχόμενο της σελίδας μπορεί να είναι ακατάλληλο για ανηλίκους."
-    facts: 
-      features: 
-        cols: 
-          adaptable: Προσαρμόσιμο
-          foss: Ελεύθερο/ανοιχτού κώδικα
-          joel: Θα κάνω πλουσιότερο τον Joel;
-          multilanguage: Πολυγλωσσικό
-          multitopic: Πολυθεματικό
-        shapado: 
-          adaptable: Ναι!
-          foss: Ναι!
-          joel: Όχι :/
-          multilanguage: Ναι!
-          multitopic: Ναι!
-        stackexchange: 
-          adaptable: Όχι
-          foss: Όχι
-          joel: Ναι!
-          multilanguage: Όχι
-          multitopic: Όχι
-      prices: 
-        cols: 
-          onsite: Στο χώρο σας
-        shapado: 
-          large: Μάλλον κοντά στα $500
-          medium: <=== το ίδιο
-          onsite: Μάλλον $0 στο δικό σας server, ε
-          small: Μάλλον μεταξύ $50 και $100/μήνα στους περισσότερους παρόχους φιλοξενίας
-        stackexchange: 
-          large: $1299/μήνα
-          medium: $999/μήνα
-          onsite: $2500/μήνα
-          small: $129/μήνα
     feedback: 
       captcha_error: Παρακαλώ λύστε μια απλή μαθηματική πράξη
       email_description: Παρακαλώ εισάγετε το email σας ώστε να μπορούμε να απαντήσουμε

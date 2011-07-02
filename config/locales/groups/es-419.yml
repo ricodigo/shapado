@@ -21,7 +21,6 @@ es-419:
         logo: Logo
         may_contain_adult_content: Este sitio podria tener contenido para adultos
         name: Nombre
-        openid_only: Solo las personas que usan openid pueden entrar a este sitio
         owner: Este grupo fue creado por %{login}
         registered_only: Solo las personas registradas pueden entrar a este sitio
         state: Estado

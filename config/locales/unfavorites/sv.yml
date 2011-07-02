@@ -1,0 +1,9 @@
+# Messages for Swedish (Svenska)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: WikiPhoenix
+sv: 
+  activerecord: 
+    models: 
+      favorite: Favorit
+      favorites: Favoriter

@@ -1,0 +1,16 @@
+# Messages for Lithuanian (Lietuvių)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Eitvys200
+lt: 
+  activerecord: 
+    attributes: 
+      announcement: 
+        ends_at: Baigiasi
+        message: Žinutė
+        only_anonymous: Tik anoniminiams vartotojams
+        starts_at: Prasideda
+  announcements: 
+    actions: 
+      delete: Pašalinti
+      title: Veiksmai

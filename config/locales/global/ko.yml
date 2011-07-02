@@ -22,9 +22,6 @@ ko:
     preview: 미리보기
     previous: 이전
     share: 공유
-  languages: 
-    any: 모두
-    user: 언어 설정
   models: 
     question: 질문
   number: 

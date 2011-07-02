@@ -1,0 +1,15 @@
+# Messages for Lithuanian (Lietuvių)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Eitvys200
+lt: 
+  wiki: 
+    actions: 
+      all_history: Atgal į istoriją
+      back_to_question: Atgal į klausimą
+    diff: 
+      title: Skirtumai tarp %{prev} and %{curr}
+    history: 
+      current_version: Dabartinė versija
+      previous_versions: Ankstesnės versijos
+      version: Versija

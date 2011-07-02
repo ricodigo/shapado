@@ -98,7 +98,6 @@ es:
       close: Cerrar
       close_reason: "La pregunta ha sido cerrada por la siguiente razón:"
       edit_request: Editar la solicitud
-      favorite_tooltip: Agregar esta pregunta a tus favoritas
       flag: Reportar abuso
       flagged_as: Reportado como
       flags: Reportado como
@@ -118,10 +117,7 @@ es:
       solution: Solución
       to_answer_question: para responder esta pregunta
       unauthenticated_retag: Se necesita una cuenta para re-etiquetar
-      unfavorite_tooltip: Remover esta pregunta de tus favoritas
-      unwatch_tooltip: Dejar de seguir esta pregunta
       viewed: visto
-      watch_tooltip: Seguir esta pregunta
     solve: 
       flash_notice: La pregunta ha sido resuelta
     tags: 

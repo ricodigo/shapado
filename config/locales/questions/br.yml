@@ -97,7 +97,6 @@ br:
       close: Serriñ
       close_reason: "Serret eo bet ar goulenn-mañ evit an abeg da-heul :"
       edit_request: Kemmañ ar goulenn
-      favorite_tooltip: Ouzhpennañ ar goulenn-mañ d'ar sinedoù
       flag: Kas kemenn un implij direizh
       flagged_as: Kemennet evel
       flags: Kemennet evel
@@ -117,10 +116,7 @@ br:
       solution: Diskoulm
       to_answer_question: evit respont d'ar goulenn-mañ
       unauthenticated_retag: Ret eo deoc'h kaout ur gont implijer evit gellout kemmañ an tikedennoù
-      unfavorite_tooltip: Lemel ar goulenn-mañ kuit eus ar roll sinedoù
-      unwatch_tooltip: Paouez da heuliañ ar goulenn-mañ
       viewed: lennet
-      watch_tooltip: Heuliañ ar goulenn-mañ
     solve: 
       flash_notice: Diskoulmet eo bet ar gudenn.
     tags: 

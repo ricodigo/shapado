@@ -10,39 +10,6 @@ br:
       over_18: A-us 18 bloaz on
       under_18: Dindan 18 bloaz on
       warning: "DIWALLIT : Er bajenn-mañ e c'heller kavout danvez evit an dud gour."
-    facts: 
-      features: 
-        cols: 
-          adaptable: azasaus
-          foss: frank/digor e darzh
-          joel: Ha pinvidikoc'h e vo Joel a-drugarez din ?
-          multilanguage: liesyezh
-          multitopic: liesdanvez
-        shapado: 
-          adaptable: ya !
-          foss: ya !
-          joel: ket :/
-          multilanguage: ya !
-          multitopic: ya !
-        stackexchange: 
-          adaptable: ket
-          foss: ket
-          joel: ya !
-          multilanguage: ket
-          multitopic: ket
-      prices: 
-        cols: 
-          onsite: el lec'hienn
-        shapado: 
-          large: tro $500
-          medium: <=== heñvel
-          onsite: $0 ebet war o servijer deoc'h moarvat
-          small: moarvat eus $50 da $100/miz war al lod vrasañ eus ar pourvezerien a herbec'hier
-        stackexchange: 
-          large: $1299/miz
-          medium: $999/miz
-          onsite: $2500/miz
-          small: $129/miz
     feedback: 
       captcha_error: Mar plij, diskoulmit un oberiadenn matematikel simpl
       email_description: Merkit ur chomlec'h postel evit ma c'hallfemp respont d'ho kemennadenn

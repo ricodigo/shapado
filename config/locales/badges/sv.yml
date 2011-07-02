@@ -1,0 +1,103 @@
+# Messages for Swedish (Svenska)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Lokal Profil
+# Author: Tobulos1
+# Author: WikiPhoenix
+sv: 
+  activerecord: 
+    models: 
+      badge: Emblem
+      badges: Emblem
+  badges: 
+    index: 
+      description: Alla emblem som du kan tjäna. Dela din kunskap och tjäna emblem.
+      title: emblem
+    shared: 
+      autobiographer: 
+        description: Avslutade alla fälten på användarprofilen
+        name: Autobiographer
+      celebrity: 
+        description: Fick mer än 100 anhängare
+        name: Kändis
+      civic_duty: 
+        description: Röstade 300 gånger
+      commentator: 
+        description: Lämnat 10 kommentarer
+        name: Kommentator
+      critic: 
+        description: Röstade negativt för första gången
+        name: Kritiker
+      disciplined: 
+        name: Disciplinerad
+      effort_medal: 
+        description: Fick 100 positiva röster
+      enlightened: 
+        name: Upplyst
+      famous_question: 
+        description: Ställde en fråga med 10.000 visningar
+        name: Berömd fråga
+      fanatic: 
+        description: Besökte webbplatsen varje dag i 100 dagar i följd
+        name: Fanatiker
+      good_answer: 
+        description: Gav ett svar som nådde ett genomsnitt på mer än 25 röster
+        name: Bra svar
+      good_question: 
+        description: Ställde en fråga som nådde ett genomsnitt på mer än 25 röster
+        name: Bra fråga
+      great_answer: 
+        description: Har ett svar som röstats upp 100 gånger
+      great_question: 
+        description: Ställde en fråga som röstats upp 100 gånger
+      inquirer: 
+        description: Ställde en fråga för första gången
+        name: Undersökare
+      interesting_person: 
+        description: Fick mer än 10 anhängare
+        name: Intressant person
+      merit_medal: 
+        description: Fick 200 positiva röster
+      nice_answer: 
+        description: Har ett svar som röstats upp 10 gånger
+        name: Bra svar
+      nice_question: 
+        description: Ställde en fråga som röstats upp 10 gånger
+        name: Bra fråga
+      notable_question: 
+        description: Ställde en fråga med 2.500 visningar
+        name: Anmärkningsvärd fråga
+      organizer: 
+        name: Organisatör
+      peer_pressure: 
+        description: Raderade egna inlägg med ett poäng på -3 eller lägre
+        name: Grupptryck
+      pioneer: 
+        description: Var en av de första registrerade användarna
+        name: Pionjär
+      popstar: 
+        description: Har 500 positiva röster, maximalt 10 negativa röster
+        name: Popstjärna
+      popular_person: 
+        description: Fick mer än 50 anhängare
+        name: Populär person
+      popular_question: 
+        description: Ställde en fråga med 1.000 visningar
+        name: Populära frågor
+      rockstar: 
+        description: Har 1.000 positiva röster, maximalt 10 negativa röster
+        name: Rockstjärna
+      service_medal: 
+        description: Har 300 positiva röster
+      student: 
+        name: Student
+      supporter: 
+        description: Röstade positivt för första gången
+        name: Supporter
+      troubleshooter: 
+        description: Svarade för första gången
+        name: Felsökaren
+    show: 
+      description: "Användare som har tjänat detta emblem. Nyligen tilldelad till:"
+      earned: tjänade
+      title: Emblem %{type}

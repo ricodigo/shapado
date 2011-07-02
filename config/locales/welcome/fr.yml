@@ -9,39 +9,6 @@ fr:
       over_18: J'ai plus de 18 ans
       under_18: J'ai moins de 18 ans
       warning: "ATTENTION: Cette page peux contenir du matériel explicite pour adultes."
-    facts: 
-      features: 
-        cols: 
-          adaptable: adaptable
-          foss: libre/open source
-          joel: vais-je rendre joel plus riche?
-          multilanguage: multilingue
-          multitopic: multi-topic
-        shapado: 
-          adaptable: oui!
-          foss: oui!
-          joel: non :/
-          multilanguage: oui!
-          multitopic: oui!
-        stackexchange: 
-          adaptable: non
-          foss: non
-          joel: oui!
-          multilanguage: non
-          multitopic: non
-      prices: 
-        cols: 
-          onsite: sur site
-        shapado: 
-          large: genre $500
-          medium: <=== idem
-          onsite: bah que dalle sur votre propre serveur
-          small: à peu près $50-$100/mois sur ovh
-        stackexchange: 
-          large: $1299/mois
-          medium: $999/mois
-          onsite: $2500/mois
-          small: $129/mois
     feedback: 
       captcha_error: s'il vous plait, veuillez résoudre cette simple opération mathématique
       email_description: S'il vous plait, donnez-nous votre email afin que nous puissions répondre à votre message.

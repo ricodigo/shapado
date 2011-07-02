@@ -9,39 +9,6 @@ da:
       over_18: Jeg er over 18
       under_18: Jeg er under 18
       warning: "ADVARSEL: Denne side kan indeholde eksplicit voksent materiale."
-    facts: 
-      features: 
-        cols: 
-          adaptable: fleksibel
-          foss: gratis/open source
-          joel: vil jeg gøre joel rigere?
-          multilanguage: multi-sprog
-          multitopic: multi-emne
-        shapado: 
-          adaptable: ja!
-          foss: ja!
-          joel: nej :/
-          multilanguage: ja!
-          multitopic: ja!
-        stackexchange: 
-          adaptable: nej
-          foss: nej
-          joel: ja!
-          multilanguage: nej
-          multitopic: nej
-      prices: 
-        cols: 
-          onsite: på stedet
-        shapado: 
-          large: nok omkring 500 dollars
-          medium: <=== ditto
-          onsite: formentlig $0 på din egen server
-          small: formentlig omkring 50 til 100 dollars/måned på de fleste hosting udbydere
-        stackexchange: 
-          large: 1299$(USD) om måneden
-          medium: 999$(USD) om måneden
-          onsite: 2500$(USD om måneden)
-          small: 129$(USD) om måneden
     feedback: 
       captcha_error: Løs en simpel matematisk opgave
       email_description: Angiv venligst din e-mail-adresse så vi kan besvare din besked

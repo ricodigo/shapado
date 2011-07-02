@@ -95,7 +95,6 @@ ko:
       ban: 금지
       close: 닫기
       close_reason: "이 질문은 아래 사유로 폐쇄되었습니다 :"
-      favorite_tooltip: 이 질문을 Favorite에 추가
       flag: 플래그
       flagged_as: "플래그 :"
       flags: reported as
@@ -110,10 +109,7 @@ ko:
       solution: 해결
       to_answer_question: 이 질문에 답하기
       unauthenticated_retag: 질문을 retag하려면 계정이 필요합니다
-      unfavorite_tooltip: 이 질문을 Favorite에서 삭제
-      unwatch_tooltip: 이 질문을 그만 보기
       viewed: 조회
-      watch_tooltip: 이 질문을 관찰하기
     solve: 
       flash_notice: 질문이 해결되었습니다.
     tags: 

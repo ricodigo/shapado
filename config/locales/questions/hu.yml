@@ -96,7 +96,6 @@ hu:
       close: Lezárás
       close_reason: "A kérdés a következő ok miatt lett lezárva:"
       edit_request: Kérés szerkesztése
-      favorite_tooltip: Kérdés felvétele a kedvencek közé
       flag: Megjelölés
       flagged_as: "Megjelölve:"
       flags: Jeletve, mint
@@ -115,10 +114,7 @@ hu:
       share_on: "Kérés megosztása a következő oldalon: %{site}"
       solution: Megoldás
       unauthenticated_retag: Fiók szükséges a kérdések újracímkézéséhez
-      unfavorite_tooltip: Kérdés eltávolítása a kedvencek közül
-      unwatch_tooltip: Kérdés figyelésének vége
       viewed: "Megtekintések:"
-      watch_tooltip: Kérdés figyelése
     solve: 
       flash_notice: A kérdés megoldva.
     tags: 

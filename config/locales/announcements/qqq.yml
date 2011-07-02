@@ -14,6 +14,6 @@ qqq:
       delete: "{{Identical|Remove}}"
       title: "{{Identical|Action}}"
     create: 
-      success: "An announcement is similar to the MediaWiki sitenotice: a site wide announcement, repeated on every page."
+      success: Your announcement was successfully created.
     index: 
       title: "An announcement is similar to the MediaWiki sitenotice: a site wide announcement, repeated on every page."

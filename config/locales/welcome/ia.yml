@@ -9,39 +9,6 @@ ia:
       over_18: Io ha plus de 18 annos
       under_18: Io ha minus de 18 annos
       warning: "AVISO: Iste pagina pote continer material explicite pro adultos."
-    facts: 
-      features: 
-        cols: 
-          adaptable: adaptabile
-          foss: libere/open source
-          joel: va io render joel plus ric?
-          multilanguage: multilingue
-          multitopic: multi-topico
-        shapado: 
-          adaptable: si!
-          foss: si!
-          joel: no :/
-          multilanguage: si!
-          multitopic: si!
-        stackexchange: 
-          adaptable: 'no'
-          foss: 'no'
-          joel: si!
-          multilanguage: 'no'
-          multitopic: 'no'
-      prices: 
-        cols: 
-          onsite: in sito
-        shapado: 
-          large: probabilemente circa $500
-          medium: <=== idem
-          onsite: probabilemente $0 in tu proprie servitor
-          small: probabilemente circa $50 a $100/mense in le majoritate de servitores web
-        stackexchange: 
-          large: $1299/mense
-          medium: $999/mense
-          onsite: $2500/mense
-          small: $129/mense
     feedback: 
       captcha_error: Per favor, resolve un simple operation mathematic
       email_description: Per favor forni tu adresse de e-mail a fin que nos pote responder a tu message

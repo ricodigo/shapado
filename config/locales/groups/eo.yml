@@ -17,7 +17,6 @@ eo:
         legend: Klarigeto
         may_contain_adult_content: Tiu ĉi paĝaro eble enhavas materialon por plenkreskuloj
         name: Nomo
-        openid_only: Nur OpenID-uzantoj povas atingi la paĝaron
         owner: Tiun ĉi grupon kreis %{login}
         registered_only: Nur registritaj homoj povas atingi la paĝaron
         subdomain: Retadreso

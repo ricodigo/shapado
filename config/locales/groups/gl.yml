@@ -18,7 +18,6 @@ gl:
         logo: Logo
         may_contain_adult_content: Este sitio pode posuír contidos para adultos
         name: Nome
-        openid_only: Só as persoas con OpenID pode acceder ao sitio
         owner: Este grupo foi creado por %{login}
         registered_only: Só as persoas rexistradas poden acceder ao sitio
         state: Estado

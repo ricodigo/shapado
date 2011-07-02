@@ -26,9 +26,6 @@ fi:
     preview: Esikatselu
     previous: Edellinen
     share: Jaa
-  languages: 
-    any: Mikä tahansa
-    user: Ensisijaiset kieleni
   models: 
     question: Kysymys
   number: 

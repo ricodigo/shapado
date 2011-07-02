@@ -17,7 +17,6 @@ ja:
         logo: ロゴ
         may_contain_adult_content: このサイトはアダルトコンテンツを含む
         name: サイト名
-        openid_only: OpenIDで認証したユーザのみアクセス可能とする
         owner: このサイトは %{login}が作成しました
         registered_only: 登録したユーザのみアクセス可能とする
         state: ステータス

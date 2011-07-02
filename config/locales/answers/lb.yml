@@ -21,5 +21,7 @@ lb:
       comment_label: Dës Äntwert kommentéieren
       comment_submit: Bemierkung
       submit: Äntwert
+    revert: 
+      title: Äntwert zerécksetzen
     update: 
       flash_notice: D'Äntwert gouf aktualiséiert.

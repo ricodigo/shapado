@@ -3,9 +3,9 @@
 # Export driver: syck-pecl
 # Author: Crazymadlover
 # Author: Patcito
-es:
-  layouts:
-    application:
+es: 
+  layouts: 
+    application: 
       ask_question: Pregunte
       badges: Insignias
       forgot: La olvido?
@@ -17,7 +17,7 @@ es:
       manage_ads: Gestionar propagandas
       moderate: Moderar
       now: ya!
-      openid:
+      openid: 
         explaination: "Si deseas abrir una cuenta o solamente conectarte, por favor seleccione tu provedor openid:"
       pages: Páginas
       questions: Preguntas
@@ -32,7 +32,7 @@ es:
       unanswered: Sin contestar
       users: Usuarios
       welcome_from: Bienvenido! puedes
-    manage:
+    manage: 
       actions: Acciones
       announcements: Anuncios
       constrains: Restricciones
@@ -48,5 +48,5 @@ es:
       stats: Estadísticas
       theme: Tema
       widgets: Widgets
-    notifications:
+    notifications: 
       message: Si no deseas recibir notificaciones automáticas de %{group} otra vez, cambia tus preferencias en la pantalla de notificaciones.

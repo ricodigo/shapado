@@ -10,39 +10,6 @@ fi:
       over_18: Olen yli 18
       under_18: Olen alle 18
       warning: "VAROITUS: Tämä sivu saattaa sisältää vain aikuisille materiaalia."
-    facts: 
-      features: 
-        cols: 
-          adaptable: mukautuva
-          foss: vapaa/avoin lähdekoodi
-          joel: teenkö jussin rikkaammaksi?
-          multilanguage: monikielinen
-          multitopic: moniaiheinen
-        shapado: 
-          adaptable: kyllä!
-          foss: kyllä!
-          joel: "ei: /"
-          multilanguage: kyllä!
-          multitopic: kyllä!
-        stackexchange: 
-          adaptable: ei
-          foss: ei
-          joel: kyllä!
-          multilanguage: ei
-          multitopic: ei
-      prices: 
-        cols: 
-          onsite: sivuston
-        shapado: 
-          large: luultavasti kuten 500 dollaria
-          medium: <=== Sama
-          onsite: luultavasti 0 dollaria omalla palvelimella
-          small: todennäköisesti 50 € — 100 € kuukaudessa useimmilla videopalvelujen tarjoajilla
-        stackexchange: 
-          large: 1299 dollaria/kuukausi
-          medium: 999 dollaria/kuukausi
-          onsite: 2500 dollaria/kuukausi
-          small: 129 dollaria/kuukausi
     feedback: 
       captcha_error: Ratkaise yksinkertainen laskutoimitus
       email_description: Anna sähköpostiosoitteesi, niin voimme vastata viestiin

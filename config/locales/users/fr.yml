@@ -23,7 +23,7 @@ fr:
         language: Langue
         language_filter: Filtrer par langue
         last_logged_at: vu
-        login: Nom d'utilisateur
+        login: Nom d’utilisateur
         name: Nom réel
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe

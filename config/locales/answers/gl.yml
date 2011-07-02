@@ -10,19 +10,19 @@ gl:
         created_at: respondidas
         link: ligazón
     models: 
-      answer: resposta
-      answers: respostas
+      answer: Resposta
+      answers: Respostas
   answers: 
     create: 
       flash_error: "algo foi mal ao engadir a súa resposta. \n  lembre que: \n - non están permitidas as preguntas baleiras ou repetidas. \n - cómpre agardar 20 segundos antes de publicar outra resposta. \n - soamente pode publicar unha resposta por cada pregunta."
-      flash_notice: grazas!
+      flash_notice: Grazas!
     edit: 
       title: editando a resposta
     form: 
       answer_label: responder á pregunta
       comment_label: comentar esta resposta
       comment_submit: comentar
-      submit: responder
+      submit: Responder
     revert: 
       title: reverter a resposta
     update: 

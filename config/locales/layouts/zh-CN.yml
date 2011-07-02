@@ -48,4 +48,4 @@ zh-CN:
       theme: 主题
       widgets: 窗口小部件
     notifications: 
-      message: 如果您不希望再收到来自 %{domain} 的自动通知，更改您的首选项，在通知屏幕。
+      message: 如果您不希望再收到来自 %{group} 的自动通知，更改您的首选项，在通知屏幕。

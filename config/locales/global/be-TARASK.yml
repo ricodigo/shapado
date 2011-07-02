@@ -25,9 +25,6 @@ be-TARASK:
     preview: Папярэдні прагляд
     previous: Папярэдні
     share: Адкрыць доступ
-  languages: 
-    any: Любая
-    user: Мовы, якім я аддаю перавагу
   models: 
     question: Пытаньне
   number: 

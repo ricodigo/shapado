@@ -97,7 +97,6 @@ fi:
       close: Sulje
       close_reason: "Kysymys on suljettu seuraavista syistä:"
       edit_request: Muokkaa pyyntöä
-      favorite_tooltip: Lisää tämä kysymys suosikkeihisi
       flag: Merkintä
       flagged_as: Merkitty nimellä
       flags: Ilmoitettu nimellä
@@ -117,10 +116,7 @@ fi:
       solution: Ratkaisu
       to_answer_question: tähän kysymykseen vastaamiseksi
       unauthenticated_retag: Tarvitset tilin kysymysten uudelleenmerkintää varten
-      unfavorite_tooltip: Poista tämä kysymys suosikeistasi
-      unwatch_tooltip: Lopeta tämän kysymyksen katsominen
       viewed: katsottu
-      watch_tooltip: Tarkkaile tätä kysymystä
     solve: 
       flash_notice: Kysymys oli ratkaistu.
     tags: 

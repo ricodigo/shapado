@@ -10,39 +10,6 @@ ru:
       over_18: Я старше 18 лет
       under_18: Мне меньше 18 лет
       warning: "Внимание: эта страница может содержать откровенные материалы для взрослых."
-    facts: 
-      features: 
-        cols: 
-          adaptable: лёгкая адаптация
-          foss: бесплатный/открытый исходный код
-          joel: Я сделаю Джоэл богаче?
-          multilanguage: многоязычность
-          multitopic: различные темы
-        shapado: 
-          adaptable: да!
-          foss: да!
-          joel: нет :/
-          multilanguage: да!
-          multitopic: да!
-        stackexchange: 
-          adaptable: нет
-          foss: нет
-          joel: да!
-          multilanguage: нет
-          multitopic: нет
-      prices: 
-        cols: 
-          onsite: на сайте
-        shapado: 
-          large: где-то около $500
-          medium: <=== то же самое
-          onsite: где-то $0 на своём сервере, хех
-          small: где-то от $50 до $100 в месяц у большинства хостеров
-        stackexchange: 
-          large: $1299/месяц
-          medium: $999/месяц
-          onsite: $2500/месяц
-          small: $129/месяц
     feedback: 
       captcha_error: Пожалуйста, выполните простую математическую операцию
       email_description: Пожалуйста, укажите адрес вашей электронной почты, чтобы мы могли ответить на ваше сообщение

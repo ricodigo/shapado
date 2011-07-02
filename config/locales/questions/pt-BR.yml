@@ -98,7 +98,6 @@ pt-BR:
       close: Fechar
       close_reason: "A pergunta foi fechada pelo seguinte motivo:"
       edit_request: Editar pedido
-      favorite_tooltip: Adicionar esta pergunta às suas favoritas
       flag: Reportar
       flagged_as: Reportada como
       flags: Reportada como
@@ -118,10 +117,7 @@ pt-BR:
       solution: Solução
       to_answer_question: para responder a esta pergunta
       unauthenticated_retag: É necessária uma conta para mudar tags de perguntas
-      unfavorite_tooltip: Remover esta pergunta das suas favoritas
-      unwatch_tooltip: Deixar de vigiar esta pergunta
       viewed: visitada
-      watch_tooltip: Vigiar esta pergunta
     solve: 
       flash_notice: A pergunta foi resolvida.
     tags: 

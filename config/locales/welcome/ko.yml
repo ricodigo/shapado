@@ -9,39 +9,6 @@ ko:
       over_18: 난 18 세 이상입니다
       under_18: 난 18 세 미만입니다
       warning: 경고 :이 페이지는 노골적인 성인 자료를 포함할 수 있습니다.
-    facts: 
-      features: 
-        cols: 
-          adaptable: adaptable
-          foss: 무료 / 오픈 소스
-          joel: will i make joel richer?
-          multilanguage: multi-language
-          multitopic: multi-topic
-        shapado: 
-          adaptable: yes!
-          foss: yes!
-          joel: no :/
-          multilanguage: yes!
-          multitopic: yes!
-        stackexchange: 
-          adaptable: 'no'
-          foss: 'no'
-          joel: yes!
-          multilanguage: 'no'
-          multitopic: 'no'
-      prices: 
-        cols: 
-          onsite: on site
-        shapado: 
-          large: prolly like $500
-          medium: <=== ditto
-          onsite: prolly $0 on your own server duh
-          small: prolly like $50 to $100/month on most hosting providers
-        stackexchange: 
-          large: $1299/month
-          medium: $999/month
-          onsite: $2500/month
-          small: $129/month
     feedback: 
       captcha_error: ", 간단한 산수 문제를 푸세요"
       email_description: 귀하의 메시지에 답변할 수 있도록 이메일을 알려주세요

@@ -12,7 +12,7 @@ ms:
         starts_at: Bermula di
   announcements: 
     actions: 
-      delete: Gugurkan
+      delete: Buang
       title: Tindakan
     create: 
       success: Pengumuman berjaya dicipta.

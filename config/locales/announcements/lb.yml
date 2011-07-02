@@ -13,3 +13,5 @@ lb:
     actions: 
       delete: Ewechhuelen
       title: Aktiounen
+    index: 
+      title: Ukënnegungen

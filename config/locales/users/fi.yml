@@ -85,6 +85,8 @@ fi:
       title: Rekisteröidy uutena käyttäjänä
     show: 
       follow: Seuraa
+      followers: Seuraajat
+      following: Seurattavat
       title: Käyttäjä %{user}
       unfollow: Älä seuraa
       views: näyttökertaa

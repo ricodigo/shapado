@@ -19,7 +19,6 @@ be-TARASK:
         logo: Лягатып
         may_contain_adult_content: Гэты сайт можа ўтрымліваць зьмест для дарослых
         name: Назва
-        openid_only: Толькі людзі з OpenID маюць доступ да сайта
         owner: Гэтая група была створаная %{login}
         registered_only: Толькі зарэгістраваныя людзі могуць зайсьці на сайт
         state: Стан

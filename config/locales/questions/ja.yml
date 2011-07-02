@@ -94,7 +94,6 @@ ja:
       ban: 弾く
       close: 閉じる
       close_reason: この質問は次の理由による閉じられています：
-      favorite_tooltip: この質問をお気に入りに登録する
       flag: 報告する
       flagged_as: 報告：
       flags: 報告する
@@ -109,10 +108,7 @@ ja:
       solution: 解決
       to_answer_question: この質問に回答する
       unauthenticated_retag: タグを編集するにはアカウントが必要です
-      unfavorite_tooltip: この質問はあなたのお気に入りから削除されました
-      unwatch_tooltip: ウォッチを停止する
       viewed: 表示回数
-      watch_tooltip: この質問に注目マークを付ける
     solve: 
       flash_notice: 問題は解決しました。
     tags: 

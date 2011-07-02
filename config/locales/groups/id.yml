@@ -17,7 +17,6 @@ id:
         logo: Logo
         may_contain_adult_content: Situs ini mungkin berisi konten dewasa
         name: Nama
-        openid_only: Hanya orang-orang yang memakai OpenID yang dapat mengakses situs ini
         owner: Grup ini dibuat oleh %{login}
         registered_only: Hanya pengguna terdaftar yang boleh mengakses situs ini
         state: Keadaan

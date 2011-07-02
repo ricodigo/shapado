@@ -19,7 +19,6 @@ ca:
         logo: Logotip
         may_contain_adult_content: Aquest lloc pot contenir material per a adults
         name: Nom
-        openid_only: Només poden accedir a aquest lloc les persones que emprin OpenID
         owner: Aquest grup ha estat creat per %{login}
         registered_only: Només poden accedir a aquest lloc les persones registrades
         state: Estat

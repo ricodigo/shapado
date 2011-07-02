@@ -96,7 +96,6 @@ de:
       close: Beendet
       close_reason: "Die Frage wurde aus folgenden Gründen beendet:"
       edit_request: Bitte bearbeiten
-      favorite_tooltip: Diese Frage zur Favoritenliste hinzufügen
       flag: Kennzeichen
       flagged_as: "Gekennzeichnet als:"
       flags: Gemeldet als
@@ -116,10 +115,7 @@ de:
       solution: Lösung
       to_answer_question: Frage beantworten
       unauthenticated_retag: Du brauchst ein Nutzerkonto, um die Stichwörter ändern zu können
-      unfavorite_tooltip: Diese Frage aus der Favoritenliste entfernen
-      unwatch_tooltip: Diese Frage nicht mehr beobachten
       viewed: Gesehen
-      watch_tooltip: Diese Frage beobachten
     solve: 
       flash_notice: Die Frage wurde beantwortet.
     tags: 

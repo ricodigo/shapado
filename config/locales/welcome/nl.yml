@@ -10,39 +10,6 @@ nl:
       over_18: Ik ben ouder dan 18
       under_18: Ik ben jonger dan 18 jaar
       warning: "Waarschuwing: deze pagina kan materiaal voor volwassenen bevatten."
-    facts: 
-      features: 
-        cols: 
-          adaptable: Aanpasbaar
-          foss: gratis / open source
-          joel: Ga ik Joel rijker maken?
-          multilanguage: Meertalig
-          multitopic: Meerdere onderwerpen
-        shapado: 
-          adaptable: Ja!
-          foss: Ja!
-          joel: Nee :/
-          multilanguage: Ja!
-          multitopic: Ja!
-        stackexchange: 
-          adaptable: Nee
-          foss: Nee
-          joel: Ja!
-          multilanguage: Nee
-          multitopic: Nee
-      prices: 
-        cols: 
-          onsite: op de site
-        shapado: 
-          large: Waarschijnlijk $500
-          medium: <=== hetzelfde
-          onsite: Waarschijnlijk $0 op uw eigen server
-          small: Waarschijnlijk $50 tot $100 per maand bij de meeste hostingproviders
-        stackexchange: 
-          large: $1.299 per maand
-          medium: $999 per maand
-          onsite: $2.500 per maand
-          small: $129 per maand
     feedback: 
       captcha_error: Los altublieft deze eenvoudige vergelijking op
       email_description: Geef alstublieft uw e-mailadres op zodat we u kunnen antwoorden

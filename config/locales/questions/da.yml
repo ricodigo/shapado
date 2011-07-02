@@ -96,7 +96,6 @@ da:
       close: Luk
       close_reason: "Det spørgsmål er blevet lukket af følgende grunde:"
       edit_request: Rediger anmodning
-      favorite_tooltip: Tilføj dette spørgsmål til dine favoritter
       flag: Anmeld
       flagged_as: Anmeldt som
       flags: Anmeldt som
@@ -116,10 +115,7 @@ da:
       solution: Løsning
       to_answer_question: for at besvare dette spørgsmål
       unauthenticated_retag: Du skal bruge en konto for at gen-tage spørgsmål
-      unfavorite_tooltip: Fjern dette spørgsmål fra dine favoritter
-      unwatch_tooltip: Stop med at holde øje med dette spørgsmål
       viewed: set
-      watch_tooltip: Hold øje med dette spørgsmål
     solve: 
       flash_notice: Spørgsmålet var løst.
     tags: 

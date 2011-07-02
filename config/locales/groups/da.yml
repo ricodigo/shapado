@@ -18,7 +18,6 @@ da:
         logo: Logo
         may_contain_adult_content: Dette site kan indeholde voksen indhold
         name: Navn
-        openid_only: Kun folk med OpenID kan få adgang til webstedet
         owner: Denne gruppe blev oprettet af %{login}
         registered_only: Kun registrerede personer kan få adgang til webstedet
         state: Tilstand

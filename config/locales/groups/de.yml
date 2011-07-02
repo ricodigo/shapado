@@ -19,7 +19,6 @@ de:
         logo: Logo
         may_contain_adult_content: Diese Website enthält möglicherweise jugendgefährdende Inhalte
         name: Name
-        openid_only: Nur Personen, die OpenID nutzen, können auf die Website zugreifen
         owner: Diese Gruppe wurde erstellt von %{login}
         registered_only: Diese Website ist nur für registrierte Nutzer zugänglich
         state: Land

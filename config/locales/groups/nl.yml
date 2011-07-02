@@ -19,7 +19,6 @@ nl:
         logo: Logo
         may_contain_adult_content: Deze site kan inhoud voor volwassenen bevatten
         name: Naam
-        openid_only: Alleen gebruikers via OpenID toestaan
         owner: Deze groep is aangemaakt door %{login}
         registered_only: Alleen geregistreerde gebruikers kunnen de site lezen
         state: Status

@@ -9,39 +9,6 @@ de:
       over_18: Ich bin älter als 18 Jahre
       under_18: Ich bin jünger als 18 Jahre
       warning: "ACHTUNG: Auf dieser Website können sich jugendgefährdende Inhalte befinden."
-    facts: 
-      features: 
-        cols: 
-          adaptable: anpassungsfähig
-          foss: Free/Open Source
-          joel: Werde ich Joel reicher machen können?
-          multilanguage: mehrsprachig
-          multitopic: mehrthemenfähig
-        shapado: 
-          adaptable: Ja!
-          foss: Ja!
-          joel: Nein :/
-          multilanguage: Ja!
-          multitopic: Ja!
-        stackexchange: 
-          adaptable: Nein
-          foss: Nein
-          joel: Ja!
-          multilanguage: Nein
-          multitopic: Nein
-      prices: 
-        cols: 
-          onsite: auf dieser Website
-        shapado: 
-          large: wahrscheinlich $ 500
-          medium: <=== dito
-          onsite: wahrscheinlich $ 0 auf Deinem eigenen Server
-          small: wahrscheinlich zwischen $ 50 und $ 100/Monat bei den meisten Hostern
-        stackexchange: 
-          large: $ 1299/Monat
-          medium: $ 999/Monat
-          onsite: $ 2500/Monat
-          small: $ 129/Monat
     feedback: 
       captcha_error: Bitte löse eine einfache Rechenaufgabe
       email_description: Bitte hinterlasse Deine E-Mail-Adresse, damit wir auf Deine Nachricht antworten können

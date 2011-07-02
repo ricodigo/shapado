@@ -43,4 +43,4 @@ hu:
       theme: Téma
       widgets: Minialkalmazások
     notifications: 
-      message: Ha nem akarsz további automatikus értesítéseket a(z) %{domain} oldalról, módosítsd a beállításaidat az értesítések képernyőn.
+      message: Ha nem akarsz további automatikus értesítéseket a(z) %{group} oldalról, módosítsd a beállításaidat az értesítések képernyőn.

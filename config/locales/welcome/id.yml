@@ -9,39 +9,6 @@ id:
       over_18: Saya berusia lebih dari 18 tahun
       under_18: Saya berusia di bawah 18 tahun
       warning: "PERINGATAN: Halaman ini mungkin berisi konten dewasa yang berlebihan."
-    facts: 
-      features: 
-        cols: 
-          adaptable: dapat beradaptasi
-          foss: bebas/sumber terbuka
-          joel: akankah saya membuat joel lebih kaya?
-          multilanguage: multibahasa
-          multitopic: multitopik
-        shapado: 
-          adaptable: ya!
-          foss: ya!
-          joel: tidak :/
-          multilanguage: ya!
-          multitopic: ya!
-        stackexchange: 
-          adaptable: tidak
-          foss: tidak
-          joel: ya!
-          multilanguage: tidak
-          multitopic: tidak
-      prices: 
-        cols: 
-          onsite: di tempat
-        shapado: 
-          large: mungkin $500
-          medium: <=== ditto
-          onsite: mungkin $0 di server Anda
-          small: mungkin $50 hingga $100/bulan di sebagian besar penyedia hosting
-        stackexchange: 
-          large: $1299/bulan
-          medium: $999/bulan
-          onsite: $2500/bulan
-          small: $129/bulan
     feedback: 
       captcha_error: Tolong selesaikan sebuah operasi matematika sederhana
       email_description: Harap beritahu alamat surel Anda agar kami dapat menjawab pesan Anda

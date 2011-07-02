@@ -20,7 +20,7 @@ sr:
       title: Уређивање одговора
     form: 
       answer_label: Одговори на питање
-      comment_label: Прокоментариши на овај одговор
+      comment_label: Прокоментариши овај одговор
       comment_submit: Прокоментариши
       submit: Одговори
     revert: 

@@ -97,7 +97,6 @@ it:
       close: Chiudi
       close_reason: "La domanda è stata chiusa per il seguente motivo:"
       edit_request: Modifica richiesta
-      favorite_tooltip: Aggiungi la domanda ai preferiti
       flag: Segnalazione
       flagged_as: Segnalato come
       flags: Segnalata come
@@ -117,10 +116,7 @@ it:
       solution: Soluzione
       to_answer_question: per rispondere alla domanda
       unauthenticated_retag: Serve un account per modificare i tag delle domande
-      unfavorite_tooltip: Rimuovi questa domanda dai preferiti
-      unwatch_tooltip: Non seguire più la domanda
       viewed: visite
-      watch_tooltip: Segui questa domanda
     solve: 
       flash_notice: La domanda è stata risolta.
     tags: 
