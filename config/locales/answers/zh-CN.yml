@@ -20,9 +20,9 @@ zh-CN:
     edit: 
       title: 编辑答案
     form: 
-      answer_label: 回答这个问题
-      comment_label: 这个答案评论
-      comment_submit: 评论
+      answer_label: 回答
+      comment_label: 评论
+      comment_submit: 提交
       submit: 答案
     revert: 
       title: 恢复答案

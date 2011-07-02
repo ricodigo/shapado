@@ -7,10 +7,10 @@ zh-CN:
     attributes: 
       user: 
         activated_at: 在激活
-        activation_code: 激活代码
+        activation_code: 激活码
         age: 年龄
         asked_by: 要求
-        avatar: 配置文件映像
+        avatar: 头像
         birthday: 生日
         created_at: 加入
         current_password: 当前密码

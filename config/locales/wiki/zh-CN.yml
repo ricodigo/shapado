@@ -5,10 +5,10 @@
 zh-CN: 
   wiki: 
     actions: 
-      all_history: 回到历史
+      all_history: 所有历史
       back_to_question: 回到问题
       revert: 恢复到此版本
-      show_diff: 选定的版本进行比较
+      show_diff: 对选定的版本进行比较
     diff: 
       title: "%{prev} 和 %{curr} 的不同"
     history: 

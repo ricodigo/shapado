@@ -7,10 +7,10 @@ zh-CN:
     attributes: 
       group: 
         default_tags: 默认标签
-        description: 说明
-        domain: 域
+        description: 描述
+        domain: 域名
         enable_latex: 启用 LaTeX
-        fb_button: 启用 Facebook 类似按钮（不隐私友好）
+        fb_button: 启用 Facebook 按钮（不隐私友好）
         forum: 允许用户通过多个答案
         group_created_by: 通过创建
         language: 语言
@@ -22,7 +22,7 @@ zh-CN:
         owner: 这一组是由 %{login} 创建
         registered_only: 只有已登记的人可以访问网站
         state: 状态
-        subdomain: URL
+        subdomain: 子域名
         wysiwyg_editor: 启用用户友好的编辑器
     models: 
       default_tags_message: 你不能拥有 10 多个默认标签
