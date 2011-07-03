@@ -27,7 +27,7 @@
         By:
         =t("global.anonymous")
       %time{:pubdate => "pubdate", :datetime => last_target_date.iso8601}
-        = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question, :anchor => last_target_id)
+        = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question, :anchor => last_target_id), :class => "pjax", :"data-layout" => "question"
 
 
     .tags

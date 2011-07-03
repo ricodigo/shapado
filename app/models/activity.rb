@@ -51,6 +51,21 @@ class Activity
     end
   end
 
+  def layout_for_trackable
+    case (self[:target_type] || self[:trackable_type]).to_s
+    when "Question"
+      "question"
+    when "Answer"
+      "question"
+    when "Page"
+      "pages"
+    when "User"
+      "user"
+    else
+      "index"
+    end
+  end
+
   def to_activity_stream
     url_helper = Rails.application.routes.url_helpers
     domain = self.group.domain

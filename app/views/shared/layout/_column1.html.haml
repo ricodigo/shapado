@@ -15,13 +15,13 @@
           = tab_entry "li", t('layouts.application.contributed'), contributed_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
           = tab_entry "li", t('layouts.application.collaborate'), expertise_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
         %li
-          = link_to t('layouts.application.faq')
+          = link_to t('layouts.application.faq'), :class => "pjax", :"data-layout" => "index"
 
   .widget-links.module
     %nav
       %ul
         %li
-          = link_to t('layouts.application.random_question'), random_questions_path(:unanswered => true)
+          = link_to t('layouts.application.random_question'), random_questions_path(:unanswered => true), :class => "pjax", :"data-layout" => "question"
         %li
           = link_to t('layouts.application.badges'), badges_path, :class => "pjax", :"data-layout" => "badges"
         %li
