@@ -83,6 +83,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
+        sweep_widgets
         flash[:notice] = I18n.t("pages.create.success")
         format.html { redirect_to(@page) }
         format.json  { render :json => @page, :status => :created, :location => @page }
@@ -103,6 +104,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
+        sweep_widgets
         flash[:notice] = I18n.t("pages.update.success")
         format.html { redirect_to(@page) }
         format.json  { head :ok }
@@ -118,6 +120,7 @@ class PagesController < ApplicationController
   def destroy
     @page = current_group.pages.find(params[:id])
     @page.destroy
+    sweep_widgets
 
     respond_to do |format|
       format.html { redirect_to(pages_url) }

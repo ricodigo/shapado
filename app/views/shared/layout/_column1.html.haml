@@ -14,8 +14,17 @@
           = tab_entry "li", t('layouts.application.preferred'), preferred_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
           = tab_entry "li", t('layouts.application.contributed'), contributed_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
           = tab_entry "li", t('layouts.application.collaborate'), expertise_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
+          = tab_entry "li", t('layouts.application.search'), '/search', :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
         %li
           = link_to t('layouts.application.faq'), :class => "pjax", :"data-layout" => "index"
+
+  -if user_signed_in? && current_user.searches.count > 0
+    .widget-links.module
+      %nav
+        %ul
+          -current_user.searches.each do |search|
+            %li
+              = tab_entry "li", search.name, search_path(search), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
 
   .widget-links.module
     %nav

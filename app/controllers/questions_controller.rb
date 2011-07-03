@@ -651,6 +651,10 @@ class QuestionsController < ApplicationController
     conds = {:group_id => current_group.id}
     conds[:answered] = false if params[:unanswered] && params[:unanswered] != "0"
     @question = Question.random(conds)
+    if !@question
+      conds.delete(:answered)
+      @question = Question.random(conds)
+    end
 
     respond_to do |format|
       format.html { redirect_to question_path(@question) }
