@@ -4,12 +4,12 @@
 # Author: Hydra
 zh-CN: 
   feeds: 
-    feed: 饲料
+    feed: 订阅
     post_new_questions: 发布新问题
     question: 订阅此问题
     questions: 订阅的所有问题
-    share_on_twitter: Twitter、 Facebook 和更多 …
-    tag: 订阅标记
+    share_on_twitter: 分享至Twitter
+    tag: 订阅标签
     user: 订阅的用户问题
   global: 
     active: 激活
@@ -24,6 +24,9 @@ zh-CN:
     preview: 预览
     previous: 前
     share: 共享
+  languages: 
+    any: 所有
+    user: 我的首选的语言
   models: 
     question: 问题
   number: 

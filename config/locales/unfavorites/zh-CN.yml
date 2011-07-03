@@ -5,9 +5,9 @@
 zh-CN: 
   activerecord: 
     models: 
-      favorite: 最爱
+      favorite: 喜欢
       favorites: 收藏夹
   unfavorites: 
     create: 
-      success: 这个问题已从您的喜好
+      success: 这个问题已添加到您的收藏夹
       unauthenticated: 您需要删除收藏夹中的帐户

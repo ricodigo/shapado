@@ -11,7 +11,7 @@ zh-CN:
       home: 首页
       languages: 语言
       log_in: 登录
-      logged: "%{login} 作为登录"
+      logged: "欢迎 %{login}"
       logout: 退出
       manage_ads: 管理广告
       moderate: 中度
@@ -28,19 +28,19 @@ zh-CN:
       subscribe: 订阅
       tags: 标签
       title: 科技解答
-      unanswered: 无人应答
+      unanswered: 未解决问题
       users: 用户
       welcome_from: 欢迎！您可以
     manage: 
-      actions: 行动
+      actions: 活动
       announcements: 公告
       constrains: 要求
       content: 内容
-      dashboard: 仪表板
-      domain: 域
+      dashboard: 控制台
+      domain: 域名
       general: 一般
       members: 成员
-      pages: 页
+      pages: 页面
       properties: 属性
       reputation: 声誉
       rewards: 奖励
