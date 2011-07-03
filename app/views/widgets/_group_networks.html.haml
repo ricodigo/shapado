@@ -1,13 +1,10 @@
 
-.widget-networks.module
-  %h3= t('layouts.application.follow_us_and_share')
-  %section
-    %ul
-      -widget.networks.each do |name, data|
-        %li
-          =link_to "", "http://#{data["url"]}", :class => name, :rel => "nofollow"
+%aside
+  %ul
+    -widget.networks.each do |name, data|
       %li
-        -feed_urls.each do |title, url|
-          %a{:href => url}
-            =image_tag "atom.png", :width => 20
-  .clear
+        =link_to "", "http://#{data["url"]}", :class => name, :rel => "nofollow"
+    %li
+      -feed_urls.each do |title, url|
+        %a{:href => url}
+          =image_tag "atom.png", :width => 20

@@ -1,0 +1,12 @@
+%section.content-panel#column2
+  - unless params[:controller] =~ /moderate\//
+    //= render "shared/action-tabs"
+    =render "shared/quick_question_box"
+  = render "shared/widgets", :context => 'mainlist', :position => 'header'
+
+  #main-content-wrap{:class => @active_tab}
+    - if params[:controller] =~ /moderate\//
+      = render "shared/moderate_navigation"
+
+    = yield
+    .clear

@@ -1,7 +1,2 @@
--cache("tag_list_#{current_group.id}_#{Date.today.to_s}") do
-  .widget-tags.module
-    %h3
-      = t('.tags', :default => [:"layout.application.tags", :"activerecord.attributes.user.tags", "tags"])
-    %section
-      = render :partial => "shared/tag_list", :locals => {:tag_list => @tag_cloud}
-  .clear
+%aside
+  = render :partial => "shared/tag_list", :locals => {:tag_list => @tag_cloud}

@@ -237,13 +237,16 @@
 
     .followUp-content
       -if @question.follow_up
-        %h1 This Question Is a Follow Up Of
+        %h1
+          =t("questions.show.follow_up_of")
         = link_to @question.follow_up.original_question.title, question_path(@question.follow_up.original_question)+"##{@question.follow_up.original_answer_id}"
 
       -if @question.followed_up_by.limit(1).count > 0
         %h1= t('global.followed_by')
-        -@question.followed_up_by.all.each do |child|
-          = link_to child.title, question_path(child)
+        %ul
+          -@question.followed_up_by.all.each do |child|
+            %li
+              = link_to child.title, question_path(child)
 
       - if @question.closed && @question.close_reason.present?
         #close_reason.pacho

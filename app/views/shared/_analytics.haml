@@ -1,11 +1,11 @@
-- if Rails.env.production? && !AppConfig.analytics_id.blank? && (!current_group.has_custom_analytics || current_group.analytics_id.blank?)
+- if  Rails.env.production? && !AppConfig.analytics_id.blank? && (!current_group.has_custom_analytics || current_group.analytics_id.blank?)
   = googlean_script(AppConfig.analytics_id, AppConfig.googlean_domain)
 
-- elsif Rails.env.production? && current_group.has_custom_analytics && current_group.analytics_vendor == 'googlean' && request.domain == AppConfig.domain
+- elsif Rails.env.production? && !current_group.analytics_id.blank? && current_group.analytics_vendor == 'googlean' && request.domain == AppConfig.domain
 
   = googlean_script(AppConfig.analytics_id, AppConfig.googlean_domain)
   = googlean_script(current_group.analytics_id, current_group.domain)
 
-- elsif Rails.env.production? && current_group.has_custom_analytics && current_group.analytics_vendor == 'googlean' && request.domain != AppConfig.domain
+- elsif Rails.env.production? && current_group.has_custom_analytics && current_group.analytics_vendor == 'googlean' && request.domain != AppConfig.domain && !current_group.analytics_id.blank?
 
   = googlean_script(current_group.analytics_id, current_group.domain)

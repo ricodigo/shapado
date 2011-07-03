@@ -11,10 +11,10 @@
     = render "shared/layout/javascript"
 
     = csrf_meta_tag
-
-  %body
     = render "shared/analytics"
 
+  %body
+    =render_app_config
     #container{:class => @current_class}
       %nav.top-bar
         %ul.group-list.sf-menu
@@ -44,61 +44,9 @@
           = multiauth_dropdown("Sign In")
         -else
           = render "users/top_user"
-
-      %section.left-panel
-        .brand
-          %h1
-            = link_to(group_logo_img(current_group, :class => "group_logo"), domain_url(:custom => current_group.domain))
-
-        //= render "shared/user-zone"
-        .widget-links.module
-          %nav
-            %ul
-              = tab_entry "li", t('layouts.application.all'), questions_path, :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-              -if logged_in?
-                = tab_entry "li", t('layouts.application.followed'), feed_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-                = tab_entry "li", t('layouts.application.by_me'), by_me_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-                = tab_entry "li", t('layouts.application.preferred'), preferred_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-                = tab_entry "li", t('layouts.application.contributed'), contributed_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-                = tab_entry "li", t('layouts.application.collaborate'), expertise_user_path(current_user), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
-              %li
-                = link_to t('layouts.application.faq')
-
-        .widget-links.module
-          %nav
-            %ul
-              %li
-                = link_to t('layouts.application.random_question'), random_questions_path(:unanswered => true)
-              %li
-                = link_to t('layouts.application.badges'), badges_path, :class => "pjax", :"data-layout" => "badges"
-              %li
-                = link_to t('layouts.application.pages'), pages_path, :class => "pjax", :"data-layout" => "pages"
-
-        -if AppConfig.enable_adbard && request.domain == AppConfig.domain
-          -widget = AdbardWidget.new(:settings => {'host_id' => AppConfig.adbard_host_id, 'site_key' => AppConfig.adbard_site_key})
-          .widget.block{:id => widget.name}
-            = render :partial => widget.partial_name, :locals => {:widget => widget}
-
-        = render "shared/widgets", :context => 'mainlist', :position => 'navbar'
-
-
-      %section.content-panel
-        - unless params[:controller] =~ /moderate\//
-          //= render "shared/action-tabs"
-          =render "shared/quick_question_box"
-        = render "shared/widgets", :context => 'mainlist', :position => 'header'
-
-        #main-content-wrap{:class => @active_tab}
-          - if params[:controller] =~ /moderate\//
-            = render "shared/moderate_navigation"
-
-          = yield
-          .clear
-
-      %section.right-panel
-        = yield :sidebar
-
-        .clear
+      #columns
+        -(current_group.columns||["column1", "column2", "column3"]).each do |c|
+          =render "shared/layout/#{c}"
 
       = render "shared/widgets", :context => 'mainlist', :position => 'footer'
 

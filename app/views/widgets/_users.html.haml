@@ -1,18 +1,13 @@
--cache("new_users_#{current_group.id}_#{I18n.locale}") do
-  .module
-    %h3
-      =t(".title")
-    %section
-      %ul.list
-        -widget.recent_users(current_group).each do |user|
-          %li
-            .gravatar
-              = avatar_img(user, :size => "small")
-            .item
-              =link_to h(user.login), user_path(user), :class => "pjax", :"data-layout" => "user"
-              .joined
-                = t(:created_at, :scope => "activerecord.attributes.user")
-                =t("time.ago", :time => time_ago_in_words(user.created_at))
-    %footer
-      =link_to t("scaffold.more"), users_path
-    .clear
+%aside
+  %ul.list
+    -widget.recent_users(current_group).each do |user|
+      %li
+        .gravatar
+          = avatar_img(user, :size => "small")
+        .item
+          =link_to h(user.login), user_path(user), :class => "pjax", :"data-layout" => "user"
+          .joined
+            = t(:created_at, :scope => "activerecord.attributes.user")
+            =t("time.ago", :time => time_ago_in_words(user.created_at))
+%footer
+  =link_to t("scaffold.more"), users_path

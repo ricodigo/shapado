@@ -49,7 +49,7 @@
 
         -if question.followers_count.to_i > 0
           %li.followers
-            = t('.followers_number', :quantity => format_number(question.followers_count))
+            = t('questions.index.followers_count', :quantity => format_number(question.followers_count))
 
         -if !logged_in? || (current_user != question.user && current_user.has_flagged?(question).nil?)
           %li.spam

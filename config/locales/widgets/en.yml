@@ -50,6 +50,7 @@ en:
     mod_info:
       description: "This widget shows information relevant to moderators such as flags and reporting requests."
     question_tags:
+      title: Question Tags
       description: "This widget displays tags related to the current page."
     question_badges:
       description: "This widget displays badged earned on that question."
@@ -60,6 +61,7 @@ en:
     current_tags:
       description: "This widget displays tags followed by the current user."
     tag_list:
+      title: Tags
       description: "This widget displays tags related to the current page."
     ask_question:
       description: "This widget allows users to ask questions from anywhere."
@@ -73,3 +75,7 @@ en:
       followed_by: "Followed by %{user}"
     contributors:
       title: "Question's Contributors"
+    group_networks:
+      title: "Follow us"
+    share:
+      title: "Share in"

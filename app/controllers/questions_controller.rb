@@ -234,7 +234,9 @@ class QuestionsController < ApplicationController
     @question.safe_update(%w[title body language tags wiki position attachments], params[:question])
 
     if params[:original_question_id]
-      @question.follow_up = FollowUp.new(:original_question_id => params[:original_question_id], :original_answer_id => params[:original_answer_id])
+      @question.follow_up = FollowUp.new
+      @question.follow_up.original_question_id = params[:original_question_id]
+      @question.follow_up.original_answer_id = params[:original_answer_id]
     end
 
     @question.anonymous = params[:question][:anonymous] if current_group.enable_anonymous

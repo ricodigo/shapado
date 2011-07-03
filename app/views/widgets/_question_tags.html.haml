@@ -1,6 +1,3 @@
-.widget-tags.module
-  %h3
-    = t('.tags', :default => [:"layout.application.tags", :"activerecord.attributes.user.tags", "tags"])
-  %section
-    = render :partial => "shared/tag_list", :locals => {:tag_list => @tag_cloud, :extra_params => {:controller => "questions", :action => "index"} }
-  .clear
+
+%section
+  = render :partial => "shared/tag_list", :locals => {:tag_list => @tag_cloud, :extra_params => {:controller => "questions", :action => "index"} }

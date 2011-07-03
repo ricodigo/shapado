@@ -12,9 +12,9 @@
     <link type="text/css" rel="stylesheet" media="screen" href="http://jqueryui.com/themes/base/jquery.ui.tabs.css">
 
     = csrf_meta_tag
+    = render "shared/analytics"
 
   %body
-    = render "shared/analytics"
     #container{:class => @current_class}
 
       %nav.top-bar

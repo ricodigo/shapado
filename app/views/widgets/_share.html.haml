@@ -1,16 +1,14 @@
 
-.widget-share.module
-  %h3= t('.title')
-  %section
-    -if data = widget.networks["twitter"]
-      -username = data["nickname"]
-      -text = "#{current_group.name} #{current_group.legend}"
-      -if @question
-        -text = h(@question.title)
-      = widget_for(:twitter_share, {:text => text, :via => username, :layout => "horizontal", :button_txt => "Tweet it!"})
-    -if data = widget.networks["facebook"]
-      -username = data["nickname"]
-      = widget_for(:facebook_like_button, {})
-    -if data = widget.networks["google"]
-      = widget_for(:google_plus, {:lang =>  I18n.locale})
-  .clear
+%aside
+  -if data = widget.networks["twitter"]
+    -username = data["nickname"]
+    -text = "#{current_group.name} #{current_group.legend}"
+    -if @question
+      -text = h(@question.title)
+    = widget_for(:twitter_share, {:text => text, :via => username, :layout => "horizontal", :button_txt => "Tweet it!"})
+  -if data = widget.networks["facebook"]
+    -username = data["nickname"]
+    = widget_for(:facebook_like_button, {})
+  -if data = widget.networks["google"]
+    = widget_for(:google_plus, {:lang =>  I18n.locale})
+

@@ -17,6 +17,7 @@ en:
       active_tooltip: Questions that have been updated recently
       votes_tooltip:  Questions with the most votes
       newest_tooltip: The most recently asked questions
+      followers_count: %{quantity} followers
     show:
       create_reward: Create reward
       create_reward_description: Reward the best answer with some of your own karma.
@@ -54,6 +55,7 @@ en:
       requested_reopening: "You requested reopening this question"
       retract_request: "Retract request"
       edit_request: "Edit request"
+      follow_up_of: This Question Is a Follow Up Of
       answers_title:
         one: "%{count} answer"
         other: "%{count} answers"
@@ -156,3 +158,4 @@ en:
         updated_by: updated by
         closed: Closed
         banned: Banned
+

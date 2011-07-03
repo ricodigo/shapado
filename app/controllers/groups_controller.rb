@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
   before_filter :check_permissions, :only => [:edit, :update, :close,
                                               :connect_group_to_twitter,
-                                              :disconnect_twitter_group]
+                                              :disconnect_twitter_group, :set_columns]
   before_filter :admin_required , :only => [:accept, :destroy]
   subtabs :index => [ [:most_active, "activity_rate desc"], [:newest, "created_at desc"],
                       [:oldest, "created_at asc"], [:name, "name asc"]]
@@ -120,6 +120,17 @@ class GroupsController < ApplicationController
         format.html { render :action => "edit" }
         format.json  { render :json => @group.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def set_columns
+    if params[:columns] && params[:columns].kind_of?(Array) && params[:columns].size == 3
+      @group.override(:columns => params[:columns])
+    end
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js  { render :json => {:success => true} }
     end
   end
 

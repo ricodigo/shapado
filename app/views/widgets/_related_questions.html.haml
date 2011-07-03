@@ -1,10 +1,7 @@
 -related_questions = Question.related_questions(@question, :language => find_languages)
 - if !related_questions.empty?
-  .block
-    %h3
-      =t("questions.show.related_questions")
-    .content
-      %ul.list
-        -related_questions.each do |rq|
-          %li
-            = link_to h(rq.title), question_path(rq), :title => truncate(strip_tags(rq.body), :length => 200)
+  %aside
+    %ul.list
+      -related_questions.each do |rq|
+        %li
+          = link_to h(rq.title), question_path(rq), :title => truncate(strip_tags(rq.body), :length => 200)

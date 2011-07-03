@@ -562,7 +562,6 @@ section.left-panel {
     border-bottom: 1px solid darken($view_bg_color, 10%);
     h3 {
       color: darken($view_fg_color, 5%);
-      text-shadow: 1px 1px 2px;
       border-bottom: 1px dotted darken($view_bg_color, 10%);
     }
   }
@@ -572,7 +571,6 @@ section.right-panel {
   .module {
     h3 {
       color: darken($view_fg_color, 5%);
-      text-shadow: 1px 1px 2px;
       border-bottom: 1px solid darken($view_bg_color, 10%);
     }
     footer {

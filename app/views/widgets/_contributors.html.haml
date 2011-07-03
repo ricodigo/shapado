@@ -1,7 +1,5 @@
-.contributors.module
-  %h3
-    = t(".title")
 
+%aside
   %ul
     - @question.contributors.each do |user|
       %li
@@ -13,5 +11,3 @@
               =link_to h(user.login), user_path(user), :class => "pjax", :"data-layout" => "user"
             %small
               ==#{user.reputation_on(current_group)}
-  .clear
-

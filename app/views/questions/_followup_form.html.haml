@@ -1,9 +1,9 @@
 -if @original_question
   .follow-up-msg
-    %p 
-      This is a follow up of
+    %p
+      =t("questions.show.follow_up_of")
       =link_to @original_question.title, question_path(@original_question), :target => "_blank"
-  
+
   -if @original_answer
     %em
       =@original_answer.body

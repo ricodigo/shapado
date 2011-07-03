@@ -74,6 +74,7 @@ class Group
   field :twitter_account, :type => Hash, :default => { }
 
   field :invitations_perms, :type => String, :default => 'user' # can be "moderator", "owner"
+  field :columns, :type => Array, :default => ["column1", "column2", "column3"]
 
   file_key :logo, :max_length => 2.megabytes
   file_key :custom_css, :max_length => 256.kilobytes

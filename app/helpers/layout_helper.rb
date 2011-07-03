@@ -20,6 +20,9 @@ module LayoutHelper
     end
   end
 
+  def render_app_config
+    content_tag(:span, "", {:id=>"appconfig",:"data-g"=>current_group.id})
+  end
 
   def questions_link_for(action)
     case action

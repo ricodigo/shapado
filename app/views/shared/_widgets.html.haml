@@ -2,5 +2,9 @@
   -widget_list = current_group.send(:"#{context}_widgets")
   -if widget_list
     - widget_list.send(position).each do |widget|
-      .widget.block{:id => widget.name}
+      .module.widget.block{:class => "widget-#{widget.name}"}
+        -if !(widget.settings||{})[:notitle]
+          %h3
+            = t(:"widgets.#{widget.name}.title")
         = render :partial => widget.partial_name, :locals => {:widget => widget}
+      .clear

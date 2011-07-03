@@ -1,6 +1,6 @@
 package_assets:         on          # (on, off, always)
 embed_assets:           datauri          # (on, off, datauri)
-compress_assets:        on          # (on, off)
+compress_assets:        on         # (on, off)
 gzip_assets:            on          # (on, off)
 template_function:      _.template  # (defaults to the built-in micro-templating)
 package_path:           packages    # (defaults to assets)
@@ -29,6 +29,7 @@ javascripts:
     - public/javascripts/vendor/jquery.cookie.js
     - public/javascripts/vendor/jquery.pjax.js
 
+    - public/javascripts/app/modules/app_config.js
     - public/javascripts/app/modules/jqmath.js
     - public/javascripts/app/modules/comments.js
     - public/javascripts/app/modules/answers.js
@@ -46,6 +47,7 @@ javascripts:
     - public/javascripts/app/modules/widgets.js
     - public/javascripts/app/modules/websocket.js
     - public/javascripts/app/modules/updater.js
+    - public/javascripts/app/modules/layout_editor.js
 
 
     - public/javascripts/rails.js
@@ -82,6 +84,7 @@ javascripts:
   jqueryui:
     - public/javascripts/vendor/jquery-ui.js
     - public/javascripts/app/modules/effects.js
+
   jqautocomplete:
     - public/javascripts/vendor/jqueryui.ricodigoComplete.js
   jqueryautovideo:

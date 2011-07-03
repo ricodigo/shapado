@@ -1,5 +1,5 @@
-.widget-tags.module
-  .content.tag-list
+%aside
+  .tag-list
     -self.current_tags.each do |tag|
       %span.tag{:class => "tag_#{h(tag)}"}
         = link_to h(tag), tag_path(:id => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
@@ -8,13 +8,7 @@
           = link_to "-", tag_path(:id => self.current_tags.join("+")), :class => "remove_tag"
         -else
           = link_to "-", tag_path(:id => tags.join("+")), :class => "remove_tag"
-  %section
-    %hgroup
-      %ul
-        %li.active
-          =link_to t('global.size')
-        %li
-          =link_to t('global.alphabetically')
-    .tag_cloud
-      = tag_cloud([], {}, widget[:settings][:limit])
-  .clear
+
+  .tag_cloud
+    = tag_cloud([], {}, widget[:settings][:limit])
+

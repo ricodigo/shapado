@@ -1,6 +1,6 @@
 
 desc "Fix all"
-task :fixall => [:init, "fixdb:create_thumbnails", "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:set_comment_count", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:versions", "fixdb:ads", "fixdb:wiki_booleans", "fixdb:themes"] do
+task :fixall => [:init, "fixdb:create_thumbnails", "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:fix_moved_comments_and_set_comment_count", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:versions", "fixdb:ads", "fixdb:wiki_booleans", "fixdb:themes"] do
 end
 
 
@@ -25,25 +25,33 @@ end
 
 namespace :fixdb do
   task :memberships => [:init] do
+    user_count= User.count
+    user_count_i = 0
+    memberships = []
+    p "gathering memberships"
     User.all.each do |user|
       count = user[:membership_list].count
-
       user.memberships.delete_all
       (user[:membership_list] || {}).each do |group_id, membership|
-        membership["_id"] = BSON::ObjectId.new.to_s
-        membership["group_id"] = group_id
-        membership["user_id"] = user.id
-        Membership.create!(membership)
+        if Group.find(group_id)
+          membership["_id"] = BSON::ObjectId.new.to_s
+          membership["group_id"] = group_id
+          membership["user_id"] = user.id
+          memberships << membership
+        end
       end
-
-      if user.memberships.count != count
-        puts "something is wrong #{user.email} #{user.memberships.count} #{count}"
-      else
-        puts "OK for #{user.email} #{count}"
-      end
+      user_count_i+=1
+      puts "#{user_count_i}/#{user_count}"
     end
-
+    msc = memberships.size
+    msi = 0
+    p "creating memberships:"
+    memberships.each do |m|
+      Membership.create!(m)
+      p "#{msi+=1}/#{msc}"
+    end
     User.unset({}, {:membership_list => 1})
+    p "done creating membership"
   end
 
   task :questions => [:init] do
@@ -182,24 +190,28 @@ namespace :fixdb do
   end
 
 
-  task :set_comment_count => [:init] do
+  task :fix_moved_comments_and_set_comment_count => [:init] do
+    comments = Mongoid.database.collection("comments")
     questions = Mongoid.database.collection("questions")
-    answers = Mongoid.database.collection("answers")
+    users = Mongoid.database.collection("users")
 
-    User.only([:_id,:membership_list, :login]).all.each do |u|
-      u.membership_list.each do |group_id, vals|
-        count = 0
-        group = Group.where(:_id => group_id).only([:_id, :name]).first
-        next if group.nil?
-
-        count = Mongoid.database.collection("comments").find(:_type => "Comment", :group_id => group.id, :user_id => u.id).count
-
-        u.override({"membership_list.#{group.id}.comments_count" => count})
-        if count > 0
-          p "#{u.login}: #{count} in #{group.name}"
-        end
+    x = 0
+    Mongoid.database.collection("comments").find(:_type => "Comment").each do |c|
+      collection = comments
+      if c["commentable_type"] == "Question"
+        collection = questions;
       end
+      parent = collection.find(:_id => c["commentable_id"]).first
+      if parent && parent["group_id"] != c["group_id"]
+        c["group_id"] = parent["group_id"]
+        comments.update({ :_id => c["_id"]}, c)
+        x += 1
+      end
+
+      # update user's comment count
+      users.update({ :_id => c["user_id"]}, "$inc" => {"membership_list.#{c['group_id']}.comments_count" => 1})
     end
+    p "#{x} moved comments had the wrong group_id"
   end
 
   task :comments => [:init] do

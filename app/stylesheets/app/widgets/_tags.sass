@@ -1,47 +1,66 @@
 // WIDGET - Tags
 //========================================================================
-.widget-tags
-  hgroup
-    margin: 5px 0 0 0
-    height: 25px
-
-    ul
-      li
-        float: left
-        display: inline
-        margin: 0 10px 0 0
-        font-size: 12px
-        a:hover
-          border-bottom: 1px dotted
-      li.active a
-        font-weight: bold
-
-  .tag_cloud
+.widget-tag_cloud
+  .list_cloud
+    padding: 5px
     span
-      font-size: 11px
+      margin: 1px 5px
       display: block
       a
-        +big-radius
-        padding: 5px 10px
+        color: #777
+        padding: 4px 10px
+        background-color: #f1f1f1
         display: block
-        margin-bottom: 3px
-        overflow: hidden
-
-      a:first-letter
-        text-transform: uppercase
-      a.xxl
-        width: 48%
-      a.xl
-        width: 46%
-      a.l
-        width: 44%
-      a.s
-        width: 42%
-      a.xxs
+        +huge-radius
+        &:hover
+          color: #000
+          background-color: #ccc
+          width: 95%
+      .xxs
+        width: 20%
+      .xs
+        width: 30%
+      .s
         width: 40%
-      a.xs
-        width: 38%
+      .m
+        width: 50%
+      .xm
+        width: 60%
+      .xxm
+        width: 70%
+      .l
+        width: 80%
+      .xl
+        width: 90%
+      .xxl
+        width: 100%
+
+  .tag_cloud
+    padding: 10px  
+    span
+      float: left
+      display: inline
+      margin: 0 10px 0 0
+      a
+        color: #000
+        line-height: 24px
       a:hover
-        width: 88%
-        display: block
-        text-align: right
+        color: #f60
+      .xxs
+        font-size: 10px
+      .xs
+        font-size: 12px
+      .s
+        font-size: 14px
+      .m
+        font-size: 16px
+      .xm
+        font-size: 18px
+      .xxm
+        font-size: 20px
+      .l
+        font-size: 22px
+      .xl
+        font-size: 24px
+      .xxl
+        font-size: 26px

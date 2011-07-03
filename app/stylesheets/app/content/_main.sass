@@ -28,8 +28,6 @@
 
 
     article
-      padding: 15px 20px
-
       .user-data
         font-size: 12px
         margin: 0 0 10px 20px
@@ -60,48 +58,41 @@
             margin: 0 0 0 7px
             &:hover
               border-bottom: 1px dotted
-
+      
       .toolbar
         clear: both
         display: block
         border: 0px !important
         ul
-          li.answers, li.votes, li.followers
-            float: left
-            margin-right: 5px
-            margin-left: 0
-            form
-              float: left
-              margin: 0 4px 0 0
-            a
-              background-image: url("/images/ans-icon-small-light.gif") 0 1px  no-repeat
-              margin: 0
-              padding: 0 0 0 20px
-              font-size: 12px
-
-          li.votes
-            width: 150px
-            height: 15px
-            position: relative
-            form
-              width: auto
-              margin: 0 -13px 0 0 !important
-            a
-              background-image: none !important
-              background-color: transparent !important
-            img
-              position: absolute
-              top: 0
-
-          li
+          li 
             float: right
             display: inline
-            margin-left: 5px
+            font-size: 11px
+            color: #999
+            margin-right: 5px 
+            border: 0px !important
             a
+              display: block
+              padding: 3px 5px            
               +small-radius
               padding: 3px 7px
               font-size: 11px
+          li.answers, li.votes, li.followers, li.answers a, li.votes a, li.followers a
+            float: left
+            font-size: 12px !important
+            border-right: 1px solid #e5e5e5
+          li.followers
+            padding: 3px 5px
+            
 
+
+
+.questions
+  article
+    .toolbar
+      overflow: hidden
+      margin-bottom: 20px
+      
 .questions, #users_show .questions
   section
     article
