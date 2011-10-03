@@ -3,6 +3,6 @@
 mkdir -p shared
 cd shared
 rm -f GeoLiteCity.dat.gz
-wget -q http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+wget -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 gunzip -f GeoLiteCity.dat.gz
 
