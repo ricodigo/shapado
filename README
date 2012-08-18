@@ -31,11 +31,6 @@ sudo gem install bundler
 
     If you don't want to use newrelic, just comment it out in the Gemfile.
 
-    Go to https://rpm.newrelic.com/ and create an account, then:
-    cp config/shapado.yml.sample config/newrelic.yml
-
-    If you don't want to use newrelic, just comment it out in the Gemfile.
-
 3. Install dependencies
 
     bundle install
