@@ -20,9 +20,9 @@ sudo gem install bundler
 
 2. Configure the application
 
-    cp config/shapado.sample.yml config/shapado.yml
-    cp config/mongoid.sample.yml config/mongoid.yml
-    cp config/auth_providers.sample.yml config/auth_providers.yml
+    cp config/shapado.yml.sample config/shapado.yml
+    cp config/mongoid.yml.sample config/mongoid.yml
+    cp config/auth_providers.yml.sample config/auth_providers.yml
 
     edit shapado.yml and auth_providers.yml
 
