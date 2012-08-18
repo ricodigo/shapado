@@ -20,16 +20,11 @@ sudo gem install bundler
 
 2. Configure the application
 
-    cp config/shapado.sample.yml config/shapado.yml
-    cp config/mongoid.sample.yml config/mongoid.yml
-    cp config/auth_providers.sample.yml config/auth_providers.yml
+    cp config/shapado.yml.sample config/shapado.yml
+    cp config/mongoid.yml.sample config/mongoid.yml
+    cp config/auth_providers.yml.sample config/auth_providers.yml
 
     edit shapado.yml and auth_providers.yml
-
-    Go to https://rpm.newrelic.com/ and create an account, then:
-    cp config/shapado.yml.sample config/newrelic.yml
-
-    If you don't want to use newrelic, just comment it out in the Gemfile.
 
     Go to https://rpm.newrelic.com/ and create an account, then:
     cp config/shapado.yml.sample config/newrelic.yml
