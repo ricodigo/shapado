@@ -68,6 +68,11 @@ module MultiauthSupport
           end
         end
 
+        # To handle: Facebook login issue
+        if user.password.blank? && provider =~ /facebook|Facebook/
+          user.password = Devise.friendly_token[0,20]
+        end
+
         if !user.valid? && !user.errors[:login].empty?
           user.login = user.login + "_#{rand(100)}#{rand(100)}#{rand(100)}"
         end
