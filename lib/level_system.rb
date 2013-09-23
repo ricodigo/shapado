@@ -7,8 +7,8 @@ class LevelSystem
 
   def initialize
     @levels = []
-    (1..200).to_a.map do |e|
-      @levels << (@levels.last||0)  + (((e-1)/5)+1)*10
+    200.times do |e|
+      @levels << (@levels.last||0)  + (((e)/5)+1)*10
     end
   end
 
