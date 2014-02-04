@@ -16,6 +16,7 @@ base_packaged.*
 .bundle
 log/*.log
 tmp/**/*
+tmp/restart.txt
 vendor/cache/*.gem
 public/javascripts/login_packaged.js
 public/javascripts/show_packaged.js
@@ -28,3 +29,5 @@ public/packages/
 .redcar
 .idea
 tunnlr.yml
+shared/*
+.rbenv-version
