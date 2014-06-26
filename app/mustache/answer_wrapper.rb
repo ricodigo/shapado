@@ -70,7 +70,7 @@ class AnswerWrapper < ModelWrapper
   def pick_as_solution_url
     if !question.accepted || question.subjetive
       view_context.link_to(I18n.t("questions.answer.pick_answer"), view_context.solve_question_path(question, :answer_id => @target))
-    elsif question.answer == answer
+    else question.answer == answer
       view_context.link_to(I18n.t("questions.answer.unset_answer"), view_context.unsolve_question_path(question, :answer_id => @target))
     end
   end
